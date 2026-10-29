@@ -664,6 +664,7 @@ const HOTSPOTS = [
     x: 38, y: 38,
     tag: 'Силовой агрегат',
     title: 'Двигатель N55 TwinPower Turbo',
+    pin: 'Двигатель N55',
     desc: 'Рядная «шестёрка» 3.0 л с турбокомпрессором TwinScroll, 306 л.с. и непосредственным впрыском.',
     stat: '306 л.с. · 400 Н·м',
   },
@@ -672,6 +673,7 @@ const HOTSPOTS = [
     x: 50, y: 52,
     tag: 'Трансмиссия',
     title: '8-ступенчатая АКПП Steptronic',
+    pin: 'АКПП Steptronic',
     desc: 'Мгновенные переключения, спорт-режим и эффективная передача 400 Н·м момента.',
     stat: '8HP45 · 8 передач',
   },
@@ -680,6 +682,7 @@ const HOTSPOTS = [
     x: 28, y: 62,
     tag: 'Шасси',
     title: 'Двухрычажная подвеска Double Wishbone',
+    pin: 'Подвеска Double Wishbone',
     desc: 'Алюминиевая пространственная конструкция для филигранной управляемости.',
     stat: 'Al-Alloy · 50:50',
   },
@@ -688,6 +691,7 @@ const HOTSPOTS = [
     x: 20, y: 70,
     tag: 'Безопасность',
     title: 'Спортивная тормозная система',
+    pin: 'Спортивные тормоза',
     desc: 'Вентилируемые композитные диски и суппорты с высокой термостойкостью.',
     stat: '345 мм · Диски',
   },
@@ -696,6 +700,7 @@ const HOTSPOTS = [
     x: 24, y: 33,
     tag: 'Оптика',
     title: 'Адаптивные фары Adaptive LED',
+    pin: 'Адаптивные фары',
     desc: 'Фирменные кольца Corona Rings и система автоуправления дальним светом.',
     stat: 'LED · AHL',
   },
@@ -704,6 +709,7 @@ const HOTSPOTS = [
     x: 55, y: 36,
     tag: 'Салон',
     title: 'Кокпит и кожа Dakota',
+    pin: 'Кокпит Dakota',
     desc: 'Анатомические кресла, 14 электрорегулировок и консоль, ориентированная на водителя.',
     stat: 'Dakota Leather',
   },
@@ -712,6 +718,7 @@ const HOTSPOTS = [
     x: 33, y: 24,
     tag: 'Кузов',
     title: 'Облегчённый алюминиевый капот',
+    pin: 'Алюминиевый капот',
     desc: 'Снижение массы передней оси для достижения идеальной развесовки 50:50.',
     stat: '−6 кг · Алюминий',
   },
@@ -720,6 +727,7 @@ const HOTSPOTS = [
     x: 70, y: 68,
     tag: 'Выхлоп',
     title: 'Выпуск с активным клапаном',
+    pin: 'Выпускная система',
     desc: 'Басовитый звук рядного двигателя и оптимизированный отвод отработавших газов.',
     stat: 'Active Flap Valve',
   },
@@ -975,7 +983,7 @@ function buildHotspots() {
       <div class="hs-pin">
         <div class="hs-pin-ring"></div>
         <div class="hs-pin-core"></div>
-        <span class="hs-pin-label">${hs.title.split(' ')[0]} ${hs.title.split(' ')[1] || ''}</span>
+        <span class="hs-pin-label">${hs.pin || hs.title}</span>
       </div>`;
 
     // Hover to view component
