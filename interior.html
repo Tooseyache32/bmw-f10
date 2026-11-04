@@ -419,7 +419,7 @@
       const INTRO_END = .25;
       const FRAME_COUNT = 120;
       const frameFolder = innerWidth <= 700 ? 'mobile' : 'desktop';
-      const frameSrc = i => `assets/interior-scroll-lite/${frameFolder}/i_${String(i + 1).padStart(4, '0')}.webp`;
+      const frameSrc = i => `frames_interior/i_${String(i + 1).padStart(4, '0')}.webp`;
       const trajectories = [
         [-.85, -.85, -28], [-.58, .95, 24], [-.34, -.98, -18], [-.16, 1.1, 14],
         [.20, -1.05, -22], [.40, .95, 28], [.65, -.90, 20], [.90, .85, -26]
@@ -447,21 +447,13 @@
       const introShade = $('introShade');
       const stageProgress = $('stageProgFill');
 
-      // Only the current frame and four neighbours on either side retain decoded images.
+      /* Все 120 кадров удерживаются в памяти и не выбрасываются —
+         очередь добирает недостающие кадры по мере загрузки. */
       function planFrames(index) {
         if (index !== wantedFrame) frameDirection = Math.sign(index - wantedFrame);
         wantedFrame = index;
-        const ordered = [index];
-        for (let distance = 1; distance <= BUFFER_RADIUS; distance++) {
-          ordered.push(index + distance * frameDirection, index - distance * frameDirection);
-        }
-        frameWindow = new Set(ordered.filter(i => i >= 0 && i < FRAME_COUNT));
-        for (const [key, image] of frames) {
-          if (!frameWindow.has(key)) {
-            image.removeAttribute('src');
-            frames.delete(key);
-          }
-        }
+        frameWindow = new Set();
+        for (let k = 0; k < FRAME_COUNT; k++) frameWindow.add(k);
         queue = Array.from(frameWindow).filter(i => !frames.has(i) && !pending.has(i) && !failed.has(i));
         pumpQueue();
       }
