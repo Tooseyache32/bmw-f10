@@ -8,3 +8,8 @@ full-page.html
 # Служебные файлы
 Thumbs.db
 .DS_Store
+
+# Служебные наборы кадров и бэкапы (не пушим)
+frames_interior2/
+frames_interior_orig/
+.shots/

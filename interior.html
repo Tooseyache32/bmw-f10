@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW 5 серии (F10) · Салон</title>
+  <meta name="description"
+    content="Интерактивный салон BMW 5 серии (F10): кокпит, приборы Black Panel, система iDrive, селектор АКПП и кресла Dakota.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #08080a;
+      --bg-2: #0f0f12;
+      --surface: rgba(16, 16, 20, 0.78);
+      --text: #f4f3ef;
+      --text-muted: #a8a8b0;
+      --text-dim: #686872;
+      --accent: #d90b16;
+      --amber: #ff6b1a;
+      --ruby-bright: #ff1e1e;
+      --ruby-mid: #c9040c;
+      --line: rgba(255, 255, 255, 0.11);
+      --line-strong: rgba(255, 255, 255, 0.24);
+
+      --font-display: 'Inter Tight', 'Inter', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --gutter: clamp(20px, 4vw, 64px);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    html.lenis,
+    html.lenis body {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    body {
+      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: clip;
+    }
+
+    ::selection {
+      background: var(--ruby-mid);
+      color: #fff;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    }
+
+    #ambientCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    .display {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(42px, 6.4vw, 108px);
+      line-height: 0.96;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+      perspective: 900px;
+    }
+
+    .lede {
+      font-size: clamp(16px, 1.35vw, 20px);
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 48ch;
+      text-wrap: pretty;
+    }
+
+    .w {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: top;
+      padding: 0.08em 0 0.14em;
+      margin: -0.08em 0 -0.14em;
+      perspective: 600px;
+    }
+
+    .w>span {
+      display: inline-block;
+      transform-origin: 50% 100%;
+      backface-visibility: hidden;
+    }
+
+    /* Локальное рубиновое боке строго под курсором */
+    .ruby-spot {
+      --sx: -9999px;
+      --sy: -9999px;
+      --sr: 0px;
+      --base-col: #f4f3ef;
+      background-image:
+        radial-gradient(circle calc(var(--sr) * 0.26) at calc(var(--sx) + 18px) calc(var(--sy) - 14px), rgba(255, 75, 75, 0.95) 0%, transparent 76%),
+        radial-gradient(circle calc(var(--sr) * 0.20) at calc(var(--sx) - 22px) calc(var(--sy) + 16px), rgba(255, 42, 42, 0.92) 0%, transparent 76%),
+        radial-gradient(circle calc(var(--sr) * 0.15) at calc(var(--sx) + 8px) calc(var(--sy) + 24px), rgba(255, 60, 60, 0.88) 0%, transparent 78%),
+        radial-gradient(circle var(--sr) at var(--sx) var(--sy), #ff1e1e 0%, #c8000a 40%, #5a0003 70%, var(--base-col) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--base-col);
+    }
+
+    /* Курсор */
+    @media (pointer: fine) {
+
+      html.has-cursor,
+      html.has-cursor * {
+        cursor: none !important;
+      }
+    }
+
+    .cursor-dot,
+    .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 100001;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .cursor-dot {
+      width: 6px;
+      height: 6px;
+      margin: -3px 0 0 -3px;
+      background: #fff;
+      mix-blend-mode: difference;
+    }
+
+    .cursor-ring {
+      width: 40px;
+      height: 40px;
+      margin: -20px 0 0 -20px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #08080a;
+      font-weight: 500;
+      transition: width 0.35s var(--ease-out), height 0.35s var(--ease-out), margin 0.35s var(--ease-out), background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .cursor-ring span {
+      opacity: 0;
+      transform: scale(0.7);
+      transition: opacity 0.2s, transform 0.25s var(--ease-out);
+    }
+
+    .cursor-ring.is-hover {
+      width: 84px;
+      height: 84px;
+      margin: -42px 0 0 -42px;
+      background: rgba(244, 243, 239, 0.95);
+      border-color: transparent;
+    }
+
+    .cursor-ring.is-hover span {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .cursor-ring.is-text-ruby {
+      width: 64px;
+      height: 64px;
+      margin: -32px 0 0 -32px;
+      background: radial-gradient(circle at 38% 35%, rgba(255, 35, 35, 0.28), rgba(160, 0, 10, 0.12) 65%, transparent 100%);
+      border-color: rgba(255, 38, 38, 0.65);
+      box-shadow: 0 0 28px rgba(210, 0, 12, 0.45);
+    }
+
+    html.has-cursor .cursor-dot,
+    html.has-cursor .cursor-ring {
+      opacity: 1;
+    }
+
+    /* Навигация */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: linear-gradient(180deg, rgba(8, 8, 10, 0.82) 0%, rgba(8, 8, 10, 0) 100%);
+      transition: transform 0.5s var(--ease-out), opacity 0.4s;
+      pointer-events: none;
+    }
+
+    .site-nav>* {
+      pointer-events: auto;
+    }
+
+    .site-nav.is-hidden {
+      transform: translateY(-110%);
+      opacity: 0;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px 8px 10px;
+      border-radius: 999px;
+      background: rgba(14, 14, 18, 0.68);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      color: var(--text);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-brand svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 1.7;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(14, 14, 18, 0.68);
+      border: 1px solid var(--line);
+      padding: 4px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(18px);
+    }
+
+    .bracket-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 4px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      transition: color 0.25s;
+    }
+
+    .bracket-link .br {
+      color: var(--text-dim);
+      transition: transform 0.3s var(--ease-out), color 0.25s;
+    }
+
+    .bracket-link:hover {
+      color: #fff;
+    }
+
+    .bracket-link:hover .br:first-child {
+      transform: translateX(-4px);
+      color: var(--accent);
+    }
+
+    .bracket-link:hover .br:last-child {
+      transform: translateX(4px);
+      color: var(--accent);
+    }
+
+    /* ============================================================
+       1. ГЛАВНАЯ СЦЕНА САЛОНА (ПОЛНОЕ ВИДЕО БЕЗ ПРОПУСКОВ И МЫЛА)
+       ============================================================ */
+    .cabin-orbit-section {
+      position: relative;
+      height: 460vh;
+      background: #000;
+      z-index: 2;
+    }
+
+    .cabin-sticky-stage {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100svh;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #cabinVideo,
+    #cabinCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cabin-sticky-stage::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 50%, transparent 48%, rgba(0, 0, 0, 0.6) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 20%),
+        linear-gradient(0deg, rgba(8, 8, 10, 0.85) 0%, transparent 26%);
+    }
+
+    /* Плашка ГЛАВА слева сверху */
+    .cabin-chapter-pill {
+      position: absolute;
+      z-index: 15;
+      top: clamp(74px, 10vh, 108px);
+      left: var(--gutter);
+      padding: 14px 20px;
+      border-radius: 14px;
+      background: rgba(12, 12, 16, 0.76);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      max-width: 380px;
+    }
+
+    .cabin-chapter-head {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .cabin-chapter-head b {
+      color: #fff;
+      font-weight: 500;
+      margin-left: 6px;
+    }
+
+    .cabin-chapter-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* Карточка описания активного узла справа */
+    .cabin-info-card {
+      position: absolute;
+      z-index: 15;
+      right: var(--gutter);
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(440px, calc(100vw - 40px));
+      padding: clamp(24px, 3vw, 36px);
+      border-radius: 18px;
+      background: rgba(14, 14, 18, 0.82);
+      border: 1px solid var(--line-strong);
+      backdrop-filter: blur(24px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
+      transition: transform 0.45s var(--ease-out), opacity 0.35s var(--ease-out);
+    }
+
+    .cabin-card-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .cabin-card-eyebrow i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .cabin-card-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+    }
+
+    .cabin-card-desc {
+      font-size: 15px;
+      line-height: 1.62;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .cabin-card-meta {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+    }
+
+    /* Док быстрого перехода по 5 точкам салона внизу */
+    .cabin-dock {
+      position: absolute;
+      z-index: 20;
+      left: 0;
+      right: 0;
+      bottom: 26px;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px;
+      pointer-events: none;
+    }
+
+    .cabin-dock-inner {
+      display: flex;
+      gap: clamp(16px, 3vw, 40px);
+      pointer-events: auto;
+      overflow-x: auto;
+      max-width: 100%;
+      scrollbar-width: none;
+    }
+
+    .cabin-dock-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .dock-item {
+      background: none;
+      border: 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color 0.25s;
+    }
+
+    .dock-item i {
+      display: block;
+      height: 2px;
+      width: 100%;
+      min-width: 56px;
+      background: rgba(255, 255, 255, 0.2);
+      transition: background 0.25s;
+    }
+
+    .dock-item:hover,
+    .dock-item.active {
+      color: #fff;
+    }
+
+    .dock-item.active i {
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .stage-progress-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.08);
+      z-index: 25;
+    }
+
+    .stage-progress-bar i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+    }
+
+    /* ============================================================
+       2. ТОЛЬКО 3 КАРТОЧКИ ПОСЛЕ СКРОЛЛ-АНИМАЦИИ
+       ============================================================ */
+    .section-ergonomics {
+      position: relative;
+      z-index: 5;
+      background: var(--bg);
+      padding: clamp(90px, 14vh, 160px) 0 clamp(60px, 10vh, 110px);
+      border-top: 1px solid var(--line);
+    }
+
+    .ergo-head {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: clamp(32px, 6vw, 90px);
+      align-items: end;
+      margin-bottom: clamp(56px, 8vw, 100px);
+    }
+
+    .ergo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(24px, 3vw, 40px);
+    }
+
+    .flip-card {
+      perspective: 1800px;
+      cursor: pointer;
+    }
+
+    .flip-inner {
+      padding: clamp(28px, 3vw, 42px);
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform-style: preserve-3d;
+      transition: border-color 0.35s, box-shadow 0.4s;
+    }
+
+    .flip-card:hover .flip-inner {
+      border-color: rgba(255, 42, 42, 0.65);
+      box-shadow: 0 26px 64px rgba(0, 0, 0, 0.75), 0 0 36px rgba(215, 0, 12, 0.25);
+    }
+
+    .flip-val {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(44px, 5vw, 76px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .flip-title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 400;
+      margin: 20px 0 10px;
+    }
+
+    .flip-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .interior-footer {
+      margin-top: clamp(70px, 10vh, 120px);
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+
+      .ergo-head,
+      .ergo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cabin-info-card {
+        top: auto;
+        bottom: 78px;
+        right: var(--gutter);
+        left: var(--gutter);
+        transform: none;
+        width: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+  <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel">360°</span></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <header class="site-nav" id="siteNav">
+    <div class="nav-left">
+      <a href="index.html" class="nav-brand">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+        <span>F10 · Anatomy</span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="bracket-link"><span class="br">[</span><span>Главная</span><span
+          class="br">]</span></a>
+      <a href="exterior.html" class="bracket-link"><span class="br">[</span><span>← Экстерьер</span><span
+          class="br">]</span></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. ИНТЕРАКТИВНЫЙ ПРОЛЁТ ПО САЛОНУ (ПОЛНОЕ СТАРОЕ ВИДЕО/КАДРЫ БЕЗ ВЫРЕЗАНИЯ) -->
+    <section class="cabin-orbit-section" id="cabinOrbitSection">
+      <div class="cabin-sticky-stage">
+        <video id="cabinVideo" src="interior.mp4" muted playsinline preload="auto"></video>
+        <canvas id="cabinCanvas" aria-label="Интерактивный салон BMW F10"></canvas>
+
+        <!-- Левая верхняя плашка ГЛАВА -->
+        <div class="cabin-chapter-pill">
+          <div class="cabin-chapter-head">ГЛАВА · <b id="chapHeadName">КОКПИТ</b></div>
+          <div class="cabin-chapter-sub" id="chapHeadSub">АРХИТЕКТУРА САЛОНА ВОКРУГ ВОДИТЕЛЯ.</div>
+        </div>
+
+        <!-- Правая карточка активного узла -->
+        <aside class="cabin-info-card" id="cabinInfoCard">
+          <div class="cabin-card-eyebrow"><i></i><span id="cardStepTag">01 · КОКПИТ</span></div>
+          <h1 class="cabin-card-title ruby-spot" id="cardTitle">Разворот на 7° к пилоту</h1>
+          <p class="cabin-card-desc" id="cardDesc">
+            Центральная консоль и мультимедийный комплекс развёрнуты к водителю: все клавиши и контроллер iDrive
+            находятся на расстоянии естественного движения руки.
+          </p>
+          <div class="cabin-card-meta" id="cardMeta">Driver-Oriented Cockpit · M-Sport</div>
+        </aside>
+
+        <!-- Нижний док быстрого выбора узла -->
+        <div class="cabin-dock">
+          <div class="cabin-dock-inner">
+            <button class="dock-item active" data-progress="0.00" type="button"><i></i><span>01 Кокпит</span></button>
+            <button class="dock-item" data-progress="0.25" type="button"><i></i><span>02 Приборы</span></button>
+            <button class="dock-item" data-progress="0.52" type="button"><i></i><span>03 iDrive</span></button>
+            <button class="dock-item" data-progress="0.76" type="button"><i></i><span>04 Консоль</span></button>
+            <button class="dock-item" data-progress="0.95" type="button"><i></i><span>05 Кресла</span></button>
+          </div>
+        </div>
+
+        <div class="stage-progress-bar"><i id="stageProgFill"></i></div>
+      </div>
+    </section>
+
+    <!-- 2. ТОЛЬКО 3 КАРТОЧКИ С ПЕРЕВОРОТОМ НА 360° -->
+    <section class="section-ergonomics" id="sectionErgonomics">
+      <div class="container">
+        <div class="ergo-head">
+          <h2 class="display split-words">Точность в каждом касании.</h2>
+          <p class="lede">Наведите курсор на любую карточку — первая совершит оборот на 360° по вертикали, вторая — на
+            360° по горизонтали, третья — снова по вертикали.</p>
+        </div>
+
+        <div class="ergo-grid" id="ergoGrid">
+          <article class="flip-card" data-cursor="360° ↕">
+            <div class="flip-inner">
+              <div class="flip-val ruby-spot"><span data-count-to="605">605</span><span
+                  style="font-size:0.4em;color:var(--text-dim);margin-left:6px;">нм</span></div>
+              <div>
+                <h3 class="flip-title ruby-spot">Янтарный спектр 605 нм</h3>
+                <p class="flip-desc">Длина волны подсветки приборов выбрана так, чтобы глаз мгновенно фокусировался при
+                  переводе взгляда с ночной трассы в салон.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card" data-cursor="360° ↔">
+            <div class="flip-inner">
+              <div class="flip-val ruby-spot"><span data-count-to="10.2" data-decimals="1">10.2</span><span
+                  style="font-size:0.4em;color:var(--text-dim);margin-left:6px;">″</span></div>
+              <div>
+                <h3 class="flip-title ruby-spot">Дисплей Control Display</h3>
+                <p class="flip-desc">Широкоформатный экран высокого разрешения интегрирован в верхний ярус торпедо на
+                  уровне глаз водителя.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card" data-cursor="360° ↕">
+            <div class="flip-inner">
+              <div class="flip-val ruby-spot"><span data-count-to="14">14</span><span
+                  style="font-size:0.4em;color:var(--text-dim);margin-left:6px;">осей</span></div>
+              <div>
+                <h3 class="flip-title ruby-spot">Кресла Comfort / Dakota</h3>
+                <p class="flip-desc">Независимая регулировка верхнего сегмента спинки, ширины боковой поддержки и
+                  выдвижной коленной опоры.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <footer class="interior-footer">
+          <span class="mono" style="color: var(--text-dim);">© BMW F10 Anatomy · Салон</span>
+          <div style="display:flex;gap:18px;flex-wrap:wrap;">
+            <a href="index.html" class="bracket-link"><span class="br">[</span><span>Планета</span><span
+                class="br">]</span></a>
+            <a href="exterior.html" class="bracket-link"><span class="br">[</span><span>Экстерьер</span><span
+                class="br">]</span></a>
+            <button type="button" class="bracket-link" id="backToTopBtn"><span class="br">[</span><span>Наверх
+                ↑</span><span class="br">]</span></button>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const hasGsap = !!(window.gsap && window.ScrollTrigger);
+      if (hasGsap) {
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.config({ ignoreMobileResize: true });
+      }
+
+      const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+      const $ = id => document.getElementById(id);
+      const finePointer = window.matchMedia('(pointer: fine)').matches;
+
+      /* ─── 1. ПЛАВНЫЙ СКРОЛЛ LENIS ───────────────────────────── */
+      let lenis = null;
+      if (hasGsap && window.Lenis) {
+        lenis = new Lenis({
+          lerp: 0.09,
+          smoothWheel: true,
+          wheelMultiplier: 0.95
+        });
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add(t => lenis.raf(t * 1000));
+        gsap.ticker.lagSmoothing(0);
+      }
+
+      const scrollToY = (y) => {
+        if (lenis) lenis.scrollTo(y, { duration: 1.4 });
+        else window.scrollTo({ top: y, behavior: 'smooth' });
+      };
+
+      /* ─── 2. СПЛИТ СЛОВ ДЛЯ ЗАГОЛОВКА ───────────────────────── */
+      function splitWords(el) {
+        const text = el.textContent.trim().replace(/\s+/g, ' ');
+        el.setAttribute('aria-label', text);
+        el.textContent = '';
+        const words = text.split(' ');
+        const inners = [];
+        words.forEach((wd, i) => {
+          const w = document.createElement('span');
+          w.className = 'w';
+          w.setAttribute('aria-hidden', 'true');
+          const s = document.createElement('span');
+          s.textContent = wd;
+          s.className = 'ruby-spot';
+          w.appendChild(s);
+          el.appendChild(w);
+          if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
+          inners.push(s);
+        });
+        return inners;
+      }
+
+      /* ─── 3. ГЛАВЫ САЛОНА ───────────────────────────────────── */
+      const CABIN_CHAPTERS = [
+        {
+          head: 'КОКПИТ',
+          sub: 'АРХИТЕКТУРА САЛОНА ВОКРУГ ВОДИТЕЛЯ.',
+          tag: '01 · КОКПИТ',
+          title: 'Разворот на 7° к пилоту',
+          desc: 'Центральная консоль и мультимедийный комплекс развёрнуты к водителю: все клавиши и контроллер iDrive находятся на расстоянии естественного движения руки.',
+          meta: 'Driver-Oriented Cockpit · M-Sport'
+        },
+        {
+          head: 'ПРИБОРЫ',
+          sub: 'ЯНТАРНАЯ ПОДСВЕТКА РАБОЧЕЙ КОМБИНАЦИИ.',
+          tag: '02 · ПРИБОРЫ',
+          title: 'Янтарная подсветка',
+          desc: 'Классическая оранжевая шкала приборов: ночью глаза не устают, показания читаются периферийным зрением.',
+          meta: 'Black Panel · Head-Up Display'
+        },
+        {
+          head: 'IDRIVE',
+          sub: 'ЦЕНТРАЛЬНЫЙ ИНФОРМАЦИОННЫЙ ДИСПЛЕЙ 10.2".',
+          tag: '03 · МУЛЬТИМЕДИА',
+          title: 'Система BMW iDrive',
+          desc: 'Широкоформатный экран высокого разрешения с технологией Transflective не бликует на солнце и управляется шайбой под правой рукой.',
+          meta: '1280×480 px · Navigation Professional'
+        },
+        {
+          head: 'КОНСОЛЬ',
+          sub: 'ДВУХЗОННЫЙ КЛИМАТ И СЕЛЕКТОР STEPTRONIC.',
+          tag: '04 · КОНСОЛЬ',
+          title: 'Электронный селектор 8HP',
+          desc: 'Джойстик 8-ступенчатой трансмиссии ZF и клавиши Driving Experience Control (Comfort, Sport, Sport+) для мгновенной смены характера шасси.',
+          meta: 'ZF 8HP45 · Driving Experience Control'
+        },
+        {
+          head: 'КРЕСЛА',
+          sub: 'АНАТОМИЧЕСКИЙ ПРОФИЛЬ И КОЖА DAKOTA.',
+          tag: '05 · ЭРГОНОМИКА',
+          title: 'Кресла с кожей Dakota',
+          desc: 'Плотная набивка, регулируемая боковая поддержка и выдвижной валик под бёдра фиксируют тело в скоростных поворотах.',
+          meta: 'Dakota Leather · 14 регулировок'
+        }
+      ];
+
+      const cabinSection = $('cabinOrbitSection');
+      const cabinVideo = $('cabinVideo');
+      const cabinCanvas = $('cabinCanvas');
+      const cabinCtx = cabinCanvas.getContext('2d', { alpha: false });
+      const dockBtns = document.querySelectorAll('.dock-item');
+      const stageProgFill = $('stageProgFill');
+
+      let targetProg = 0;
+      let curProg = 0;
+      let curChap = -1;
+
+      /* Секвенция 1..120 (первый фильм) с локальным отбором резкого соседа ±1 кадр */
+      const FRAME_COUNT = 120;
+      const frameSrc = i => `frames_interior/i_${String(i + 1).padStart(4, '0')}.webp`;
+      const frames = new Array(FRAME_COUNT);
+      const sharpness = new Float32Array(FRAME_COUNT);
+      let loadedFrames = 0;
+      let useFrames = false;
+
+      const probeCanvas = document.createElement('canvas');
+      probeCanvas.width = 96;
+      probeCanvas.height = 54;
+      const probeCtx = probeCanvas.getContext('2d', { willReadFrequently: true });
+
+      function computeSharpness(img) {
+        try {
+          probeCtx.drawImage(img, 0, 0, 96, 54);
+          const d = probeCtx.getImageData(0, 0, 96, 54).data;
+          let sum = 0;
+          for (let y = 1; y < 53; y++) {
+            for (let x = 1; x < 95; x++) {
+              const p = (y * 96 + x) * 4;
+              const diffX = d[p] - d[p + 4];
+              const diffY = d[p] - d[p + 384];
+              sum += diffX * diffX + diffY * diffY;
+            }
+          }
+          return sum;
+        } catch (_) {
+          return 0;
+        }
+      }
+
+      for (let i = 0; i < FRAME_COUNT; i++) {
+        const img = new Image();
+        img.decoding = 'async';
+        img.onload = () => {
+          loadedFrames++;
+          sharpness[i] = computeSharpness(img);
+          if (loadedFrames === 1) {
+            useFrames = true;
+            cabinVideo.style.display = 'none';
+            renderCrispFrame(0, true);
+          }
+        };
+        img.src = frameSrc(i);
+        frames[i] = img;
+      }
+
+      let cw = innerWidth, ch = innerHeight, lastIdx = -1;
+      function resizeCabinCanvas() {
+        const dpr = Math.max(window.devicePixelRatio || 1, 2);
+        cw = innerWidth;
+        ch = innerHeight;
+        cabinCanvas.width = Math.round(cw * dpr);
+        cabinCanvas.height = Math.round(ch * dpr);
+        cabinCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        cabinCtx.imageSmoothingEnabled = true;
+        cabinCtx.imageSmoothingQuality = 'high';
+        lastIdx = -1;
+        renderCrispFrame(curProg, true);
+      }
+      window.addEventListener('resize', resizeCabinCanvas, { passive: true });
+      resizeCabinCanvas();
+
+      /* Если текущий кадр — смазанный переход между двумя соседними (±1), берём более резкий соседний кадр */
+      function pickCrispFrameIndex(rawIdx) {
+        const s0 = sharpness[rawIdx];
+        if (s0 <= 0) return rawIdx;
+        let best = rawIdx;
+        let bestS = s0;
+        if (rawIdx > 0 && sharpness[rawIdx - 1] > bestS * 1.12) {
+          best = rawIdx - 1;
+          bestS = sharpness[rawIdx - 1];
+        }
+        if (rawIdx < FRAME_COUNT - 1 && sharpness[rawIdx + 1] > bestS * 1.12) {
+          best = rawIdx + 1;
+        }
+        return best;
+      }
+
+      function renderCrispFrame(prog, force) {
+        const p = clamp(prog, 0, 1);
+
+        if (!useFrames) {
+          if (cabinVideo.readyState >= 2 && cabinVideo.duration) {
+            const targetTime = p * cabinVideo.duration;
+            if (Math.abs(cabinVideo.currentTime - targetTime) > 0.025) {
+              cabinVideo.currentTime = targetTime;
+            }
+          }
+          return;
+        }
+
+        const rawIdx = Math.round(p * (FRAME_COUNT - 1));
+        const idx = pickCrispFrameIndex(rawIdx);
+        if (!force && idx === lastIdx) return;
+
+        const img = frames[idx];
+        if (!img || !img.complete || !img.naturalWidth) return;
+        lastIdx = idx;
+
+        const w = img.naturalWidth;
+        const h = img.naturalHeight;
+        const scale = Math.max(cw / w, ch / h);
+        const drawW = Math.round(w * scale);
+        const drawH = Math.round(h * scale);
+        const drawX = Math.round((cw - drawW) / 2);
+        const drawY = Math.round((ch - drawH) / 2);
+
+        cabinCtx.globalAlpha = 1;
+        cabinCtx.drawImage(img, drawX, drawY, drawW, drawH);
+      }
+
+      function updateChapterUI(prog) {
+        let idx = 0;
+        if (prog >= 0.84) idx = 4;
+        else if (prog >= 0.66) idx = 3;
+        else if (prog >= 0.42) idx = 2;
+        else if (prog >= 0.16) idx = 1;
+
+        if (idx !== curChap) {
+          curChap = idx;
+          const c = CABIN_CHAPTERS[idx];
+          $('chapHeadName').textContent = c.head;
+          $('chapHeadSub').textContent = c.sub;
+          $('cardStepTag').textContent = c.tag;
+          $('cardTitle').textContent = c.title;
+          $('cardDesc').textContent = c.desc;
+          $('cardMeta').textContent = c.meta;
+          dockBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
+        }
+      }
+
+      /* Прогресс секции пересчитывается каждый кадр — не зависит от того,
+         кто скроллит (Lenis, колесо, тач, программный scrollTo) */
+      function pollScrollProgress() {
+        const rect = cabinSection.getBoundingClientRect();
+        const total = cabinSection.offsetHeight - innerHeight;
+        if (total > 0) targetProg = clamp(-rect.top / total, 0, 1);
+      }
+      window.addEventListener('scroll', () => {
+        pollScrollProgress();
+      }, { passive: true });
+      if (lenis) lenis.on('scroll', pollScrollProgress);
+
+      dockBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const p = parseFloat(btn.dataset.progress);
+          const total = cabinSection.offsetHeight - innerHeight;
+          scrollToY(cabinSection.offsetTop + p * total);
+        });
+      });
+
+      $('backToTopBtn').addEventListener('click', () => scrollToY(0));
+
+      /* ─── 4. ПЕРЕВОРОТ 3 КАРТОЧЕК НА 360° ───────────────────── */
+      document.querySelectorAll('.flip-card').forEach((card, idx) => {
+        const inner = card.querySelector('.flip-inner');
+        const isVert = idx % 2 === 0;
+        let spinning = false;
+        card.addEventListener('pointerenter', () => {
+          if (spinning || !hasGsap) return;
+          spinning = true;
+          gsap.fromTo(inner,
+            { rotateX: 0, rotateY: 0 },
+            {
+              rotateX: isVert ? 360 : 0,
+              rotateY: isVert ? 0 : 360,
+              duration: 1.1,
+              ease: 'expo.inOut',
+              onComplete() {
+                gsap.set(inner, { rotateX: 0, rotateY: 0 });
+                spinning = false;
+              }
+            }
+          );
+        });
+      });
+
+      /* ─── 5. АНИМАЦИЯ ПОЯВЛЕНИЯ ЗАГОЛОВКА И 3 КАРТОЧЕК ──────── */
+      if (hasGsap) {
+        document.querySelectorAll('.split-words').forEach(h => {
+          const inners = splitWords(h);
+          gsap.set(inners, { yPercent: 118, rotateX: -32, opacity: 0 });
+          gsap.to(inners, {
+            yPercent: 0,
+            rotateX: 0,
+            opacity: 1,
+            duration: 1.3,
+            ease: 'expo.out',
+            stagger: 0.06,
+            scrollTrigger: {
+              trigger: h,
+              start: 'top 88%',
+              toggleActions: 'play none none reverse'
+            }
+          });
+        });
+
+        gsap.fromTo('#ergoGrid .flip-card',
+          { y: 52, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.3,
+            stagger: 0.12,
+            ease: 'expo.out',
+            scrollTrigger: {
+              trigger: '#ergoGrid',
+              start: 'top 86%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+
+        document.querySelectorAll('[data-count-to]').forEach(el => {
+          const targetVal = parseFloat(el.getAttribute('data-count-to'));
+          const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+          const counter = { val: 0 };
+          gsap.to(counter, {
+            val: targetVal,
+            duration: 1.9,
+            ease: 'expo.out',
+            scrollTrigger: {
+              trigger: '#ergoGrid',
+              start: 'top 86%',
+              toggleActions: 'play none none reset'
+            },
+            onUpdate() {
+              el.textContent = decimals > 0 ? counter.val.toFixed(decimals) : String(Math.round(counter.val));
+            }
+          });
+        });
+      }
+
+      /* ─── 6. КУРСОР И ЛОКАЛЬНОЕ РУБИНОВОЕ БОКЕ .ruby-spot ──── */
+      const cursorDot = $('cursorDot');
+      const cursorRing = $('cursorRing');
+      const cursorLabel = $('cursorLabel');
+      const ambCanvas = $('ambientCanvas');
+      const ambCtx = ambCanvas.getContext('2d');
+      let cx = innerWidth / 2, cy = innerHeight / 2, rx = cx, ry = cy;
+      const trail = [];
+      let activeBigText = null;
+      let activeSpotSpans = [];
+
+      function resizeAmb() {
+        ambCanvas.width = innerWidth;
+        ambCanvas.height = innerHeight;
+      }
+      window.addEventListener('resize', resizeAmb, { passive: true });
+      resizeAmb();
+
+      const LARGE_TEXT_SEL = '.display, .cabin-card-title, .flip-val, .flip-title';
+
+      function clearActiveBigText() {
+        for (let i = 0; i < activeSpotSpans.length; i++) {
+          activeSpotSpans[i].style.setProperty('--sr', '0px');
+        }
+        activeSpotSpans = [];
+        activeBigText = null;
+      }
+
+      if (finePointer) {
+        document.documentElement.classList.add('has-cursor');
+        window.addEventListener('pointermove', e => {
+          cx = e.clientX;
+          cy = e.clientY;
+          cursorDot.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+          trail.push({ x: cx, y: cy, life: 1 });
+          if (trail.length > 24) trail.shift();
+
+          const big = e.target.closest && e.target.closest(LARGE_TEXT_SEL);
+          if (big !== activeBigText) {
+            clearActiveBigText();
+            if (big) {
+              activeBigText = big;
+              activeSpotSpans = big.classList.contains('ruby-spot')
+                ? [big]
+                : Array.from(big.querySelectorAll('.ruby-spot'));
+            }
+          }
+          for (let i = 0; i < activeSpotSpans.length; i++) {
+            const sp = activeSpotSpans[i];
+            const r = sp.getBoundingClientRect();
+            sp.style.setProperty('--sx', (cx - r.left).toFixed(1) + 'px');
+            sp.style.setProperty('--sy', (cy - r.top).toFixed(1) + 'px');
+            sp.style.setProperty('--sr', '120px');
+          }
+        }, { passive: true });
+
+        document.addEventListener('mouseover', e => {
+          const custom = e.target.closest && e.target.closest('[data-cursor]');
+          const ruby = e.target.closest && e.target.closest(LARGE_TEXT_SEL);
+          if (custom) {
+            cursorLabel.textContent = custom.getAttribute('data-cursor');
+            cursorRing.classList.remove('is-text-ruby');
+            cursorRing.classList.add('is-hover');
+          } else if (ruby) {
+            cursorLabel.textContent = '';
+            cursorRing.classList.remove('is-hover');
+            cursorRing.classList.add('is-text-ruby');
+          } else {
+            cursorRing.classList.remove('is-hover', 'is-text-ruby');
+          }
+        });
+      }
+
+      const nav = $('siteNav');
+      let lastY = window.scrollY;
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        nav.classList.toggle('is-hidden', y > lastY && y > 180);
+        lastY = y;
+      }, { passive: true });
+
+      function loop() {
+        pollScrollProgress();
+        curProg += (targetProg - curProg) * 0.14;
+        renderCrispFrame(curProg, false);
+        updateChapterUI(curProg);
+        stageProgFill.style.width = (curProg * 100).toFixed(1) + '%';
+
+        if (finePointer) {
+          rx += (cx - rx) * 0.2;
+          ry += (cy - ry) * 0.2;
+          cursorRing.style.transform = `translate3d(${rx.toFixed(1)}px, ${ry.toFixed(1)}px, 0)`;
+
+          ambCtx.clearRect(0, 0, ambCanvas.width, ambCanvas.height);
+          if (trail.length > 2) {
+            ambCtx.beginPath();
+            for (let i = 0; i < trail.length; i++) {
+              const pt = trail[i];
+              pt.life *= 0.93;
+              if (i === 0) ambCtx.moveTo(pt.x, pt.y);
+              else ambCtx.lineTo(pt.x, pt.y);
+            }
+            if (trail[0].life < 0.05) trail.shift();
+            ambCtx.strokeStyle = 'rgba(232, 24, 34, 0.22)';
+            ambCtx.lineWidth = 1.5;
+            ambCtx.stroke();
+          }
+        }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    })();
+  </script>
+</body>
+
+</html>
