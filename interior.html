@@ -454,12 +454,15 @@
         wantedFrame = index;
         frameWindow = new Set();
         for (let k = 0; k < FRAME_COUNT; k++) frameWindow.add(k);
-        queue = Array.from(frameWindow).filter(i => !frames.has(i) && !pending.has(i) && !failed.has(i));
+        /* Сначала грузим кадры рядом с текущей позицией, затем остальные */
+        queue = Array.from(frameWindow)
+          .filter(i => !frames.has(i) && !pending.has(i) && !failed.has(i))
+          .sort((a, b) => Math.abs(a - index) - Math.abs(b - index));
         pumpQueue();
       }
       function pumpQueue() {
         if (document.hidden) return;
-        while (activeLoads < 2 && queue.length) {
+        while (activeLoads < 8 && queue.length) {
           const index = queue.shift();
           if (!frameWindow.has(index) || pending.has(index) || frames.has(index)) continue;
           pending.add(index);
