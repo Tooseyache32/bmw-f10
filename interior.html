@@ -1,1256 +1,664 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMW 5 серии (F10) · Салон</title>
-  <meta name="description"
-    content="Интерактивный салон BMW 5 серии (F10): кокпит, приборы Black Panel, система iDrive, селектор АКПП и кресла Dakota.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic"
-    rel="stylesheet">
-
+  <meta name="color-scheme" content="light dark">
+  <title>Интерьер · BMW F10 Anatomy</title>
+  <meta name="description" content="Интерьер BMW 5 серии F10: интерактивный пролёт по салону, ориентированный на водителя кокпит, iDrive, материалы и комфорт.">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('f10-interior-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') document.documentElement.dataset.theme = savedTheme;
+    } catch (_) {}
+  </script>
+  <link rel="preload" as="image" href="assets/interior-scroll-lite/desktop/i_0001.webp" media="(min-width: 701px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/interior-scroll-lite/mobile/i_0001.webp" media="(max-width: 700px)" fetchpriority="high">
   <style>
     :root {
-      --bg: #08080a;
-      --bg-2: #0f0f12;
-      --surface: rgba(16, 16, 20, 0.78);
-      --text: #f4f3ef;
-      --text-muted: #a8a8b0;
-      --text-dim: #686872;
-      --accent: #d90b16;
-      --amber: #ff6b1a;
-      --ruby-bright: #ff1e1e;
-      --ruby-mid: #c9040c;
-      --line: rgba(255, 255, 255, 0.11);
-      --line-strong: rgba(255, 255, 255, 0.24);
-
-      --font-display: 'Inter Tight', 'Inter', system-ui, sans-serif;
-      --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
-
-      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-      --gutter: clamp(20px, 4vw, 64px);
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-    }
-
-    html.lenis,
-    html.lenis body {
-      height: auto;
-    }
-
-    .lenis.lenis-smooth {
-      scroll-behavior: auto !important;
-    }
-
-    .lenis.lenis-stopped {
-      overflow: hidden;
-    }
-
-    body {
-      background: var(--bg);
-      min-height: 100vh;
-      overflow-x: clip;
-    }
-
-    ::selection {
-      background: var(--ruby-mid);
-      color: #fff;
-    }
-
-    img,
-    video {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1480px;
-      margin: 0 auto;
-      padding: 0 var(--gutter);
-    }
-
-    .mono {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .grain {
-      position: fixed;
-      inset: 0;
-      z-index: 9000;
-      pointer-events: none;
-      opacity: 0.04;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-    }
-
-    #ambientCanvas {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-      opacity: 0.55;
-    }
-
-    .display {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: clamp(42px, 6.4vw, 108px);
-      line-height: 0.96;
-      letter-spacing: -0.035em;
-      text-wrap: balance;
-      perspective: 900px;
-    }
-
-    .lede {
-      font-size: clamp(16px, 1.35vw, 20px);
-      line-height: 1.65;
-      color: var(--text-muted);
-      max-width: 48ch;
-      text-wrap: pretty;
-    }
-
-    .w {
-      display: inline-block;
-      overflow: hidden;
-      vertical-align: top;
-      padding: 0.08em 0 0.14em;
-      margin: -0.08em 0 -0.14em;
-      perspective: 600px;
-    }
-
-    .w>span {
-      display: inline-block;
-      transform-origin: 50% 100%;
-      backface-visibility: hidden;
-    }
-
-    /* Локальное рубиновое боке строго под курсором */
-    .ruby-spot {
-      --sx: -9999px;
-      --sy: -9999px;
-      --sr: 0px;
-      --base-col: #f4f3ef;
-      background-image:
-        radial-gradient(circle calc(var(--sr) * 0.26) at calc(var(--sx) + 18px) calc(var(--sy) - 14px), rgba(255, 75, 75, 0.95) 0%, transparent 76%),
-        radial-gradient(circle calc(var(--sr) * 0.20) at calc(var(--sx) - 22px) calc(var(--sy) + 16px), rgba(255, 42, 42, 0.92) 0%, transparent 76%),
-        radial-gradient(circle calc(var(--sr) * 0.15) at calc(var(--sx) + 8px) calc(var(--sy) + 24px), rgba(255, 60, 60, 0.88) 0%, transparent 78%),
-        radial-gradient(circle var(--sr) at var(--sx) var(--sy), #ff1e1e 0%, #c8000a 40%, #5a0003 70%, var(--base-col) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: var(--base-col);
-    }
-
-    /* Курсор */
-    @media (pointer: fine) {
-
-      html.has-cursor,
-      html.has-cursor * {
-        cursor: none !important;
-      }
-    }
-
-    .cursor-dot,
-    .cursor-ring {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 100001;
-      border-radius: 50%;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .cursor-dot {
-      width: 6px;
-      height: 6px;
-      margin: -3px 0 0 -3px;
-      background: #fff;
-      mix-blend-mode: difference;
-    }
-
-    .cursor-ring {
-      width: 40px;
-      height: 40px;
-      margin: -20px 0 0 -20px;
-      border: 1px solid rgba(255, 255, 255, 0.65);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-mono);
-      font-size: 9px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #08080a;
-      font-weight: 500;
-      transition: width 0.35s var(--ease-out), height 0.35s var(--ease-out), margin 0.35s var(--ease-out), background 0.3s, border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .cursor-ring span {
-      opacity: 0;
-      transform: scale(0.7);
-      transition: opacity 0.2s, transform 0.25s var(--ease-out);
-    }
-
-    .cursor-ring.is-hover {
-      width: 84px;
-      height: 84px;
-      margin: -42px 0 0 -42px;
-      background: rgba(244, 243, 239, 0.95);
-      border-color: transparent;
-    }
-
-    .cursor-ring.is-hover span {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .cursor-ring.is-text-ruby {
-      width: 64px;
-      height: 64px;
-      margin: -32px 0 0 -32px;
-      background: radial-gradient(circle at 38% 35%, rgba(255, 35, 35, 0.28), rgba(160, 0, 10, 0.12) 65%, transparent 100%);
-      border-color: rgba(255, 38, 38, 0.65);
-      box-shadow: 0 0 28px rgba(210, 0, 12, 0.45);
-    }
-
-    html.has-cursor .cursor-dot,
-    html.has-cursor .cursor-ring {
-      opacity: 1;
-    }
-
-    /* Навигация */
-    .site-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 16px var(--gutter);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      background: linear-gradient(180deg, rgba(8, 8, 10, 0.82) 0%, rgba(8, 8, 10, 0) 100%);
-      transition: transform 0.5s var(--ease-out), opacity 0.4s;
-      pointer-events: none;
-    }
-
-    .site-nav>* {
-      pointer-events: auto;
-    }
-
-    .site-nav.is-hidden {
-      transform: translateY(-110%);
-      opacity: 0;
-    }
-
-    .nav-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px 8px 10px;
-      border-radius: 999px;
-      background: rgba(14, 14, 18, 0.68);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(18px);
-      color: var(--text);
-      text-decoration: none;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .nav-brand svg {
-      width: 16px;
-      height: 16px;
-      fill: none;
-      stroke: var(--accent);
-      stroke-width: 1.7;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(14, 14, 18, 0.68);
-      border: 1px solid var(--line);
-      padding: 4px 10px;
-      border-radius: 999px;
-      backdrop-filter: blur(18px);
-    }
-
-    .bracket-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 6px 4px;
-      background: none;
-      border: 0;
-      cursor: pointer;
-      transition: color 0.25s;
-    }
-
-    .bracket-link .br {
-      color: var(--text-dim);
-      transition: transform 0.3s var(--ease-out), color 0.25s;
-    }
-
-    .bracket-link:hover {
-      color: #fff;
-    }
-
-    .bracket-link:hover .br:first-child {
-      transform: translateX(-4px);
-      color: var(--accent);
-    }
-
-    .bracket-link:hover .br:last-child {
-      transform: translateX(4px);
-      color: var(--accent);
-    }
-
-    /* ============================================================
-       1. ГЛАВНАЯ СЦЕНА САЛОНА (ПОЛНОЕ ВИДЕО БЕЗ ПРОПУСКОВ И МЫЛА)
-       ============================================================ */
-    .cabin-orbit-section {
-      position: relative;
-      height: 460vh;
-      background: #000;
-      z-index: 2;
-    }
-
-    .cabin-sticky-stage {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      height: 100vh;
-      height: 100svh;
-      overflow: hidden;
-      background: #000;
-    }
-
-    #cabinVideo,
-    #cabinCanvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .cabin-sticky-stage::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 50% 50%, transparent 48%, rgba(0, 0, 0, 0.6) 100%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 20%),
-        linear-gradient(0deg, rgba(8, 8, 10, 0.85) 0%, transparent 26%);
-    }
-
-    /* Плашка ГЛАВА слева сверху */
-    .cabin-chapter-pill {
-      position: absolute;
-      z-index: 15;
-      top: clamp(74px, 10vh, 108px);
-      left: var(--gutter);
-      padding: 14px 20px;
-      border-radius: 14px;
-      background: rgba(12, 12, 16, 0.76);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(18px);
-      max-width: 380px;
-    }
-
-    .cabin-chapter-head {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .cabin-chapter-head b {
-      color: #fff;
-      font-weight: 500;
-      margin-left: 6px;
-    }
-
-    .cabin-chapter-sub {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-    }
-
-    /* Карточка описания активного узла справа */
-    .cabin-info-card {
-      position: absolute;
-      z-index: 15;
-      right: var(--gutter);
-      top: 50%;
-      transform: translateY(-50%);
-      width: min(440px, calc(100vw - 40px));
-      padding: clamp(24px, 3vw, 36px);
-      border-radius: 18px;
-      background: rgba(14, 14, 18, 0.82);
-      border: 1px solid var(--line-strong);
-      backdrop-filter: blur(24px);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
-      transition: transform 0.45s var(--ease-out), opacity 0.35s var(--ease-out);
-    }
-
-    .cabin-card-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-
-    .cabin-card-eyebrow i {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
-    }
-
-    .cabin-card-title {
-      font-family: var(--font-display);
-      font-weight: 500;
-      font-size: clamp(28px, 3.2vw, 44px);
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      margin-bottom: 14px;
-    }
-
-    .cabin-card-desc {
-      font-size: 15px;
-      line-height: 1.62;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .cabin-card-meta {
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      color: var(--amber);
-    }
-
-    /* Док быстрого перехода по 5 точкам салона внизу */
-    .cabin-dock {
-      position: absolute;
-      z-index: 20;
-      left: 0;
-      right: 0;
-      bottom: 26px;
-      display: flex;
-      justify-content: center;
-      padding: 0 16px;
-      pointer-events: none;
-    }
-
-    .cabin-dock-inner {
-      display: flex;
-      gap: clamp(16px, 3vw, 40px);
-      pointer-events: auto;
-      overflow-x: auto;
-      max-width: 100%;
-      scrollbar-width: none;
-    }
-
-    .cabin-dock-inner::-webkit-scrollbar {
-      display: none;
-    }
-
-    .dock-item {
-      background: none;
-      border: 0;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      white-space: nowrap;
-      cursor: pointer;
-      transition: color 0.25s;
-    }
-
-    .dock-item i {
-      display: block;
-      height: 2px;
-      width: 100%;
-      min-width: 56px;
-      background: rgba(255, 255, 255, 0.2);
-      transition: background 0.25s;
-    }
-
-    .dock-item:hover,
-    .dock-item.active {
-      color: #fff;
-    }
-
-    .dock-item.active i {
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
-    }
-
-    .stage-progress-bar {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.08);
-      z-index: 25;
-    }
-
-    .stage-progress-bar i {
-      display: block;
-      height: 100%;
-      width: 0%;
-      background: var(--accent);
-    }
-
-    /* ============================================================
-       2. ТОЛЬКО 3 КАРТОЧКИ ПОСЛЕ СКРОЛЛ-АНИМАЦИИ
-       ============================================================ */
-    .section-ergonomics {
-      position: relative;
-      z-index: 5;
-      background: var(--bg);
-      padding: clamp(90px, 14vh, 160px) 0 clamp(60px, 10vh, 110px);
-      border-top: 1px solid var(--line);
-    }
-
-    .ergo-head {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: clamp(32px, 6vw, 90px);
-      align-items: end;
-      margin-bottom: clamp(56px, 8vw, 100px);
-    }
-
-    .ergo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(24px, 3vw, 40px);
-    }
-
-    .flip-card {
-      perspective: 1800px;
-      cursor: pointer;
-    }
-
-    .flip-inner {
-      padding: clamp(28px, 3vw, 42px);
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: linear-gradient(160deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
-      min-height: 330px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transform-style: preserve-3d;
-      transition: border-color 0.35s, box-shadow 0.4s;
-    }
-
-    .flip-card:hover .flip-inner {
-      border-color: rgba(255, 42, 42, 0.65);
-      box-shadow: 0 26px 64px rgba(0, 0, 0, 0.75), 0 0 36px rgba(215, 0, 12, 0.25);
-    }
-
-    .flip-val {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: clamp(44px, 5vw, 76px);
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-
-    .flip-title {
-      font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 400;
-      margin: 20px 0 10px;
-    }
-
-    .flip-desc {
-      font-size: 14.5px;
-      line-height: 1.6;
-      color: var(--text-muted);
-    }
-
-    .interior-footer {
-      margin-top: clamp(70px, 10vh, 120px);
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 900px) {
-
-      .ergo-head,
-      .ergo-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cabin-info-card {
-        top: auto;
-        bottom: 78px;
-        right: var(--gutter);
-        left: var(--gutter);
-        transform: none;
-        width: auto;
-      }
+      color-scheme: light;
+      --page: #f5f5f7;
+      --surface: #ffffff;
+      --surface-soft: #eeeeef;
+      --ink: #19191b;
+      --muted: #707076;
+      --line: #dedee2;
+      --inverse: #151516;
+      --inverse-ink: #fafafa;
+      --glass: rgba(250, 250, 252, .87);
+      --shadow: 0 16px 48px rgba(0, 0, 0, .035);
+      --gutter: clamp(20px, 5vw, 80px);
+      --radius: 24px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --page: #101011;
+      --surface: #1a1a1c;
+      --surface-soft: #242426;
+      --ink: #f5f5f7;
+      --muted: #a1a1a8;
+      --line: #323236;
+      --inverse: #eeeeef;
+      --inverse-ink: #19191b;
+      --glass: rgba(27, 27, 29, .87);
+      --shadow: 0 16px 48px rgba(0, 0, 0, .12);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background: var(--page); scroll-padding-top: 110px; }
+    body { margin: 0; color: var(--ink); background: var(--page); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, p, figure { margin: 0; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    button, a { touch-action: manipulation; }
+    button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid #4789ed; outline-offset: 5px; }
+    img { display: block; width: 100%; height: auto; }
+    ::selection { background: #b4c9eb; color: #141416; }
+    .container { max-width: 1440px; padding-inline: var(--gutter); margin-inline: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 9px; font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 6px; height: 6px; flex: 0 0 6px; background: currentColor; border-radius: 50%; }
+    .muted { color: var(--muted); }
+    .skip-link { position: fixed; left: 20px; top: -90px; z-index: 200; background: var(--surface); padding: 16px; border-radius: 12px; }
+    .skip-link:focus { top: 90px; }
+    .site-nav { position: fixed; top: 20px; left: var(--gutter); right: var(--gutter); z-index: 100; max-width: 1280px; margin-inline: auto; display: flex; align-items: center; gap: 24px; padding: 10px 12px 10px 20px; border: 1px solid rgba(255,255,255,.17); border-radius: 100px; color: #fff; background: rgba(22,22,25,.72); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+    .site-nav.is-editorial { color: var(--ink); background: var(--glass); border-color: var(--line); box-shadow: 0 4px 28px rgba(0,0,0,.04); }
+    .nav-brand { display: flex; align-items: center; gap: 10px; margin-right: auto; font-size: 12px; letter-spacing: -.02em; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid currentColor; border-radius: 50%; font-size: 10px; font-weight: 700; }
+    .brand-name { font-weight: 600; }
+    .brand-name span { opacity: .5; font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: 24px; font-size: 12px; }
+    .nav-links a { opacity: .6; transition: opacity .2s; }
+    .nav-links a:hover, .nav-links a[aria-current] { opacity: 1; }
+    .nav-links a[aria-current]::after { content: ''; display: block; margin: 4px auto -7px; width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
+    .nav-controls { display: flex; align-items: center; gap: 12px; }
+    .theme-switch { display: flex; padding: 3px; gap: 2px; border-radius: 100px; background: rgba(128,128,128,.16); }
+    .theme-button { width: 34px; height: 34px; display: grid; place-items: center; padding: 0; color: inherit; background: transparent; border: 0; border-radius: 50%; opacity: .6; }
+    .theme-button[aria-pressed="true"] { background: #fff; color: #151516; opacity: 1; box-shadow: 0 1px 5px rgba(0,0,0,.12); }
+    .is-editorial .theme-button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+    .theme-button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+    .nav-detail { display: inline-flex; align-items: center; gap: 14px; font-size: 12px; background: #fff; color: #19191b; padding: 12px 16px; border-radius: 99px; }
+    .is-editorial .nav-detail { background: var(--ink); color: var(--surface); }
+    .cabin-orbit-section { height: 540vh; height: 540svh; position: relative; background: #08090a; color: #fff; }
+    .cabin-sticky-stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; isolation: isolate; }
+    #cabinCanvas { position: absolute; inset: 0; width: 100%; height: 100%; background: #0b0c0d url('assets/interior-scroll-lite/desktop/i_0001.webp') center/cover no-repeat; }
+    .stage-vignette { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg,rgba(0,0,0,.2),transparent 30%,transparent 60%,rgba(0,0,0,.7)); }
+    .intro-shade { position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,.44); pointer-events: none; }
+    .intro { position: absolute; inset: 0; z-index: 4; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none; padding-bottom: 5vh; }
+    .intro-kicker { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: clamp(18px,4vh,48px); }
+    .intro-title { display: flex; justify-content: center; font-size: clamp(68px, 14.4vw, 230px); line-height: 1.12; font-weight: 500; letter-spacing: -.075em; color: #fff; padding-right: .075em; }
+    .intro-letter { display: inline-block; transform-origin: 50% 70%; will-change: transform, opacity; }
+    .intro-subtitle { font-size: clamp(12px,1.15vw,17px); letter-spacing: -.01em; color: rgba(255,255,255,.75); margin-top: 22px; }
+    .intro-bottom { position: absolute; z-index: 5; bottom: 40px; left: var(--gutter); right: var(--gutter); display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; pointer-events: none; }
+    .intro-index { font-size: 11px; line-height: 1.7; color: rgba(255,255,255,.55); }
+    .intro-index strong { color: #fff; font-weight: 500; }
+    .scroll-hint { font-size: 11px; display: flex; align-items: center; gap: 16px; color: rgba(255,255,255,.8); }
+    .scroll-hint span { display: grid; place-items: center; width: 36px; height: 52px; border: 1px solid rgba(255,255,255,.35); border-radius: 30px; font-size: 19px; }
+    .cabin-ui { opacity: 0; visibility: hidden; }
+    .cabin-chapter-pill { position: absolute; z-index: 6; top: 110px; left: var(--gutter); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.65); }
+    .cabin-chapter-pill b { color: #fff; font-weight: 500; margin-left: 10px; }
+    .cabin-info-card { position: absolute; z-index: 6; right: var(--gutter); bottom: 135px; width: 340px; padding: 26px; border: 1px solid rgba(255,255,255,.2); background: rgba(18,18,20,.69); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 20px; }
+    .cabin-card-eyebrow { font-size: 10px; letter-spacing: .12em; color: rgba(255,255,255,.58); margin-bottom: 15px; text-transform: uppercase; }
+    .cabin-card-title { font-size: 30px; line-height: 1.08; letter-spacing: -.045em; font-weight: 500; margin-bottom: 12px; }
+    .cabin-card-desc { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,.7); }
+    .cabin-dock { position: absolute; z-index: 7; bottom: 32px; left: var(--gutter); right: var(--gutter); display: flex; justify-content: center; }
+    .cabin-dock-inner { display: flex; gap: clamp(14px,3vw,40px); max-width: 100%; overflow-x: auto; scrollbar-width: thin; padding: 8px 3px; }
+    .dock-item { border: 0; background: none; color: rgba(255,255,255,.6); padding: 9px 0; min-width: 65px; text-align: left; font-size: 11px; white-space: nowrap; }
+    .dock-item::before { content: ''; display: block; height: 1px; background: rgba(255,255,255,.3); margin-bottom: 12px; transition: background .25s; }
+    .dock-item[aria-current="true"] { color: #fff; }
+    .dock-item[aria-current="true"]::before { background: #fff; }
+    .stage-progress-bar { position: absolute; z-index: 8; bottom: 0; left: 0; right: 0; height: 2px; background: rgba(255,255,255,.08); }
+    .stage-progress-bar i { display: block; height: 100%; background: #fff; transform-origin: 0 50%; transform: scaleX(0); }
+    .stage-error { position: absolute; z-index: 8; top: 100px; left: var(--gutter); right: var(--gutter); padding: 12px; font-size: 12px; background: #242426; border-radius: 12px; }
+    .editorial { position: relative; background: var(--page); padding-top: clamp(84px, 11vw, 164px); padding-bottom: 40px; }
+    .editorial-heading { display: grid; grid-template-columns: 1.35fr 1fr; align-items: end; gap: 60px; margin-bottom: 64px; }
+    .editorial-heading .eyebrow { margin-bottom: 30px; }
+    .section-title { font-size: clamp(44px,6vw,88px); line-height: 1.01; font-weight: 500; letter-spacing: -.065em; }
+    .section-title span { color: var(--muted); }
+    .intro-copy { max-width: 355px; justify-self: end; padding-bottom: 3px; }
+    .intro-copy p { font-size: 15px; line-height: 1.75; color: var(--muted); }
+    .intro-copy p strong { color: var(--ink); font-weight: 500; }
+    .text-link { display: inline-flex; align-items: center; gap: 24px; font-size: 12px; font-weight: 500; margin-top: 24px; padding-block: 8px; border-bottom: 1px solid var(--line); }
+    .text-link span { font-size: 17px; }
+    .feature { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .cockpit-feature { display: grid; grid-template-columns: 1.35fr 1fr; min-height: 450px; }
+    .feature-photo { position: relative; overflow: hidden; background: #171b1e; min-width: 0; }
+    .feature-photo img { height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+    @media (hover: hover) { .feature:hover .feature-photo img { transform: scale(1.025); } }
+    .photo-label { position: absolute; left: 22px; bottom: 20px; padding: 8px 12px; color: #fff; background: rgba(20,20,22,.45); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(12px); border-radius: 20px; font-size: 10px; letter-spacing: .05em; }
+    .feature-copy { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(30px, 3.7vw, 56px); }
+    .feature-number { font-size: 10px; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 32px; }
+    .feature-title { font-size: clamp(29px,3vw,46px); font-weight: 500; line-height: 1.05; letter-spacing: -.05em; margin-bottom: 20px; }
+    .feature-title span { color: var(--muted); }
+    .feature-description { color: var(--muted); font-size: 14px; line-height: 1.75; max-width: 44ch; }
+    .feature-note { font-size: 11px; color: var(--muted); padding-top: 24px; margin-top: auto; }
+    .feature-note strong { color: var(--ink); font-weight: 500; }
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+    .detail-grid .feature-photo { aspect-ratio: 16/10; }
+    .detail-grid .feature-copy { padding: 34px 36px 40px; }
+    .detail-grid .feature-number { margin-bottom: 24px; }
+    .detail-grid .feature-title { font-size: clamp(27px,2.8vw,40px); }
+    .specs { display: grid; grid-template-columns: repeat(3,1fr); padding: 48px 0; margin-top: 48px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .spec { padding-inline: 32px; border-left: 1px solid var(--line); }
+    .spec:first-child { padding-left: 0; border-left: 0; }
+    .spec dt { color: var(--muted); font-size: 11px; margin-bottom: 20px; }
+    .spec dd { margin: 0; font-size: clamp(44px,5.3vw,76px); line-height: 1; font-weight: 500; letter-spacing: -.06em; }
+    .spec dd span { font-size: 20px; letter-spacing: -.03em; }
+    .spec p { color: var(--muted); font-size: 12px; margin-top: 12px; line-height: 1.5; }
+    .statement { padding: clamp(70px,10vw,140px) 0; text-align: center; }
+    .statement .eyebrow { justify-content: center; margin-bottom: 32px; }
+    .statement h2 { max-width: 850px; margin-inline: auto; font-size: clamp(30px,4.1vw,58px); font-weight: 500; letter-spacing: -.055em; line-height: 1.12; }
+    .statement h2 span { color: var(--muted); }
+    .statement p { max-width: 510px; margin: 26px auto 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
+    .closing { display: flex; justify-content: space-between; align-items: end; gap: 40px; padding: clamp(34px,5vw,70px); border-radius: var(--radius); background: var(--inverse); color: var(--inverse-ink); }
+    .closing .eyebrow { opacity: .55; margin-bottom: 28px; }
+    .closing h2 { font-size: clamp(32px,4.4vw,64px); line-height: 1.03; letter-spacing: -.055em; font-weight: 500; }
+    .closing h2 span { opacity: .45; }
+    .closing-actions { display: flex; flex-direction: column; gap: 15px; align-items: flex-start; flex-shrink: 0; }
+    .pill-button { border: 0; border-radius: 99px; padding: 15px 20px; display: inline-flex; align-items: center; gap: 25px; background: var(--inverse-ink); color: var(--inverse); font-size: 12px; font-weight: 500; }
+    .closing-actions .text-link { border-color: currentColor; margin: 0 15px; opacity: .75; }
+    .materials-note { font-size: 11px; line-height: 1.7; color: var(--muted); padding-top: 32px; max-width: 760px; }
+    .materials-note summary { cursor: pointer; display: list-item; width: fit-content; padding: 10px 0; }
+    .materials-note p { margin-top: 8px; }
+    .interior-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-top: 32px; padding-top: 26px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+    .interior-footer nav { display: flex; gap: 26px; }
+    .interior-footer a:hover { color: var(--ink); }
+    .reveal { transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal.is-pending { opacity: 0; transform: translateY(28px); }
+    @media (min-width: 1600px) { .cabin-info-card { width: 390px; padding: 32px; } }
+    @media (max-width: 1000px) {
+      .nav-links { gap: 16px; }
+      .site-nav { gap: 18px; }
+      .nav-detail { display: none; }
+      .editorial-heading { gap: 35px; }
+      .cockpit-feature { grid-template-columns: 1.1fr 1fr; min-height: 400px; }
+      .feature-copy { padding: 30px; }
+      .detail-grid .feature-copy { padding: 30px; }
+      .closing { align-items: flex-start; }
+    }
+    @media (max-width: 700px) {
+      #cabinCanvas { background-image: url('assets/interior-scroll-lite/mobile/i_0001.webp'); }
+      :root { --radius: 20px; }
+      .site-nav { top: 12px; left: 14px; right: 14px; gap: 8px; padding: 8px 9px 8px 14px; }
+      .nav-brand { gap: 8px; font-size: 11px; }
+      .brand-name span { display: none; }
+      .nav-links { gap: 12px; font-size: 11px; }
+      .nav-links .nav-home { display: none; }
+      .nav-controls { margin-left: 5px; }
+      .theme-button { width: 32px; height: 32px; }
+      .intro-title { font-size: 15.3vw; }
+      .intro { padding-bottom: 4vh; }
+      .intro-kicker { font-size: 9px; letter-spacing: .16em; }
+      .intro-subtitle { max-width: 250px; text-align: center; font-size: 12px; line-height: 1.6; margin-top: 20px; }
+      .intro-bottom { bottom: 28px; }
+      .intro-index { font-size: 9px; }
+      .scroll-hint { gap: 10px; font-size: 10px; }
+      .scroll-hint span { width: 30px; height: 44px; }
+      .cabin-chapter-pill { top: 96px; font-size: 9px; }
+      .cabin-info-card { bottom: 110px; left: var(--gutter); right: var(--gutter); width: auto; padding: 22px; }
+      .cabin-card-title { font-size: 28px; }
+      .cabin-card-desc { font-size: 12px; line-height: 1.65; }
+      .cabin-card-eyebrow { font-size: 9px; margin-bottom: 10px; }
+      .cabin-dock { bottom: 22px; left: 14px; right: 14px; justify-content: flex-start; }
+      .cabin-dock-inner { gap: 16px; width: 100%; }
+      .dock-item { font-size: 10px; min-width: 59px; flex: 1; }
+      .editorial-heading { grid-template-columns: 1fr; gap: 30px; margin-bottom: 36px; }
+      .editorial-heading .eyebrow { margin-bottom: 24px; }
+      .intro-copy { justify-self: start; max-width: 440px; }
+      .intro-copy p { font-size: 14px; }
+      .cockpit-feature { grid-template-columns: 1fr; }
+      .cockpit-feature .feature-photo { aspect-ratio: 4/3; }
+      .feature-copy, .detail-grid .feature-copy { padding: 28px; }
+      .feature-number { margin-bottom: 22px; }
+      .feature-title { font-size: 34px; }
+      .feature-description { font-size: 13px; }
+      .detail-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 18px; }
+      .detail-grid .feature-photo { aspect-ratio: 4/3; }
+      .specs { margin-top: 32px; padding: 30px 0; }
+      .spec { padding-inline: 14px; }
+      .spec dt { font-size: 9px; line-height: 1.5; min-height: 27px; margin-bottom: 14px; }
+      .spec dd { font-size: 38px; }
+      .spec dd span { font-size: 16px; }
+      .spec p { font-size: 10px; line-height: 1.5; }
+      .statement p { font-size: 13px; }
+      .closing { flex-direction: column; gap: 30px; }
+      .closing-actions { flex-direction: row; flex-wrap: wrap; align-items: center; }
+      .closing-actions .text-link { margin-left: 0; }
+      .photo-label { left: 16px; bottom: 16px; }
+      .interior-footer { margin-top: 24px; font-size: 10px; }
+    }
+    @media (max-width: 370px) { .nav-links .nav-exterior { display: none; } .spec { padding-inline: 9px; } .spec dd { font-size: 34px; } }
+    @media (max-height: 540px) and (min-width: 701px) {
+      .cabin-info-card { bottom: 88px; width: 280px; padding: 18px; }
+      .cabin-card-title { font-size: 24px; }
+      .cabin-card-desc { font-size: 11px; }
+      .cabin-chapter-pill { top: 96px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .cabin-orbit-section { height: 220svh; }
+      .intro-letter { will-change: auto; }
+      .reveal.is-pending { opacity: 1; transform: none; }
+    }
+    @media print {
+      .site-nav, .cabin-orbit-section, .closing-actions { display: none; }
+      .editorial { padding-top: 30px; }
+      .reveal.is-pending { opacity: 1; transform: none; }
     }
   </style>
 </head>
-
 <body>
-
-  <div class="grain" aria-hidden="true"></div>
-  <canvas id="ambientCanvas" aria-hidden="true"></canvas>
-
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel">360°</span></div>
-  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
-
+  <a class="skip-link" href="#sectionErgonomics">Перейти к описанию салона</a>
   <header class="site-nav" id="siteNav">
-    <div class="nav-left">
-      <a href="index.html" class="nav-brand">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        </svg>
-        <span>F10 · Anatomy</span>
-      </a>
-    </div>
-    <div class="nav-right">
-      <a href="index.html" class="bracket-link"><span class="br">[</span><span>Главная</span><span
-          class="br">]</span></a>
-      <a href="exterior.html" class="bracket-link"><span class="br">[</span><span>← Экстерьер</span><span
-          class="br">]</span></a>
+    <a class="nav-brand" href="index.html" aria-label="F10 Anatomy — главная">
+      <span class="brand-mark" aria-hidden="true">F10</span>
+      <span class="brand-name">Anatomy<span> / Салон</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Страницы проекта">
+      <a class="nav-home" href="index.html">Главная</a>
+      <a class="nav-exterior" href="exterior.html">Экстерьер</a>
+      <a href="#cabinOrbitSection" aria-current="page">Интерьер</a>
+    </nav>
+    <div class="nav-controls">
+      <div class="theme-switch" role="group" aria-label="Цветовая тема">
+        <button class="theme-button" type="button" data-theme-choice="light" aria-label="Светлая тема" aria-pressed="true" title="Светлая тема">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        </button>
+        <button class="theme-button" type="button" data-theme-choice="dark" aria-label="Тёмная тема" aria-pressed="false" title="Тёмная тема">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.5 8.5 0 1 0 20.2 15.2Z"/></svg>
+        </button>
+      </div>
+      <a class="nav-detail" href="#sectionErgonomics">К деталям <span aria-hidden="true">↘</span></a>
     </div>
   </header>
 
   <main>
-    <!-- 1. ИНТЕРАКТИВНЫЙ ПРОЛЁТ ПО САЛОНУ (ПОЛНОЕ СТАРОЕ ВИДЕО/КАДРЫ БЕЗ ВЫРЕЗАНИЯ) -->
-    <section class="cabin-orbit-section" id="cabinOrbitSection">
-      <div class="cabin-sticky-stage">
-        <video id="cabinVideo" src="interior.mp4" muted playsinline preload="auto"></video>
-        <canvas id="cabinCanvas" aria-label="Интерактивный салон BMW F10"></canvas>
-
-        <!-- Левая верхняя плашка ГЛАВА -->
-        <div class="cabin-chapter-pill">
-          <div class="cabin-chapter-head">ГЛАВА · <b id="chapHeadName">КОКПИТ</b></div>
-          <div class="cabin-chapter-sub" id="chapHeadSub">АРХИТЕКТУРА САЛОНА ВОКРУГ ВОДИТЕЛЯ.</div>
+    <section class="cabin-orbit-section" id="cabinOrbitSection" aria-label="Интерактивный пролёт по салону">
+      <div class="cabin-sticky-stage" id="cabinStage">
+        <canvas id="cabinCanvas" aria-label="BMW F10: пролёт от кузова к деталям салона">Кадры интерьера BMW F10. Подробное текстовое описание расположено ниже.</canvas>
+        <div class="stage-vignette" aria-hidden="true"></div>
+        <div class="intro-shade" id="introShade" aria-hidden="true"></div>
+        <div class="intro" id="introOverlay">
+          <p class="intro-kicker" id="introKicker">BMW 5 серии · F10 / 02</p>
+          <h1 class="intro-title" aria-label="Интерьер"><span class="intro-letter" aria-hidden="true">И</span><span class="intro-letter" aria-hidden="true">н</span><span class="intro-letter" aria-hidden="true">т</span><span class="intro-letter" aria-hidden="true">е</span><span class="intro-letter" aria-hidden="true">р</span><span class="intro-letter" aria-hidden="true">ь</span><span class="intro-letter" aria-hidden="true">е</span><span class="intro-letter" aria-hidden="true">р</span></h1>
+          <p class="intro-subtitle" id="introSubtitle">Пространство, в котором всё начинается с вас.</p>
         </div>
-
-        <!-- Правая карточка активного узла -->
-        <aside class="cabin-info-card" id="cabinInfoCard">
-          <div class="cabin-card-eyebrow"><i></i><span id="cardStepTag">01 · КОКПИТ</span></div>
-          <h1 class="cabin-card-title ruby-spot" id="cardTitle">Разворот на 7° к пилоту</h1>
-          <p class="cabin-card-desc" id="cardDesc">
-            Центральная консоль и мультимедийный комплекс развёрнуты к водителю: все клавиши и контроллер iDrive
-            находятся на расстоянии естественного движения руки.
-          </p>
-          <div class="cabin-card-meta" id="cardMeta">Driver-Oriented Cockpit · M-Sport</div>
+        <div class="intro-bottom" id="introBottom">
+          <p class="intro-index"><strong>ВНУТРИ F10</strong><br>Дизайн. Ощущения. Детали.</p>
+          <p class="scroll-hint">Листайте, чтобы войти <span aria-hidden="true">↓</span></p>
+        </div>
+        <p class="cabin-chapter-pill cabin-ui">Обзор салона <b id="chapHeadName">Кокпит</b></p>
+        <aside class="cabin-info-card cabin-ui" aria-label="Текущая деталь салона">
+          <div class="cabin-card-eyebrow" id="cardStepTag">01 / Кокпит</div>
+          <h2 class="cabin-card-title" id="cardTitle">На вашей стороне.</h2>
+          <p class="cabin-card-desc" id="cardDesc">Консоль обращена к водителю. Клавиши, дисплей и контроллер находятся там, где их ожидаешь.</p>
         </aside>
-
-        <!-- Нижний док быстрого выбора узла -->
-        <div class="cabin-dock">
+        <nav class="cabin-dock cabin-ui" aria-label="Главы пролёта по салону" inert>
           <div class="cabin-dock-inner">
-            <button class="dock-item active" data-progress="0.00" type="button"><i></i><span>01 Кокпит</span></button>
-            <button class="dock-item" data-progress="0.25" type="button"><i></i><span>02 Приборы</span></button>
-            <button class="dock-item" data-progress="0.52" type="button"><i></i><span>03 iDrive</span></button>
-            <button class="dock-item" data-progress="0.76" type="button"><i></i><span>04 Консоль</span></button>
-            <button class="dock-item" data-progress="0.95" type="button"><i></i><span>05 Кресла</span></button>
+            <button class="dock-item" data-progress="0" type="button" aria-current="true">01 Кокпит</button>
+            <button class="dock-item" data-progress="0.43" type="button">02 Приборы</button>
+            <button class="dock-item" data-progress="0.60" type="button">03 iDrive</button>
+            <button class="dock-item" data-progress="0.80" type="button">04 Консоль</button>
+            <button class="dock-item" data-progress="0.98" type="button">05 Кресла</button>
           </div>
-        </div>
-
-        <div class="stage-progress-bar"><i id="stageProgFill"></i></div>
+        </nav>
+        <div class="stage-progress-bar" aria-hidden="true"><i id="stageProgFill"></i></div>
+        <p class="stage-error" id="stageError" hidden>Не удалось загрузить кадры. Описание салона доступно ниже.</p>
       </div>
     </section>
 
-    <!-- 2. ТОЛЬКО 3 КАРТОЧКИ С ПЕРЕВОРОТОМ НА 360° -->
-    <section class="section-ergonomics" id="sectionErgonomics">
+    <section class="editorial" id="sectionErgonomics" aria-labelledby="editorialTitle">
       <div class="container">
-        <div class="ergo-head">
-          <h2 class="display split-words">Точность в каждом касании.</h2>
-          <p class="lede">Наведите курсор на любую карточку — первая совершит оборот на 360° по вертикали, вторая — на
-            360° по горизонтали, третья — снова по вертикали.</p>
-        </div>
-
-        <div class="ergo-grid" id="ergoGrid">
-          <article class="flip-card" data-cursor="360° ↕">
-            <div class="flip-inner">
-              <div class="flip-val ruby-spot"><span data-count-to="605">605</span><span
-                  style="font-size:0.4em;color:var(--text-dim);margin-left:6px;">нм</span></div>
-              <div>
-                <h3 class="flip-title ruby-spot">Янтарный спектр 605 нм</h3>
-                <p class="flip-desc">Длина волны подсветки приборов выбрана так, чтобы глаз мгновенно фокусировался при
-                  переводе взгляда с ночной трассы в салон.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="flip-card" data-cursor="360° ↔">
-            <div class="flip-inner">
-              <div class="flip-val ruby-spot"><span data-count-to="10.2" data-decimals="1">10.2</span><span
-                  style="font-size:0.4em;color:var(--text-dim);margin-left:6px;">″</span></div>
-              <div>
-                <h3 class="flip-title ruby-spot">Дисплей Control Display</h3>
-                <p class="flip-desc">Широкоформатный экран высокого разрешения интегрирован в верхний ярус торпедо на
-                  уровне глаз водителя.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="flip-card" data-cursor="360° ↕">
-            <div class="flip-inner">
-              <div class="flip-val ruby-spot"><span data-count-to="14">14</span><span
-                  style="font-size:0.4em;color:var(--text-dim);margin-left:6px;">осей</span></div>
-              <div>
-                <h3 class="flip-title ruby-spot">Кресла Comfort / Dakota</h3>
-                <p class="flip-desc">Независимая регулировка верхнего сегмента спинки, ширины боковой поддержки и
-                  выдвижной коленной опоры.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <footer class="interior-footer">
-          <span class="mono" style="color: var(--text-dim);">© BMW F10 Anatomy · Салон</span>
-          <div style="display:flex;gap:18px;flex-wrap:wrap;">
-            <a href="index.html" class="bracket-link"><span class="br">[</span><span>Планета</span><span
-                class="br">]</span></a>
-            <a href="exterior.html" class="bracket-link"><span class="br">[</span><span>Экстерьер</span><span
-                class="br">]</span></a>
-            <button type="button" class="bracket-link" id="backToTopBtn"><span class="br">[</span><span>Наверх
-                ↑</span><span class="br">]</span></button>
+        <div class="editorial-heading reveal">
+          <div>
+            <p class="eyebrow">Продуман изнутри</p>
+            <h2 class="section-title" id="editorialTitle">Всё вокруг.<br><span>Всё для вас.</span></h2>
           </div>
+          <div class="intro-copy">
+            <p><strong>Хороший интерьер не требует привыкания.</strong> В F10 всё на своём месте: естественная посадка, знакомые движения, материалы, к которым хочется прикоснуться. Ничего лишнего. Только вы и дорога.</p>
+            <a class="text-link" href="#cockpitDetails">Рассмотреть ближе <span aria-hidden="true">↙</span></a>
+          </div>
+        </div>
+
+        <article class="feature cockpit-feature reveal" id="cockpitDetails">
+          <figure class="feature-photo">
+            <img src="assets/img/interior-preview/cockpit.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Общий вид кокпита BMW F10: руль, приборная панель и центральная консоль">
+            <figcaption class="photo-label">01 / Архитектура кокпита</figcaption>
+          </figure>
+          <div class="feature-copy">
+            <p class="feature-number">Ориентирован на водителя</p>
+            <h3 class="feature-title">В центре внимания.<br><span>Не случайно.</span></h3>
+            <p class="feature-description">Передняя панель словно продолжает ваше движение. Дисплей расположен в поле зрения, консоль развёрнута к водителю, а основные функции доступны без поиска по меню.</p>
+            <p class="feature-note"><strong>Driver-oriented cockpit</strong><br>Классическая архитектура BMW.</p>
+          </div>
+        </article>
+
+        <div class="detail-grid">
+          <article class="feature reveal">
+            <figure class="feature-photo">
+              <img src="assets/img/interior-preview/comfort.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Передние кресла и отделка салона BMW F10, вид со стороны водителя">
+              <figcaption class="photo-label">02 / Материалы и комфорт</figcaption>
+            </figure>
+            <div class="feature-copy">
+              <p class="feature-number">Комфорт без лишних слов</p>
+              <h3 class="feature-title">Чувствуется.<br><span>В каждом касании.</span></h3>
+              <p class="feature-description">Мягкие поверхности, выразительная фактура кожи и аккуратные линии отделки. Форма кресел поддерживает тело, а настройки посадки помогают найти своё положение — и забыть о расстоянии.</p>
+            </div>
+          </article>
+          <article class="feature reveal">
+            <figure class="feature-photo">
+              <img src="assets/img/interior-preview/console.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Центральная консоль BMW F10 с селектором трансмиссии и контроллером iDrive">
+              <figcaption class="photo-label">03 / Управление и iDrive</figcaption>
+            </figure>
+            <div class="feature-copy">
+              <p class="feature-number">Технологии на своём месте</p>
+              <h3 class="feature-title">Меньше действий.<br><span>Больше контроля.</span></h3>
+              <p class="feature-description">Поворот контроллера. Чёткий отклик клавиши. Знакомое движение селектора. iDrive объединяет навигацию, музыку и настройки автомобиля, сохраняя главное — внимание к дороге.</p>
+            </div>
+          </article>
+        </div>
+
+        <dl class="specs reveal" aria-label="Особенности оснащения">
+          <div class="spec"><dt>CONTROL DISPLAY</dt><dd>10,2<span>″</span></dd><p>Дисплей с опциональной<br>Navigation Professional.</p></div>
+          <div class="spec"><dt>STEPTRONIC</dt><dd>8</dd><p>Ступеней автоматической<br>трансмиссии.</p></div>
+          <div class="spec"><dt>КЛИМАТ-КОНТРОЛЬ</dt><dd>2<span> зоны</span></dd><p>Индивидуальный комфорт<br>водителя и пассажира.</p></div>
+        </dl>
+
+        <div class="statement reveal">
+          <p class="eyebrow">Пространство для своего ритма</p>
+          <h2>Роскошь — это когда<br>ничто не отвлекает.<br><span>Даже от самого себя.</span></h2>
+          <p>Спокойный свет приборов. Удобная посадка. Ощущение собранности в каждой детали. Салон F10 не старается удивить на секунду — он остаётся приятным в каждой поездке.</p>
+        </div>
+
+        <section class="closing reveal" aria-labelledby="closingTitle">
+          <div><p class="eyebrow">BMW F10 · Anatomy</p><h2 id="closingTitle">Почувствовать.<br><span>Не объяснить.</span></h2></div>
+          <div class="closing-actions">
+            <button class="pill-button" id="backToTopBtn" type="button">Вернуться в салон <span aria-hidden="true">↗</span></button>
+            <a class="text-link" href="exterior.html">Рассмотреть экстерьер <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+
+        <details class="materials-note">
+          <summary>О материалах и комплектациях</summary>
+          <p>Оснащение зависит от года выпуска, рынка и комплектации. Размер дисплея, обивка, регулировки кресел, трансмиссия и климатическая система могут отличаться. На странице временно использованы кадры из существующего пролёта; места для авторских фотографий подготовлены.</p>
+        </details>
+        <footer class="interior-footer">
+          <span>F10 Anatomy © 2026 · Независимый дизайн-проект</span>
+          <nav aria-label="Навигация в подвале"><a href="index.html">Главная</a><a href="exterior.html">Экстерьер ↗</a><a href="#cabinOrbitSection">Наверх ↑</a></nav>
         </footer>
       </div>
     </section>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-
   <script>
     (() => {
       'use strict';
-
-      const hasGsap = !!(window.gsap && window.ScrollTrigger);
-      if (hasGsap) {
-        gsap.registerPlugin(ScrollTrigger);
-        ScrollTrigger.config({ ignoreMobileResize: true });
-      }
-
-      const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
       const $ = id => document.getElementById(id);
-      const finePointer = window.matchMedia('(pointer: fine)').matches;
-
-      /* ─── 1. ПЛАВНЫЙ СКРОЛЛ LENIS ───────────────────────────── */
-      let lenis = null;
-      if (hasGsap && window.Lenis) {
-        lenis = new Lenis({
-          lerp: 0.09,
-          smoothWheel: true,
-          wheelMultiplier: 0.95
-        });
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add(t => lenis.raf(t * 1000));
-        gsap.ticker.lagSmoothing(0);
+      const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+      const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      const themeButtons = document.querySelectorAll('[data-theme-choice]');
+      function setTheme(theme) {
+        document.documentElement.dataset.theme = theme;
+        themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
+        try { localStorage.setItem('f10-interior-theme', theme); } catch (_) {}
       }
+      setTheme(document.documentElement.dataset.theme);
+      themeButtons.forEach(button => button.addEventListener('click', () => setTheme(button.dataset.themeChoice)));
 
-      const scrollToY = (y) => {
-        if (lenis) lenis.scrollTo(y, { duration: 1.4 });
-        else window.scrollTo({ top: y, behavior: 'smooth' });
-      };
-
-      /* ─── 2. СПЛИТ СЛОВ ДЛЯ ЗАГОЛОВКА ───────────────────────── */
-      function splitWords(el) {
-        const text = el.textContent.trim().replace(/\s+/g, ' ');
-        el.setAttribute('aria-label', text);
-        el.textContent = '';
-        const words = text.split(' ');
-        const inners = [];
-        words.forEach((wd, i) => {
-          const w = document.createElement('span');
-          w.className = 'w';
-          w.setAttribute('aria-hidden', 'true');
-          const s = document.createElement('span');
-          s.textContent = wd;
-          s.className = 'ruby-spot';
-          w.appendChild(s);
-          el.appendChild(w);
-          if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
-          inners.push(s);
-        });
-        return inners;
-      }
-
-      /* ─── 3. ГЛАВЫ САЛОНА ───────────────────────────────────── */
-      const CABIN_CHAPTERS = [
-        {
-          head: 'КОКПИТ',
-          sub: 'АРХИТЕКТУРА САЛОНА ВОКРУГ ВОДИТЕЛЯ.',
-          tag: '01 · КОКПИТ',
-          title: 'Разворот на 7° к пилоту',
-          desc: 'Центральная консоль и мультимедийный комплекс развёрнуты к водителю: все клавиши и контроллер iDrive находятся на расстоянии естественного движения руки.',
-          meta: 'Driver-Oriented Cockpit · M-Sport'
-        },
-        {
-          head: 'ПРИБОРЫ',
-          sub: 'ЯНТАРНАЯ ПОДСВЕТКА РАБОЧЕЙ КОМБИНАЦИИ.',
-          tag: '02 · ПРИБОРЫ',
-          title: 'Янтарная подсветка',
-          desc: 'Классическая оранжевая шкала приборов: ночью глаза не устают, показания читаются периферийным зрением.',
-          meta: 'Black Panel · Head-Up Display'
-        },
-        {
-          head: 'IDRIVE',
-          sub: 'ЦЕНТРАЛЬНЫЙ ИНФОРМАЦИОННЫЙ ДИСПЛЕЙ 10.2".',
-          tag: '03 · МУЛЬТИМЕДИА',
-          title: 'Система BMW iDrive',
-          desc: 'Широкоформатный экран высокого разрешения с технологией Transflective не бликует на солнце и управляется шайбой под правой рукой.',
-          meta: '1280×480 px · Navigation Professional'
-        },
-        {
-          head: 'КОНСОЛЬ',
-          sub: 'ДВУХЗОННЫЙ КЛИМАТ И СЕЛЕКТОР STEPTRONIC.',
-          tag: '04 · КОНСОЛЬ',
-          title: 'Электронный селектор 8HP',
-          desc: 'Джойстик 8-ступенчатой трансмиссии ZF и клавиши Driving Experience Control (Comfort, Sport, Sport+) для мгновенной смены характера шасси.',
-          meta: 'ZF 8HP45 · Driving Experience Control'
-        },
-        {
-          head: 'КРЕСЛА',
-          sub: 'АНАТОМИЧЕСКИЙ ПРОФИЛЬ И КОЖА DAKOTA.',
-          tag: '05 · ЭРГОНОМИКА',
-          title: 'Кресла с кожей Dakota',
-          desc: 'Плотная набивка, регулируемая боковая поддержка и выдвижной валик под бёдра фиксируют тело в скоростных поворотах.',
-          meta: 'Dakota Leather · 14 регулировок'
-        }
-      ];
-
-      const cabinSection = $('cabinOrbitSection');
-      const cabinVideo = $('cabinVideo');
-      const cabinCanvas = $('cabinCanvas');
-      const cabinCtx = cabinCanvas.getContext('2d', { alpha: false });
-      const dockBtns = document.querySelectorAll('.dock-item');
-      const stageProgFill = $('stageProgFill');
-
-      let targetProg = 0;
-      let curProg = 0;
-      let curChap = -1;
-
-      /* Секвенция 1..120 (первый фильм) с локальным отбором резкого соседа ±1 кадр */
-      const FRAME_COUNT = 120;
-      const frameSrc = i => `frames_interior/i_${String(i + 1).padStart(4, '0')}.webp`;
-      const frames = new Array(FRAME_COUNT);
-      const sharpness = new Float32Array(FRAME_COUNT);
-      let loadedFrames = 0;
-      let useFrames = false;
-
-      const probeCanvas = document.createElement('canvas');
-      probeCanvas.width = 96;
-      probeCanvas.height = 54;
-      const probeCtx = probeCanvas.getContext('2d', { willReadFrequently: true });
-
-      function computeSharpness(img) {
-        try {
-          probeCtx.drawImage(img, 0, 0, 96, 54);
-          const d = probeCtx.getImageData(0, 0, 96, 54).data;
-          let sum = 0;
-          for (let y = 1; y < 53; y++) {
-            for (let x = 1; x < 95; x++) {
-              const p = (y * 96 + x) * 4;
-              const diffX = d[p] - d[p + 4];
-              const diffY = d[p] - d[p + 384];
-              sum += diffX * diffX + diffY * diffY;
-            }
-          }
-          return sum;
-        } catch (_) {
-          return 0;
-        }
-      }
-
-      for (let i = 0; i < FRAME_COUNT; i++) {
-        const img = new Image();
-        img.decoding = 'async';
-        img.onload = () => {
-          loadedFrames++;
-          sharpness[i] = computeSharpness(img);
-          if (loadedFrames === 1) {
-            useFrames = true;
-            cabinVideo.style.display = 'none';
-            renderCrispFrame(0, true);
-          }
-        };
-        img.src = frameSrc(i);
-        frames[i] = img;
-      }
-
-      let cw = innerWidth, ch = innerHeight, lastIdx = -1;
-      function resizeCabinCanvas() {
-        const dpr = Math.max(window.devicePixelRatio || 1, 2);
-        cw = innerWidth;
-        ch = innerHeight;
-        cabinCanvas.width = Math.round(cw * dpr);
-        cabinCanvas.height = Math.round(ch * dpr);
-        cabinCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        cabinCtx.imageSmoothingEnabled = true;
-        cabinCtx.imageSmoothingQuality = 'high';
-        lastIdx = -1;
-        renderCrispFrame(curProg, true);
-      }
-      window.addEventListener('resize', resizeCabinCanvas, { passive: true });
-      resizeCabinCanvas();
-
-      /* Если текущий кадр — смазанный переход между двумя соседними (±1), берём более резкий соседний кадр */
-      function pickCrispFrameIndex(rawIdx) {
-        const s0 = sharpness[rawIdx];
-        if (s0 <= 0) return rawIdx;
-        let best = rawIdx;
-        let bestS = s0;
-        if (rawIdx > 0 && sharpness[rawIdx - 1] > bestS * 1.12) {
-          best = rawIdx - 1;
-          bestS = sharpness[rawIdx - 1];
-        }
-        if (rawIdx < FRAME_COUNT - 1 && sharpness[rawIdx + 1] > bestS * 1.12) {
-          best = rawIdx + 1;
-        }
-        return best;
-      }
-
-      function renderCrispFrame(prog, force) {
-        const p = clamp(prog, 0, 1);
-
-        if (!useFrames) {
-          if (cabinVideo.readyState >= 2 && cabinVideo.duration) {
-            const targetTime = p * cabinVideo.duration;
-            if (Math.abs(cabinVideo.currentTime - targetTime) > 0.025) {
-              cabinVideo.currentTime = targetTime;
-            }
-          }
-          return;
-        }
-
-        const rawIdx = Math.round(p * (FRAME_COUNT - 1));
-        const idx = pickCrispFrameIndex(rawIdx);
-        if (!force && idx === lastIdx) return;
-
-        const img = frames[idx];
-        if (!img || !img.complete || !img.naturalWidth) return;
-        lastIdx = idx;
-
-        const w = img.naturalWidth;
-        const h = img.naturalHeight;
-        const scale = Math.max(cw / w, ch / h);
-        const drawW = Math.round(w * scale);
-        const drawH = Math.round(h * scale);
-        const drawX = Math.round((cw - drawW) / 2);
-        const drawY = Math.round((ch - drawH) / 2);
-
-        cabinCtx.globalAlpha = 1;
-        cabinCtx.drawImage(img, drawX, drawY, drawW, drawH);
-      }
-
-      function updateChapterUI(prog) {
-        let idx = 0;
-        if (prog >= 0.84) idx = 4;
-        else if (prog >= 0.66) idx = 3;
-        else if (prog >= 0.42) idx = 2;
-        else if (prog >= 0.16) idx = 1;
-
-        if (idx !== curChap) {
-          curChap = idx;
-          const c = CABIN_CHAPTERS[idx];
-          $('chapHeadName').textContent = c.head;
-          $('chapHeadSub').textContent = c.sub;
-          $('cardStepTag').textContent = c.tag;
-          $('cardTitle').textContent = c.title;
-          $('cardDesc').textContent = c.desc;
-          $('cardMeta').textContent = c.meta;
-          dockBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
-        }
-      }
-
-      /* Прогресс секции пересчитывается каждый кадр — не зависит от того,
-         кто скроллит (Lenis, колесо, тач, программный scrollTo) */
-      function pollScrollProgress() {
-        const rect = cabinSection.getBoundingClientRect();
-        const total = cabinSection.offsetHeight - innerHeight;
-        if (total > 0) targetProg = clamp(-rect.top / total, 0, 1);
-      }
-      window.addEventListener('scroll', () => {
-        pollScrollProgress();
-      }, { passive: true });
-      if (lenis) lenis.on('scroll', pollScrollProgress);
-
-      dockBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const p = parseFloat(btn.dataset.progress);
-          const total = cabinSection.offsetHeight - innerHeight;
-          scrollToY(cabinSection.offsetTop + p * total);
-        });
-      });
-
-      $('backToTopBtn').addEventListener('click', () => scrollToY(0));
-
-      /* ─── 4. ПЕРЕВОРОТ 3 КАРТОЧЕК НА 360° ───────────────────── */
-      document.querySelectorAll('.flip-card').forEach((card, idx) => {
-        const inner = card.querySelector('.flip-inner');
-        const isVert = idx % 2 === 0;
-        let spinning = false;
-        card.addEventListener('pointerenter', () => {
-          if (spinning || !hasGsap) return;
-          spinning = true;
-          gsap.fromTo(inner,
-            { rotateX: 0, rotateY: 0 },
-            {
-              rotateX: isVert ? 360 : 0,
-              rotateY: isVert ? 0 : 360,
-              duration: 1.1,
-              ease: 'expo.inOut',
-              onComplete() {
-                gsap.set(inner, { rotateX: 0, rotateY: 0 });
-                spinning = false;
-              }
-            }
-          );
-        });
-      });
-
-      /* ─── 5. АНИМАЦИЯ ПОЯВЛЕНИЯ ЗАГОЛОВКА И 3 КАРТОЧЕК ──────── */
-      if (hasGsap) {
-        document.querySelectorAll('.split-words').forEach(h => {
-          const inners = splitWords(h);
-          gsap.set(inners, { yPercent: 118, rotateX: -32, opacity: 0 });
-          gsap.to(inners, {
-            yPercent: 0,
-            rotateX: 0,
-            opacity: 1,
-            duration: 1.3,
-            ease: 'expo.out',
-            stagger: 0.06,
-            scrollTrigger: {
-              trigger: h,
-              start: 'top 88%',
-              toggleActions: 'play none none reverse'
-            }
-          });
-        });
-
-        gsap.fromTo('#ergoGrid .flip-card',
-          { y: 52, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1.3,
-            stagger: 0.12,
-            ease: 'expo.out',
-            scrollTrigger: {
-              trigger: '#ergoGrid',
-              start: 'top 86%',
-              toggleActions: 'play none none reverse'
-            }
-          }
-        );
-
-        document.querySelectorAll('[data-count-to]').forEach(el => {
-          const targetVal = parseFloat(el.getAttribute('data-count-to'));
-          const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
-          const counter = { val: 0 };
-          gsap.to(counter, {
-            val: targetVal,
-            duration: 1.9,
-            ease: 'expo.out',
-            scrollTrigger: {
-              trigger: '#ergoGrid',
-              start: 'top 86%',
-              toggleActions: 'play none none reset'
-            },
-            onUpdate() {
-              el.textContent = decimals > 0 ? counter.val.toFixed(decimals) : String(Math.round(counter.val));
-            }
-          });
-        });
-      }
-
-      /* ─── 6. КУРСОР И ЛОКАЛЬНОЕ РУБИНОВОЕ БОКЕ .ruby-spot ──── */
-      const cursorDot = $('cursorDot');
-      const cursorRing = $('cursorRing');
-      const cursorLabel = $('cursorLabel');
-      const ambCanvas = $('ambientCanvas');
-      const ambCtx = ambCanvas.getContext('2d');
-      let cx = innerWidth / 2, cy = innerHeight / 2, rx = cx, ry = cy;
-      const trail = [];
-      let activeBigText = null;
-      let activeSpotSpans = [];
-
-      function resizeAmb() {
-        ambCanvas.width = innerWidth;
-        ambCanvas.height = innerHeight;
-      }
-      window.addEventListener('resize', resizeAmb, { passive: true });
-      resizeAmb();
-
-      const LARGE_TEXT_SEL = '.display, .cabin-card-title, .flip-val, .flip-title';
-
-      function clearActiveBigText() {
-        for (let i = 0; i < activeSpotSpans.length; i++) {
-          activeSpotSpans[i].style.setProperty('--sr', '0px');
-        }
-        activeSpotSpans = [];
-        activeBigText = null;
-      }
-
-      if (finePointer) {
-        document.documentElement.classList.add('has-cursor');
-        window.addEventListener('pointermove', e => {
-          cx = e.clientX;
-          cy = e.clientY;
-          cursorDot.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-          trail.push({ x: cx, y: cy, life: 1 });
-          if (trail.length > 24) trail.shift();
-
-          const big = e.target.closest && e.target.closest(LARGE_TEXT_SEL);
-          if (big !== activeBigText) {
-            clearActiveBigText();
-            if (big) {
-              activeBigText = big;
-              activeSpotSpans = big.classList.contains('ruby-spot')
-                ? [big]
-                : Array.from(big.querySelectorAll('.ruby-spot'));
-            }
-          }
-          for (let i = 0; i < activeSpotSpans.length; i++) {
-            const sp = activeSpotSpans[i];
-            const r = sp.getBoundingClientRect();
-            sp.style.setProperty('--sx', (cx - r.left).toFixed(1) + 'px');
-            sp.style.setProperty('--sy', (cy - r.top).toFixed(1) + 'px');
-            sp.style.setProperty('--sr', '120px');
-          }
-        }, { passive: true });
-
-        document.addEventListener('mouseover', e => {
-          const custom = e.target.closest && e.target.closest('[data-cursor]');
-          const ruby = e.target.closest && e.target.closest(LARGE_TEXT_SEL);
-          if (custom) {
-            cursorLabel.textContent = custom.getAttribute('data-cursor');
-            cursorRing.classList.remove('is-text-ruby');
-            cursorRing.classList.add('is-hover');
-          } else if (ruby) {
-            cursorLabel.textContent = '';
-            cursorRing.classList.remove('is-hover');
-            cursorRing.classList.add('is-text-ruby');
-          } else {
-            cursorRing.classList.remove('is-hover', 'is-text-ruby');
-          }
-        });
-      }
-
+      const section = $('cabinOrbitSection');
+      const stage = $('cabinStage');
+      const canvas = $('cabinCanvas');
+      const ctx = canvas.getContext('2d', { alpha: false });
+      const letters = Array.from(document.querySelectorAll('.intro-letter'));
+      const ui = document.querySelectorAll('.cabin-ui');
+      const dock = document.querySelector('.cabin-dock');
+      const dockButtons = Array.from(document.querySelectorAll('.dock-item'));
+      const introParts = [$('introKicker'), $('introSubtitle'), $('introBottom')];
       const nav = $('siteNav');
-      let lastY = window.scrollY;
-      window.addEventListener('scroll', () => {
-        const y = window.scrollY;
-        nav.classList.toggle('is-hidden', y > lastY && y > 180);
-        lastY = y;
-      }, { passive: true });
+      const INTRO_END = .25;
+      const FRAME_COUNT = 120;
+      const frameFolder = innerWidth <= 700 ? 'mobile' : 'desktop';
+      const frameSrc = i => `assets/interior-scroll-lite/${frameFolder}/i_${String(i + 1).padStart(4, '0')}.webp`;
+      const trajectories = [
+        [-.85, -.85, -28], [-.58, .95, 24], [-.34, -.98, -18], [-.16, 1.1, 14],
+        [.20, -1.05, -22], [.40, .95, 28], [.65, -.90, 20], [.90, .85, -26]
+      ];
+      const chapters = [
+        { at: 0, name: 'Кокпит', title: 'На вашей стороне.', desc: 'Консоль обращена к водителю. Клавиши, дисплей и контроллер находятся там, где их ожидаешь.' },
+        { at: .37, name: 'Приборы', title: 'Главное. С первого взгляда.', desc: 'Читаемые шкалы и спокойная подсветка. Скорость, обороты и информация о поездке — без визуального шума.' },
+        { at: .55, name: 'iDrive', title: 'Всё под рукой.', desc: 'Навигация, музыка и настройки автомобиля на одном дисплее. Управление — привычным поворотом контроллера.' },
+        { at: .73, name: 'Консоль', title: 'Точность движения.', desc: 'Выразительная форма селектора, физические клавиши и логичное расположение органов управления.' },
+        { at: .92, name: 'Кресла', title: 'Ваше место силы.', desc: 'Продуманная посадка и поддержка тела. Настройки кресел позволяют устроиться так, как удобно именно вам.' }
+      ];
+      let width = 0, height = 0, travel = 1, progress = 0, target = 0;
+      let sectionTop = 0, editorialTop = 0, onEditorial = false;
+      let lastFrame = -1, lastChapter = -1, lastUiVisible = false;
+      let lastIntro = -1, lastUiOpacity = -1, lastFrameProgress = -1;
+      let animationId = 0, lastTick = 0, needsDraw = true;
+      let wantedFrame = 0, frameDirection = 1, activeLoads = 0;
+      const frames = new Map();
+      const pending = new Set();
+      const failed = new Set();
+      let frameWindow = new Set();
+      let queue = [];
+      const BUFFER_RADIUS = 4;
+      const stageError = $('stageError');
+      const introShade = $('introShade');
+      const stageProgress = $('stageProgFill');
 
-      function loop() {
-        pollScrollProgress();
-        curProg += (targetProg - curProg) * 0.14;
-        renderCrispFrame(curProg, false);
-        updateChapterUI(curProg);
-        stageProgFill.style.width = (curProg * 100).toFixed(1) + '%';
-
-        if (finePointer) {
-          rx += (cx - rx) * 0.2;
-          ry += (cy - ry) * 0.2;
-          cursorRing.style.transform = `translate3d(${rx.toFixed(1)}px, ${ry.toFixed(1)}px, 0)`;
-
-          ambCtx.clearRect(0, 0, ambCanvas.width, ambCanvas.height);
-          if (trail.length > 2) {
-            ambCtx.beginPath();
-            for (let i = 0; i < trail.length; i++) {
-              const pt = trail[i];
-              pt.life *= 0.93;
-              if (i === 0) ambCtx.moveTo(pt.x, pt.y);
-              else ambCtx.lineTo(pt.x, pt.y);
-            }
-            if (trail[0].life < 0.05) trail.shift();
-            ambCtx.strokeStyle = 'rgba(232, 24, 34, 0.22)';
-            ambCtx.lineWidth = 1.5;
-            ambCtx.stroke();
+      // Only the current frame and four neighbours on either side retain decoded images.
+      function planFrames(index) {
+        if (index !== wantedFrame) frameDirection = Math.sign(index - wantedFrame);
+        wantedFrame = index;
+        const ordered = [index];
+        for (let distance = 1; distance <= BUFFER_RADIUS; distance++) {
+          ordered.push(index + distance * frameDirection, index - distance * frameDirection);
+        }
+        frameWindow = new Set(ordered.filter(i => i >= 0 && i < FRAME_COUNT));
+        for (const [key, image] of frames) {
+          if (!frameWindow.has(key)) {
+            image.removeAttribute('src');
+            frames.delete(key);
           }
         }
-        requestAnimationFrame(loop);
+        queue = Array.from(frameWindow).filter(i => !frames.has(i) && !pending.has(i) && !failed.has(i));
+        pumpQueue();
       }
-      requestAnimationFrame(loop);
+      function pumpQueue() {
+        if (document.hidden) return;
+        while (activeLoads < 2 && queue.length) {
+          const index = queue.shift();
+          if (!frameWindow.has(index) || pending.has(index) || frames.has(index)) continue;
+          pending.add(index);
+          activeLoads++;
+          loadFrame(index);
+        }
+      }
+      async function loadFrame(index) {
+        const image = new Image();
+        image.decoding = 'async';
+        image.src = frameSrc(index);
+        try {
+          await image.decode();
+          if (frameWindow.has(index)) {
+            frames.set(index, image);
+            stageError.hidden = true;
+            if (index === wantedFrame || lastFrame === -1 || needsDraw) requestTick();
+          } else {
+            image.removeAttribute('src');
+          }
+        } catch (_) {
+          failed.add(index);
+          if (index === wantedFrame && lastFrame === -1) stageError.hidden = false;
+        } finally {
+          pending.delete(index);
+          activeLoads--;
+          pumpQueue();
+        }
+      }
+      function drawFrame(frameProgress) {
+        if (!ctx) return;
+        const wanted = Math.round(frameProgress * (FRAME_COUNT - 1));
+        if (wanted !== wantedFrame || frameWindow.size === 0) planFrames(wanted);
+        let index = wanted;
+        if (!frames.has(index)) {
+          if (lastFrame !== -1 && !needsDraw) return;
+          let distance = Infinity;
+          for (const key of frames.keys()) {
+            if (Math.abs(key - wanted) < distance) {
+              index = key;
+              distance = Math.abs(key - wanted);
+            }
+          }
+        }
+        const image = frames.get(index);
+        if (!image || (index === lastFrame && !needsDraw)) return;
+        const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
+        const drawWidth = image.naturalWidth * scale;
+        const drawHeight = image.naturalHeight * scale;
+        ctx.drawImage(image, (width - drawWidth) / 2, (height - drawHeight) / 2, drawWidth, drawHeight);
+        if (lastFrame === -1) canvas.style.backgroundImage = 'none';
+        lastFrame = index;
+        needsDraw = false;
+      }
+      function measure() {
+        width = stage.clientWidth;
+        height = stage.clientHeight;
+        sectionTop = section.offsetTop;
+        editorialTop = $('sectionErgonomics').offsetTop;
+        travel = Math.max(1, section.offsetHeight - height);
+        const scale = Math.min(1, (frameFolder === 'mobile' ? 768 : 1280) / width);
+        canvas.width = Math.round(width * scale);
+        canvas.height = Math.round(height * scale);
+        if (ctx) ctx.setTransform(canvas.width / width, 0, 0, canvas.height / height, 0, 0);
+        needsDraw = true;
+        lastIntro = -1;
+        updateTarget();
+        requestTick();
+      }
+      function updateTarget() {
+        const nextTarget = clamp((scrollY - sectionTop) / travel);
+        const nextEditorial = scrollY + 80 >= editorialTop;
+        if (nextEditorial !== onEditorial) {
+          nav.classList.toggle('is-editorial', nextEditorial);
+          onEditorial = nextEditorial;
+        }
+        if (nextTarget !== target) {
+          target = nextTarget;
+          requestTick();
+        }
+      }
+      function renderIntro() {
+        const intro = clamp(progress / INTRO_END);
+        if (intro !== lastIntro) {
+          letters.forEach((letter, i) => {
+            const t = clamp((intro - .035 - i * .012) / (.965 - i * .012));
+            const [x, y, rotation] = trajectories[i];
+            letter.style.transform = reducedMotion.matches ? 'none' : `translate3d(${(x * width * t).toFixed(1)}px, ${(y * height * t).toFixed(1)}px, 0) rotate(${(rotation * t).toFixed(1)}deg)`;
+            letter.style.opacity = String(reducedMotion.matches ? 1 - intro : 1 - clamp((t - .94) / .06));
+          });
+          const copyOpacity = String(1 - clamp(intro * 4));
+          introParts.forEach(part => part.style.opacity = copyOpacity);
+          introShade.style.opacity = String(1 - intro);
+          lastIntro = intro;
+        }
+        const uiOpacity = clamp((progress - INTRO_END) / .045);
+        if (uiOpacity === lastUiOpacity) return;
+        const visible = uiOpacity > .01;
+        ui.forEach(el => {
+          el.style.opacity = String(uiOpacity);
+          el.style.visibility = visible ? 'visible' : 'hidden';
+        });
+        if (visible !== lastUiVisible) {
+          dock.inert = !visible;
+          lastUiVisible = visible;
+        }
+        lastUiOpacity = uiOpacity;
+      }
+      function updateChapter(frameProgress) {
+        let index = 0;
+        chapters.forEach((chapter, i) => { if (frameProgress >= chapter.at) index = i; });
+        if (index === lastChapter) return;
+        const chapter = chapters[index];
+        $('chapHeadName').textContent = chapter.name;
+        $('cardStepTag').textContent = `0${index + 1} / ${chapter.name}`;
+        $('cardTitle').textContent = chapter.title;
+        $('cardDesc').textContent = chapter.desc;
+        dockButtons.forEach((button, i) => {
+          if (i === index) button.setAttribute('aria-current', 'true');
+          else button.removeAttribute('aria-current');
+        });
+        lastChapter = index;
+      }
+      function requestTick() {
+        if (!animationId && !document.hidden) animationId = requestAnimationFrame(tick);
+      }
+      function tick(time) {
+        animationId = 0;
+        const elapsed = Math.min(64, lastTick ? time - lastTick : 16.7);
+        lastTick = time;
+        const difference = target - progress;
+        progress = reducedMotion.matches || Math.abs(difference) < .0001 ? target : progress + difference * (1 - Math.exp(-elapsed / 90));
+        const frameProgress = clamp((progress - INTRO_END) / (1 - INTRO_END));
+        renderIntro();
+        drawFrame(frameProgress);
+        updateChapter(frameProgress);
+        if (frameProgress !== lastFrameProgress) {
+          stageProgress.style.transform = `scaleX(${frameProgress.toFixed(4)})`;
+          lastFrameProgress = frameProgress;
+        }
+        if (Math.abs(target - progress) >= .0001) requestTick();
+      }
+      function scrollToY(y) {
+        window.scrollTo({ top: y, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+      }
+      dockButtons.forEach(button => button.addEventListener('click', () => {
+        const frameProgress = Number(button.dataset.progress);
+        const destination = INTRO_END + .048 + frameProgress * (1 - INTRO_END - .048);
+        scrollToY(section.offsetTop + destination * travel);
+      }));
+      $('backToTopBtn').addEventListener('click', () => scrollToY(0));
+      document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', event => {
+        const element = document.querySelector(link.getAttribute('href'));
+        if (!element) return;
+        event.preventDefault();
+        scrollToY(element === section ? 0 : element.getBoundingClientRect().top + scrollY - 100);
+        if (link.classList.contains('skip-link')) {
+          element.setAttribute('tabindex', '-1');
+          element.focus({ preventScroll: true });
+        }
+      }));
+      window.addEventListener('scroll', updateTarget, { passive: true });
+      window.addEventListener('resize', measure, { passive: true });
+      reducedMotion.addEventListener('change', measure);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          cancelAnimationFrame(animationId);
+          animationId = 0;
+        } else {
+          lastTick = 0;
+          updateTarget();
+          pumpQueue();
+          requestTick();
+        }
+      });
+      window.addEventListener('pageshow', measure);
+
+      if ('IntersectionObserver' in window && !reducedMotion.matches) {
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('is-pending');
+            observer.unobserve(entry.target);
+          }
+        }), { threshold: .08 });
+        document.querySelectorAll('.reveal').forEach(element => {
+          element.classList.add('is-pending');
+          observer.observe(element);
+        });
+      }
+      measure();
     })();
   </script>
 </body>
-
 </html>
