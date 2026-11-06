@@ -1,659 +1,1559 @@
 <!DOCTYPE html>
 <html lang="ru" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <title>Интерьер · BMW F10 Anatomy</title>
-  <meta name="description" content="Интерьер BMW 5 серии F10: интерактивный пролёт по салону, ориентированный на водителя кокпит, iDrive, материалы и комфорт.">
+  <meta name="description"
+    content="Интерьер BMW 5 серии F10: ориентированный на водителя кокпит, iDrive, материалы и комфорт.">
   <script>
     try {
       const savedTheme = localStorage.getItem('f10-interior-theme');
       if (savedTheme === 'dark' || savedTheme === 'light') document.documentElement.dataset.theme = savedTheme;
-    } catch (_) {}
+    } catch (_) { }
   </script>
-  <link rel="preload" as="image" href="assets/interior-scroll-lite/desktop/i_0001.webp" media="(min-width: 701px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/interior-scroll-lite/mobile/i_0001.webp" media="(max-width: 700px)" fetchpriority="high">
+  <link rel="preload" as="image" href="img/Generated Image November 05, 2026 - 8_21PM.jpg" fetchpriority="high">
   <style>
+    /* ============================================================
+       ПАЛИТРА И ПЕРЕМЕННЫЕ В ЭСТЕТИКЕ PILATO (QUIET LUXURY)
+       ============================================================ */
     :root {
       color-scheme: light;
-      --page: #f5f5f7;
-      --surface: #ffffff;
-      --surface-soft: #eeeeef;
-      --ink: #19191b;
-      --muted: #707076;
-      --line: #dedee2;
-      --inverse: #151516;
-      --inverse-ink: #fafafa;
-      --glass: rgba(250, 250, 252, .87);
-      --shadow: 0 16px 48px rgba(0, 0, 0, .035);
-      --gutter: clamp(20px, 5vw, 80px);
-      --radius: 24px;
+      --page: #f3efe8;
+      --page-secondary: #ebe5da;
+      --surface: rgba(255, 252, 247, 0.88);
+      --surface-solid: #fffcf7;
+      --surface-soft: #e6dfd3;
+      --ink: #14171c;
+      --muted: #5c6470;
+      --line: rgba(20, 23, 28, 0.11);
+      --line-strong: rgba(217, 83, 30, 0.35);
+      --accent: #d9531e;
+      --accent-2: #1b6ca8;
+      --accent-gold: #c6923a;
+      --accent-glow: rgba(217, 83, 30, 0.16);
+      --accent-2-glow: rgba(27, 108, 168, 0.14);
+      --inverse: #11151c;
+      --inverse-ink: #f9f6f0;
+      --glass: rgba(248, 244, 237, 0.84);
+      --shadow: 0 24px 64px rgba(18, 22, 28, 0.06);
+      --shadow-hover: 0 36px 90px rgba(18, 22, 28, 0.14);
+      --gutter: clamp(24px, 5.5vw, 88px);
+      --radius: 22px;
       --ease: cubic-bezier(.22, 1, .36, 1);
-      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      --ease-out-expo: cubic-bezier(.16, 1, .3, 1);
+      --ease-in-out-quart: cubic-bezier(.76, 0, .24, 1);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Arial, sans-serif;
     }
+
     :root[data-theme="dark"] {
       color-scheme: dark;
-      --page: #101011;
-      --surface: #1a1a1c;
-      --surface-soft: #242426;
-      --ink: #f5f5f7;
-      --muted: #a1a1a8;
-      --line: #323236;
-      --inverse: #eeeeef;
-      --inverse-ink: #19191b;
-      --glass: rgba(27, 27, 29, .87);
-      --shadow: 0 16px 48px rgba(0, 0, 0, .12);
+      --page: #080b10;
+      --page-secondary: #0d131c;
+      --surface: rgba(17, 22, 31, 0.84);
+      --surface-solid: #121822;
+      --surface-soft: #1b2330;
+      --ink: #f3f6fa;
+      --muted: #94a0b2;
+      --line: rgba(255, 255, 255, 0.10);
+      --line-strong: rgba(255, 107, 43, 0.42);
+      --accent: #ff6b2b;
+      --accent-2: #38bdf8;
+      --accent-gold: #f59e0b;
+      --accent-glow: rgba(255, 107, 43, 0.22);
+      --accent-2-glow: rgba(56, 189, 248, 0.16);
+      --inverse: #f3efe8;
+      --inverse-ink: #0d1117;
+      --glass: rgba(15, 20, 28, 0.82);
+      --shadow: 0 28px 72px rgba(0, 0, 0, 0.48);
+      --shadow-hover: 0 40px 100px rgba(0, 0, 0, 0.65);
     }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { background: var(--page); scroll-padding-top: 110px; }
-    body { margin: 0; color: var(--ink); background: var(--page); font-family: var(--font); -webkit-font-smoothing: antialiased; }
-    h1, h2, h3, p, figure { margin: 0; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; }
-    button, a { touch-action: manipulation; }
-    button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid #4789ed; outline-offset: 5px; }
-    img { display: block; width: 100%; height: auto; }
-    ::selection { background: #b4c9eb; color: #141416; }
-    .container { max-width: 1440px; padding-inline: var(--gutter); margin-inline: auto; }
-    .eyebrow { display: flex; align-items: center; gap: 9px; font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
-    .eyebrow::before { content: ''; width: 6px; height: 6px; flex: 0 0 6px; background: currentColor; border-radius: 50%; }
-    .muted { color: var(--muted); }
-    .skip-link { position: fixed; left: 20px; top: -90px; z-index: 200; background: var(--surface); padding: 16px; border-radius: 12px; }
-    .skip-link:focus { top: 90px; }
-    .site-nav { position: fixed; top: 20px; left: var(--gutter); right: var(--gutter); z-index: 100; max-width: 1280px; margin-inline: auto; display: flex; align-items: center; gap: 24px; padding: 10px 12px 10px 20px; border: 1px solid rgba(255,255,255,.17); border-radius: 100px; color: #fff; background: rgba(22,22,25,.72); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
-    .site-nav.is-editorial { color: var(--ink); background: var(--glass); border-color: var(--line); box-shadow: 0 4px 28px rgba(0,0,0,.04); }
-    .nav-brand { display: flex; align-items: center; gap: 10px; margin-right: auto; font-size: 12px; letter-spacing: -.02em; white-space: nowrap; }
-    .brand-mark { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid currentColor; border-radius: 50%; font-size: 10px; font-weight: 700; }
-    .brand-name { font-weight: 600; }
-    .brand-name span { opacity: .5; font-weight: 400; }
-    .nav-links { display: flex; align-items: center; gap: 24px; font-size: 12px; }
-    .nav-links a { opacity: .6; transition: opacity .2s; }
-    .nav-links a:hover, .nav-links a[aria-current] { opacity: 1; }
-    .nav-links a[aria-current]::after { content: ''; display: block; margin: 4px auto -7px; width: 3px; height: 3px; border-radius: 50%; background: currentColor; }
-    .nav-controls { display: flex; align-items: center; gap: 12px; }
-    .theme-switch { display: flex; padding: 3px; gap: 2px; border-radius: 100px; background: rgba(128,128,128,.16); }
-    .theme-button { width: 34px; height: 34px; display: grid; place-items: center; padding: 0; color: inherit; background: transparent; border: 0; border-radius: 50%; opacity: .6; }
-    .theme-button[aria-pressed="true"] { background: #fff; color: #151516; opacity: 1; box-shadow: 0 1px 5px rgba(0,0,0,.12); }
-    .is-editorial .theme-button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
-    .theme-button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
-    .nav-detail { display: inline-flex; align-items: center; gap: 14px; font-size: 12px; background: #fff; color: #19191b; padding: 12px 16px; border-radius: 99px; }
-    .is-editorial .nav-detail { background: var(--ink); color: var(--surface); }
-    .cabin-orbit-section { height: 540vh; height: 540svh; position: relative; background: #08090a; color: #fff; }
-    .cabin-sticky-stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; isolation: isolate; }
-    #cabinCanvas { position: absolute; inset: 0; width: 100%; height: 100%; background: #0b0c0d url('assets/interior-scroll-lite/desktop/i_0001.webp') center/cover no-repeat; }
-    .stage-vignette { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg,rgba(0,0,0,.2),transparent 30%,transparent 60%,rgba(0,0,0,.7)); }
-    .intro-shade { position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,.44); pointer-events: none; }
-    .intro { position: absolute; inset: 0; z-index: 4; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none; padding-bottom: 5vh; }
-    .intro-kicker { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: clamp(18px,4vh,48px); }
-    .intro-title { display: flex; justify-content: center; font-size: clamp(68px, 14.4vw, 230px); line-height: 1.12; font-weight: 500; letter-spacing: -.075em; color: #fff; padding-right: .075em; }
-    .intro-letter { display: inline-block; transform-origin: 50% 70%; will-change: transform, opacity; }
-    .intro-subtitle { font-size: clamp(12px,1.15vw,17px); letter-spacing: -.01em; color: rgba(255,255,255,.75); margin-top: 22px; }
-    .intro-bottom { position: absolute; z-index: 5; bottom: 40px; left: var(--gutter); right: var(--gutter); display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; pointer-events: none; }
-    .intro-index { font-size: 11px; line-height: 1.7; color: rgba(255,255,255,.55); }
-    .intro-index strong { color: #fff; font-weight: 500; }
-    .scroll-hint { font-size: 11px; display: flex; align-items: center; gap: 16px; color: rgba(255,255,255,.8); }
-    .scroll-hint span { display: grid; place-items: center; width: 36px; height: 52px; border: 1px solid rgba(255,255,255,.35); border-radius: 30px; font-size: 19px; }
-    .cabin-ui { opacity: 0; visibility: hidden; }
-    .cabin-chapter-pill { position: absolute; z-index: 6; top: 110px; left: var(--gutter); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.65); }
-    .cabin-chapter-pill b { color: #fff; font-weight: 500; margin-left: 10px; }
-    .cabin-info-card { position: absolute; z-index: 6; right: var(--gutter); bottom: 135px; width: 340px; padding: 26px; border: 1px solid rgba(255,255,255,.2); background: rgba(18,18,20,.69); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 20px; }
-    .cabin-card-eyebrow { font-size: 10px; letter-spacing: .12em; color: rgba(255,255,255,.58); margin-bottom: 15px; text-transform: uppercase; }
-    .cabin-card-title { font-size: 30px; line-height: 1.08; letter-spacing: -.045em; font-weight: 500; margin-bottom: 12px; }
-    .cabin-card-desc { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,.7); }
-    .cabin-dock { position: absolute; z-index: 7; bottom: 32px; left: var(--gutter); right: var(--gutter); display: flex; justify-content: center; }
-    .cabin-dock-inner { display: flex; gap: clamp(14px,3vw,40px); max-width: 100%; overflow-x: auto; scrollbar-width: thin; padding: 8px 3px; }
-    .dock-item { border: 0; background: none; color: rgba(255,255,255,.6); padding: 9px 0; min-width: 65px; text-align: left; font-size: 11px; white-space: nowrap; }
-    .dock-item::before { content: ''; display: block; height: 1px; background: rgba(255,255,255,.3); margin-bottom: 12px; transition: background .25s; }
-    .dock-item[aria-current="true"] { color: #fff; }
-    .dock-item[aria-current="true"]::before { background: #fff; }
-    .stage-progress-bar { position: absolute; z-index: 8; bottom: 0; left: 0; right: 0; height: 2px; background: rgba(255,255,255,.08); }
-    .stage-progress-bar i { display: block; height: 100%; background: #fff; transform-origin: 0 50%; transform: scaleX(0); }
-    .stage-error { position: absolute; z-index: 8; top: 100px; left: var(--gutter); right: var(--gutter); padding: 12px; font-size: 12px; background: #242426; border-radius: 12px; }
-    .editorial { position: relative; background: var(--page); padding-top: clamp(84px, 11vw, 164px); padding-bottom: 40px; }
-    .editorial-heading { display: grid; grid-template-columns: 1.35fr 1fr; align-items: end; gap: 60px; margin-bottom: 64px; }
-    .editorial-heading .eyebrow { margin-bottom: 30px; }
-    .section-title { font-size: clamp(44px,6vw,88px); line-height: 1.01; font-weight: 500; letter-spacing: -.065em; }
-    .section-title span { color: var(--muted); }
-    .intro-copy { max-width: 355px; justify-self: end; padding-bottom: 3px; }
-    .intro-copy p { font-size: 15px; line-height: 1.75; color: var(--muted); }
-    .intro-copy p strong { color: var(--ink); font-weight: 500; }
-    .text-link { display: inline-flex; align-items: center; gap: 24px; font-size: 12px; font-weight: 500; margin-top: 24px; padding-block: 8px; border-bottom: 1px solid var(--line); }
-    .text-link span { font-size: 17px; }
-    .feature { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-    .cockpit-feature { display: grid; grid-template-columns: 1.35fr 1fr; min-height: 450px; }
-    .feature-photo { position: relative; overflow: hidden; background: #171b1e; min-width: 0; }
-    .feature-photo img { height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
-    @media (hover: hover) { .feature:hover .feature-photo img { transform: scale(1.025); } }
-    .photo-label { position: absolute; left: 22px; bottom: 20px; padding: 8px 12px; color: #fff; background: rgba(20,20,22,.45); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(12px); border-radius: 20px; font-size: 10px; letter-spacing: .05em; }
-    .feature-copy { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(30px, 3.7vw, 56px); }
-    .feature-number { font-size: 10px; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 32px; }
-    .feature-title { font-size: clamp(29px,3vw,46px); font-weight: 500; line-height: 1.05; letter-spacing: -.05em; margin-bottom: 20px; }
-    .feature-title span { color: var(--muted); }
-    .feature-description { color: var(--muted); font-size: 14px; line-height: 1.75; max-width: 44ch; }
-    .feature-note { font-size: 11px; color: var(--muted); padding-top: 24px; margin-top: auto; }
-    .feature-note strong { color: var(--ink); font-weight: 500; }
-    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-    .detail-grid .feature-photo { aspect-ratio: 16/10; }
-    .detail-grid .feature-copy { padding: 34px 36px 40px; }
-    .detail-grid .feature-number { margin-bottom: 24px; }
-    .detail-grid .feature-title { font-size: clamp(27px,2.8vw,40px); }
-    .specs { display: grid; grid-template-columns: repeat(3,1fr); padding: 48px 0; margin-top: 48px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .spec { padding-inline: 32px; border-left: 1px solid var(--line); }
-    .spec:first-child { padding-left: 0; border-left: 0; }
-    .spec dt { color: var(--muted); font-size: 11px; margin-bottom: 20px; }
-    .spec dd { margin: 0; font-size: clamp(44px,5.3vw,76px); line-height: 1; font-weight: 500; letter-spacing: -.06em; }
-    .spec dd span { font-size: 20px; letter-spacing: -.03em; }
-    .spec p { color: var(--muted); font-size: 12px; margin-top: 12px; line-height: 1.5; }
-    .statement { padding: clamp(70px,10vw,140px) 0; text-align: center; }
-    .statement .eyebrow { justify-content: center; margin-bottom: 32px; }
-    .statement h2 { max-width: 850px; margin-inline: auto; font-size: clamp(30px,4.1vw,58px); font-weight: 500; letter-spacing: -.055em; line-height: 1.12; }
-    .statement h2 span { color: var(--muted); }
-    .statement p { max-width: 510px; margin: 26px auto 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
-    .closing { display: flex; justify-content: space-between; align-items: end; gap: 40px; padding: clamp(34px,5vw,70px); border-radius: var(--radius); background: var(--inverse); color: var(--inverse-ink); }
-    .closing .eyebrow { opacity: .55; margin-bottom: 28px; }
-    .closing h2 { font-size: clamp(32px,4.4vw,64px); line-height: 1.03; letter-spacing: -.055em; font-weight: 500; }
-    .closing h2 span { opacity: .45; }
-    .closing-actions { display: flex; flex-direction: column; gap: 15px; align-items: flex-start; flex-shrink: 0; }
-    .pill-button { border: 0; border-radius: 99px; padding: 15px 20px; display: inline-flex; align-items: center; gap: 25px; background: var(--inverse-ink); color: var(--inverse); font-size: 12px; font-weight: 500; }
-    .closing-actions .text-link { border-color: currentColor; margin: 0 15px; opacity: .75; }
-    .materials-note { font-size: 11px; line-height: 1.7; color: var(--muted); padding-top: 32px; max-width: 760px; }
-    .materials-note summary { cursor: pointer; display: list-item; width: fit-content; padding: 10px 0; }
-    .materials-note p { margin-top: 8px; }
-    .interior-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-top: 32px; padding-top: 26px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
-    .interior-footer nav { display: flex; gap: 26px; }
-    .interior-footer a:hover { color: var(--ink); }
-    .reveal { transition: opacity .8s var(--ease), transform .8s var(--ease); }
-    .reveal.is-pending { opacity: 0; transform: translateY(28px); }
-    @media (min-width: 1600px) { .cabin-info-card { width: 390px; padding: 32px; } }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--page);
+      scroll-padding-top: 110px;
+    }
+
+    html.lenis,
+    html.lenis body {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle 900px at 12% 18%, var(--accent-glow), transparent 70%),
+        radial-gradient(circle 1000px at 88% 42%, var(--accent-2-glow), transparent 72%),
+        linear-gradient(180deg, var(--page) 0%, var(--page-secondary) 50%, var(--page) 100%);
+      background-attachment: fixed;
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+      transition: background-color .6s var(--ease), color .4s var(--ease);
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    figure {
+      margin: 0;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ============================================================
+       КАСТОМНЫЙ ПЛАВНЫЙ КУРСОР PILATO (ДЛЯ ПК)
+       ============================================================ */
+    .pilato-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 38px;
+      height: 38px;
+      margin-left: -19px;
+      margin-top: -19px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0;
+      transform: translate3d(-100px, -100px, 0) scale(0.75);
+      transition:
+        width .45s var(--ease-out-expo),
+        height .45s var(--ease-out-expo),
+        margin .45s var(--ease-out-expo),
+        background-color .4s var(--ease),
+        border-color .4s var(--ease),
+        opacity .35s ease;
+    }
+
+    .pilato-cursor.is-visible {
+      opacity: 1;
+    }
+
+    .pilato-cursor.is-editorial {
+      border-color: rgba(20, 23, 28, 0.25);
+      color: var(--ink);
+    }
+
+    :root[data-theme="dark"] .pilato-cursor.is-editorial {
+      border-color: rgba(255, 255, 255, 0.28);
+      color: #fff;
+    }
+
+    .pilato-cursor.is-interactive {
+      width: 58px;
+      height: 58px;
+      margin-left: -29px;
+      margin-top: -29px;
+      background: rgba(217, 83, 30, 0.18);
+      border-color: var(--accent);
+    }
+
+    .pilato-cursor.is-media {
+      width: 78px;
+      height: 78px;
+      margin-left: -39px;
+      margin-top: -39px;
+      background: rgba(14, 18, 24, 0.72);
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #fff;
+    }
+
+    .pilato-cursor span {
+      opacity: 0;
+      transform: scale(0.7);
+      transition: opacity .3s var(--ease), transform .35s var(--ease-out-expo);
+    }
+
+    .pilato-cursor.is-media span {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @media (pointer: coarse) {
+      .pilato-cursor {
+        display: none !important;
+      }
+    }
+
+    /* ============================================================
+       ШТОРКА-ПРЕЛОАДЕР ПРИ ОТКРЫТИИ СТРАНИЦЫ
+       ============================================================ */
+    .pilato-preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: #080c11;
+      transform-origin: top center;
+      transform: scaleY(1);
+      transition: transform 1.25s var(--ease-in-out-quart);
+      pointer-events: none;
+    }
+
+    .pilato-preloader.is-done {
+      transform: scaleY(0);
+    }
+
+    .container {
+      max-width: 1440px;
+      padding-inline: var(--gutter);
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      flex: 0 0 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 20px;
+      top: -90px;
+      z-index: 200;
+      background: var(--surface-solid);
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    .skip-link:focus {
+      top: 90px;
+    }
+
+    /* ============================================================
+       НАВИГАЦИЯ (ПЛАВНОЕ СКРЫТИЕ/ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ КАК НА PILATO)
+       ============================================================ */
+    .site-nav {
+      position: fixed;
+      top: 20px;
+      left: var(--gutter);
+      right: var(--gutter);
+      z-index: 100;
+      max-width: 1280px;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 10px 12px 10px 20px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 100px;
+      color: #fff;
+      background: rgba(15, 19, 26, .62);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      transition:
+        transform .65s var(--ease-out-expo),
+        background .45s var(--ease),
+        border-color .45s var(--ease),
+        color .45s var(--ease),
+        box-shadow .45s var(--ease);
+    }
+
+    .site-nav.is-editorial {
+      color: var(--ink);
+      background: var(--glass);
+      border-color: var(--line);
+      box-shadow: 0 10px 36px rgba(0, 0, 0, .06);
+    }
+
+    .site-nav.is-nav-hidden {
+      transform: translate3d(0, -130%, 0);
+    }
+
+    .theme-switch {
+      display: flex;
+      padding: 3px;
+      gap: 2px;
+      border-radius: 100px;
+      background: rgba(128, 128, 128, .16);
+    }
+
+    .theme-button {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      color: inherit;
+      background: transparent;
+      border: 0;
+      border-radius: 50%;
+      opacity: .6;
+      transition: transform .3s var(--ease-out-expo), background .25s, opacity .25s;
+    }
+
+    .theme-button:hover {
+      transform: scale(1.08);
+      opacity: 1;
+    }
+
+    .theme-button[aria-pressed="true"] {
+      background: var(--accent);
+      color: #fff;
+      opacity: 1;
+    }
+
+    /* ============================================================
+       1. ПЕРВЫЙ ЭКРАН PILATO HERO (ПЛАВНЫЙ ЗУМ + МАСОЧНЫЙ ВЫЕЗД СТРОК)
+       ============================================================ */
+    .pilato-hero-wrap {
+      position: relative;
+      height: 100vh;
+      height: 100svh;
+      min-height: 640px;
+      z-index: 1;
+      overflow: clip;
+    }
+
+    .pilato-hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100svh;
+      min-height: 640px;
+      overflow: hidden;
+      background: #080d12;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      isolation: isolate;
+      will-change: transform, opacity;
+      z-index: 1;
+    }
+
+    .pilato-hero.is-hidden {
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .pilato-hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .pilato-source-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.18);
+      filter: brightness(0.84) contrast(1.04);
+      transition:
+        transform 2.4s var(--ease-out-expo),
+        filter 2.2s var(--ease-out-expo);
+      will-change: transform;
+    }
+
+    .pilato-hero.is-ready .pilato-source-img {
+      transform: scale(1.03);
+      filter: brightness(0.96) contrast(1.02);
+    }
+
+    .pilato-hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        linear-gradient(95deg, rgba(8, 15, 22, 0.58) 0%, rgba(8, 15, 22, 0.22) 52%, transparent 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, transparent 28%, transparent 72%, rgba(0, 0, 0, 0.56) 100%);
+    }
+
+    #pixelHeroCanvas {
+      display: none !important;
+    }
+
+    .pilato-hero-content {
+      position: relative;
+      z-index: 4;
+      width: 100%;
+      max-width: 1480px;
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+      padding-bottom: 4vh;
+      will-change: transform, opacity;
+    }
+
+    .pilato-kicker-mask {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      overflow: hidden;
+      margin-bottom: clamp(18px, 2.5vh, 28px);
+      padding-left: 4px;
+    }
+
+    .pilato-kicker {
+      display: inline-block;
+      font-size: clamp(11px, 0.85vw, 13px);
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+      transform: translate3d(0, 120%, 0);
+      opacity: 0;
+      transition:
+        transform 1.35s var(--ease-out-expo) 0.25s,
+        opacity 1.1s var(--ease) 0.25s;
+    }
+
+    .pilato-hero.is-ready .pilato-kicker {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+
+    .pilato-title {
+      font-weight: 400;
+      font-size: clamp(42px, 5.8vw, 94px);
+      line-height: 1.06;
+      letter-spacing: -0.032em;
+      color: #ffffff;
+    }
+
+    .pilato-line-mask {
+      display: block;
+      overflow: hidden;
+      padding-top: 0.04em;
+      padding-bottom: 0.12em;
+      margin-top: -0.04em;
+      margin-bottom: -0.06em;
+    }
+
+    .pilato-line {
+      display: inline-block;
+      transform: translate3d(0, 115%, 0) rotate(1.8deg);
+      transform-origin: left bottom;
+      will-change: transform;
+      transition: transform 1.45s var(--ease-out-expo);
+    }
+
+    .pilato-line-1 {
+      padding-left: 0;
+      transition-delay: 0.36s;
+    }
+
+    .pilato-line-2 {
+      padding-left: clamp(56px, 9.2vw, 152px);
+      transition-delay: 0.48s;
+    }
+
+    .pilato-line-3 {
+      padding-left: clamp(28px, 4.4vw, 74px);
+      transition-delay: 0.60s;
+    }
+
+    .pilato-hero.is-ready .pilato-line {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    /* Нижний центральный индикатор «Узнать больше» в стиле Pilato */
+    .pilato-discover {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      z-index: 5;
+      transform: translate3d(-50%, 24px, 0);
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition:
+        transform 1.3s var(--ease-out-expo) 0.82s,
+        opacity 1.1s var(--ease) 0.82s,
+        color 0.3s ease;
+    }
+
+    .pilato-hero.is-ready .pilato-discover {
+      transform: translate3d(-50%, 0, 0);
+      opacity: 1;
+    }
+
+    .pilato-discover:hover {
+      color: #ffffff;
+    }
+
+    .pilato-discover-label {
+      transition: transform 0.45s var(--ease-out-expo);
+    }
+
+    .pilato-discover:hover .pilato-discover-label {
+      transform: translateY(-4px);
+    }
+
+    .pilato-discover-line {
+      position: relative;
+      width: 1px;
+      height: clamp(34px, 4.8vh, 48px);
+      background: rgba(255, 255, 255, 0.24);
+      overflow: hidden;
+    }
+
+    .pilato-discover-line::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      animation: pilatoLineFlow 2.4s cubic-bezier(.4, 0, .2, 1) infinite;
+    }
+
+    @keyframes pilatoLineFlow {
+      0% {
+        top: -100%;
+      }
+
+      50% {
+        top: 0%;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    /* ============================================================
+       2. РЕДАКЦИОННАЯ СЕКЦИЯ И ПЛАВНЫЕ REVEAL-АНИМАЦИИ PILATO
+       ============================================================ */
+    .editorial {
+      position: relative;
+      z-index: 4;
+      background:
+        radial-gradient(circle 800px at 8% 12%, var(--accent-glow), transparent 65%),
+        radial-gradient(circle 900px at 92% 48%, var(--accent-2-glow), transparent 68%),
+        linear-gradient(180deg, var(--page) 0%, var(--page-secondary) 55%, var(--page) 100%);
+      border-radius: 36px 36px 0 0;
+      box-shadow: 0 -28px 90px rgba(0, 0, 0, 0.28);
+      padding-top: clamp(96px, 11vw, 172px);
+      padding-bottom: 64px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Мягкое масочное появление блоков вместо резких 3D-вращений */
+    [data-build] {
+      position: relative;
+      opacity: 0;
+      transform: translate3d(0, 48px, 0);
+      will-change: transform, opacity;
+      transition:
+        transform 1.35s var(--ease-out-expo),
+        opacity 1.15s var(--ease-out-expo),
+        box-shadow 0.55s var(--ease),
+        border-color 0.55s var(--ease);
+      transition-delay: var(--build-delay, 0s);
+    }
+
+    [data-build]::after {
+      display: none !important;
+    }
+
+    [data-build].is-inview {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* Построчные маски для заголовков разделов */
+    .pilato-split-mask {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 0.08em;
+      margin-bottom: -0.08em;
+    }
+
+    .pilato-split-line {
+      display: inline-block;
+      transform: translate3d(0, 110%, 0);
+      transition: transform 1.35s var(--ease-out-expo);
+      transition-delay: var(--line-delay, 0s);
+      will-change: transform;
+    }
+
+    .is-inview .pilato-split-line {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .editorial-heading {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      align-items: end;
+      gap: 60px;
+      margin-bottom: 72px;
+    }
+
+    .editorial-heading .eyebrow {
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      font-size: clamp(44px, 6vw, 88px);
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -.055em;
+    }
+
+    .section-title span {
+      background: linear-gradient(120deg, var(--accent) 0%, var(--accent-gold) 52%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro-copy {
+      max-width: 400px;
+      justify-self: end;
+      padding: 28px 30px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-copy p {
+      font-size: 15px;
+      line-height: 1.78;
+      color: var(--muted);
+    }
+
+    .intro-copy p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 22px;
+      padding-block: 8px;
+      border-bottom: 1px solid var(--accent);
+      transition: gap .45s var(--ease-out-expo), color .3s, border-color .3s;
+      will-change: transform;
+    }
+
+    .text-link:hover {
+      gap: 26px;
+      color: var(--accent-2);
+      border-color: var(--accent-2);
+    }
+
+    .text-link span {
+      font-size: 16px;
+      transition: transform .45s var(--ease-out-expo);
+    }
+
+    .text-link:hover span {
+      transform: translate(3px, 2px);
+    }
+
+    /* ============================================================
+       3. КАРТОЧКИ С РАСКРЫТИЕМ ШТОРКИ ФОТО И СКРОЛЛ-ПАРАЛЛАКСОМ
+       ============================================================ */
+    .feature {
+      --mx: 50%;
+      --my: 50%;
+      --glare-op: 0;
+      position: relative;
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition:
+        border-color 0.55s var(--ease),
+        box-shadow 0.65s var(--ease-out-expo);
+    }
+
+    .feature::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      opacity: calc(var(--glare-op, 0) * 0.65);
+      background:
+        radial-gradient(circle 420px at var(--mx) var(--my), var(--accent-glow), transparent 70%);
+      transition: opacity 0.45s var(--ease);
+    }
+
+    .feature:hover {
+      border-color: var(--line-strong);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .cockpit-feature {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      min-height: 480px;
+    }
+
+    .feature-photo {
+      position: relative;
+      overflow: hidden;
+      background: #12161b;
+      min-width: 0;
+      clip-path: inset(14% 0% 14% 0% round 12px);
+      transition: clip-path 1.45s var(--ease-out-expo);
+    }
+
+    .feature.is-inview .feature-photo,
+    .feature-photo.is-inview {
+      clip-path: inset(0% 0% 0% 0% round 0px);
+    }
+
+    .feature-photo img {
+      height: 100%;
+      object-fit: cover;
+      transform: translate3d(0, 0, 0) scale(1.16);
+      will-change: transform;
+      transition: filter 0.75s var(--ease);
+    }
+
+    @media (hover: hover) {
+      .feature:hover .feature-photo img {
+        filter: contrast(1.04) saturate(1.06);
+      }
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 22px;
+      bottom: 20px;
+      z-index: 4;
+      padding: 8px 14px;
+      color: #fff;
+      background: rgba(14, 18, 24, .64);
+      border: 1px solid rgba(255, 255, 255, .20);
+      backdrop-filter: blur(14px);
+      border-radius: 99px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .photo-label::before {
+      content: '● ';
+      color: var(--accent);
+    }
+
+    .feature-copy {
+      position: relative;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: clamp(32px, 3.8vw, 58px);
+    }
+
+    .feature-number {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      padding: 5px 12px;
+      border-radius: 99px;
+      background: var(--surface-soft);
+    }
+
+    .feature-title {
+      font-size: clamp(29px, 3vw, 46px);
+      font-weight: 500;
+      line-height: 1.06;
+      letter-spacing: -.045em;
+      margin-bottom: 20px;
+    }
+
+    .feature-title span {
+      color: var(--accent-2);
+    }
+
+    .feature-description {
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.78;
+      max-width: 44ch;
+    }
+
+    .feature-note {
+      font-size: 11px;
+      color: var(--muted);
+      padding-top: 24px;
+      margin-top: auto;
+      border-top: 1px solid var(--line);
+      width: 100%;
+    }
+
+    .feature-note strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 28px;
+    }
+
+    .detail-grid .feature-photo {
+      aspect-ratio: 16/10;
+    }
+
+    .detail-grid .feature-copy {
+      padding: 36px 38px 42px;
+    }
+
+    .detail-grid .feature-number {
+      margin-bottom: 22px;
+    }
+
+    .detail-grid .feature-title {
+      font-size: clamp(27px, 2.8vw, 40px);
+    }
+
+    /* ХАРАКТЕРИСТИКИ С ПЛАВНЫМ СЧЁТЧИКОМ */
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      padding: 12px 0;
+      margin-top: 64px;
+    }
+
+    .spec {
+      --mx: 50%;
+      --my: 50%;
+      --glare-op: 0;
+      position: relative;
+      padding: 36px 34px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition:
+        border-color 0.5s var(--ease),
+        box-shadow 0.6s var(--ease-out-expo);
+    }
+
+    .spec::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold), var(--accent-2));
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 1.2s var(--ease-out-expo) 0.2s;
+    }
+
+    .spec.is-inview::before {
+      transform: scaleX(1);
+    }
+
+    .spec:hover {
+      border-color: var(--line-strong);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .spec dt {
+      color: var(--accent-2);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      margin-bottom: 18px;
+    }
+
+    .spec dd {
+      margin: 0;
+      font-size: clamp(46px, 5.5vw, 80px);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -.055em;
+      font-variant-numeric: tabular-nums;
+      background: linear-gradient(135deg, var(--ink) 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .spec dd span {
+      font-size: 22px;
+      letter-spacing: -.03em;
+    }
+
+    .spec p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    /* ЦИТАТА */
+    .statement {
+      padding: clamp(88px, 12vw, 160px) 0;
+      text-align: center;
+    }
+
+    .statement .eyebrow {
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .statement h2 {
+      max-width: 860px;
+      margin-inline: auto;
+      font-size: clamp(32px, 4.3vw, 62px);
+      font-weight: 500;
+      letter-spacing: -.05em;
+      line-height: 1.12;
+    }
+
+    .statement h2 span {
+      background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .statement p {
+      max-width: 530px;
+      margin: 28px auto 0;
+      font-size: 15px;
+      line-height: 1.82;
+      color: var(--muted);
+    }
+
+    /* ФИНАЛЬНЫЙ БЛОК */
+    .closing {
+      --mx: 50%;
+      --my: 50%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+      padding: clamp(40px, 5.5vw, 78px);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle 520px at var(--mx) var(--my), rgba(255, 107, 43, 0.22), transparent 70%),
+        linear-gradient(135deg, #10151e 0%, #192231 55%, #0e131b 100%);
+      color: #f9f6f0;
+      border: 1px solid rgba(255, 107, 43, 0.28);
+      box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32);
+      overflow: hidden;
+    }
+
+    .closing .eyebrow {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ff9866;
+      border-color: rgba(255, 255, 255, 0.14);
+      margin-bottom: 28px;
+    }
+
+    .closing h2 {
+      font-size: clamp(32px, 4.4vw, 64px);
+      line-height: 1.04;
+      letter-spacing: -.05em;
+      font-weight: 500;
+    }
+
+    .closing h2 span {
+      color: #ff8c52;
+    }
+
+    .closing-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      flex-shrink: 0;
+    }
+
+    .pill-button {
+      border: 0;
+      border-radius: 99px;
+      padding: 16px 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 22px;
+      background: linear-gradient(135deg, var(--accent) 0%, #ff8547 100%);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      box-shadow: 0 12px 32px rgba(255, 107, 43, 0.32);
+      transition: transform .45s var(--ease-out-expo), box-shadow .45s var(--ease);
+      will-change: transform;
+    }
+
+    .pill-button:hover {
+      box-shadow: 0 18px 42px rgba(255, 107, 43, 0.52);
+    }
+
+    .closing-actions .text-link {
+      color: #f9f6f0;
+      border-color: rgba(255, 255, 255, 0.35);
+      margin: 0 15px;
+    }
+
+    .materials-note {
+      font-size: 11px;
+      line-height: 1.7;
+      color: var(--muted);
+      padding-top: 32px;
+      max-width: 760px;
+    }
+
+    .materials-note summary {
+      cursor: pointer;
+      display: list-item;
+      width: fit-content;
+      padding: 10px 0;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .materials-note p {
+      margin-top: 8px;
+    }
+
+    .interior-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 32px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .interior-footer nav {
+      display: flex;
+      gap: 26px;
+    }
+
+    .interior-footer a:hover {
+      color: var(--accent);
+    }
+
     @media (max-width: 1000px) {
-      .nav-links { gap: 16px; }
-      .site-nav { gap: 18px; }
-      .nav-detail { display: none; }
-      .editorial-heading { gap: 35px; }
-      .cockpit-feature { grid-template-columns: 1.1fr 1fr; min-height: 400px; }
-      .feature-copy { padding: 30px; }
-      .detail-grid .feature-copy { padding: 30px; }
-      .closing { align-items: flex-start; }
+      .editorial-heading {
+        gap: 35px;
+      }
+
+      .cockpit-feature {
+        grid-template-columns: 1.1fr 1fr;
+        min-height: 400px;
+      }
+
+      .feature-copy,
+      .detail-grid .feature-copy {
+        padding: 30px;
+      }
+
+      .closing {
+        align-items: flex-start;
+      }
     }
+
     @media (max-width: 700px) {
-      #cabinCanvas { background-image: url('assets/interior-scroll-lite/mobile/i_0001.webp'); }
-      :root { --radius: 20px; }
-      .site-nav { top: 12px; left: 14px; right: 14px; gap: 8px; padding: 8px 9px 8px 14px; }
-      .nav-brand { gap: 8px; font-size: 11px; }
-      .brand-name span { display: none; }
-      .nav-links { gap: 12px; font-size: 11px; }
-      .nav-links .nav-home { display: none; }
-      .nav-controls { margin-left: 5px; }
-      .theme-button { width: 32px; height: 32px; }
-      .intro-title { font-size: 15.3vw; }
-      .intro { padding-bottom: 4vh; }
-      .intro-kicker { font-size: 9px; letter-spacing: .16em; }
-      .intro-subtitle { max-width: 250px; text-align: center; font-size: 12px; line-height: 1.6; margin-top: 20px; }
-      .intro-bottom { bottom: 28px; }
-      .intro-index { font-size: 9px; }
-      .scroll-hint { gap: 10px; font-size: 10px; }
-      .scroll-hint span { width: 30px; height: 44px; }
-      .cabin-chapter-pill { top: 96px; font-size: 9px; }
-      .cabin-info-card { bottom: 110px; left: var(--gutter); right: var(--gutter); width: auto; padding: 22px; }
-      .cabin-card-title { font-size: 28px; }
-      .cabin-card-desc { font-size: 12px; line-height: 1.65; }
-      .cabin-card-eyebrow { font-size: 9px; margin-bottom: 10px; }
-      .cabin-dock { bottom: 22px; left: 14px; right: 14px; justify-content: flex-start; }
-      .cabin-dock-inner { gap: 16px; width: 100%; }
-      .dock-item { font-size: 10px; min-width: 59px; flex: 1; }
-      .editorial-heading { grid-template-columns: 1fr; gap: 30px; margin-bottom: 36px; }
-      .editorial-heading .eyebrow { margin-bottom: 24px; }
-      .intro-copy { justify-self: start; max-width: 440px; }
-      .intro-copy p { font-size: 14px; }
-      .cockpit-feature { grid-template-columns: 1fr; }
-      .cockpit-feature .feature-photo { aspect-ratio: 4/3; }
-      .feature-copy, .detail-grid .feature-copy { padding: 28px; }
-      .feature-number { margin-bottom: 22px; }
-      .feature-title { font-size: 34px; }
-      .feature-description { font-size: 13px; }
-      .detail-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 18px; }
-      .detail-grid .feature-photo { aspect-ratio: 4/3; }
-      .specs { margin-top: 32px; padding: 30px 0; }
-      .spec { padding-inline: 14px; }
-      .spec dt { font-size: 9px; line-height: 1.5; min-height: 27px; margin-bottom: 14px; }
-      .spec dd { font-size: 38px; }
-      .spec dd span { font-size: 16px; }
-      .spec p { font-size: 10px; line-height: 1.5; }
-      .statement p { font-size: 13px; }
-      .closing { flex-direction: column; gap: 30px; }
-      .closing-actions { flex-direction: row; flex-wrap: wrap; align-items: center; }
-      .closing-actions .text-link { margin-left: 0; }
-      .photo-label { left: 16px; bottom: 16px; }
-      .interior-footer { margin-top: 24px; font-size: 10px; }
+      :root {
+        --radius: 20px;
+      }
+
+      .site-nav {
+        top: 12px;
+        left: 14px;
+        right: 14px;
+        gap: 8px;
+        padding: 8px 9px 8px 14px;
+      }
+
+      .theme-button {
+        width: 32px;
+        height: 32px;
+      }
+
+      .pilato-line-2 {
+        padding-left: 36px;
+      }
+
+      .pilato-line-3 {
+        padding-left: 18px;
+      }
+
+      .editorial {
+        border-radius: 26px 26px 0 0;
+      }
+
+      .editorial-heading {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 36px;
+      }
+
+      .intro-copy {
+        justify-self: start;
+        max-width: 100%;
+      }
+
+      .cockpit-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .cockpit-feature .feature-photo {
+        aspect-ratio: 4/3;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .detail-grid .feature-photo {
+        aspect-ratio: 4/3;
+      }
+
+      .specs {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      .closing {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .closing-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .closing-actions .text-link {
+        margin-left: 0;
+      }
     }
-    @media (max-width: 370px) { .nav-links .nav-exterior { display: none; } .spec { padding-inline: 9px; } .spec dd { font-size: 34px; } }
-    @media (max-height: 540px) and (min-width: 701px) {
-      .cabin-info-card { bottom: 88px; width: 280px; padding: 18px; }
-      .cabin-card-title { font-size: 24px; }
-      .cabin-card-desc { font-size: 11px; }
-      .cabin-chapter-pill { top: 96px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
-      .cabin-orbit-section { height: 220svh; }
-      .intro-letter { will-change: auto; }
-      .reveal.is-pending { opacity: 1; transform: none; }
-    }
-    @media print {
-      .site-nav, .cabin-orbit-section, .closing-actions { display: none; }
-      .editorial { padding-top: 30px; }
-      .reveal.is-pending { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) and (update: none) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+
+      .pilato-preloader {
+        display: none !important;
+      }
+
+      [data-build] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .pilato-kicker,
+      .pilato-line,
+      .pilato-discover,
+      .pilato-split-line {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .feature-photo {
+        clip-path: none !important;
+      }
     }
   </style>
+  <link rel="stylesheet" href="assets/css/site-header.css">
+  <link rel="stylesheet" href="assets/css/interior-motion.css?v=cabin-effects-4">
 </head>
+
 <body>
+  <!-- Прелоадер-шторка и кастомный курсор в стиле Pilato -->
+  <div class="pilato-preloader" id="pilatoPreloader" aria-hidden="true"></div>
+  <div class="pilato-cursor" id="pilatoCursor" aria-hidden="true"><span>Обзор</span></div>
+
   <a class="skip-link" href="#sectionErgonomics">Перейти к описанию салона</a>
-  <header class="site-nav" id="siteNav">
-    <a class="nav-brand" href="index.html" aria-label="F10 Anatomy — главная">
-      <span class="brand-mark" aria-hidden="true">F10</span>
-      <span class="brand-name">Anatomy<span> / Салон</span></span>
-    </a>
-    <nav class="nav-links" aria-label="Страницы проекта">
-      <a class="nav-home" href="index.html">Главная</a>
-      <a class="nav-exterior" href="exterior.html">Экстерьер</a>
-      <a href="#cabinOrbitSection" aria-current="page">Интерьер</a>
+
+  <header class="site-nav unified-site-header" id="siteNav">
+    <div class="unified-left">
+      <a href="index.html" class="unified-brand" aria-label="F10 Anatomy — главная"><svg viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg><span>F10 · Anatomy</span></a>
+      <details class="unified-location">
+        <summary><i aria-hidden="true"></i><span>Dingolfing</span></summary>
+        <div class="unified-location-panel">
+          <h2>Создан в Баварии.</h2>
+          <p>BMW 5 серии F10 выпускали в Дингольфинге, Германия. Дизайн — мюнхенская школа BMW.</p><small>Происхождение
+            модели, не адрес владельца сайта.</small>
+        </div>
+      </details>
+    </div>
+    <nav class="unified-links" aria-label="Страницы проекта">
+      <a href="index.html" class="unified-link"><span class="unified-dot"
+          aria-hidden="true"></span><span>Главная</span></a>
+      <a href="exterior.html" class="unified-link"><span class="unified-dot"
+          aria-hidden="true"></span><span>Экстерьер</span></a>
+      <a href="interior.html" class="unified-link" aria-current="page"><span class="unified-dot"
+          aria-hidden="true"></span><span>Салон</span></a>
+      <a href="engine.html" class="unified-link"><span class="unified-dot"
+          aria-hidden="true"></span><span>Двигатель</span></a>
+      <a href="tech.html" class="unified-link"><span class="unified-dot"
+          aria-hidden="true"></span><span>Технологии</span></a>
+      <a href="versions.html" class="unified-link"><span class="unified-dot"
+          aria-hidden="true"></span><span>Модификации</span></a>
+      <a href="contact.html" class="unified-link"><span class="unified-dot"
+          aria-hidden="true"></span><span>Контакты</span></a>
     </nav>
-    <div class="nav-controls">
-      <div class="theme-switch" role="group" aria-label="Цветовая тема">
-        <button class="theme-button" type="button" data-theme-choice="light" aria-label="Светлая тема" aria-pressed="true" title="Светлая тема">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
-        </button>
-        <button class="theme-button" type="button" data-theme-choice="dark" aria-label="Тёмная тема" aria-pressed="false" title="Тёмная тема">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.5 8.5 0 1 0 20.2 15.2Z"/></svg>
-        </button>
-      </div>
-      <a class="nav-detail" href="#sectionErgonomics">К деталям <span aria-hidden="true">↘</span></a>
+    <div class="unified-actions">
+      <div class="unified-actions-pill"><a class="unified-bracket" href="index.html#anatomySection"><span
+            class="br">[</span><span>Разбор</span><span class="br">]</span></a><a class="unified-bracket"
+          href="exterior.html"><span class="br">[</span><span>Экстерьер →</span><span class="br">]</span></a></div>
+      <div class="unified-theme theme-switch" role="group" aria-label="Цветовая тема"><button class="theme-button"
+          type="button" data-theme-choice="light" aria-label="Светлая тема" aria-pressed="true"><span
+            aria-hidden="true">☼</span></button><button class="theme-button" type="button" data-theme-choice="dark"
+          aria-label="Тёмная тема" aria-pressed="false"><span aria-hidden="true">◐</span></button></div>
+      <details class="unified-menu">
+        <summary>Страницы</summary>
+        <nav class="unified-menu-panel" aria-label="Все семь страниц" data-lenis-prevent>
+          <a href="index.html" class="unified-link"><span class="unified-dot"
+              aria-hidden="true"></span><span>Главная</span><span class="unified-number"
+              aria-hidden="true">01</span></a>
+          <a href="exterior.html" class="unified-link"><span class="unified-dot"
+              aria-hidden="true"></span><span>Экстерьер</span><span class="unified-number"
+              aria-hidden="true">02</span></a>
+          <a href="interior.html" class="unified-link" aria-current="page"><span class="unified-dot"
+              aria-hidden="true"></span><span>Салон</span><span class="unified-number" aria-hidden="true">03</span></a>
+          <a href="engine.html" class="unified-link"><span class="unified-dot"
+              aria-hidden="true"></span><span>Двигатель</span><span class="unified-number"
+              aria-hidden="true">04</span></a>
+          <a href="tech.html" class="unified-link"><span class="unified-dot"
+              aria-hidden="true"></span><span>Технологии</span><span class="unified-number"
+              aria-hidden="true">05</span></a>
+          <a href="versions.html" class="unified-link"><span class="unified-dot"
+              aria-hidden="true"></span><span>Модификации</span><span class="unified-number"
+              aria-hidden="true">06</span></a>
+          <a href="contact.html" class="unified-link"><span class="unified-dot"
+              aria-hidden="true"></span><span>Контакты</span><span class="unified-number"
+              aria-hidden="true">07</span></a>
+        </nav>
+      </details>
     </div>
   </header>
 
   <main>
-    <section class="cabin-orbit-section" id="cabinOrbitSection" aria-label="Интерактивный пролёт по салону">
-      <div class="cabin-sticky-stage" id="cabinStage">
-        <canvas id="cabinCanvas" aria-label="BMW F10: пролёт от кузова к деталям салона">Кадры интерьера BMW F10. Подробное текстовое описание расположено ниже.</canvas>
-        <div class="stage-vignette" aria-hidden="true"></div>
-        <div class="intro-shade" id="introShade" aria-hidden="true"></div>
-        <div class="intro" id="introOverlay">
-          <p class="intro-kicker" id="introKicker">BMW 5 серии · F10 / 02</p>
-          <h1 class="intro-title" aria-label="Интерьер"><span class="intro-letter" aria-hidden="true">И</span><span class="intro-letter" aria-hidden="true">н</span><span class="intro-letter" aria-hidden="true">т</span><span class="intro-letter" aria-hidden="true">е</span><span class="intro-letter" aria-hidden="true">р</span><span class="intro-letter" aria-hidden="true">ь</span><span class="intro-letter" aria-hidden="true">е</span><span class="intro-letter" aria-hidden="true">р</span></h1>
-          <p class="intro-subtitle" id="introSubtitle">Пространство, в котором всё начинается с вас.</p>
+    <!-- 1. ПЕРВЫЙ ЭКРАН В СТИЛЕ PILATO.IT -->
+    <div class="pilato-hero-wrap" id="cabinOrbitSection">
+      <section class="pilato-hero" id="pilatoStickyHero" aria-label="Интерьер BMW F10">
+        <div class="pilato-hero-media" id="heroMediaLayer">
+          <img class="pilato-source-img" id="heroMainImg" src="img/Generated Image November 05, 2026 - 8_21PM.jpg"
+            width="1376" height="768"
+            alt="Светлый салон BMW 5 серии F10 с деревянной отделкой, передними креслами и центральной консолью"
+            fetchpriority="high" decoding="async">
         </div>
-        <div class="intro-bottom" id="introBottom">
-          <p class="intro-index"><strong>ВНУТРИ F10</strong><br>Дизайн. Ощущения. Детали.</p>
-          <p class="scroll-hint">Листайте, чтобы войти <span aria-hidden="true">↓</span></p>
+        <div class="pilato-hero-scrim" aria-hidden="true"></div>
+        <div class="cabin-opening-curtain" id="cabinOpeningCurtain" aria-hidden="true"></div>
+        <p class="cabin-flight-caption">BMW F10 · ПРОСТРАНСТВО ВОКРУГ ВАС</p>
+        <div class="cabin-flight-title" id="cabinFlightTitle" aria-label="Интерьер">
+          <span class="cabin-flight-letter" aria-hidden="true">И</span><span class="cabin-flight-letter" aria-hidden="true">н</span><span class="cabin-flight-letter" aria-hidden="true">т</span><span class="cabin-flight-letter" aria-hidden="true">е</span><span class="cabin-flight-letter" aria-hidden="true">р</span><span class="cabin-flight-letter" aria-hidden="true">ь</span><span class="cabin-flight-letter" aria-hidden="true">е</span><span class="cabin-flight-letter" aria-hidden="true">р</span>
         </div>
-        <p class="cabin-chapter-pill cabin-ui">Обзор салона <b id="chapHeadName">Кокпит</b></p>
-        <aside class="cabin-info-card cabin-ui" aria-label="Текущая деталь салона">
-          <div class="cabin-card-eyebrow" id="cardStepTag">01 / Кокпит</div>
-          <h2 class="cabin-card-title" id="cardTitle">На вашей стороне.</h2>
-          <p class="cabin-card-desc" id="cardDesc">Консоль обращена к водителю. Клавиши, дисплей и контроллер находятся там, где их ожидаешь.</p>
-        </aside>
-        <nav class="cabin-dock cabin-ui" aria-label="Главы пролёта по салону" inert>
-          <div class="cabin-dock-inner">
-            <button class="dock-item" data-progress="0" type="button" aria-current="true">01 Кокпит</button>
-            <button class="dock-item" data-progress="0.43" type="button">02 Приборы</button>
-            <button class="dock-item" data-progress="0.60" type="button">03 iDrive</button>
-            <button class="dock-item" data-progress="0.80" type="button">04 Консоль</button>
-            <button class="dock-item" data-progress="0.98" type="button">05 Кресла</button>
-          </div>
-        </nav>
-        <div class="stage-progress-bar" aria-hidden="true"><i id="stageProgFill"></i></div>
-        <p class="stage-error" id="stageError" hidden>Не удалось загрузить кадры. Описание салона доступно ниже.</p>
-      </div>
-    </section>
+        <div class="cabin-scan-line" id="cabinScanLine" aria-hidden="true"></div>
+        <div class="cabin-scroll-progress" aria-hidden="true"><i id="cabinScrollFill"></i></div>
+        <canvas id="pixelHeroCanvas" aria-hidden="true"></canvas>
 
+        <div class="pilato-hero-content" id="heroContentParallax">
+          <div class="pilato-kicker-mask">
+            <p class="pilato-kicker">BMW 5 СЕРИИ · F10 · ИНТЕРЬЕР</p>
+          </div>
+
+          <h1 class="pilato-title" aria-label="Совершенство, встречающее традицию.">
+            <span class="pilato-line-mask">
+              <span class="pilato-line pilato-line-1">Совершенство,</span>
+            </span>
+            <span class="pilato-line-mask">
+              <span class="pilato-line pilato-line-2">встречающее</span>
+            </span>
+            <span class="pilato-line-mask">
+              <span class="pilato-line pilato-line-3">традицию.</span>
+            </span>
+          </h1>
+        </div>
+
+        <a class="pilato-discover" id="heroDiscoverBtn" href="#sectionErgonomics" data-magnetic
+          aria-label="Узнать больше — перейти к обзору салона">
+          <span class="pilato-discover-label">Узнать больше</span>
+          <span class="pilato-discover-line" aria-hidden="true"></span>
+        </a>
+      </section>
+    </div>
+
+    <!-- 2. ОСНОВНОЙ КОНТЕНТ: ПЛАВНОЕ РАСКРЫТИЕ ШТОРОК, ПАРАЛЛАКС КАРТИНОК И МАСОЧНАЯ ТИПОГРАФИКА -->
     <section class="editorial" id="sectionErgonomics" aria-labelledby="editorialTitle">
       <div class="container">
-        <div class="editorial-heading reveal">
-          <div>
+        <div class="editorial-heading">
+          <div data-build="left">
             <p class="eyebrow">Продуман изнутри</p>
-            <h2 class="section-title" id="editorialTitle">Всё вокруг.<br><span>Всё для вас.</span></h2>
+            <h2 class="section-title" id="editorialTitle">
+              <span class="pilato-split-mask"><span class="pilato-split-line">Всё вокруг.</span></span>
+              <span class="pilato-split-mask"><span class="pilato-split-line" style="--line-delay: 0.12s"><span>Всё для
+                    вас.</span></span></span>
+            </h2>
           </div>
-          <div class="intro-copy">
-            <p><strong>Хороший интерьер не требует привыкания.</strong> В F10 всё на своём месте: естественная посадка, знакомые движения, материалы, к которым хочется прикоснуться. Ничего лишнего. Только вы и дорога.</p>
-            <a class="text-link" href="#cockpitDetails">Рассмотреть ближе <span aria-hidden="true">↙</span></a>
+          <div class="intro-copy" data-build="right" style="--build-delay: 0.12s" data-tilt-card>
+            <p><strong>Хороший интерьер не требует привыкания.</strong> В F10 всё на своём месте: естественная посадка,
+              знакомые движения, материалы, к которым хочется прикоснуться. Ничего лишнего. Только вы и дорога.</p>
+            <a class="text-link" href="#cockpitDetails" data-magnetic>Рассмотреть ближе <span
+                aria-hidden="true">↙</span></a>
           </div>
         </div>
 
-        <article class="feature cockpit-feature reveal" id="cockpitDetails">
-          <figure class="feature-photo">
-            <img src="assets/img/interior-preview/cockpit.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Общий вид кокпита BMW F10: руль, приборная панель и центральная консоль">
+        <article class="feature cockpit-feature" id="cockpitDetails" data-build="zoom-3d" data-tilt-card>
+          <figure class="feature-photo" data-parallax-media>
+            <img src="assets/img/f10-unique-photos/f10-535i-interior-cockpit-dashboard-idrive-tttnis.jpg" width="1920"
+              height="981" loading="lazy" decoding="async" alt="Общий вид панели приборов и салона BMW 535i F10">
             <figcaption class="photo-label">01 / Архитектура кокпита</figcaption>
           </figure>
           <div class="feature-copy">
             <p class="feature-number">Ориентирован на водителя</p>
-            <h3 class="feature-title">В центре внимания.<br><span>Не случайно.</span></h3>
-            <p class="feature-description">Передняя панель словно продолжает ваше движение. Дисплей расположен в поле зрения, консоль развёрнута к водителю, а основные функции доступны без поиска по меню.</p>
-            <p class="feature-note"><strong>Driver-oriented cockpit</strong><br>Классическая архитектура BMW.</p>
+            <h3 class="feature-title">
+              <span class="pilato-split-mask"><span class="pilato-split-line">В центре внимания.</span></span>
+              <span class="pilato-split-mask"><span class="pilato-split-line" style="--line-delay: 0.1s"><span>Не
+                    случайно.</span></span></span>
+            </h3>
+            <p class="feature-description">Передняя панель словно продолжает ваше движение. Дисплей расположен в поле
+              зрения, консоль развёрнута к водителю, а основные функции доступны без поиска по меню.</p>
+            <p class="feature-note"><strong>Driver-oriented cockpit</strong><br>Классическая архитектура BMW с
+              разворотом на 7°.</p>
           </div>
         </article>
 
         <div class="detail-grid">
-          <article class="feature reveal">
-            <figure class="feature-photo">
-              <img src="assets/img/interior-preview/comfort.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Передние кресла и отделка салона BMW F10, вид со стороны водителя">
+          <article class="feature" data-build="crane-left" data-tilt-card>
+            <figure class="feature-photo" data-parallax-media>
+              <img src="assets/img/f10-unique-photos/f10-interior-cockpit-center-console-benny-hiltscher.jpg"
+                width="1600" height="1170" loading="lazy" decoding="async"
+                alt="Отделка панели и пространство салона BMW 550i F10">
               <figcaption class="photo-label">02 / Материалы и комфорт</figcaption>
             </figure>
             <div class="feature-copy">
               <p class="feature-number">Комфорт без лишних слов</p>
-              <h3 class="feature-title">Чувствуется.<br><span>В каждом касании.</span></h3>
-              <p class="feature-description">Мягкие поверхности, выразительная фактура кожи и аккуратные линии отделки. Форма кресел поддерживает тело, а настройки посадки помогают найти своё положение — и забыть о расстоянии.</p>
+              <h3 class="feature-title">
+                <span class="pilato-split-mask"><span class="pilato-split-line">Чувствуется.</span></span>
+                <span class="pilato-split-mask"><span class="pilato-split-line" style="--line-delay: 0.1s"><span>В
+                      каждом касании.</span></span></span>
+              </h3>
+              <p class="feature-description">Мягкие поверхности, выразительная фактура кожи и аккуратные линии отделки.
+                Форма кресел поддерживает тело, а настройки посадки помогают найти своё положение — и забыть о
+                расстоянии.</p>
             </div>
           </article>
-          <article class="feature reveal">
-            <figure class="feature-photo">
-              <img src="assets/img/interior-preview/console.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Центральная консоль BMW F10 с селектором трансмиссии и контроллером iDrive">
-              <figcaption class="photo-label">03 / Управление и iDrive</figcaption>
+
+          <article class="feature" data-build="crane-right" style="--build-delay: 0.14s" data-tilt-card>
+            <figure class="feature-photo" data-parallax-media>
+              <img src="assets/img/f10-page-refresh/interior/f10-m5-interior-christian-flores-6432780383.jpg"
+                width="1920" height="1280" loading="lazy" decoding="async"
+                alt="Интерьер спортивной версии BMW M5 поколения F10">
+              <figcaption class="photo-label">03 / Спортивный интерьер · M5 F10</figcaption>
             </figure>
             <div class="feature-copy">
               <p class="feature-number">Технологии на своём месте</p>
-              <h3 class="feature-title">Меньше действий.<br><span>Больше контроля.</span></h3>
-              <p class="feature-description">Поворот контроллера. Чёткий отклик клавиши. Знакомое движение селектора. iDrive объединяет навигацию, музыку и настройки автомобиля, сохраняя главное — внимание к дороге.</p>
+              <h3 class="feature-title">
+                <span class="pilato-split-mask"><span class="pilato-split-line">Меньше действий.</span></span>
+                <span class="pilato-split-mask"><span class="pilato-split-line" style="--line-delay: 0.1s"><span>Больше
+                      контроля.</span></span></span>
+              </h3>
+              <p class="feature-description">На фотографии — салон спортивной M5 поколения F10. Он показывает другое
+                исполнение того же семейства, а не оборудование обычной 535i. Обивка, кресла и трансмиссия этих версий
+                могут отличаться.</p>
             </div>
           </article>
         </div>
 
-        <dl class="specs reveal" aria-label="Особенности оснащения">
-          <div class="spec"><dt>CONTROL DISPLAY</dt><dd>10,2<span>″</span></dd><p>Дисплей с опциональной<br>Navigation Professional.</p></div>
-          <div class="spec"><dt>STEPTRONIC</dt><dd>8</dd><p>Ступеней автоматической<br>трансмиссии.</p></div>
-          <div class="spec"><dt>КЛИМАТ-КОНТРОЛЬ</dt><dd>2<span> зоны</span></dd><p>Индивидуальный комфорт<br>водителя и пассажира.</p></div>
+        <dl class="specs" aria-label="Особенности оснащения">
+          <div class="spec" data-build="left" data-tilt-card>
+            <dt>CONTROL DISPLAY</dt>
+            <dd><strong data-count-to="10.2" data-decimals="1">10,2</strong><span>″</span></dd>
+            <p>Широкоформатный дисплей высокого разрешения с опциональной Navigation Professional.</p>
+          </div>
+          <div class="spec" data-build="bottom" style="--build-delay: 0.10s" data-tilt-card>
+            <dt>STEPTRONIC</dt>
+            <dd><strong data-count-to="8" data-decimals="0">8</strong><span> ступ.</span></dd>
+            <p>Скоростная автоматическая трансмиссия ZF с электронным селектором.</p>
+          </div>
+          <div class="spec" data-build="right" style="--build-delay: 0.20s" data-tilt-card>
+            <dt>КЛИМАТ-КОНТРОЛЬ</dt>
+            <dd><strong data-count-to="2" data-decimals="0">2</strong><span> зоны</span></dd>
+            <p>Раздельная регулировка температуры и микроклимата для водителя и пассажира.</p>
+          </div>
         </dl>
 
-        <div class="statement reveal">
-          <p class="eyebrow">Пространство для своего ритма</p>
-          <h2>Роскошь — это когда<br>ничто не отвлекает.<br><span>Даже от самого себя.</span></h2>
-          <p>Спокойный свет приборов. Удобная посадка. Ощущение собранности в каждой детали. Салон F10 не старается удивить на секунду — он остаётся приятным в каждой поездке.</p>
+        <div class="statement">
+          <p class="eyebrow" data-build="top">Пространство для своего ритма</p>
+          <h2 data-build="left" style="--build-delay: 0.08s">
+            <span class="pilato-split-mask"><span class="pilato-split-line">Роскошь — это когда</span></span>
+            <span class="pilato-split-mask"><span class="pilato-split-line" style="--line-delay: 0.1s">ничто не
+                отвлекает.</span></span>
+            <span class="pilato-split-mask"><span class="pilato-split-line" style="--line-delay: 0.2s"><span>Даже от
+                  самого себя.</span></span></span>
+          </h2>
+          <p data-build="right" style="--build-delay: 0.18s">Спокойный янтарный свет приборов. Удобная посадка. Ощущение
+            собранности в каждой детали. Салон F10 не старается удивить на секунду — он остаётся приятным в каждой
+            поездке.</p>
         </div>
 
-        <section class="closing reveal" aria-labelledby="closingTitle">
-          <div><p class="eyebrow">BMW F10 · Anatomy</p><h2 id="closingTitle">Почувствовать.<br><span>Не объяснить.</span></h2></div>
+        <section class="closing" aria-labelledby="closingTitle" data-build="zoom-3d" data-tilt-card>
+          <div>
+            <p class="eyebrow">BMW F10 · Anatomy</p>
+            <h2 id="closingTitle">
+              <span class="pilato-split-mask"><span class="pilato-split-line">Почувствовать.</span></span>
+              <span class="pilato-split-mask"><span class="pilato-split-line" style="--line-delay: 0.12s"><span>Не
+                    объяснить.</span></span></span>
+            </h2>
+          </div>
           <div class="closing-actions">
-            <button class="pill-button" id="backToTopBtn" type="button">Вернуться в салон <span aria-hidden="true">↗</span></button>
-            <a class="text-link" href="exterior.html">Рассмотреть экстерьер <span aria-hidden="true">→</span></a>
+            <button class="pill-button" id="backToTopBtn" type="button" data-magnetic>Вернуться к началу <span
+                aria-hidden="true">↗</span></button>
+            <a class="text-link" href="exterior.html" data-magnetic>Рассмотреть экстерьер <span
+                aria-hidden="true">→</span></a>
           </div>
         </section>
 
-        <details class="materials-note">
+        <details class="materials-note" data-build="bottom">
           <summary>О материалах и комплектациях</summary>
-          <p>Оснащение зависит от года выпуска, рынка и комплектации. Размер дисплея, обивка, регулировки кресел, трансмиссия и климатическая система могут отличаться. На странице временно использованы кадры из существующего пролёта; места для авторских фотографий подготовлены.</p>
+          <p>Оснащение зависит от года выпуска, рынка и комплектации. Размер дисплея, обивка, регулировки кресел,
+            трансмиссия и климатическая система могут отличаться. Карточки показывают отдельные фотографии настоящих
+            автомобилей семейства F10. Фото спортивной версии M5 не подтверждает оборудование обычной 535i. <a
+              href="assets/img/f10-page-refresh/photo-credits.html#interior">Оригиналы фотографий и авторы ↗</a></p>
         </details>
-        <footer class="interior-footer">
+
+        <footer class="interior-footer" data-build="bottom">
           <span>F10 Anatomy © 2026 · Независимый дизайн-проект</span>
-          <nav aria-label="Навигация в подвале"><a href="index.html">Главная</a><a href="exterior.html">Экстерьер ↗</a><a href="#cabinOrbitSection">Наверх ↑</a></nav>
+          <nav aria-label="Навигация в подвале"><a href="index.html">Главная</a><a href="exterior.html">Экстерьер
+              ↗</a><a href="#cabinOrbitSection">Наверх ↑</a></nav>
         </footer>
       </div>
     </section>
   </main>
 
-  <script>
-    (() => {
-      'use strict';
-      const $ = id => document.getElementById(id);
-      const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
-      const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-      const themeButtons = document.querySelectorAll('[data-theme-choice]');
-      function setTheme(theme) {
-        document.documentElement.dataset.theme = theme;
-        themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
-        try { localStorage.setItem('f10-interior-theme', theme); } catch (_) {}
-      }
-      setTheme(document.documentElement.dataset.theme);
-      themeButtons.forEach(button => button.addEventListener('click', () => setTheme(button.dataset.themeChoice)));
-
-      const section = $('cabinOrbitSection');
-      const stage = $('cabinStage');
-      const canvas = $('cabinCanvas');
-      const ctx = canvas.getContext('2d', { alpha: false });
-      const letters = Array.from(document.querySelectorAll('.intro-letter'));
-      const ui = document.querySelectorAll('.cabin-ui');
-      const dock = document.querySelector('.cabin-dock');
-      const dockButtons = Array.from(document.querySelectorAll('.dock-item'));
-      const introParts = [$('introKicker'), $('introSubtitle'), $('introBottom')];
-      const nav = $('siteNav');
-      const INTRO_END = .25;
-      const FRAME_COUNT = 120;
-      const frameFolder = innerWidth <= 700 ? 'mobile' : 'desktop';
-      const frameSrc = i => `frames_interior/i_${String(i + 1).padStart(4, '0')}.webp`;
-      const trajectories = [
-        [-.85, -.85, -28], [-.58, .95, 24], [-.34, -.98, -18], [-.16, 1.1, 14],
-        [.20, -1.05, -22], [.40, .95, 28], [.65, -.90, 20], [.90, .85, -26]
-      ];
-      const chapters = [
-        { at: 0, name: 'Кокпит', title: 'На вашей стороне.', desc: 'Консоль обращена к водителю. Клавиши, дисплей и контроллер находятся там, где их ожидаешь.' },
-        { at: .37, name: 'Приборы', title: 'Главное. С первого взгляда.', desc: 'Читаемые шкалы и спокойная подсветка. Скорость, обороты и информация о поездке — без визуального шума.' },
-        { at: .55, name: 'iDrive', title: 'Всё под рукой.', desc: 'Навигация, музыка и настройки автомобиля на одном дисплее. Управление — привычным поворотом контроллера.' },
-        { at: .73, name: 'Консоль', title: 'Точность движения.', desc: 'Выразительная форма селектора, физические клавиши и логичное расположение органов управления.' },
-        { at: .92, name: 'Кресла', title: 'Ваше место силы.', desc: 'Продуманная посадка и поддержка тела. Настройки кресел позволяют устроиться так, как удобно именно вам.' }
-      ];
-      let width = 0, height = 0, travel = 1, progress = 0, target = 0;
-      let sectionTop = 0, editorialTop = 0, onEditorial = false;
-      let lastFrame = -1, lastChapter = -1, lastUiVisible = false;
-      let lastIntro = -1, lastUiOpacity = -1, lastFrameProgress = -1;
-      let animationId = 0, lastTick = 0, needsDraw = true;
-      let wantedFrame = 0, frameDirection = 1, activeLoads = 0;
-      const frames = new Map();
-      const pending = new Set();
-      const failed = new Set();
-      let frameWindow = new Set();
-      let queue = [];
-      const BUFFER_RADIUS = 4;
-      const stageError = $('stageError');
-      const introShade = $('introShade');
-      const stageProgress = $('stageProgFill');
-
-      /* Все 120 кадров удерживаются в памяти и не выбрасываются —
-         очередь добирает недостающие кадры по мере загрузки. */
-      function planFrames(index) {
-        if (index !== wantedFrame) frameDirection = Math.sign(index - wantedFrame);
-        wantedFrame = index;
-        frameWindow = new Set();
-        for (let k = 0; k < FRAME_COUNT; k++) frameWindow.add(k);
-        /* Сначала грузим кадры рядом с текущей позицией, затем остальные */
-        queue = Array.from(frameWindow)
-          .filter(i => !frames.has(i) && !pending.has(i) && !failed.has(i))
-          .sort((a, b) => Math.abs(a - index) - Math.abs(b - index));
-        pumpQueue();
-      }
-      function pumpQueue() {
-        if (document.hidden) return;
-        while (activeLoads < 8 && queue.length) {
-          const index = queue.shift();
-          if (!frameWindow.has(index) || pending.has(index) || frames.has(index)) continue;
-          pending.add(index);
-          activeLoads++;
-          loadFrame(index);
-        }
-      }
-      async function loadFrame(index) {
-        const image = new Image();
-        image.decoding = 'async';
-        image.src = frameSrc(index);
-        try {
-          await image.decode();
-          if (frameWindow.has(index)) {
-            frames.set(index, image);
-            stageError.hidden = true;
-            if (index === wantedFrame || lastFrame === -1 || needsDraw) requestTick();
-          } else {
-            image.removeAttribute('src');
-          }
-        } catch (_) {
-          failed.add(index);
-          if (index === wantedFrame && lastFrame === -1) stageError.hidden = false;
-        } finally {
-          pending.delete(index);
-          activeLoads--;
-          pumpQueue();
-        }
-      }
-      function drawFrame(frameProgress) {
-        if (!ctx) return;
-        const wanted = Math.round(frameProgress * (FRAME_COUNT - 1));
-        if (wanted !== wantedFrame || frameWindow.size === 0) planFrames(wanted);
-        let index = wanted;
-        if (!frames.has(index)) {
-          if (lastFrame !== -1 && !needsDraw) return;
-          let distance = Infinity;
-          for (const key of frames.keys()) {
-            if (Math.abs(key - wanted) < distance) {
-              index = key;
-              distance = Math.abs(key - wanted);
-            }
-          }
-        }
-        const image = frames.get(index);
-        if (!image || (index === lastFrame && !needsDraw)) return;
-        const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
-        const drawWidth = image.naturalWidth * scale;
-        const drawHeight = image.naturalHeight * scale;
-        ctx.drawImage(image, (width - drawWidth) / 2, (height - drawHeight) / 2, drawWidth, drawHeight);
-        if (lastFrame === -1) canvas.style.backgroundImage = 'none';
-        lastFrame = index;
-        needsDraw = false;
-      }
-      function measure() {
-        width = stage.clientWidth;
-        height = stage.clientHeight;
-        sectionTop = section.offsetTop;
-        editorialTop = $('sectionErgonomics').offsetTop;
-        travel = Math.max(1, section.offsetHeight - height);
-        const scale = Math.min(1, (frameFolder === 'mobile' ? 768 : 1280) / width);
-        canvas.width = Math.round(width * scale);
-        canvas.height = Math.round(height * scale);
-        if (ctx) ctx.setTransform(canvas.width / width, 0, 0, canvas.height / height, 0, 0);
-        needsDraw = true;
-        lastIntro = -1;
-        updateTarget();
-        requestTick();
-      }
-      function updateTarget() {
-        const nextTarget = clamp((scrollY - sectionTop) / travel);
-        const nextEditorial = scrollY + 80 >= editorialTop;
-        if (nextEditorial !== onEditorial) {
-          nav.classList.toggle('is-editorial', nextEditorial);
-          onEditorial = nextEditorial;
-        }
-        if (nextTarget !== target) {
-          target = nextTarget;
-          requestTick();
-        }
-      }
-      function renderIntro() {
-        const intro = clamp(progress / INTRO_END);
-        if (intro !== lastIntro) {
-          letters.forEach((letter, i) => {
-            const t = clamp((intro - .035 - i * .012) / (.965 - i * .012));
-            const [x, y, rotation] = trajectories[i];
-            letter.style.transform = reducedMotion.matches ? 'none' : `translate3d(${(x * width * t).toFixed(1)}px, ${(y * height * t).toFixed(1)}px, 0) rotate(${(rotation * t).toFixed(1)}deg)`;
-            letter.style.opacity = String(reducedMotion.matches ? 1 - intro : 1 - clamp((t - .94) / .06));
-          });
-          const copyOpacity = String(1 - clamp(intro * 4));
-          introParts.forEach(part => part.style.opacity = copyOpacity);
-          introShade.style.opacity = String(1 - intro);
-          lastIntro = intro;
-        }
-        const uiOpacity = clamp((progress - INTRO_END) / .045);
-        if (uiOpacity === lastUiOpacity) return;
-        const visible = uiOpacity > .01;
-        ui.forEach(el => {
-          el.style.opacity = String(uiOpacity);
-          el.style.visibility = visible ? 'visible' : 'hidden';
-        });
-        if (visible !== lastUiVisible) {
-          dock.inert = !visible;
-          lastUiVisible = visible;
-        }
-        lastUiOpacity = uiOpacity;
-      }
-      function updateChapter(frameProgress) {
-        let index = 0;
-        chapters.forEach((chapter, i) => { if (frameProgress >= chapter.at) index = i; });
-        if (index === lastChapter) return;
-        const chapter = chapters[index];
-        $('chapHeadName').textContent = chapter.name;
-        $('cardStepTag').textContent = `0${index + 1} / ${chapter.name}`;
-        $('cardTitle').textContent = chapter.title;
-        $('cardDesc').textContent = chapter.desc;
-        dockButtons.forEach((button, i) => {
-          if (i === index) button.setAttribute('aria-current', 'true');
-          else button.removeAttribute('aria-current');
-        });
-        lastChapter = index;
-      }
-      function requestTick() {
-        if (!animationId && !document.hidden) animationId = requestAnimationFrame(tick);
-      }
-      function tick(time) {
-        animationId = 0;
-        const elapsed = Math.min(64, lastTick ? time - lastTick : 16.7);
-        lastTick = time;
-        const difference = target - progress;
-        progress = reducedMotion.matches || Math.abs(difference) < .0001 ? target : progress + difference * (1 - Math.exp(-elapsed / 90));
-        const frameProgress = clamp((progress - INTRO_END) / (1 - INTRO_END));
-        renderIntro();
-        drawFrame(frameProgress);
-        updateChapter(frameProgress);
-        if (frameProgress !== lastFrameProgress) {
-          stageProgress.style.transform = `scaleX(${frameProgress.toFixed(4)})`;
-          lastFrameProgress = frameProgress;
-        }
-        if (Math.abs(target - progress) >= .0001) requestTick();
-      }
-      function scrollToY(y) {
-        window.scrollTo({ top: y, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
-      }
-      dockButtons.forEach(button => button.addEventListener('click', () => {
-        const frameProgress = Number(button.dataset.progress);
-        const destination = INTRO_END + .048 + frameProgress * (1 - INTRO_END - .048);
-        scrollToY(section.offsetTop + destination * travel);
-      }));
-      $('backToTopBtn').addEventListener('click', () => scrollToY(0));
-      document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', event => {
-        const element = document.querySelector(link.getAttribute('href'));
-        if (!element) return;
-        event.preventDefault();
-        scrollToY(element === section ? 0 : element.getBoundingClientRect().top + scrollY - 100);
-        if (link.classList.contains('skip-link')) {
-          element.setAttribute('tabindex', '-1');
-          element.focus({ preventScroll: true });
-        }
-      }));
-      window.addEventListener('scroll', updateTarget, { passive: true });
-      window.addEventListener('resize', measure, { passive: true });
-      reducedMotion.addEventListener('change', measure);
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          cancelAnimationFrame(animationId);
-          animationId = 0;
-        } else {
-          lastTick = 0;
-          updateTarget();
-          pumpQueue();
-          requestTick();
-        }
-      });
-      window.addEventListener('pageshow', measure);
-
-      if ('IntersectionObserver' in window && !reducedMotion.matches) {
-        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('is-pending');
-            observer.unobserve(entry.target);
-          }
-        }), { threshold: .08 });
-        document.querySelectorAll('.reveal').forEach(element => {
-          element.classList.add('is-pending');
-          observer.observe(element);
-        });
-      }
-      measure();
-    })();
-  </script>
+  <script src="assets/vendor/cabin-motion/lenis-1.1.13.min.js" defer></script>
+  <script src="assets/js/interior-motion.js?v=cabin-effects-3" defer></script>
 </body>
+
 </html>

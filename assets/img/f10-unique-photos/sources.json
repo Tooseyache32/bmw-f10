@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-11-05",
+  "status": "Six retained licensed F10 photos: five connected by coordinator plus one exterior reserve.",
+  "limitations": [
+    "No visual review possible; do not claim clean scene/no watermark or specific framing independently verified.",
+    "Two distinct confirmed dashboards only; no explicit seat image; interior01 sibling absent.",
+    "Benny550i-premiere context is not535i-specific equipment. No M5,F11,G30,G60 substitution.",
+    "1920px API web assets used after429 on originals; not low-resolution preview thumbnails.",
+    "No browser scraping, HTML reads or existing assets scanned."
+  ],
+  "assets": [
+    {
+      "filename": "f10-535i-interior-cockpit-dashboard-idrive-tttnis.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-unique-photos\\f10-535i-interior-cockpit-dashboard-idrive-tttnis.jpg",
+      "subject": "interior-dashboard",
+      "subject_note": "BMW 535i F10 dashboard; BMW automobile dashboards category. Specific controls not visually verified.",
+      "source_title": "File:BMW 535i interior.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_535i_interior.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/BMW_535i_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "API-provided1920px full-composition web asset after original429",
+      "author": "TTTNIS",
+      "author_url": "https://commons.wikimedia.org/wiki/User:TTTNIS",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+      "attribution_text": "BMW 535i interior.jpg — TTTNIS; Public domain; https://commons.wikimedia.org/wiki/File:BMW_535i_interior.jpg",
+      "source_description": "BMW 535i",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:BMW automobile dashboards"
+      ],
+      "original_dimensions": [
+        3504,
+        1791
+      ],
+      "delivered_dimensions": [
+        1920,
+        981
+      ],
+      "file_bytes": 382044,
+      "sha256": "03fa4f7500497aca212d0cff76c2ffab9d6db662de7a58d633ce1345930ae8fb",
+      "phash_64": "c31491eb8cf25c3b",
+      "changes": "Full composition, proportional scaling when needed and progressive optimized JPEG recompression; no crop.",
+      "visual_review": "Not possible: model image input omitted. Subjects rely only on source text/provenance."
+    },
+    {
+      "filename": "f10-interior-cockpit-center-console-benny-hiltscher.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-unique-photos\\f10-interior-cockpit-center-console-benny-hiltscher.jpg",
+      "subject": "interior-dashboard",
+      "subject_note": "F10 dashboard, 550i premiere source context. General cabin illustration, not evidence of seats, Dakota, center-console detail or 535i equipment. Stable filename retained.",
+      "source_title": "File:Bmw-5er-f10-interieur-02.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Bmw-5er-f10-interieur-02.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Bmw-5er-f10-interieur-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "original then downscale",
+      "author": "Benny Hiltscher (BimmerToday.de)",
+      "author_url": "https://www.bimmertoday.de/",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution_text": "Bmw-5er-f10-interieur-02.jpg — Benny Hiltscher (BimmerToday.de); CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Bmw-5er-f10-interieur-02.jpg",
+      "source_description": "Interieur des BMW F10",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:BMW automobile dashboards",
+        "Category:Items with VRTS permission confirmed"
+      ],
+      "original_dimensions": [
+        1600,
+        1170
+      ],
+      "delivered_dimensions": [
+        1600,
+        1170
+      ],
+      "file_bytes": 323302,
+      "sha256": "44b1f9c522ba74ce441e5d647fa10423ad31a1d07e5ee579b48a2453cde72ca8",
+      "phash_64": "94c19e41cf195f35",
+      "changes": "Full composition, proportional scaling when needed and progressive optimized JPEG recompression; no crop.",
+      "visual_review": "Not possible: model image input omitted. Subjects rely only on source text/provenance."
+    },
+    {
+      "filename": "f10-535i-exterior-front-three-quarter-m93.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-unique-photos\\f10-535i-exterior-front-three-quarter-m93.jpg",
+      "subject": "exterior-front",
+      "subject_note": "BMW 535i F10 front: exact source title. Three-quarter wording not independently visually verified.",
+      "source_title": "File:BMW 535i (F10) front 20100425.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_535i_(F10)_front_20100425.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/BMW_535i_%28F10%29_front_20100425.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "API-provided1920px full-composition web asset after original429",
+      "author": "M 93",
+      "author_url": "https://commons.wikimedia.org/wiki/User:M_93",
+      "license": "Attribution-only (Commons; not CC)",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:Attribution_only_license",
+      "attribution_text": "BMW 535i (F10) front 20100425.jpg — M 93; Attribution-only (Commons; not CC); https://commons.wikimedia.org/wiki/File:BMW_535i_(F10)_front_20100425.jpg",
+      "source_description": "BMW 535i",
+      "source_categories": [
+        "Category:BMW F10"
+      ],
+      "original_dimensions": [
+        2513,
+        1497
+      ],
+      "delivered_dimensions": [
+        1920,
+        1144
+      ],
+      "file_bytes": 516011,
+      "sha256": "04991ea745c1656ab236fc44248ebb467663d1529cbcb4f785cd6988336cd8f1",
+      "phash_64": "ab95634b874e856a",
+      "changes": "Full composition, proportional scaling when needed and progressive optimized JPEG recompression; no crop.",
+      "visual_review": "Not possible: model image input omitted. Subjects rely only on source text/provenance."
+    },
+    {
+      "filename": "f10-530d-exterior-rear-philippines-ethan-llamas.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-unique-photos\\f10-530d-exterior-rear-philippines-ethan-llamas.jpg",
+      "subject": "exterior-rear",
+      "subject_note": "2013 BMW 530d F10 rear at Westgate Center, Alabang, Philippines: explicit caption.",
+      "source_title": "File:BMW 530d F10 2013 (2).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_530d_F10_2013_(2).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/BMW_530d_F10_2013_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "API-provided1920px full-composition web asset after original429",
+      "author": "Ethan Llamas",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Ethan_Llamas",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW 530d F10 2013 (2).jpg — Ethan Llamas; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_530d_F10_2013_(2).jpg",
+      "source_description": "Rear view of a 2013 BMW 530d F10 photographed at Westgate Center, Filinvest City, Brgy. Alabang, Muntinlupa, Metro Manila, Philippines.",
+      "source_categories": [
+        "Category:BMW F10"
+      ],
+      "original_dimensions": [
+        3206,
+        2405
+      ],
+      "delivered_dimensions": [
+        1920,
+        1440
+      ],
+      "file_bytes": 744902,
+      "sha256": "81f188df46ae2774b01d33c4524891b4204f8148c5fe72f5721d47f4346cedc0",
+      "phash_64": "e2c07cafd355c8e0",
+      "changes": "Full composition, proportional scaling when needed and progressive optimized JPEG recompression; no crop.",
+      "visual_review": "Not possible: model image input omitted. Subjects rely only on source text/provenance."
+    },
+    {
+      "filename": "f10-exterior-white-front-candidate-sojka.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-unique-photos\\f10-exterior-white-front-candidate-sojka.jpg",
+      "subject": "exterior-body",
+      "subject_note": "BMW F10 exterior/body; kidney grilles category, Commons Quality image. Exact angle/color not visually verified.",
+      "source_title": "File:BMW5er 1.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW5er_1.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/BMW5er_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "original then downscale",
+      "author": "Wladyslaw Sojka (Taxiarchos228)",
+      "author_url": "https://www.sojka.photo/",
+      "license": "Free Art License 1.3",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3",
+      "attribution_text": "BMW5er 1.jpg — Wladyslaw Sojka (Taxiarchos228); Free Art License 1.3; https://commons.wikimedia.org/wiki/File:BMW5er_1.jpg",
+      "source_description": "BMW 5 series (F10)",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:BMW kidney grilles",
+        "Category:Quality images",
+        "Category:Quality images by Taxiarchos228",
+        "Category:Quality images of BMW automobiles",
+        "Category:Quality images of vehicles in Denmark"
+      ],
+      "original_dimensions": [
+        4549,
+        2508
+      ],
+      "delivered_dimensions": [
+        1920,
+        1059
+      ],
+      "file_bytes": 261942,
+      "sha256": "e688c9f8d5b224c666e6d788e6792809e4829d6c5ec98127f2e7546af229c2c1",
+      "phash_64": "ff8380f42b5e0978",
+      "changes": "Full composition, proportional scaling when needed and progressive optimized JPEG recompression; no crop.",
+      "visual_review": "Not possible: model image input omitted. Subjects rely only on source text/provenance."
+    },
+    {
+      "filename": "f10-exterior-white-profile-candidate-sojka.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-unique-photos\\f10-exterior-white-profile-candidate-sojka.jpg",
+      "subject": "exterior-reserve-angle-unverified",
+      "subject_note": "White BMW F10 sedan, Commons Quality image. Profile angle is not proven by caption; unused optional reserve.",
+      "source_title": "File:BMW5er 3.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW5er_3.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/BMW5er_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "API-provided1920px full-composition web asset after original429",
+      "author": "Wladyslaw Sojka (Taxiarchos228)",
+      "author_url": "https://www.sojka.photo/",
+      "license": "Free Art License 1.3",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3",
+      "attribution_text": "BMW5er 3.jpg — Wladyslaw Sojka (Taxiarchos228); Free Art License 1.3; https://commons.wikimedia.org/wiki/File:BMW5er_3.jpg",
+      "source_description": "BMW 5 series (F10)",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Quality images",
+        "Category:Quality images by Taxiarchos228",
+        "Category:Quality images missing SDC depicts",
+        "Category:Quality images missing SDC source of file",
+        "Category:Quality images of BMW automobiles",
+        "Category:Quality images of vehicles in Denmark",
+        "Category:White BMW sedans"
+      ],
+      "original_dimensions": [
+        3933,
+        2178
+      ],
+      "delivered_dimensions": [
+        1920,
+        1063
+      ],
+      "file_bytes": 728750,
+      "sha256": "8a57086b1cbeb6645e30e68b19bf9b9ede374e9d06c7768633e2b20ed4f2239b",
+      "phash_64": "d44868bcdb692ccd",
+      "changes": "Full composition, proportional scaling when needed and progressive optimized JPEG recompression; no crop.",
+      "visual_review": "Not possible: model image input omitted. Subjects rely only on source text/provenance."
+    }
+  ],
+  "duplicate_check": {
+    "algorithm": "SHA256; 64-bitDCT pHash32x32 grayscale,8x8 coefficients",
+    "exact_duplicates": 0,
+    "minimum_phash_hamming": 24,
+    "near_duplicate_threshold": 8,
+    "near_duplicate_pairs": [],
+    "pairs": [
+      {
+        "a": "f10-535i-interior-cockpit-dashboard-idrive-tttnis.jpg",
+        "b": "f10-interior-cockpit-center-console-benny-hiltscher.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 32
+      },
+      {
+        "a": "f10-535i-interior-cockpit-dashboard-idrive-tttnis.jpg",
+        "b": "f10-535i-exterior-front-three-quarter-m93.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 28
+      },
+      {
+        "a": "f10-535i-interior-cockpit-dashboard-idrive-tttnis.jpg",
+        "b": "f10-530d-exterior-rear-philippines-ethan-llamas.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 34
+      },
+      {
+        "a": "f10-535i-interior-cockpit-dashboard-idrive-tttnis.jpg",
+        "b": "f10-exterior-white-front-candidate-sojka.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 32
+      },
+      {
+        "a": "f10-535i-interior-cockpit-dashboard-idrive-tttnis.jpg",
+        "b": "f10-exterior-white-profile-candidate-sojka.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 38
+      },
+      {
+        "a": "f10-interior-cockpit-center-console-benny-hiltscher.jpg",
+        "b": "f10-535i-exterior-front-three-quarter-m93.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 36
+      },
+      {
+        "a": "f10-interior-cockpit-center-console-benny-hiltscher.jpg",
+        "b": "f10-530d-exterior-rear-philippines-ethan-llamas.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 32
+      },
+      {
+        "a": "f10-interior-cockpit-center-console-benny-hiltscher.jpg",
+        "b": "f10-exterior-white-front-candidate-sojka.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 32
+      },
+      {
+        "a": "f10-interior-cockpit-center-console-benny-hiltscher.jpg",
+        "b": "f10-exterior-white-profile-candidate-sojka.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 32
+      },
+      {
+        "a": "f10-535i-exterior-front-three-quarter-m93.jpg",
+        "b": "f10-530d-exterior-rear-philippines-ethan-llamas.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 30
+      },
+      {
+        "a": "f10-535i-exterior-front-three-quarter-m93.jpg",
+        "b": "f10-exterior-white-front-candidate-sojka.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 28
+      },
+      {
+        "a": "f10-535i-exterior-front-three-quarter-m93.jpg",
+        "b": "f10-exterior-white-profile-candidate-sojka.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 40
+      },
+      {
+        "a": "f10-530d-exterior-rear-philippines-ethan-llamas.jpg",
+        "b": "f10-exterior-white-front-candidate-sojka.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 32
+      },
+      {
+        "a": "f10-530d-exterior-rear-philippines-ethan-llamas.jpg",
+        "b": "f10-exterior-white-profile-candidate-sojka.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 24
+      },
+      {
+        "a": "f10-exterior-white-front-candidate-sojka.jpg",
+        "b": "f10-exterior-white-profile-candidate-sojka.jpg",
+        "sha256_equal": false,
+        "phash_hamming": 32
+      }
+    ],
+    "limitation": "Hashes are not visual proof of full distinct composition."
+  }
+}

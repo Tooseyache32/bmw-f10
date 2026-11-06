@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Отправьте запрос о BMW F10 на сервер учебного проекта, сохраните текст и отслеживайте статус. Личный кабинет и история обращений. Независимый проект, не дилерский центр.">
+  <meta name="color-scheme" content="light dark">
+  <title>Контакты и запрос — F10 · Anatomy</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/chapters.css">
+  <style>
+    body[data-page="contact"] {
+      --contact-paper: #f5f2ec;
+      --contact-ink: #252724;
+      --contact-muted: #62655e;
+      --contact-line: #d6d4cc;
+      --contact-accent: #5b654f;
+      --contact-surface: #fcfaf6;
+      --contact-field-line: #bcbfb4;
+      --contact-placeholder: #73766c;
+      --contact-error: #9b4635;
+      --contact-button-hover: #44483e;
+      --contact-secondary-hover: #e7e6dd;
+      --contact-plate: #252724;
+      --contact-plate-ink: #f5f2ec;
+      --contact-plate-muted: #c0c5b8;
+      color-scheme: light;
+      margin: 0;
+      background: var(--contact-paper);
+      color: var(--contact-ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    html[data-theme="dark"] body[data-page="contact"] {
+      --contact-paper: #1b1c19;
+      --contact-ink: #eeeae1;
+      --contact-muted: #b6b8ab;
+      --contact-line: #42453b;
+      --contact-accent: #b5c49f;
+      --contact-surface: #252720;
+      --contact-field-line: #626859;
+      --contact-placeholder: #a4a999;
+      --contact-error: #ef9b88;
+      --contact-button-hover: #d0d7c2;
+      --contact-secondary-hover: #34382d;
+      --contact-plate: #11130f;
+      --contact-plate-ink: #eeeae1;
+      --contact-plate-muted: #b5c49f;
+      color-scheme: dark;
+    }
+    body[data-page="contact"] *,
+    body[data-page="contact"] *::before,
+    body[data-page="contact"] *::after { box-sizing: border-box; }
+    body[data-page="contact"] [hidden] { display: none !important; }
+    body[data-page="contact"] main { overflow-wrap: anywhere; }
+    body[data-page="contact"] main a { color: inherit; }
+    body[data-page="contact"] main p { margin: 0 0 1em; }
+    body[data-page="contact"] main h1,
+    body[data-page="contact"] main h2,
+    body[data-page="contact"] main h3 { margin: 0; font-weight: 400; }
+    body[data-page="contact"] main .container,
+    body[data-page="contact"] .contact-noscript .container {
+      width: 100%;
+      max-width: 1440px;
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+    body[data-page="contact"] main .eyebrow {
+      display: block;
+      margin: 0;
+      font-family: "Courier New", monospace;
+      font-size: 11px;
+      line-height: 1.5;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    body[data-page="contact"] main .muted { color: var(--contact-muted); }
+    body[data-page="contact"] main .rule { border: 0; border-top: 1px solid var(--contact-line); margin: 0; }
+    body[data-page="contact"] main .section { padding-block: 88px; }
+    body[data-page="contact"] main .display-xl,
+    body[data-page="contact"] main .display-lg {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+    body[data-page="contact"] main .display-xl { font-size: clamp(64px, 7.7vw, 112px); }
+    body[data-page="contact"] main .display-lg { font-size: clamp(38px, 4vw, 58px); line-height: 1.06; }
+    body[data-page="contact"] main .lede { font-size: 18px; line-height: 1.65; }
+    body[data-page="contact"] .contact-skip {
+      position: fixed;
+      z-index: 300;
+      top: 90px;
+      left: 12px;
+      padding: 12px 18px;
+      background: var(--contact-ink);
+      color: var(--contact-paper);
+      transform: translateY(calc(-100% - 110px));
+    }
+    body[data-page="contact"] .contact-skip:focus { transform: none; }
+    body[data-page="contact"] main :focus-visible,
+    body[data-page="contact"] .contact-noscript a:focus-visible {
+      outline: 3px solid var(--contact-accent);
+      outline-offset: 5px;
+    }
+    body[data-page="contact"] .contact-hero { padding-top: 142px; padding-bottom: 72px; }
+    body[data-page="contact"] .contact-folio {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 23px;
+      border-bottom: 1px solid var(--contact-line);
+    }
+    body[data-page="contact"] .contact-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+      gap: clamp(36px, 5vw, 80px);
+      align-items: start;
+      padding-top: 57px;
+    }
+    body[data-page="contact"] .contact-hero h1 { max-width: 850px; }
+    body[data-page="contact"] .contact-hero h1 em { font-weight: 400; color: var(--contact-accent); }
+    body[data-page="contact"] .contact-hero .lede { max-width: 535px; margin-top: 32px; }
+    body[data-page="contact"] main .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 44px;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 1px;
+      font-size: 14px;
+    }
+    body[data-page="contact"] .contact-plate { margin: 0; background: var(--contact-plate); color: var(--contact-plate-ink); }
+    body[data-page="contact"] .contact-plate img {
+      display: block;
+      width: 100%;
+      height: clamp(180px, 20vw, 290px);
+      object-fit: cover;
+      object-position: 50% 58%;
+    }
+    body[data-page="contact"] .contact-plate figcaption { padding: 25px 28px 28px; }
+    body[data-page="contact"] .contact-plate .eyebrow { color: var(--contact-plate-muted); }
+    body[data-page="contact"] .contact-plate p { margin-top: 13px; margin-bottom: 0; font-size: 14px; line-height: 1.7; }
+    body[data-page="contact"] .contact-section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, .55fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+    body[data-page="contact"] .contact-section-heading .eyebrow { margin-bottom: 19px; }
+    body[data-page="contact"] .contact-section-heading > p { max-width: 370px; margin: 0; font-size: 15px; }
+    body[data-page="contact"] .contact-form-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, .43fr);
+      gap: clamp(32px, 5vw, 76px);
+      align-items: start;
+    }
+    body[data-page="contact"] #inquiryForm { min-width: 0; margin: 0; }
+    body[data-page="contact"] .contact-mode {
+      border-left: 2px solid var(--contact-accent);
+      padding: 3px 0 3px 18px;
+      margin-bottom: 30px;
+      color: var(--contact-muted);
+      font-size: 14px;
+    }
+    body[data-page="contact"] .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    body[data-page="contact"] .field { display: block; min-width: 0; }
+    body[data-page="contact"] .field-wide { grid-column: 1 / -1; }
+    body[data-page="contact"] .field label {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    body[data-page="contact"] .field label span { color: var(--contact-muted); font-weight: 400; }
+    body[data-page="contact"] .field input,
+    body[data-page="contact"] .field select,
+    body[data-page="contact"] .field textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      min-height: 52px;
+      padding: 13px 14px;
+      border: 1px solid var(--contact-field-line);
+      border-radius: 0;
+      background: var(--contact-surface);
+      color: var(--contact-ink);
+      font: inherit;
+      font-size: 16px;
+      line-height: 1.5;
+      box-shadow: none;
+    }
+    body[data-page="contact"] .field select { padding-right: 28px; }
+    body[data-page="contact"] .field textarea { min-height: 184px; resize: vertical; }
+    body[data-page="contact"] .field input::placeholder,
+    body[data-page="contact"] .field textarea::placeholder { color: var(--contact-placeholder); opacity: 1; }
+    body[data-page="contact"] .field :is(input, select, textarea):focus {
+      border-color: var(--contact-accent);
+      outline: 2px solid var(--contact-accent);
+      outline-offset: 2px;
+    }
+    body[data-page="contact"] .field [aria-invalid="true"] { border-color: var(--contact-error); }
+    body[data-page="contact"] #inquiryStatus.is-error { color: var(--contact-error); }
+    body[data-page="contact"] .field-hint { margin: 8px 0 0 !important; color: var(--contact-muted); font-size: 12px; line-height: 1.6; }
+    body[data-page="contact"] .contact-required { margin-bottom: 22px !important; }
+    body[data-page="contact"] .check-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    body[data-page="contact"] .check-field input {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
+      margin: 3px 0 0;
+      accent-color: var(--contact-accent);
+    }
+    body[data-page="contact"] .check-field label { max-width: 540px; font-size: 14px; cursor: pointer; }
+    body[data-page="contact"] .contact-form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 24px;
+      margin-top: 28px;
+    }
+    body[data-page="contact"] main .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 52px;
+      padding: 14px 24px;
+      border: 1px solid var(--contact-ink);
+      border-radius: 0;
+      background: var(--contact-ink);
+      color: var(--contact-paper);
+      font: inherit;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color .18s ease, color .18s ease;
+    }
+    body[data-page="contact"] main .button:hover { background: var(--contact-button-hover); }
+    body[data-page="contact"] main .button.secondary { background: transparent; color: var(--contact-ink); }
+    body[data-page="contact"] main .button.secondary:hover { background: var(--contact-secondary-hover); }
+    body[data-page="contact"] main .button:disabled { opacity: .55; cursor: not-allowed; }
+    body[data-page="contact"] .contact-form-actions p { margin: 0; font-size: 12px; }
+    body[data-page="contact"] #inquiryStatus { margin-top: 18px; font-size: 14px; }
+    body[data-page="contact"] #inquiryStatus:empty { margin: 0; }
+    body[data-page="contact"] .contact-result { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--contact-line); }
+    body[data-page="contact"] .contact-result h3 { font: 400 28px/1.2 Georgia, "Times New Roman", serif; }
+    body[data-page="contact"] .contact-result > p { margin-top: 10px; font-size: 14px; }
+    body[data-page="contact"] #inquiryText { min-height: 300px; white-space: pre-wrap; }
+    body[data-page="contact"] .contact-result .contact-form-actions { margin-top: 18px; }
+    body[data-page="contact"] .contact-brief {
+      background: transparent;
+      border: 0;
+      border-top: 2px solid var(--contact-ink);
+      border-radius: 0;
+      padding-top: 23px;
+    }
+    body[data-page="contact"] .contact-brief h3 { margin-top: 13px; font: 400 29px/1.16 Georgia, "Times New Roman", serif; letter-spacing: -.025em; }
+    body[data-page="contact"] .contact-checklist { list-style: none; padding: 0; margin: 24px 0 0; counter-reset: request-item; }
+    body[data-page="contact"] .contact-checklist li {
+      display: grid;
+      grid-template-columns: 25px minmax(0, 1fr);
+      gap: 14px;
+      padding-block: 16px;
+      border-top: 1px solid var(--contact-line);
+      font-size: 14px;
+      counter-increment: request-item;
+    }
+    body[data-page="contact"] .contact-checklist li::before {
+      content: "0" counter(request-item);
+      padding-top: 2px;
+      color: var(--contact-accent);
+      font: 11px/1.6 "Courier New", monospace;
+    }
+    body[data-page="contact"] .contact-checklist strong { display: block; margin-bottom: 5px; font-weight: 600; }
+    body[data-page="contact"] .contact-checklist p { margin: 0; color: var(--contact-muted); }
+    body[data-page="contact"] .contact-privacy { margin-top: 22px; padding-top: 19px; border-top: 1px solid var(--contact-line); font-size: 12px; color: var(--contact-muted); }
+    body[data-page="contact"] .contact-bottom-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .75fr) minmax(0, 1fr);
+      gap: clamp(36px, 7vw, 110px);
+    }
+    body[data-page="contact"] .contact-channels .eyebrow,
+    body[data-page="contact"] .contact-faq .eyebrow { margin-bottom: 20px; }
+    body[data-page="contact"] .contact-channels h2 { font: 400 38px/1.1 Georgia, "Times New Roman", serif; letter-spacing: -.04em; }
+    body[data-page="contact"] [data-contact-channels] { margin-top: 25px; }
+    body[data-page="contact"] .contact-channels .note { padding-block: 20px; border-block: 1px solid var(--contact-line); font-size: 14px; }
+    body[data-page="contact"] .contact-channels .note p:last-child { margin-bottom: 0; }
+    body[data-page="contact"] .contact-channels > p { margin-top: 22px; font-size: 13px; }
+    body[data-page="contact"] .contact-faq h2 { margin-bottom: 25px; font: 400 38px/1.1 Georgia, "Times New Roman", serif; letter-spacing: -.04em; }
+    body[data-page="contact"] .contact-faq details { border-top: 1px solid var(--contact-line); }
+    body[data-page="contact"] .contact-faq details:last-child { border-bottom: 1px solid var(--contact-line); }
+    body[data-page="contact"] .contact-faq summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      min-height: 64px;
+      padding-block: 18px;
+      font-size: 15px;
+      cursor: pointer;
+      list-style: none;
+    }
+    body[data-page="contact"] .contact-faq summary::-webkit-details-marker { display: none; }
+    body[data-page="contact"] .contact-faq summary::after { content: "+"; flex: 0 0 auto; color: var(--contact-accent); font-size: 23px; font-weight: 400; }
+    body[data-page="contact"] .contact-faq details[open] summary::after { content: "−"; }
+    body[data-page="contact"] .contact-faq details p { margin: 0; padding: 0 28px 23px 0; color: var(--contact-muted); font-size: 14px; }
+    body[data-page="contact"] .contact-endnote {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 28px 40px;
+      border-top: 1px solid var(--contact-line);
+      font-size: 12px;
+      color: var(--contact-muted);
+    }
+    body[data-page="contact"] .contact-endnote p { max-width: 520px; margin: 0; }
+    body[data-page="contact"] .contact-noscript { padding-block: 24px; border-bottom: 1px solid var(--contact-line); }
+    body[data-page="contact"] .contact-noscript nav { display: flex; flex-wrap: wrap; gap: 12px 22px; }
+    body[data-page="contact"] .contact-noscript a { color: inherit; font-size: 14px; text-underline-offset: 4px; }
+    body[data-page="contact"] .contact-noscript p { max-width: 760px; margin: 18px 0 0; font-size: 14px; }
+    @media (max-width: 1000px) {
+      body[data-page="contact"] .contact-hero-grid { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 30px; }
+      body[data-page="contact"] main .display-xl { font-size: clamp(60px, 8vw, 86px); }
+      body[data-page="contact"] .contact-plate figcaption { padding: 22px; }
+      body[data-page="contact"] .contact-form-layout { grid-template-columns: minmax(0, 1fr) minmax(0, .48fr); gap: 32px; }
+      body[data-page="contact"] .form-grid { gap: 22px 18px; }
+    }
+    @media (max-width: 760px) {
+      body[data-page="contact"] main .section { padding-block: 58px; }
+      body[data-page="contact"] .contact-hero { padding-top: 120px; padding-bottom: 48px; }
+      body[data-page="contact"] .contact-hero-grid,
+      body[data-page="contact"] .contact-form-layout,
+      body[data-page="contact"] .contact-section-heading,
+      body[data-page="contact"] .contact-bottom-grid { grid-template-columns: minmax(0, 1fr); }
+      body[data-page="contact"] .contact-hero-grid { padding-top: 36px; gap: 36px; }
+      body[data-page="contact"] main .display-xl { font-size: clamp(59px, 10.5vw, 80px); }
+      body[data-page="contact"] .contact-hero .lede { margin-top: 25px; font-size: 17px; }
+      body[data-page="contact"] .contact-plate { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      body[data-page="contact"] .contact-plate img { height: 100%; min-height: 210px; }
+      body[data-page="contact"] .contact-section-heading { gap: 22px; margin-bottom: 30px; }
+      body[data-page="contact"] .contact-section-heading > p { max-width: 540px; }
+      body[data-page="contact"] .contact-form-layout { gap: 46px; }
+      body[data-page="contact"] .contact-bottom-grid { gap: 46px; }
+      body[data-page="contact"] .contact-endnote { flex-direction: column; gap: 16px; }
+    }
+    @media (max-width: 480px) {
+      body[data-page="contact"] .contact-folio { gap: 12px; }
+      body[data-page="contact"] .contact-folio .eyebrow { font-size: 10px; letter-spacing: .07em; }
+      body[data-page="contact"] main .display-xl { font-size: clamp(47px, 13.4vw, 64px); letter-spacing: -.065em; }
+      body[data-page="contact"] main .display-lg { font-size: 37px; }
+      body[data-page="contact"] .contact-plate { display: block; }
+      body[data-page="contact"] .contact-plate img { height: 180px; min-height: 0; }
+      body[data-page="contact"] .contact-plate figcaption { padding: 22px; }
+      body[data-page="contact"] .form-grid { grid-template-columns: minmax(0, 1fr); }
+      body[data-page="contact"] .contact-form-actions { align-items: stretch; gap: 12px; }
+      body[data-page="contact"] .contact-form-actions .button { width: 100%; }
+      body[data-page="contact"] .contact-form-actions p { width: 100%; }
+      body[data-page="contact"] .contact-channels h2,
+      body[data-page="contact"] .contact-faq h2 { font-size: 34px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body[data-page="contact"] main .button { transition: none; }
+    }
+  </style>
+  <script defer src="assets/js/site-settings.js"></script>
+  <script defer src="assets/vendor/cabin-motion/lenis-1.1.13.min.js"></script>
+  <script defer src="assets/js/chapters.js"></script>
+  <link rel="stylesheet" href="assets/css/chapter-motion.css">
+  <script src="assets/js/chapter-motion.js" defer></script>
+  <script src="assets/js/api-client.js" defer></script>
+  <script src="assets/js/contact-api.js" defer></script>
+  <link rel="stylesheet" href="assets/css/chapter-transitions.css">
+  <script src="assets/js/chapter-transitions.js" defer></script>
+  <link rel="stylesheet" href="assets/css/site-header.css">
+</head>
+<body data-page="contact" data-chapter-motion="cinematic">
+  <a class="contact-skip" href="#inquiryForm">Перейти к форме запроса</a>
+  <header class="site-nav unified-site-header" id="siteNav">
+    <div class="unified-left">
+      <a href="index.html" class="unified-brand" aria-label="F10 Anatomy — главная"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>F10 · Anatomy</span></a>
+      <details class="unified-location"><summary><i aria-hidden="true"></i><span>Dingolfing</span></summary><div class="unified-location-panel"><h2>Создан в Баварии.</h2><p>BMW 5 серии F10 выпускали в Дингольфинге, Германия. Дизайн — мюнхенская школа BMW.</p><small>Происхождение модели, не адрес владельца сайта.</small></div></details>
+    </div>
+    <nav class="unified-links" aria-label="Страницы проекта">
+        <a href="index.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span></a>
+        <a href="exterior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span></a>
+        <a href="interior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span></a>
+        <a href="engine.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Двигатель</span></a>
+        <a href="tech.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span></a>
+        <a href="versions.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span></a>
+        <a href="contact.html" class="unified-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span></a>
+    </nav>
+    <div class="unified-actions">
+      <div class="unified-actions-pill"><a class="unified-bracket" href="index.html#anatomySection"><span class="br">[</span><span>Разбор</span><span class="br">]</span></a><a class="unified-bracket" href="exterior.html"><span class="br">[</span><span>Экстерьер →</span><span class="br">]</span></a></div>
+      <div class="unified-theme chapter-theme" role="group" aria-label="Цветовая тема"><button type="button" data-theme="light" aria-label="Светлая тема" aria-pressed="true"><span aria-hidden="true">☼</span></button><button type="button" data-theme="dark" aria-label="Тёмная тема" aria-pressed="false"><span aria-hidden="true">◐</span></button></div>
+      <details class="unified-menu"><summary>Страницы</summary><nav class="unified-menu-panel" aria-label="Все семь страниц" data-lenis-prevent>
+        <a href="index.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span><span class="unified-number" aria-hidden="true">01</span></a>
+        <a href="exterior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span><span class="unified-number" aria-hidden="true">02</span></a>
+        <a href="interior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span><span class="unified-number" aria-hidden="true">03</span></a>
+        <a href="engine.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Двигатель</span><span class="unified-number" aria-hidden="true">04</span></a>
+        <a href="tech.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span><span class="unified-number" aria-hidden="true">05</span></a>
+        <a href="versions.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span><span class="unified-number" aria-hidden="true">06</span></a>
+        <a href="contact.html" class="unified-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span><span class="unified-number" aria-hidden="true">07</span></a>
+      </nav></details>
+    </div>
+    
+  </header>
+  <noscript>
+    <style>
+      body[data-page="contact"] #inquiryForm { display: none !important; }
+    </style>
+    <div class="contact-noscript">
+      <div class="container">
+        <nav aria-label="Страницы проекта">
+          <a href="index.html">Главная</a>
+          <a href="exterior.html">Экстерьер</a>
+          <a href="interior.html">Салон</a>
+          <a href="engine.html">Двигатель</a>
+          <a href="tech.html">Технологии</a>
+          <a href="versions.html">Модификации</a>
+          <a href="contact.html" aria-current="page">Контакты</a>
+        </nav>
+        <p>Для локальной подготовки, копирования и скачивания запроса нужен JavaScript. Сейчас форма ничего не отправляет. Вы можете самостоятельно составить текст по памятке ниже; контакты получателя пока не настроены.</p>
+      </div>
+    </div>
+  </noscript>
+
+  <main id="main" tabindex="-1">
+    <section class="contact-hero container" aria-labelledby="contactTitle">
+      <div class="contact-folio">
+        <p class="eyebrow">F10 · Anatomy / Контакты</p>
+        <p class="eyebrow muted">Глава 07 / 07</p>
+      </div>
+      <div class="contact-hero-grid grid-2">
+        <div class="reveal">
+          <h1 id="contactTitle" class="display-xl">Составим<br>хороший <em>запрос.</em></h1>
+          <p class="lede muted">У каждой F10 своя история. Расскажите, что хотите узнать, выбрать или проверить, — и начните с текста, в котором есть всё важное.</p>
+          <a class="text-link" href="#request">Перейти к форме <span aria-hidden="true">↘</span></a>
+        </div>
+        <figure class="contact-plate reveal">
+          <img src="assets/img/f10-page-refresh/exterior/f10-535i-rear-m93.jpg" alt="Вид сзади на настоящий BMW 535i F10" decoding="async">
+          <figcaption>
+            <span class="eyebrow">Сначала — ясность</span>
+            <p>Это независимый учебный проект о BMW F10, не дилерский центр. Запрос сохраняется на сервере проекта, а его статус можно проверить по персональной ссылке или в личном кабинете.</p>
+            <p><a href="assets/img/f10-page-refresh/photo-credits.html#contact">Фото: M 93 · Источник ↗</a></p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container"><hr class="rule"></div>
+
+    <section id="request" class="section container" aria-labelledby="requestTitle">
+      <div class="contact-section-heading reveal">
+        <div>
+          <p class="eyebrow">01 / Подготовка</p>
+          <h2 id="requestTitle" class="display-lg">О чём ваш запрос?</h2>
+        </div>
+        <p class="muted">Оставьте несколько конкретных деталей. Сервер сохранит обращение, присвоит номер и выдаст персональную ссылку для проверки статуса.</p>
+      </div>
+
+      <div class="contact-form-layout">
+        <div>
+          <p id="contactModeNote" class="contact-mode note">Запрос будет сохранён в PostgreSQL на сервере учебного проекта. Это не запись к дилеру и не отправка email. В <a href="account.html">личном кабинете</a> доступны ваши обращения и избранные модификации.</p>
+
+          <form id="inquiryForm" aria-labelledby="requestTitle" aria-describedby="contactModeNote requiredFieldsNote" onsubmit="event.preventDefault()">
+            <p id="requiredFieldsNote" class="field-hint contact-required">Все поля обязательны, кроме модификации.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="inquiryName">Как вас зовут</label>
+                <input id="inquiryName" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Ваше имя">
+              </div>
+              <div class="field">
+                <label for="inquiryContact">Email или мессенджер</label>
+                <input id="inquiryContact" name="contact" type="text" autocomplete="email" maxlength="160" required aria-describedby="contactHint" placeholder="Email или имя в мессенджере">
+                <p id="contactHint" class="field-hint">Для мессенджера укажите его название и ваш профиль. Контакт сохранится в обращении и будет доступен администратору проекта.</p>
+              </div>
+              <div class="field">
+                <label for="inquiryInterest">Тема запроса</label>
+                <select id="inquiryInterest" name="interest" required>
+                  <option value="" disabled selected>Выберите тему</option>
+                  <option value="Подбор F10">Подбор F10</option>
+                  <option value="Вопрос по автомобилю">Вопрос по автомобилю</option>
+                  <option value="Обслуживание">Обслуживание</option>
+                  <option value="Другое">Другое</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="inquiryModification">Модификация <span>· необязательно</span></label>
+                <select id="inquiryModification" name="modification">
+                  <option value="Не определился" selected>Не определился</option>
+                  <option value="520d">520d</option>
+                  <option value="528i">528i</option>
+                  <option value="535i">535i</option>
+                </select>
+              </div>
+              <div class="field field-wide">
+                <label for="inquiryMessage">Что хотите обсудить</label>
+                <textarea id="inquiryMessage" name="message" rows="7" maxlength="2000" required aria-describedby="messageHint" placeholder="Опишите задачу. Если автомобиль уже есть: год, двигатель, пробег и что именно вызывает вопрос. Если выбираете: бюджет и как планируете ездить."></textarea>
+                <p id="messageHint" class="field-hint">До 2 000 символов. Полный VIN, документы и чужие персональные данные здесь не нужны.</p>
+              </div>
+            </div>
+            <div class="check-field">
+              <input id="inquiryConsent" name="consent" type="checkbox" required>
+              <label for="inquiryConsent">Я понимаю: запрос сохранится на сервере учебного проекта, но не будет отправлен дилеру или по email.</label>
+            </div>
+            <div class="contact-form-actions">
+              <button type="submit" class="button" data-submit-label="Сохранить запрос">Сохранить запрос</button>
+              <p class="muted">Сохранение в учебном приложении — не запись к дилеру.</p>
+            </div>
+            <div id="inquiryStatus" role="status" aria-live="polite" aria-atomic="true"></div>
+          </form>
+
+          <section id="inquiryResult" class="contact-result" hidden aria-labelledby="resultTitle">
+            <h3 id="resultTitle">Ваш текст запроса</h3>
+            <p class="muted">Проверьте детали и сохраните персональную ссылку. Текст можно скопировать или скачать после подтверждённого сервером сохранения.</p>
+            <div class="field">
+              <label for="inquiryText">Текст для передачи получателю</label>
+              <textarea id="inquiryText" rows="12" readonly spellcheck="false" aria-describedby="resultPrivacyNote"></textarea>
+            </div>
+            <div class="contact-form-actions">
+              <button id="copyInquiry" type="button" class="button">Скопировать текст</button>
+              <button id="downloadInquiry" type="button" class="button secondary">Скачать .txt</button>
+            </div>
+            <p id="resultPrivacyNote" class="field-hint">Копирование перенесёт текст в буфер обмена, скачивание сохранит файл на вашем устройстве. В них будут данные, которые вы указали.</p>
+          </section>
+        </div>
+
+        <aside class="contact-brief feature-card" aria-labelledby="briefTitle">
+          <p class="eyebrow">Небольшая памятка</p>
+          <h3 id="briefTitle">Меньше догадок.<br>Больше контекста.</h3>
+          <ol class="contact-checklist">
+            <li>
+              <div>
+                <strong>Если выбираете F10</strong>
+                <p>Назовите бюджет, привычные маршруты и приоритеты: расход, динамика или комфорт. Не знаете мотор — так и напишите.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Если автомобиль уже есть</strong>
+                <p>Укажите год выпуска, модификацию, примерный пробег и важные работы из истории обслуживания.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Если есть неисправность</strong>
+                <p>Опишите симптом, когда он появляется и что уже проверили. Код ошибки полезнее предположения о причине.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="contact-privacy">Не прикладывайте паспорт, СТС и другие документы. Для первого вопроса достаточно описания; идентификаторы автомобиля лучше обсуждать отдельно с выбранным специалистом.</p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container"><hr class="rule"></div>
+
+    <section class="section container contact-bottom-grid grid-2" aria-label="Каналы связи и ответы на вопросы">
+      <div class="contact-channels reveal">
+        <p class="eyebrow">02 / Получатель</p>
+        <h2>Куда передать текст</h2>
+        <div data-contact-channels>
+          <div class="note">
+            <p><strong>Обращения принимает сервер учебного проекта.</strong></p>
+            <p class="muted">После сохранения появятся номер и персональная ссылка на статус. Авторизованный пользователь также увидит обращение в <a href="account.html">личном кабинете</a>.</p>
+          </div>
+        </div>
+        <p class="muted">Подтверждённого адреса для посещения нет, поэтому здесь нет карты и маршрута. Серверный статус означает только обработку обращения в учебном приложении.</p>
+      </div>
+
+      <div class="contact-faq reveal">
+        <p class="eyebrow">03 / До подготовки запроса</p>
+        <h2>Коротко о важном</h2>
+        <details>
+          <summary>Что произойдёт после нажатия кнопки?</summary>
+          <p>После проверки обязательных полей запрос сохраняется в базе данных и получает номер. Вы увидите текст и секретную ссылку, по которой раскрывается только статус без контактных данных и сообщения. Это не отправка дилеру, сервису или по email.</p>
+        </details>
+        <details>
+          <summary>Как указать год и данные автомобиля?</summary>
+          <p>Напишите год выпуска, а не только год первой регистрации, если знаете разницу. Добавьте модификацию, двигатель, примерный пробег и наличие xDrive. Если какие-то данные неизвестны, честно отметьте это — выдумывать их не нужно.</p>
+        </details>
+        <details>
+          <summary>Нужен ли полный VIN?</summary>
+          <p>Нет, полный VIN не обязателен и для первого запроса обычно не нужен. Если позже потребуется проверка комплектации или истории, согласуйте передачу VIN напрямую с выбранным получателем. Не публикуйте его вместе с документами и персональными данными.</p>
+        </details>
+        <details>
+          <summary>Где останутся введённые данные?</summary>
+          <p>Обращения хранятся в PostgreSQL на сервере учебного проекта. Гость получает секретную ссылку только на статус; авторизованный пользователь видит свои обращения в личном кабинете. Пароль хранится не открытым текстом, а как стойкий хеш. Браузер также может запоминать поля через собственное автозаполнение.</p>
+        </details>
+        <details>
+          <summary>Можно ли здесь заказать подбор или ремонт?</summary>
+          <p>Нет. «Подбор F10» и «Обслуживание» — категории обращений учебного приложения, а не услуги дилера. Администратор проекта может изменить статус запроса, но это не создаёт заказ, договор или запись на ремонт.</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="container contact-endnote">
+      <p>F10 · Anatomy — независимый редакционный проект. Названия BMW и F10 используются для описания автомобиля.</p>
+      <a class="text-link" href="versions.html">Сначала сравнить модификации <span aria-hidden="true">↗</span></a>
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

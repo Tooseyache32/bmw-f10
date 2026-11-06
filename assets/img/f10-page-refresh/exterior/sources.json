@@ -1,0 +1,1072 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-11-05",
+  "status": "24 distinct new licensed BMW F10 sedan exterior photographs; sourcing only, no page edits by this agent",
+  "quality_policy": "Original high-resolution Commons photographs; no generated images, upscaling, crops or animation frame extraction. Metadata-based identity and resolution validation, not visual review.",
+  "assets": [
+    {
+      "filename": "f10-520d-black-sapphire-01.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-01.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-01.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (1).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(1).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/BMW_F10_520d_Black_Sapphire_Metallic_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/BMW_F10_520d_Black_Sapphire_Metallic_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "original download, proportional downscale",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (1).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(1).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3951,
+        2964
+      ],
+      "downloaded_dimensions": [
+        3951,
+        2964
+      ],
+      "delivered_dimensions": [
+        1920,
+        1440
+      ],
+      "file_bytes": 579954,
+      "commons_original_sha1": "0db218282ab3597fcbf75db9173b712597d79289",
+      "downloaded_sha256": "259d882bf90caea6ab4fb9cde3568402e1abc7c84350fd463326bfe23f0fa778",
+      "sha256": "71fbc7ef22d586dd75af05340f4d04578c9e91a8d434c60c6ce7b69b17ce71df",
+      "phash_64": "e6c89211f1efc03d",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-520d-black-sapphire-02.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-02.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-02.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (2).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(2).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/BMW_F10_520d_Black_Sapphire_Metallic_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/BMW_F10_520d_Black_Sapphire_Metallic_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "original download, proportional downscale",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (2).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(2).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3917,
+        2938
+      ],
+      "downloaded_dimensions": [
+        3917,
+        2938
+      ],
+      "delivered_dimensions": [
+        1920,
+        1440
+      ],
+      "file_bytes": 589528,
+      "commons_original_sha1": "1911b06da2b4ad0b186318dce87af7517a44ac67",
+      "downloaded_sha256": "583762f4cd39308d1820dc08721d41ecd89034ac3002477aab5e602ec36d5c8b",
+      "sha256": "d43151d5b4f9d36a1a20edfb1760d6881fdb685a977b92e7ab8219222d9eac32",
+      "phash_64": "e6ac9203ed6ec41e",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-520d-black-sapphire-03.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-03.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-03.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (3).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(3).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/BMW_F10_520d_Black_Sapphire_Metallic_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/BMW_F10_520d_Black_Sapphire_Metallic_%283%29.jpg/1920px-BMW_F10_520d_Black_Sapphire_Metallic_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (3).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(3).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3909,
+        2931
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 511573,
+      "commons_original_sha1": "4993e076c65db1a09a46fd69d0e7e7ade6dfe98a",
+      "downloaded_sha256": "7b5cb4e411cf7b81598f475f624e8bf99aba328191c0078c73809d82102763a9",
+      "sha256": "e1138be8a430da32a1ab612d76bd41a3854ff179173af5c92d4d07e1c58a87cc",
+      "phash_64": "ec849327ef2f5112",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-520d-black-sapphire-04.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-04.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-04.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (4).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(4).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/BMW_F10_520d_Black_Sapphire_Metallic_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/BMW_F10_520d_Black_Sapphire_Metallic_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "original download, proportional downscale",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (4).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(4).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3976,
+        2982
+      ],
+      "downloaded_dimensions": [
+        3976,
+        2982
+      ],
+      "delivered_dimensions": [
+        1920,
+        1440
+      ],
+      "file_bytes": 594062,
+      "commons_original_sha1": "c8d32c5144fcfa321d9b39e473779f8530c5b0ab",
+      "downloaded_sha256": "0136c569f9e8667eac8960175edf31dd59bba9ec24594c2e8d69a86542310846",
+      "sha256": "1cc1faade985901440c0623fbd007104b0e34a1caaf92a26a2e34461daed0d47",
+      "phash_64": "ec879343c65d903e",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-520d-black-sapphire-05.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-05.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-05.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (5).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(5).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/BMW_F10_520d_Black_Sapphire_Metallic_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/BMW_F10_520d_Black_Sapphire_Metallic_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "original download, proportional downscale",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (5).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(5).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3972,
+        2979
+      ],
+      "downloaded_dimensions": [
+        3972,
+        2979
+      ],
+      "delivered_dimensions": [
+        1920,
+        1440
+      ],
+      "file_bytes": 550784,
+      "commons_original_sha1": "33461bb12a6e6074bf7c2a070de051855dee7fb1",
+      "downloaded_sha256": "0ff029ea47942a1c3406117477954452240498291a186001699d13e88b3410cd",
+      "sha256": "256d142e1088ad49fd4f28a2df47472dc7a294ceede5d26456bc13c0bb120561",
+      "phash_64": "ec83d626ee1c9133",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-520d-black-sapphire-07.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-07.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-07.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (7).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(7).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/BMW_F10_520d_Black_Sapphire_Metallic_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/BMW_F10_520d_Black_Sapphire_Metallic_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "original download, proportional downscale",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (7).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(7).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3751,
+        2813
+      ],
+      "downloaded_dimensions": [
+        3751,
+        2813
+      ],
+      "delivered_dimensions": [
+        1920,
+        1440
+      ],
+      "file_bytes": 567615,
+      "commons_original_sha1": "74e9d5687f699b2f95e9a3242d532adfdd44fdc0",
+      "downloaded_sha256": "442dbbb000582d94191543a9ff2fd84bf12ca98e3b87659aeaba020095b06a45",
+      "sha256": "27ac4cded7ac518f889fda0f541dcd3bfca2e24e048800f99bd90fb9ee4df717",
+      "phash_64": "eac2ca84b5dc1676",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-520d-black-sapphire-08.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-08.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-08.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (8).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(8).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/BMW_F10_520d_Black_Sapphire_Metallic_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/BMW_F10_520d_Black_Sapphire_Metallic_%288%29.jpg/1920px-BMW_F10_520d_Black_Sapphire_Metallic_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (8).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(8).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3701,
+        2775
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 533903,
+      "commons_original_sha1": "e9bea11c0a9a8468f2a16b9db6301e88e6974adf",
+      "downloaded_sha256": "02072706eff0a96360021ddcdfb23aab7a4e757b1208268feac92dac47f9fc54",
+      "sha256": "ef71cd9df431d2cf2ba82bf4ecf8afb5781820cb7cc06244250390c01a2e33a8",
+      "phash_64": "aad59519bf219d22",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-520d-black-sapphire-09.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-09.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-09.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (9).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(9).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/BMW_F10_520d_Black_Sapphire_Metallic_%289%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/BMW_F10_520d_Black_Sapphire_Metallic_%289%29.jpg/1920px-BMW_F10_520d_Black_Sapphire_Metallic_%289%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (9).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(9).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3912,
+        2934
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 412129,
+      "commons_original_sha1": "b89dc08d5e552911ba3fa96d188b74843d03dc6f",
+      "downloaded_sha256": "b8894fcb9628e0233518781bbc8a10cbd72975a52b4ffca145dee955a4b1f182",
+      "sha256": "7d64b937cd4e88ec0be86d497499f33ed4cccbd94cfaf145e0754192f86c31c4",
+      "phash_64": "ede18a91d702dd62",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-520d-black-sapphire-10.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-10.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-10.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (10).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(10).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/BMW_F10_520d_Black_Sapphire_Metallic_%2810%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/BMW_F10_520d_Black_Sapphire_Metallic_%2810%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "download_method": "original download, proportional downscale",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (10).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(10).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3945,
+        2959
+      ],
+      "downloaded_dimensions": [
+        3945,
+        2959
+      ],
+      "delivered_dimensions": [
+        1920,
+        1440
+      ],
+      "file_bytes": 541533,
+      "commons_original_sha1": "931702e850b999670a18bc14e0d396757468e6cb",
+      "downloaded_sha256": "41d3900221b065e972c87359c24b091d18429ac7bb345d686d6c04b960e09d11",
+      "sha256": "98599c67acebfe3b5dfdd9e75c8f338e07bdf9acdae0da300bbd00626c34ab3d",
+      "phash_64": "ee91cc7eb6205d41",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-520d-black-sapphire-11.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-520d-black-sapphire-11.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-11.jpg",
+      "subject": "Black Sapphire Metallic BMW F10 520d sedan exterior",
+      "source_title": "File:BMW F10 520d Black Sapphire Metallic (11).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(11).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/BMW_F10_520d_Black_Sapphire_Metallic_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/BMW_F10_520d_Black_Sapphire_Metallic_%2811%29.jpg/1920px-BMW_F10_520d_Black_Sapphire_Metallic_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 520d Black Sapphire Metallic (11).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(11).jpg",
+      "source_description": "Black Sapphire Metallic BMW F10 520d sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:Black BMW sedans",
+        "Category:CC-BY-SA-4.0",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3963,
+        2972
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 469647,
+      "commons_original_sha1": "c069957ae3226d155ae6b09676cab77acb0b4321",
+      "downloaded_sha256": "4f74d62b1cc5cd6f13c0b89a9dd38ed0200566dd44642fa6fff445a118f451a0",
+      "sha256": "d19161e8bcf5a9b4091291ee206b8461500786765fd4edd3c7b69be225d70772",
+      "phash_64": "fa92dd34331a892d",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-528i-dark-graphite-01.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-528i-dark-graphite-01.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-01.jpg",
+      "subject": "Dark Graphite Metallic BMW F10 528i sedan exterior",
+      "source_title": "File:BMW F10 528i Dark Graphite Metallic (1).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_528i_Dark_Graphite_Metallic_(1).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/BMW_F10_528i_Dark_Graphite_Metallic_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/BMW_F10_528i_Dark_Graphite_Metallic_%281%29.jpg/1920px-BMW_F10_528i_Dark_Graphite_Metallic_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 528i Dark Graphite Metallic (1).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_528i_Dark_Graphite_Metallic_(1).jpg",
+      "source_description": "Dark Graphite Metallic BMW F10 528i sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:CC-BY-SA-4.0",
+        "Category:Files with coordinates missing SDC location of creation",
+        "Category:Gray BMW sedans",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3904,
+        2928
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 728526,
+      "commons_original_sha1": "ece79195481a855c73ca07644e639d9755580a99",
+      "downloaded_sha256": "f5cc0ea72fd5edefe9954d7384b69d3c979ab99fd7f98eb79b81dc185d6b9943",
+      "sha256": "d45ea19315f592100ab7009362d6aa170001818badca95bb74945e8fa5e580d8",
+      "phash_64": "bf41803ed53c6cc5",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-528i-dark-graphite-02.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-528i-dark-graphite-02.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-02.jpg",
+      "subject": "Dark Graphite Metallic BMW F10 528i sedan exterior",
+      "source_title": "File:BMW F10 528i Dark Graphite Metallic (2).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_528i_Dark_Graphite_Metallic_(2).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/BMW_F10_528i_Dark_Graphite_Metallic_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/BMW_F10_528i_Dark_Graphite_Metallic_%282%29.jpg/1920px-BMW_F10_528i_Dark_Graphite_Metallic_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 528i Dark Graphite Metallic (2).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_528i_Dark_Graphite_Metallic_(2).jpg",
+      "source_description": "Dark Graphite Metallic BMW F10 528i sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:CC-BY-SA-4.0",
+        "Category:Gray BMW sedans",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3945,
+        2959
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 772113,
+      "commons_original_sha1": "9a1537d4edea7759f4a10adb1a52626ff0d92c95",
+      "downloaded_sha256": "fcf4d4b38ac8f6e9b3d0ee36f67d8c8e2f00d2ab7aa735f39c46b828b0f1318e",
+      "sha256": "93c7c5fd063ebfead7522f3111cb8dbed2d66c5205844fd519b5f50e01464029",
+      "phash_64": "bf73a02cd5d228c5",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-528i-dark-graphite-03.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-528i-dark-graphite-03.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-03.jpg",
+      "subject": "Dark Graphite Metallic BMW F10 528i sedan exterior",
+      "source_title": "File:BMW F10 528i Dark Graphite Metallic (3).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_528i_Dark_Graphite_Metallic_(3).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/BMW_F10_528i_Dark_Graphite_Metallic_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/BMW_F10_528i_Dark_Graphite_Metallic_%283%29.jpg/1920px-BMW_F10_528i_Dark_Graphite_Metallic_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 528i Dark Graphite Metallic (3).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_528i_Dark_Graphite_Metallic_(3).jpg",
+      "source_description": "Dark Graphite Metallic BMW F10 528i sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:CC-BY-SA-4.0",
+        "Category:Gray BMW sedans",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3939,
+        2954
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 607978,
+      "commons_original_sha1": "97d8e9e2ddadb7d974d86249adce6553d1300dd6",
+      "downloaded_sha256": "0f0e3bbbdfe0e8cd5a01ec2db9dd8e68cbe97101479859b6789e9b63f815d503",
+      "sha256": "6bac2e508878261ad0be7bc2117aee6e2c1ef8d23f6c96dff44eaed3e74734c4",
+      "phash_64": "fb55903a75e1129c",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-green-sedan-01.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-green-sedan-01.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-green-sedan-01.jpg",
+      "subject": "Green BMW F10 5 Series sedan exterior",
+      "source_title": "File:BMW F10 5 Series Green (1).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_5_Series_Green_(1).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/BMW_F10_5_Series_Green_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/BMW_F10_5_Series_Green_%281%29.jpg/1920px-BMW_F10_5_Series_Green_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 5 Series Green (1).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_5_Series_Green_(1).jpg",
+      "source_description": "Green BMW F10 5 Series sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:CC-BY-SA-4.0",
+        "Category:Files with coordinates missing SDC location of creation",
+        "Category:Green BMW sedans",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3991,
+        2993
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 678466,
+      "commons_original_sha1": "167a0bd63e77d5a64ca3882ee0816a348b92fd27",
+      "downloaded_sha256": "111992acaf5ddf7ecfe60bf6717919e357063451074488014f40933534d67d0a",
+      "sha256": "38197b7c03b8ac577bee7b5f61ca34bc8cc590d52260efb7802d86f19f591860",
+      "phash_64": "bfc23e1d8433309d",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-green-sedan-02.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-green-sedan-02.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-green-sedan-02.jpg",
+      "subject": "Green BMW F10 5 Series sedan exterior",
+      "source_title": "File:BMW F10 5 Series Green (2).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_5_Series_Green_(2).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/BMW_F10_5_Series_Green_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/BMW_F10_5_Series_Green_%282%29.jpg/1920px-BMW_F10_5_Series_Green_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 5 Series Green (2).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_5_Series_Green_(2).jpg",
+      "source_description": "Green BMW F10 5 Series sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:CC-BY-SA-4.0",
+        "Category:Green BMW sedans",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3991,
+        2993
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 670108,
+      "commons_original_sha1": "eba0b5657bbe60018bdc3d26fc4545d06ff7f3e9",
+      "downloaded_sha256": "03e5c38569b6bde17aa0e3941b826de7ae71f5bf1ae4e1ac6589d78b118c2f99",
+      "sha256": "447911713d9342d5ab6a1d5c4ea33b9084d807403dae187b50ca3945d87ef792",
+      "phash_64": "bfc2640d8ce3972c",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-green-sedan-03.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-green-sedan-03.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-green-sedan-03.jpg",
+      "subject": "Green BMW F10 5 Series sedan exterior",
+      "source_title": "File:BMW F10 5 Series Green (3).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_5_Series_Green_(3).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/BMW_F10_5_Series_Green_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/BMW_F10_5_Series_Green_%283%29.jpg/1920px-BMW_F10_5_Series_Green_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 5 Series Green (3).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_5_Series_Green_(3).jpg",
+      "source_description": "Green BMW F10 5 Series sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:CC-BY-SA-4.0",
+        "Category:Green BMW sedans",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3895,
+        2921
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 617637,
+      "commons_original_sha1": "249f347b3c7c8dd873d7934b1899155d0fb257d8",
+      "downloaded_sha256": "e715e513449d1c19abb5956a1d439ecb09a23a507b923b7cf56d6e3a6ccc2e80",
+      "sha256": "273595273006cc2af10d1b86ab61e98c4c2c1083b47d6f4929f7feea1861c542",
+      "phash_64": "b932f52d013d4ed2",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-green-sedan-04.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-green-sedan-04.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-green-sedan-04.jpg",
+      "subject": "Green BMW F10 5 Series sedan exterior",
+      "source_title": "File:BMW F10 5 Series Green (4).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_F10_5_Series_Green_(4).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/BMW_F10_5_Series_Green_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/BMW_F10_5_Series_Green_%284%29.jpg/1920px-BMW_F10_5_Series_Green_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Damian B Oh",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Damian_B_Oh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_text": "BMW F10 5 Series Green (4).jpg — Damian B Oh; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BMW_F10_5_Series_Green_(4).jpg",
+      "source_description": "Green BMW F10 5 Series sedan.",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:CC-BY-SA-4.0",
+        "Category:Green BMW sedans",
+        "Category:Self-published work"
+      ],
+      "original_dimensions": [
+        3868,
+        2901
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1440
+      ],
+      "delivered_dimensions": [
+        1600,
+        1200
+      ],
+      "file_bytes": 567885,
+      "commons_original_sha1": "35f7730c9e9033e55a569fbc962308c912a05d1c",
+      "downloaded_sha256": "c8dc82ba8fb3bbcc3a4da441f6cca8c62e812b8182ac377c69a9b09bd0e1c882",
+      "sha256": "b5d2b2aa6cb9328092e2c2ad26130b8830c28d14020956b807e0a30272bbcc55",
+      "phash_64": "b934654a52fdab81",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-sedan-sojka-2.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-sedan-sojka-2.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-sedan-sojka-2.jpg",
+      "subject": "BMW F10 5 Series sedan exterior; exact viewpoint unverified",
+      "source_title": "File:BMW5er 2.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW5er_2.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/BMW5er_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/BMW5er_2.jpg/1920px-BMW5er_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Wladyslaw Sojka (Taxiarchos228)",
+      "author_url": "https://www.sojka.photo/",
+      "license": "Free Art License 1.3",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3",
+      "attribution_text": "BMW5er 2.jpg — Wladyslaw Sojka (Taxiarchos228); Free Art License 1.3; https://commons.wikimedia.org/wiki/File:BMW5er_2.jpg",
+      "source_description": "BMW 5 series (F10)",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:FAL",
+        "Category:Quality images",
+        "Category:Quality images by Taxiarchos228",
+        "Category:Quality images missing SDC source of file",
+        "Category:Quality images of BMW automobiles",
+        "Category:Quality images of vehicles in Denmark",
+        "Category:Taken with Nikon D7000",
+        "Category:White BMW sedans"
+      ],
+      "original_dimensions": [
+        4329,
+        2668
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1183
+      ],
+      "delivered_dimensions": [
+        1600,
+        986
+      ],
+      "file_bytes": 418432,
+      "commons_original_sha1": "de94d7939ac2774e967cd336117550b8345b9bab",
+      "downloaded_sha256": "464bf545a53158691b212d2a7ed7bb04b36d5fcae75ae957544215da2ee3f236",
+      "sha256": "84599fe6b44812c526f5d1cae7779a68e4590efdff4f157dce4fe24fff40c9c3",
+      "phash_64": "ddc6a895c27a552c",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-sedan-sojka-4.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-sedan-sojka-4.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-sedan-sojka-4.jpg",
+      "subject": "BMW F10 5 Series sedan exterior; exact viewpoint unverified",
+      "source_title": "File:BMW5er 4.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW5er_4.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/BMW5er_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/BMW5er_4.jpg/1920px-BMW5er_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Wladyslaw Sojka (Taxiarchos228)",
+      "author_url": "https://www.sojka.photo/",
+      "license": "Free Art License 1.3",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3",
+      "attribution_text": "BMW5er 4.jpg — Wladyslaw Sojka (Taxiarchos228); Free Art License 1.3; https://commons.wikimedia.org/wiki/File:BMW5er_4.jpg",
+      "source_description": "BMW 5 series (F10)",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:FAL",
+        "Category:Quality images",
+        "Category:Quality images by Taxiarchos228",
+        "Category:Quality images missing SDC source of file",
+        "Category:Quality images of BMW automobiles",
+        "Category:Quality images of vehicles in Denmark",
+        "Category:Taken with Nikon D7000",
+        "Category:White BMW sedans"
+      ],
+      "original_dimensions": [
+        4130,
+        2552
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1186
+      ],
+      "delivered_dimensions": [
+        1600,
+        988
+      ],
+      "file_bytes": 385760,
+      "commons_original_sha1": "70816fb9f7b68393abcacb9867e991c2fb3091ce",
+      "downloaded_sha256": "c368c1b266fb63258219649ab9e343bb9c3675d72c1c83fd875db8b168f13d9e",
+      "sha256": "e722d056f32ca65c5cfa1f0053ce4d82a1dd8068d78e33ed407fa25576a72d1e",
+      "phash_64": "a7d8d8668538fd06",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-sedan-sojka-5.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-sedan-sojka-5.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-sedan-sojka-5.jpg",
+      "subject": "BMW F10 5 Series sedan exterior; exact viewpoint unverified",
+      "source_title": "File:BMW5er 5.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW5er_5.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/BMW5er_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/BMW5er_5.jpg/1920px-BMW5er_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Wladyslaw Sojka (Taxiarchos228)",
+      "author_url": "https://www.sojka.photo/",
+      "license": "Free Art License 1.3",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3",
+      "attribution_text": "BMW5er 5.jpg — Wladyslaw Sojka (Taxiarchos228); Free Art License 1.3; https://commons.wikimedia.org/wiki/File:BMW5er_5.jpg",
+      "source_description": "BMW 5 series (F10)",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:FAL",
+        "Category:Quality images",
+        "Category:Quality images by Taxiarchos228",
+        "Category:Quality images missing SDC source of file",
+        "Category:Quality images of BMW automobiles",
+        "Category:Quality images of vehicles in Denmark",
+        "Category:Taken with Nikon D7000",
+        "Category:White BMW sedans"
+      ],
+      "original_dimensions": [
+        4554,
+        3025
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1275
+      ],
+      "delivered_dimensions": [
+        1600,
+        1063
+      ],
+      "file_bytes": 434435,
+      "commons_original_sha1": "ec63ca21c487123abbc4988bd764b36d92f999ec",
+      "downloaded_sha256": "5dab568ee7a8d06f89167035a75161436104a9b84b9663303de8abfa0bfe742e",
+      "sha256": "bc03fa6c5dbf0d64bcbcd50af85c120979bdb6ebc5f3b7f72f481701f48f76ff",
+      "phash_64": "d2492985cdca787d",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-sedan-sojka-6.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-sedan-sojka-6.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-sedan-sojka-6.jpg",
+      "subject": "BMW F10 5 Series sedan exterior; exact viewpoint unverified",
+      "source_title": "File:BMW5er 6.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW5er_6.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/BMW5er_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/BMW5er_6.jpg/1920px-BMW5er_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "Wladyslaw Sojka (Taxiarchos228)",
+      "author_url": "https://www.sojka.photo/",
+      "license": "Free Art License 1.3",
+      "license_url": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3",
+      "attribution_text": "BMW5er 6.jpg — Wladyslaw Sojka (Taxiarchos228); Free Art License 1.3; https://commons.wikimedia.org/wiki/File:BMW5er_6.jpg",
+      "source_description": "BMW 5 series (F10)",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:FAL",
+        "Category:Quality images",
+        "Category:Quality images by Taxiarchos228",
+        "Category:Quality images missing SDC creator",
+        "Category:Quality images missing SDC source of file",
+        "Category:Quality images of BMW automobiles",
+        "Category:Quality images of vehicles in Denmark",
+        "Category:White BMW sedans"
+      ],
+      "original_dimensions": [
+        4433,
+        2706
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1172
+      ],
+      "delivered_dimensions": [
+        1600,
+        977
+      ],
+      "file_bytes": 526226,
+      "commons_original_sha1": "801befe79cce2c21c04fb6eaed8567a4ce2b43f8",
+      "downloaded_sha256": "947a2267a900937431eafa7294d06d2b507b132e957c5c2f75f375e8d93c9200",
+      "sha256": "2fe0a5a01ffe3cd875ca2207fc5ddaa0916343f6d770812d63aeb5f955213288",
+      "phash_64": "d9462ebdd6e02925",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-535i-rear-m93.jpg",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-535i-rear-m93.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-535i-rear-m93.jpg",
+      "subject": "BMW 535i F10 exterior, rear view according to source filename",
+      "source_title": "File:BMW 535i (F10) rear 20100410.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_535i_(F10)_rear_20100410.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/BMW_535i_%28F10%29_rear_20100410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/BMW_535i_%28F10%29_rear_20100410.jpg/1920px-BMW_535i_%28F10%29_rear_20100410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "M 93",
+      "author_url": "https://commons.wikimedia.org/wiki/User:M_93",
+      "license": "Attribution-only (Commons; not Creative Commons)",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:Attribution_only_license",
+      "attribution_text": "BMW 535i (F10) rear 20100410.jpg — M 93; Attribution-only (Commons; not Creative Commons); https://commons.wikimedia.org/wiki/File:BMW_535i_(F10)_rear_20100410.jpg",
+      "source_description": "BMW 535i",
+      "source_categories": [
+        "Category:Attribution only license",
+        "Category:BMW F10",
+        "Category:Self-published work",
+        "Category:Taken with Casio Exilim EX-Z1080"
+      ],
+      "original_dimensions": [
+        2468,
+        1299
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1011
+      ],
+      "delivered_dimensions": [
+        1600,
+        843
+      ],
+      "file_bytes": 283490,
+      "commons_original_sha1": "c7e5e8c8369c9d4fd519433767c823f1d340a11a",
+      "downloaded_sha256": "f09b963e4be60b185d5cf4e104b3f56a657994adc0f5d396ccf47f2d97bc59de",
+      "sha256": "b577fef651d5fc9760275d8f8d38fbe79ebb80f19b69bcd191c971739b576fcf",
+      "phash_64": "df90ea3d656c41b0",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and high-resolution original metadata."
+    },
+    {
+      "filename": "f10-535i-washington-ows-01.jpg",
+      "source_title": "File:BMW 535i (F10) Washington DC Metro Area, USA.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_535i_(F10)_Washington_DC_Metro_Area,_USA.jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/BMW_535i_%28F10%29_Washington_DC_Metro_Area%2C_USA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        2311,
+        1541
+      ],
+      "commons_original_sha1": "b0addc68cf1c93c7243e64f6d86d44bf75775021",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-535i-washington-ows-01.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-535i-washington-ows-01.jpg",
+      "subject": "BMW 535i F10 sedan exterior photographed in the Washington DC metropolitan area; exact viewpoint unverified",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/BMW_535i_%28F10%29_Washington_DC_Metro_Area%2C_USA.jpg/1920px-BMW_535i_%28F10%29_Washington_DC_Metro_Area%2C_USA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "one API-provided full-composition thumbnail fallback after original HTTP 429; final long edge 1600",
+      "author": "OWS Photography",
+      "author_url": "https://commons.wikimedia.org/wiki/User:OWS_Photography",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "attribution_text": "BMW 535i (F10) Washington DC Metro Area, USA.jpg — OWS Photography; CC BY 4.0; https://commons.wikimedia.org/wiki/File:BMW_535i_(F10)_Washington_DC_Metro_Area,_USA.jpg",
+      "source_description": "BMW 535i (F10) Washington DC, USA",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:BMW automobiles in the United States",
+        "Category:CC-BY-4.0",
+        "Category:Self-published work"
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1280
+      ],
+      "delivered_dimensions": [
+        1600,
+        1067
+      ],
+      "file_bytes": 310625,
+      "downloaded_sha256": "14544461560cd75ba207051309d186da434211854b3aa292490639d8c5133f5a",
+      "sha256": "e02dd389c5dafabe33512b57d3c16d5a4cb454a645f2a2a28c1723886ccd9d3c",
+      "phash_64": "c6956b6790682e6b",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and original metadata."
+    },
+    {
+      "filename": "f10-535i-washington-ows-02.jpg",
+      "source_title": "File:BMW 535i (F10) Washington DC Metro Area, USA (1).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:BMW_535i_(F10)_Washington_DC_Metro_Area,_USA_(1).jpg",
+      "original_asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/BMW_535i_%28F10%29_Washington_DC_Metro_Area%2C_USA_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_dimensions": [
+        1618,
+        1294
+      ],
+      "commons_original_sha1": "6b750603b5b6c9dc2f61237d93ccf31f7a6bcc9c",
+      "downloaded_fallback_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/BMW_535i_%28F10%29_Washington_DC_Metro_Area%2C_USA_%281%29.jpg/1280px-BMW_535i_%28F10%29_Washington_DC_Metro_Area%2C_USA_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "local_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\exterior\\f10-535i-washington-ows-02.jpg",
+      "relative_path": "assets/img/f10-page-refresh/exterior/f10-535i-washington-ows-02.jpg",
+      "subject": "BMW 535i F10 sedan exterior photographed in the Washington DC metropolitan area; exact viewpoint unverified",
+      "downloaded_asset_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/BMW_535i_%28F10%29_Washington_DC_Metro_Area%2C_USA_%281%29.jpg/1280px-BMW_535i_%28F10%29_Washington_DC_Metro_Area%2C_USA_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "download_method": "API-provided actual1280px full-composition derivative after original and unscaled1600 fallback HTTP429; no upscaling",
+      "author": "OWS Photography",
+      "author_url": "https://commons.wikimedia.org/wiki/User:OWS_Photography",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "attribution_text": "BMW 535i (F10) Washington DC Metro Area, USA (1).jpg — OWS Photography; CC BY 4.0; https://commons.wikimedia.org/wiki/File:BMW_535i_(F10)_Washington_DC_Metro_Area,_USA_(1).jpg",
+      "source_description": "BMW 535i (F10) Washington DC, USA",
+      "source_categories": [
+        "Category:BMW F10",
+        "Category:BMW automobiles in the United States",
+        "Category:CC-BY-4.0",
+        "Category:Self-published work"
+      ],
+      "downloaded_dimensions": [
+        1280,
+        1024
+      ],
+      "delivered_dimensions": [
+        1280,
+        1024
+      ],
+      "file_bytes": 246956,
+      "downloaded_sha256": "7beac47a16fdb3c088ce49634cd178886b3f455c0da4e7262ac40be2314f6b9e",
+      "sha256": "e2ac4e6fc84b069cd0b27cdf728f97bc4b587b66d216e9a1cf7ce95473033ec1",
+      "phash_64": "ad02b529ce23ce67",
+      "changes": "Full composition retained; proportional downscale only, JPEG quality 86 optimized progressive recompression. No crop, generation or upscaling.",
+      "visual_review": "Not performed; model image input unavailable. F10 identity, real-photograph provenance and subjects validated from Commons filename, caption, categories and original metadata."
+    }
+  ],
+  "duplicate_check": {
+    "algorithm": "exact delivered SHA256, Commons original SHA1, downloaded SHA256; 64-bit DCT pHash, 32x32 grayscale/8x8 low coefficients",
+    "near_duplicate_threshold": 8,
+    "old_pool_count": 6,
+    "new_pool_count": 24,
+    "exact_duplicates_retained": 0,
+    "near_duplicate_pairs_retained": [],
+    "minimum_phash_distance_to_new_or_old": 14
+  },
+  "skipped_candidates": [
+    {
+      "title": "File:BMW F10 520d Black Sapphire Metallic (6).jpg",
+      "error": "duplicate or near-duplicate threshold",
+      "conflicts": [
+        {
+          "filename": "f10-520d-black-sapphire-05.jpg",
+          "distance": 6,
+          "exact": false
+        }
+      ]
+    },
+    {
+      "title": "File:BMW F10 528i Dark Graphite Metallic (4).jpg",
+      "error": "duplicate or near-duplicate threshold",
+      "conflicts": [
+        {
+          "filename": "f10-528i-dark-graphite-03.jpg",
+          "distance": 8,
+          "exact": false
+        }
+      ]
+    }
+  ]
+}

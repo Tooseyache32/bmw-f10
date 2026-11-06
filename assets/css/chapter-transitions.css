@@ -1,0 +1,56 @@
+body[data-chapter-motion="cinematic"] .chapter-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  pointer-events: none;
+  overflow: clip;
+}
+body[data-chapter-motion="cinematic"] .chapter-transition-panel {
+  background: var(--paper, #111315);
+  transform: translateY(102%);
+  will-change: transform;
+}
+body[data-page="tech"] .chapter-transition-panel { background: var(--tech-ink); }
+body[data-page="contact"] .chapter-transition-panel { background: var(--contact-ink); }
+body[data-page="versions"] .chapter-transition-panel { background: var(--ink); }
+body[data-page="engine"] .chapter-transition-panel { background: var(--ink); }
+body[data-chapter-motion="cinematic"] .chapter-transition-label {
+  position: fixed;
+  z-index: 5001;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--paper);
+  font: 500 clamp(30px, 7vw, 90px)/1.1 var(--font, system-ui);
+  letter-spacing: -.05em;
+  opacity: 0;
+  pointer-events: none;
+}
+body[data-page="tech"] .chapter-transition-label { color: var(--tech-surface); }
+body[data-page="contact"] .chapter-transition-label { color: var(--contact-paper); }
+body[data-chapter-motion="cinematic"] .cinema-slit,
+body[data-chapter-motion="cinematic"] .cinema-aperture,
+body[data-chapter-motion="cinematic"] .cinema-fold { isolation: isolate; }
+body[data-chapter-motion="cinematic"] .cinema-slit .cinema-shutter {
+  position: absolute;
+  inset-block: 0;
+  width: 25.1%;
+  background: var(--surface);
+  pointer-events: none;
+  z-index: 2;
+  transform-origin: 0 50%;
+}
+body[data-page="tech"] .cinema-slit .cinema-shutter { background: var(--tech-surface); }
+body[data-page="contact"] .cinema-slit .cinema-shutter { background: var(--contact-paper); }
+body[data-chapter-motion="cinematic"] .cinema-pointer { translate: var(--cinema-hover-x, 0px) var(--cinema-hover-y, 0px); transition: translate 1.05s cubic-bezier(.16,1,.3,1); }
+body[data-chapter-motion="cinematic"] .cinema-card-content { transform: perspective(1600px) rotateX(var(--cinema-tilt-x, 0deg)) rotateY(var(--cinema-tilt-y, 0deg)); transition: transform 1.2s cubic-bezier(.16,1,.3,1); }
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: chapter-old-view .85s cubic-bezier(.2,.75,.2,1) both; }
+::view-transition-new(root) { animation: chapter-new-view 1.1s cubic-bezier(.2,.75,.2,1) both; }
+@keyframes chapter-old-view { to { opacity: 0; transform: scale(.965) translateY(-30px); } }
+@keyframes chapter-new-view { from { opacity: 0; transform: scale(1.045) translateY(45px); clip-path: inset(5% 0 0); } to { opacity: 1; transform: scale(1) translateY(0); clip-path: inset(0); } }
+@media print {
+  .chapter-transition, .chapter-transition-label, .cinema-shutter { display: none !important; }
+}

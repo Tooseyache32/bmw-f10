@@ -977,6 +977,81 @@ footer {
 #btnOpenInspect, #btnCloseInspect, #btnReplayInspect, #inspHint,
 #anatProgBar { display: none !important; }
 </style>
+<style>
+.project-route-menu {
+  position: absolute;
+  top: 76px;
+  right: clamp(20px, 4vw, 64px);
+  z-index: 2;
+  width: max-content;
+  max-width: calc(100vw - 40px);
+  margin: 0;
+  color: #f4f3ef;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+  pointer-events: auto;
+}
+.project-route-menu > summary {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: #111318;
+  color: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.project-route-menu > nav {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  display: grid;
+  gap: 4px;
+  width: 220px;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100svh - 150px);
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 14px;
+  background: #111318;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+.project-route-menu > nav > a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+.project-route-menu > nav > a:hover,
+.project-route-menu > nav > a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.12);
+}
+.project-route-menu > nav > a[aria-current="page"] { font-weight: 700; }
+.project-route-menu > summary:focus-visible,
+.project-route-menu > nav > a:focus-visible {
+  outline: 2px solid #78aaf5;
+  outline-offset: 3px;
+}
+.project-route-menu { display: none; }
+@media (max-width: 1120px) {
+  .project-route-menu { display: block; }
+}
+</style>
+<style>
+.home-photo-edit { max-width:1440px; margin:0 auto; padding:70px clamp(20px,5vw,72px) 100px; }
+.home-photo-edit .home-photo-heading { display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:32px; }
+.home-photo-edit h2 { font:400 clamp(36px,5vw,72px)/1.08 var(--font-serif); letter-spacing:-.04em; max-width:650px; }
+.home-photo-edit .home-photo-heading p { color:var(--text-muted); font-size:13px; line-height:1.8; max-width:300px; }
+.home-photo-edit .home-photo-grid { display:grid; grid-template-columns:1.35fr 1fr; gap:22px; }
+.home-photo-edit figure { margin:0; min-width:0; }
+.home-photo-edit img { display:block; width:100%; height:360px; object-fit:cover; border-radius:20px; }
+.home-photo-edit figcaption { display:flex; justify-content:space-between; gap:20px; padding:18px 0; color:var(--text-muted); font:10px/1.7 var(--font-mono); }
+.home-photo-edit figcaption a { color:var(--text-primary); }
+@media(max-width:700px) { .home-photo-edit .home-photo-heading { flex-direction:column; align-items:start; } .home-photo-edit .home-photo-grid { grid-template-columns:1fr; } .home-photo-edit img { height:auto; aspect-ratio:4/3; } .home-photo-edit { padding-block:50px; } }
+</style>
+  <link rel="stylesheet" href="assets/css/site-header.css">
 </head>
 <body>
 
@@ -1008,52 +1083,35 @@ footer {
 </div>
 
 <!-- ── TOP NAVIGATION ────────────────────────────────────────── -->
-<header class="site-nav" id="siteNav">
-  <div class="nav-left">
-    <a href="index.html" class="nav-brand" title="На главную">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-      </svg>
-      <span>F10 · Anatomy</span>
-    </a>
-    <button type="button" class="hood-trigger" title="Место создания">
-      <i></i><span>Dingolfing</span>
-    </button>
-  </div>
-
-  <nav class="nav-chapters" aria-label="Страницы проекта">
-    <a href="index.html" class="nav-chap-link is-active" aria-current="page">
-      <span class="nav-chap-dot"></span><span>Главная</span>
-    </a>
-    <a href="exterior.html" class="nav-chap-link nav-transition-link">
-      <span class="nav-chap-dot"></span><span>Экстерьер</span>
-    </a>
-    <a href="interior.html" class="nav-chap-link nav-transition-link">
-      <span class="nav-chap-dot"></span><span>Салон</span>
-    </a>
-    <a href="engine.html" class="nav-chap-link nav-transition-link">
-      <span class="nav-chap-dot"></span><span>Двигатель</span>
-    </a>
-    <a href="tech.html" class="nav-chap-link nav-transition-link">
-      <span class="nav-chap-dot"></span><span>Технологии</span>
-    </a>
-    <a href="versions.html" class="nav-chap-link nav-transition-link">
-      <span class="nav-chap-dot"></span><span>Модификации</span>
-    </a>
-    <a href="contact.html" class="nav-chap-link nav-transition-link">
-      <span class="nav-chap-dot"></span><span>Контакты</span>
-    </a>
-  </nav>
-
-  <div class="nav-right">
-    <a href="#anatomySection" class="bracket-link">
-      <span class="br">[</span><span>Разбор</span><span class="br">]</span>
-    </a>
-    <a href="exterior.html" class="bracket-link nav-transition-link">
-      <span class="br">[</span><span>Экстерьер →</span><span class="br">]</span>
-    </a>
-  </div>
-</header>
+<header class="site-nav unified-site-header" id="siteNav">
+    <div class="unified-left">
+      <a href="index.html" class="unified-brand" aria-label="F10 Anatomy — главная"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>F10 · Anatomy</span></a>
+      <details class="unified-location"><summary><i aria-hidden="true"></i><span>Dingolfing</span></summary><div class="unified-location-panel"><h2>Создан в Баварии.</h2><p>BMW 5 серии F10 выпускали в Дингольфинге, Германия. Дизайн — мюнхенская школа BMW.</p><small>Происхождение модели, не адрес владельца сайта.</small></div></details>
+    </div>
+    <nav class="unified-links" aria-label="Страницы проекта">
+        <a href="index.html" class="unified-link nav-transition-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span></a>
+        <a href="exterior.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span></a>
+        <a href="interior.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span></a>
+        <a href="engine.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Двигатель</span></a>
+        <a href="tech.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span></a>
+        <a href="versions.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span></a>
+        <a href="contact.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span></a>
+    </nav>
+    <div class="unified-actions">
+      <div class="unified-actions-pill"><a class="unified-bracket" href="#anatomySection"><span class="br">[</span><span>Разбор</span><span class="br">]</span></a><a class="unified-bracket" href="exterior.html"><span class="br">[</span><span>Экстерьер →</span><span class="br">]</span></a></div>
+      
+      <details class="unified-menu"><summary>Страницы</summary><nav class="unified-menu-panel" aria-label="Все семь страниц" data-lenis-prevent>
+        <a href="index.html" class="unified-link nav-transition-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span><span class="unified-number" aria-hidden="true">01</span></a>
+        <a href="exterior.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span><span class="unified-number" aria-hidden="true">02</span></a>
+        <a href="interior.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span><span class="unified-number" aria-hidden="true">03</span></a>
+        <a href="engine.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Двигатель</span><span class="unified-number" aria-hidden="true">04</span></a>
+        <a href="tech.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span><span class="unified-number" aria-hidden="true">05</span></a>
+        <a href="versions.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span><span class="unified-number" aria-hidden="true">06</span></a>
+        <a href="contact.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span><span class="unified-number" aria-hidden="true">07</span></a>
+      </nav></details>
+    </div>
+    
+  </header>
 
 <!-- ── 2. HERO SECTION (Planet & Orbiting BMW F10 Video) ─────── -->
 <section class="hero-ref" id="heroRef">
@@ -1078,7 +1136,7 @@ footer {
     <span>Интерактивный разбор</span>
   </a>
 
-  <img id="heroStudioImg" src="assets/img/hero-studio.jpg" alt="BMW F10 Studio">
+  <img id="heroStudioImg" src="assets/img/new/bmw_dark_studio.jpg" alt="BMW F10 Studio">
 </section>
 
 <!-- ── 3. INTERACTIVE DISASSEMBLY CANVAS (HOVER & HUD SCRUBBER) ── -->
@@ -1192,6 +1250,14 @@ footer {
 
 <!-- ── ЧИСТЫЙ ПЕРЕХОД МЕЖДУ СТРАНИЦАМИ (БЕЗ ДРИФТ-ВИДЕО) ─────── -->
 <div class="page-transition-curtain" id="transitionOverlay"></div>
+
+<section class="home-photo-edit" aria-labelledby="homePhotoTitle">
+  <div class="home-photo-heading"><h2 id="homePhotoTitle">F10 без фильтров.<br>Настоящие автомобили.</h2><p>Два отдельных снимка пятой серии. Фото кузова дополняют интерактивный разбор, а не повторяют его кадры.</p></div>
+  <div class="home-photo-grid">
+    <figure><img src="assets/img/f10-page-refresh/exterior/f10-sedan-sojka-2.jpg" alt="Седан BMW 5 серии F10, фотография Wladyslaw Sojka" loading="lazy" decoding="async"><figcaption><span>BMW F10 / Фотография кузова</span><a href="assets/img/f10-page-refresh/photo-credits.html#index">Wladyslaw Sojka ↗</a></figcaption></figure>
+    <figure><img src="assets/img/f10-unique-photos/f10-530d-exterior-rear-philippines-ethan-llamas.jpg" alt="Другой автомобиль семейства F10 — BMW 530d, вид сзади" loading="lazy" decoding="async"><figcaption><span>BMW 530d F10 / Отдельный кадр</span><a href="assets/img/f10-page-refresh/photo-credits.html#index">Ethan Llamas · Источник ↗</a></figcaption></figure>
+  </div>
+</section>
 
 <footer id="mainFooter">
   <span>© BMW 5 Series (F10) Interactive Showcase · WebGL / Canvas / 4K</span>

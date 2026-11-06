@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-05",
+  "scope": "Source-distinct cabin asset preparation only; no site HTML read or modified.",
+  "new_photo_count": 2,
+  "limitation": "Only two new explicitly verified F10 cabin photographs located; no third new regular F10 source verified. Original download rate-limited, official 1920px medium used.",
+  "sources": [
+    {
+      "filename": "f10-m5-interior-christian-flores-6432780383.jpg",
+      "absolute_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\interior\\f10-m5-interior-christian-flores-6432780383.jpg",
+      "model_label": "BMW M5 (F10)",
+      "recommended_caption": "BMW M5 (F10) interior — Christian Flores, CC BY-SA 2.0",
+      "source_title": "File:BMW M5 F10 (6432780383).jpg",
+      "description_exact": "BMW M5 F10",
+      "categories_exact": "Files with coordinates missing SDC location of creation|United States photographs taken on 2011-11-27|Flickr images reviewed by FlickreviewR 2|BMW automobile interiors|BMW M5 (F10) at the 2011 Greater Los Angeles Auto Show",
+      "author": "Christian Flores",
+      "artist_metadata_exact": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/10290887@N03\">Christian Flores</a> from Carlsbad / Encinitas, United States of America",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/BMW_M5_F10_%286432780383%29.jpg/1920px-BMW_M5_F10_%286432780383%29.jpg",
+      "original_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/BMW_M5_F10_%286432780383%29.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:BMW_M5_F10_(6432780383).jpg",
+      "flickr_source_page": "https://www.flickr.com/photos/10290887@N03/6432780383",
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1280
+      ],
+      "optimized_dimensions": [
+        1920,
+        1280
+      ],
+      "downloaded_asset_sha256": "934fe8217eff7f0ad35930db62aae1e146801756d3d437346961044a7960480b",
+      "sha256": "de92e6b9677d7af3f75d9b56262d35c224c1f658561ae57f3544c0ff4065f6ee",
+      "bytes": 494937,
+      "modifications": "Official Commons 1920px thumbnail; JPEG re-encoded, no cropping or upscaling.",
+      "restrictions": "Explicitly label BMW M5 (F10); not proof of Dakota upholstery, ZF 8HP gearbox, standard comfort seats or a specific seat/console composition.",
+      "verification": "Source caption BMW M5 F10 and BMW automobile interiors category. JPEG decoder/dimensions verified; no browser or visual inspection."
+    },
+    {
+      "filename": "f10-m5-interior-christian-flores-6432789547.jpg",
+      "absolute_path": "C:\\Users\\Administrator\\Desktop\\site\\assets\\img\\f10-page-refresh\\interior\\f10-m5-interior-christian-flores-6432789547.jpg",
+      "model_label": "BMW M5 (F10)",
+      "recommended_caption": "BMW M5 (F10) interior — Christian Flores, CC BY-SA 2.0",
+      "source_title": "File:BMW M5 F10 (6432789547).jpg",
+      "description_exact": "BMW M5 F10",
+      "categories_exact": "Files with coordinates missing SDC location of creation|United States photographs taken on 2011-11-27|Flickr images reviewed by FlickreviewR 2|BMW automobile interiors|BMW M5 (F10) at the 2011 Greater Los Angeles Auto Show",
+      "author": "Christian Flores",
+      "artist_metadata_exact": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/10290887@N03\">Christian Flores</a> from Carlsbad / Encinitas, United States of America",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/BMW_M5_F10_%286432789547%29.jpg/1920px-BMW_M5_F10_%286432789547%29.jpg",
+      "original_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/BMW_M5_F10_%286432789547%29.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:BMW_M5_F10_(6432789547).jpg",
+      "flickr_source_page": "https://www.flickr.com/photos/10290887@N03/6432789547",
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "downloaded_dimensions": [
+        1920,
+        1280
+      ],
+      "optimized_dimensions": [
+        1920,
+        1280
+      ],
+      "downloaded_asset_sha256": "7399cde39d11858b4db87bf941febd2abdaffb722de1fa3b06692d181b24a605",
+      "sha256": "d93db2d119259e8cdfac489a2d3ec1ffaad25e1b1312074318b72b205292c681",
+      "bytes": 575957,
+      "modifications": "Official Commons 1920px thumbnail; JPEG re-encoded, no cropping or upscaling.",
+      "restrictions": "Explicitly label BMW M5 (F10); not proof of Dakota upholstery, ZF 8HP gearbox, standard comfort seats or a specific seat/console composition.",
+      "verification": "Source caption BMW M5 F10 and BMW automobile interiors category. JPEG decoder/dimensions verified; no browser or visual inspection."
+    }
+  ]
+}

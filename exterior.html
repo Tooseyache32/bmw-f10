@@ -2439,6 +2439,65 @@
       }
     }
   </style>
+<style>
+.project-route-menu {
+  position: absolute;
+  top: 152px;
+  right: clamp(20px, 4vw, 64px);
+  z-index: 2;
+  width: max-content;
+  max-width: calc(100vw - 40px);
+  margin: 0;
+  color: #f4f3ef;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+  pointer-events: auto;
+}
+.project-route-menu > summary {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: #111318;
+  color: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.project-route-menu > nav {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  display: grid;
+  gap: 4px;
+  width: 220px;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100svh - 226px);
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 14px;
+  background: #111318;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+.project-route-menu > nav > a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+.project-route-menu > nav > a:hover,
+.project-route-menu > nav > a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.12);
+}
+.project-route-menu > nav > a[aria-current="page"] { font-weight: 700; }
+.project-route-menu > summary:focus-visible,
+.project-route-menu > nav > a:focus-visible {
+  outline: 2px solid #78aaf5;
+  outline-offset: 3px;
+}
+</style>
+  <link rel="stylesheet" href="assets/css/site-header.css">
 </head>
 
 <body>
@@ -2452,12 +2511,12 @@
   <!-- Парящее окно превью для секции Индекс узлов -->
   <div class="floating-preview" id="floatingPreview" aria-hidden="true">
     <div class="fp-reel" id="fpReel">
-      <div class="fp-slide"><img src="frames/orbit/o_008.webp" alt=""></div>
-      <div class="fp-slide"><img src="frames/orbit/o_042.webp" alt=""></div>
-      <div class="fp-slide"><img src="frames/orbit/o_092.webp" alt=""></div>
-      <div class="fp-slide"><img src="frames/orbit/o_112.webp" alt=""></div>
-      <div class="fp-slide"><img src="frames/orbit/o_148.webp" alt=""></div>
-      <div class="fp-slide"><img src="frames/orbit/o_168.webp" alt=""></div>
+      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-07.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-08.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-09.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-10.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-11.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-01.jpg" alt="" loading="lazy" decoding="async"></div>
     </div>
   </div>
 
@@ -2546,20 +2605,34 @@
   </div>
 
   <!-- Навигация с прогресс-барами секций -->
-  <header class="site-nav" id="siteNav">
-    <div class="nav-left">
-      <a href="index.html" class="nav-brand" title="На главную">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        </svg>
-        <span>F10 · Anatomy</span>
-      </a>
-      <button type="button" class="hood-trigger" data-open-pop="locPopover" title="Место создания">
-        <i></i><span>Dingolfing</span>
-      </button>
+  <header class="site-nav unified-site-header" id="siteNav">
+    <div class="unified-left">
+      <a href="index.html" class="unified-brand" aria-label="F10 Anatomy — главная"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>F10 · Anatomy</span></a>
+      <details class="unified-location"><summary><i aria-hidden="true"></i><span>Dingolfing</span></summary><div class="unified-location-panel"><h2>Создан в Баварии.</h2><p>BMW 5 серии F10 выпускали в Дингольфинге, Германия. Дизайн — мюнхенская школа BMW.</p><small>Происхождение модели, не адрес владельца сайта.</small></div></details>
     </div>
-
-    <nav class="nav-chapters" aria-label="Навигация по секциям">
+    <nav class="unified-links" aria-label="Страницы проекта">
+        <a href="index.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span></a>
+        <a href="exterior.html" class="unified-link nav-transition-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span></a>
+        <a href="interior.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span></a>
+        <a href="engine.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Двигатель</span></a>
+        <a href="tech.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span></a>
+        <a href="versions.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span></a>
+        <a href="contact.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span></a>
+    </nav>
+    <div class="unified-actions">
+      <div class="unified-actions-pill"><a class="unified-bracket" href="index.html#anatomySection"><span class="br">[</span><span>Разбор</span><span class="br">]</span></a><a class="unified-bracket" href="exterior.html"><span class="br">[</span><span>Экстерьер →</span><span class="br">]</span></a></div>
+      
+      <details class="unified-menu"><summary>Страницы</summary><nav class="unified-menu-panel" aria-label="Все семь страниц" data-lenis-prevent>
+        <a href="index.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span><span class="unified-number" aria-hidden="true">01</span></a>
+        <a href="exterior.html" class="unified-link nav-transition-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span><span class="unified-number" aria-hidden="true">02</span></a>
+        <a href="interior.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span><span class="unified-number" aria-hidden="true">03</span></a>
+        <a href="engine.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Двигатель</span><span class="unified-number" aria-hidden="true">04</span></a>
+        <a href="tech.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span><span class="unified-number" aria-hidden="true">05</span></a>
+        <a href="versions.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span><span class="unified-number" aria-hidden="true">06</span></a>
+        <a href="contact.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span><span class="unified-number" aria-hidden="true">07</span></a>
+      </nav></details>
+    </div>
+    <nav class="nav-chapters unified-legacy-links" hidden aria-hidden="true" inert aria-label="Навигация по секциям">
       <a href="#heroOrbitSection" class="nav-chap-link is-active" data-section="heroOrbitSection">
         <span class="nav-chap-dot"></span><span>Облёт</span>
         <span class="nav-chap-bar"><i></i></span>
@@ -2585,18 +2658,6 @@
         <span class="nav-chap-bar"><i></i></span>
       </a>
     </nav>
-
-    <div class="nav-right">
-      <button type="button" class="bracket-link" data-open-pop="hoodPopover">
-        <span class="br">[</span><span>// Код</span><span class="br">]</span>
-      </button>
-      <a href="index.html#anatomySection" class="bracket-link">
-        <span class="br">[</span><span>Разбор</span><span class="br">]</span>
-      </a>
-      <a href="interior.html" class="bracket-link nav-transition-link">
-        <span class="br">[</span><span>Салон →</span><span class="br">]</span>
-      </a>
-    </div>
   </header>
 
   <main>
@@ -2766,12 +2827,12 @@
     <section class="section-look" id="sectionLook">
       <div class="look-stage" id="lookStage">
         <div class="look-media" id="lookMedia">
-          <img class="dim" src="img/ext_headlight.webp" alt="" width="2000" height="1500">
-          <img class="lit" src="img/ext_headlight.webp"
-            alt="Фара BMW F10 с двумя световыми кольцами и решётка радиатора" width="2000" height="1500">
+          <img class="dim" src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-01.jpg" alt="" loading="lazy" decoding="async">
+          <img class="lit" src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-01.jpg"
+            alt="Фотография седана BMW F10 — кадр 01" loading="lazy" decoding="async">
         </div>
         <div class="container look-copy">
-          <h2 class="display split-words">Два кольца в каждой фаре.</h2>
+          <h2 class="display split-words">Лицо пятой серии.</h2>
           <p class="lede" data-reveal="slide">Кольца дневного света и «ноздри» решётки — лицо, которое узнаёшь в зеркале
             заднего вида раньше, чем успеваешь прочитать шильдик.</p>
         </div>
@@ -2782,7 +2843,7 @@
     <section class="section-featured" id="sectionFeatured">
       <div class="container">
         <div class="feat-header">
-          <h2 class="display split-words">От замысла к металлу.</h2>
+          <h2 class="display split-words">Настоящий F10. Разные кадры.</h2>
           <p class="lede" data-reveal="slide">Наведите на любой кадр для 3D-преломления света или нажмите, чтобы открыть
             полноэкранную панораму.</p>
         </div>
@@ -2792,30 +2853,30 @@
             <article class="feat-card fx-tilt" data-zoom data-cursor="ZOOM" data-curtain="left">
               <div class="feat-img-box fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <span class="feat-badge">Ракурс 3/4 · Фронт</span>
-                <img src="frames/orbit/o_028.webp" alt="Передний полуоборот BMW F10 в студии" data-parallax-img>
+                <span class="feat-badge">520d · Black Sapphire / 02</span>
+                <img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-02.jpg" alt="Фотография седана BMW F10 — кадр 02" data-parallax-img loading="lazy" decoding="async">
               </div>
               <div class="feat-meta">
                 <div>
-                  <span class="feat-title ruby-spot">Атакующий разворот</span>
-                  <span class="feat-sub">Наклон решётки · Выступающий сплиттер · Линия капота</span>
+                  <span class="feat-title ruby-spot">Один характер</span>
+                  <span class="feat-sub">Фотография реального автомобиля · Без студийного рендера</span>
                 </div>
-                <span class="feat-tag">Фронт · 3/4</span>
+                <span class="feat-tag">Black Sapphire · 02</span>
               </div>
             </article>
 
             <article class="feat-card tall fx-tilt" data-zoom data-cursor="ZOOM" data-curtain="left">
               <div class="feat-img-box fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <span class="feat-badge">Заднее крыло · Стойка C</span>
-                <img src="frames/orbit/o_134.webp" alt="Заднее крыло и плечевая линия BMW F10" data-parallax-img>
+                <span class="feat-badge">520d · Black Sapphire / 03</span>
+                <img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-03.jpg" alt="Фотография седана BMW F10 — кадр 03" data-parallax-img loading="lazy" decoding="async">
               </div>
               <div class="feat-meta">
                 <div>
-                  <span class="feat-title ruby-spot">Мускулатура кормы</span>
-                  <span class="feat-sub">Переход плечевой грани в L-образный фонарь</span>
+                  <span class="feat-title ruby-spot">Чёрный сапфир</span>
+                  <span class="feat-sub">Отдельный кадр серии Black Sapphire Metallic</span>
                 </div>
-                <span class="feat-tag">Корма · Рельеф</span>
+                <span class="feat-tag">Black Sapphire · 03</span>
               </div>
             </article>
           </div>
@@ -2824,30 +2885,30 @@
             <article class="feat-card tall fx-tilt" data-zoom data-cursor="ZOOM" data-curtain="right">
               <div class="feat-img-box fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <span class="feat-badge">Боковая пластика</span>
-                <img src="frames/orbit/o_076.webp" alt="Боковой силуэт и колёсная база BMW F10" data-parallax-img>
+                <span class="feat-badge">520d · Black Sapphire / 04</span>
+                <img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-04.jpg" alt="Фотография седана BMW F10 — кадр 04" data-parallax-img loading="lazy" decoding="async">
               </div>
               <div class="feat-meta">
                 <div>
-                  <span class="feat-title ruby-spot">Баланс длинной базы</span>
-                  <span class="feat-sub">Короткий передний свес и смещённая назад кабина</span>
+                  <span class="feat-title ruby-spot">Оттенки формы</span>
+                  <span class="feat-sub">Поверхности кузова · Естественный свет</span>
                 </div>
-                <span class="feat-tag">Силуэт · Динамика</span>
+                <span class="feat-tag">Black Sapphire · 04</span>
               </div>
             </article>
 
             <article class="feat-card fx-tilt" data-zoom data-cursor="ZOOM" data-curtain="right">
               <div class="feat-img-box fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <span class="feat-badge">Симметрия капота</span>
-                <img src="frames/orbit/o_182.webp" alt="Сходящиеся линии капота и фары BMW F10" data-parallax-img>
+                <span class="feat-badge">520d · Black Sapphire / 05</span>
+                <img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-05.jpg" alt="Фотография седана BMW F10 — кадр 05" data-parallax-img loading="lazy" decoding="async">
               </div>
               <div class="feat-meta">
                 <div>
-                  <span class="feat-title ruby-spot">Сходящийся вектор</span>
-                  <span class="feat-sub">Четыре ребра капота фокусируют взгляд на эмблеме</span>
+                  <span class="feat-title ruby-spot">Пятый ракурс</span>
+                  <span class="feat-sub">Ещё одна самостоятельная фотография F10</span>
                 </div>
-                <span class="feat-tag">Капот · Вектор</span>
+                <span class="feat-tag">Black Sapphire · 05</span>
               </div>
             </article>
           </div>
@@ -2859,72 +2920,72 @@
     <section class="section-index" id="sectionIndex">
       <div class="container">
         <div class="index-head">
-          <h2 class="display split-words">Узлы, создающие силуэт.</h2>
+          <h2 class="display split-words">Фотосерия. В деталях.</h2>
           <p class="lede" data-reveal="slide">От фронтальной оптики до геометрии кормы — ключевые элементы экстерьера с
             мгновенным превью и панорамным увеличением.</p>
         </div>
 
         <ul class="index-list" id="indexList">
-          <li class="index-row" data-idx="0" data-src="frames/orbit/o_008.webp"
-            data-alt="Фронтальная геометрия и решётка радиатора BMW F10" data-cursor="OPEN">
+          <li class="index-row" data-idx="0" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-07.jpg"
+            data-alt="Фотография седана BMW F10 — кадр 06" data-cursor="OPEN">
             <span class="idx-num">01</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Фронтальная геометрия и «ноздри»</span>
+              <span class="idx-title ruby-spot">Black Sapphire · Кадр 06</span>
               <span class="idx-tags">Передний бампер · Радиатор</span>
             </div>
             <span class="idx-code">F10 · FRONT</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="1" data-src="frames/orbit/o_042.webp" data-alt="Передний свес и крыло BMW F10"
+          <li class="index-row" data-idx="1" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-08.jpg" data-alt="Фотография седана BMW F10 — кадр 07"
             data-cursor="OPEN">
             <span class="idx-num">02</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Передний свес и архитектура крыла</span>
+              <span class="idx-title ruby-spot">Black Sapphire · Кадр 07</span>
               <span class="idx-tags">Колёсная арка · Вылет оси</span>
             </div>
             <span class="idx-code">F10 · FENDER</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="2" data-src="frames/orbit/o_092.webp"
-            data-alt="Чистый боковой профиль BMW F10" data-cursor="OPEN">
+          <li class="index-row" data-idx="2" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-09.jpg"
+            data-alt="Фотография седана BMW F10 — кадр 08" data-cursor="OPEN">
             <span class="idx-num">03</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Классический баланс заднего привода</span>
+              <span class="idx-title ruby-spot">Black Sapphire · Кадр 08</span>
               <span class="idx-tags">Длинный капот · База 2 968 мм</span>
             </div>
             <span class="idx-code">F10 · PROFILE</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="3" data-src="frames/orbit/o_112.webp"
-            data-alt="Купол крыши и изгиб Хофмайстера BMW F10" data-cursor="OPEN">
+          <li class="index-row" data-idx="3" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-10.jpg"
+            data-alt="Фотография седана BMW F10 — кадр 09" data-cursor="OPEN">
             <span class="idx-num">04</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Купол крыши и изгиб Хофмайстера</span>
+              <span class="idx-title ruby-spot">Black Sapphire · Кадр 09</span>
               <span class="idx-tags">Остекление · Стойка C</span>
             </div>
             <span class="idx-code">F10 · ROOFLINE</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="4" data-src="frames/orbit/o_148.webp"
-            data-alt="Задний полуоборот и фонари BMW F10" data-cursor="OPEN">
+          <li class="index-row" data-idx="4" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-11.jpg"
+            data-alt="Фотография седана BMW F10 — кадр 10" data-cursor="OPEN">
             <span class="idx-num">05</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Расширенные плечи задних крыльев</span>
+              <span class="idx-title ruby-spot">Black Sapphire · Кадр 10</span>
               <span class="idx-tags">Задняя колея · Светотень</span>
             </div>
             <span class="idx-code">F10 · HAUNCH</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="5" data-src="frames/orbit/o_168.webp"
-            data-alt="Кромка багажника и раздвоенный выхлоп BMW F10" data-cursor="OPEN">
+          <li class="index-row" data-idx="5" data-src="assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-01.jpg"
+            data-alt="Фотография седана BMW F10 — кадр 11" data-cursor="OPEN">
             <span class="idx-num">06</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Аэродинамическая кромка и диффузор</span>
+              <span class="idx-title ruby-spot">Black Sapphire · Кадр 11</span>
               <span class="idx-tags">Багажник · Сдвоенный выхлоп</span>
             </div>
             <span class="idx-code">F10 · DIFFUSER</span>
@@ -2946,7 +3007,7 @@
 
       <div class="sil-pin" id="silPin">
         <div class="sil-track" id="silTrack">
-          <img src="img/ext_profile.webp" alt="Профиль седана BMW F10 в студии" width="2560" height="1440">
+          <img src="assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-02.jpg" alt="Фотография седана BMW F10 — кадр 12" loading="lazy" decoding="async">
         </div>
         <div class="sil-count">
           <div class="sil-count-num ruby-spot" id="silCount">0000</div>
@@ -3000,9 +3061,9 @@
               <span class="d-num">01</span>
               <div class="d-media fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <img src="img/ext_lines.webp" alt="Линия плеч и дверные ручки BMW F10" width="2000" height="1500">
+                <img src="assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-03.jpg" alt="Фотография седана BMW F10 — кадр 13" loading="lazy" decoding="async">
               </div>
-              <figcaption><span><b>A</b>Линия плеч и профиль ручек</span><em>360° по вертикали</em></figcaption>
+              <figcaption><span><b>A</b>Dark Graphite · Кадр 02</span><em>360° по вертикали</em></figcaption>
             </div>
           </figure>
 
@@ -3012,9 +3073,9 @@
               <span class="d-num">02</span>
               <div class="d-media fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <img src="img/ext_top.webp" alt="Вид сверху на кузов BMW F10" width="2560" height="1440">
+                <img src="assets/img/f10-page-refresh/exterior/f10-green-sedan-01.jpg" alt="Фотография седана BMW F10 — кадр 14" loading="lazy" decoding="async">
               </div>
-              <figcaption><span><b>B</b>Аэродинамический план сверху</span><em>360° по горизонтали</em></figcaption>
+              <figcaption><span><b>B</b>Dark Graphite · Кадр 03</span><em>360° по горизонтали</em></figcaption>
             </div>
           </figure>
 
@@ -3024,10 +3085,10 @@
               <span class="d-num">03</span>
               <div class="d-media fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <img src="frames/orbit/o_138.webp" alt="Скульптура задней стойки и крыла BMW F10" width="2560"
-                  height="1440">
+                <img src="assets/img/f10-page-refresh/exterior/f10-green-sedan-02.jpg" alt="Фотография седана BMW F10 — кадр 15"
+                  loading="lazy" decoding="async">
               </div>
-              <figcaption><span><b>C</b>Скульптура заднего крыла</span><em>360° по вертикали</em></figcaption>
+              <figcaption><span><b>C</b>Зелёный F10 · Кадр 02</span><em>360° по вертикали</em></figcaption>
             </div>
           </figure>
         </div>
@@ -3055,8 +3116,8 @@
         <div class="tail-mirror-grid">
           <figure class="tail-photo-wrap fx-tilt fx-frame" data-curtain="left" data-zoom data-cursor="ZOOM">
             <i class="fx-scan" aria-hidden="true"></i>
-            <img src="img/ext_tail.webp" alt="L-образные фонари кормы BMW F10" loading="lazy" width="1500"
-              height="2000">
+            <img src="assets/img/f10-page-refresh/exterior/f10-green-sedan-03.jpg" alt="Фотография седана BMW F10 — кадр 16" loading="lazy"
+             >
           </figure>
           <div class="tail-text">
             <h2 class="display split-words">Корма без лишнего.</h2>
@@ -3068,7 +3129,7 @@
 
       <div class="rear-wide-banner fx-frame" id="rearBanner" data-zoom data-cursor="ZOOM">
         <i class="fx-scan" aria-hidden="true"></i>
-        <img src="img/ext_rear.webp" alt="Корма BMW F10 в ракурсе 3/4" loading="lazy" width="2560" height="1440">
+        <img src="assets/img/f10-page-refresh/exterior/f10-green-sedan-04.jpg" alt="Фотография седана BMW F10 — кадр 17" loading="lazy">
         <div class="rear-scrim-overlay">
           <div class="container">
             <div class="rear-scrim-row">
@@ -3109,6 +3170,7 @@
           </div>
         </div>
 
+        <p class="mono" style="font-size:11px;line-height:1.8;color:var(--text-muted);margin:24px 0;">Новая фотосерия: Damian B Oh · CC BY-SA 4.0. <a href="assets/img/f10-page-refresh/photo-credits.html#exterior">Авторы, оригиналы и лицензии ↗</a></p>
         <footer class="exterior-footer" id="exteriorFooter">
           <span class="mono" style="color: var(--text-dim);">© BMW F10 Anatomy · Экстерьер</span>
           <div class="footer-brackets">

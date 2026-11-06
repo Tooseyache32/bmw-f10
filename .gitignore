@@ -13,3 +13,13 @@ Thumbs.db
 frames_interior2/
 frames_interior_orig/
 .shots/
+
+# Client/server dependencies, credentials and local PostgreSQL data
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+coverage/
+.pgdata/
+.pglogs/

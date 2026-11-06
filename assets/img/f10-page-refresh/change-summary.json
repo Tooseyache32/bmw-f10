@@ -1,0 +1,42 @@
+{
+  "pages": {
+    "index.html": {
+      "updated": true,
+      "original_scripts_preserved": true
+    },
+    "exterior.html": {
+      "updated": true,
+      "original_scripts_preserved": true
+    },
+    "interior.html": {
+      "updated": true,
+      "original_scripts_preserved": true
+    },
+    "engine.html": {
+      "updated": true,
+      "original_scripts_preserved": true
+    },
+    "tech.html": {
+      "updated": true,
+      "original_scripts_preserved": true
+    },
+    "versions.html": {
+      "updated": true,
+      "original_scripts_preserved": true
+    },
+    "contact.html": {
+      "updated": true,
+      "original_scripts_preserved": true
+    }
+  },
+  "independent_photo_counts": {
+    "index": 2,
+    "exterior": 17,
+    "interior": 3,
+    "engine": 1,
+    "tech": 6,
+    "versions": 1,
+    "contact": 1
+  },
+  "browsers_or_animation_tests_run": false
+}

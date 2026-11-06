@@ -1,0 +1,17 @@
+{
+  "name": "f10-anatomy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Educational F10 Anatomy client/server application",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "db:migrate": "node server/migrate.js",
+    "db:seed": "node server/seed.js",
+    "db:admin": "node server/create-admin.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": { "express": "^5.1.0", "pg": "^8.16.3" }
+}
