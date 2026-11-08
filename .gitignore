@@ -21,6 +21,7 @@ node_modules/
 !.env.example
 *.log
 coverage/
+*.local.txt
 .inv.cjs
 .pgdata/
 .pglogs/

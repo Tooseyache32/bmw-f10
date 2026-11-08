@@ -1,4 +1,3 @@
--- Exactly eight application tables. This migration only creates missing objects.
 BEGIN;
 CREATE TABLE IF NOT EXISTS users (
   id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
