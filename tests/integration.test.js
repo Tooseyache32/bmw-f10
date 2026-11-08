@@ -10,12 +10,13 @@ import { hashPassword, digest } from '../server/security.js';
 
 const url=process.env.TEST_DATABASE_URL;
 test('real PostgreSQL client/server integration (dedicated test database only)',{skip:!url?'TEST_DATABASE_URL is not set':false},async t => {
-  assertProjectDatabase(url,true); // Before any connection or mutation.
+  assertProjectDatabase(url,true);  
   const pool=createPool(url);
   pool.on('error',() => {});
   let server;
   const users=[];
   const inquiries=[];
+  const orders=[];
   let failEvent=false;
   const appPool={
     query:(...args) => pool.query(...args),
@@ -57,11 +58,12 @@ test('real PostgreSQL client/server integration (dedicated test database only)',
     const pass='Integration-test-only-2026';
     const payload={name:'Тестовый запрос',contact:'@test-contact',interest:'Подбор F10',modification:'528i',message:"Test with SQL-like text: '; DROP TABLE users; --",consent:true};
     let ownId; let ticket; let guestId;
-    await t.test('health, readiness, exactly eight tables and idempotent catalog seed',async () => {
+    await t.test('health, readiness, nine tables and idempotent catalog seed',async () => {
       assert.equal((await guest.request('/api/health')).status,200);
       assert.equal((await guest.request('/api/ready')).data.status,'ready');
+      assert.equal((await guest.request('/api/ready')).data.tables,9);
       const tables=await pool.query("SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE'");
-      assert.deepEqual(tables.rows.map(row => row.table_name).sort(),['favorites','inquiries','inquiry_events','inquiry_topics','model_specs','sessions','users','vehicle_models'].sort());
+      assert.deepEqual(tables.rows.map(row => row.table_name).sort(),['car_orders','favorites','inquiries','inquiry_events','inquiry_topics','model_specs','sessions','users','vehicle_models'].sort());
       const models=(await guest.request('/api/models')).data.models;
       assert.deepEqual(models.map(m => [m.slug,m.power,m.torque,m.acceleration,m.consumption,m.displacement,m.kw]),[
         ['520d',184,380,7.9,4.5,1995,135],['528i',245,350,6.3,6.1,1997,180],['535i',306,400,5.7,7.2,2979,225]
@@ -76,6 +78,31 @@ test('real PostgreSQL client/server integration (dedicated test database only)',
       const raw=guest.cookie.split('=')[1];
       assert.equal((await pool.query('SELECT count(*)::int AS n FROM sessions WHERE token_hash=$1',[digest(raw)])).rows[0].n,1);
       assert.equal((await pool.query('SELECT count(*)::int AS n FROM sessions WHERE token_hash=$1',[raw])).rows[0].n,0);
+    });
+    await t.test('car orders reject invalid data and persist guest orders with a model foreign key',async () => {
+      const data={name:'Покупатель',phone:'+7 (999) 123-45-67',modification:'535i',city:'Оренбург',budget:2500000,message:"Предпочтения: '; DROP TABLE users; --",consent:true};
+      const before=(await pool.query('SELECT count(*)::int AS n FROM car_orders')).rows[0].n;
+      assert.equal((await guest.request('/api/car-orders',{method:'POST',body:data,headers:{'X-CSRF-Token':'wrong'}})).status,403);
+      assert.equal((await guest.request('/api/car-orders',{method:'POST',body:data,headers:{Origin:'https://attacker.example'}})).status,403);
+      for (const invalid of [{phone:'bad'},{consent:false},{modification:'unknown'},{budget:50000},{budget:2500000.5},{city:'   '},{message:'x'.repeat(2001)}]) {
+        assert.equal((await guest.request('/api/car-orders',{method:'POST',body:{...data,...invalid}})).status,400);
+      }
+      assert.equal((await pool.query('SELECT count(*)::int AS n FROM car_orders')).rows[0].n,before);
+      const response=await guest.request('/api/car-orders',{method:'POST',body:data});
+      assert.equal(response.status,201);
+      orders.push(response.data.order.id);
+      assert.deepEqual(Object.keys(response.data.order).sort(),['createdAt','id','status']);
+      const stored=(await pool.query('SELECT o.*,m.slug FROM car_orders o JOIN vehicle_models m ON m.id=o.model_id WHERE o.id=$1',[response.data.order.id])).rows[0];
+      assert.equal(stored.user_id,null);
+      assert.equal(stored.slug,'535i');
+      assert.equal(stored.phone,data.phone);
+      assert.equal(stored.city,data.city);
+      assert.equal(stored.budget,data.budget);
+      assert.equal(stored.message,data.message);
+      assert.equal(stored.status,'new');
+      assert.ok(stored.consent_at);
+      await migrate(pool);
+      assert.equal((await pool.query('SELECT count(*)::int AS n FROM car_orders WHERE id=$1',[stored.id])).rows[0].n,1);
     });
     await t.test('CSRF, origin, consent and input-length failures reject without inserts',async () => {
       const before=(await pool.query('SELECT count(*)::int AS n FROM inquiries')).rows[0].n;
@@ -119,6 +146,15 @@ test('real PostgreSQL client/server integration (dedicated test database only)',
       assert.equal((await user.request('/api/admin/inquiries')).status,403);
       assert.equal((await user.request(`/api/admin/inquiries/${ownId}/status`,{method:'PATCH',body:{status:'completed'}})).status,403);
     });
+    await t.test('authenticated car orders use the session owner and allow optional details',async () => {
+      const response=await user.request('/api/car-orders',{method:'POST',body:{name:'Покупатель',phone:'89991234567',modification:'520d',city:'Москва',budget:null,message:'',consent:true,userId:users[1]}});
+      assert.equal(response.status,201);
+      orders.push(response.data.order.id);
+      const stored=(await pool.query('SELECT user_id,budget,message FROM car_orders WHERE id=$1',[response.data.order.id])).rows[0];
+      assert.equal(stored.user_id,users[0]);
+      assert.equal(stored.budget,null);
+      assert.equal(stored.message,'');
+    });
     await t.test('favorites are persisted, unique, and isolated per user',async () => {
       assert.equal((await user.request('/api/favorites/520d',{method:'PUT',body:{}})).status,200);
       await user.request('/api/favorites/520d',{method:'PUT',body:{}});
@@ -157,6 +193,9 @@ test('real PostgreSQL client/server integration (dedicated test database only)',
       }
       assert.equal((await guest.request('/account.html')).status,200);
       assert.equal((await guest.request('/admin.html')).status,200);
+      assert.equal((await guest.request('/order.html')).status,200);
+      assert.equal((await guest.request('/db/002_car_orders.sql')).status,404);
+      assert.equal((await guest.request('/assets/js/order.js')).status,200);
       assert.equal((await guest.request('/assets/js/api-client.js')).status,200);
       assert.equal((await guest.request('/api/missing')).status,404);
     });
@@ -173,7 +212,8 @@ test('real PostgreSQL client/server integration (dedicated test database only)',
   } finally {
     failEvent=false;
     if (server) await new Promise(resolve => server.close(resolve));
-    // Cleanup only IDs generated by this run. Never TRUNCATE or DROP a database/table.
+     
+    if (orders.length) await pool.query('DELETE FROM car_orders WHERE id=ANY($1::bigint[])',[orders]);
     if (inquiries.length) await pool.query('DELETE FROM inquiries WHERE id=ANY($1::bigint[])',[inquiries]);
     if (users.length) await pool.query('DELETE FROM users WHERE id=ANY($1::bigint[])',[users]);
     await pool.end();

@@ -44,6 +44,26 @@ export function validateInquiry(body = {}) {
     interest: text(body.interest,'тема',80), modification, message: text(body.message,'сообщение',2000)
   };
 }
+export function validateCarOrder(body = {}) {
+  if (body.consent !== true) throw new HttpError(400, 'Требуется согласие на сохранение заявки.');
+  const phone = text(body.phone, 'телефон', 32);
+  const digits = phone.replace(/\D/g, '');
+  if (!/^\+?[0-9\s().-]+$/.test(phone) || digits.length < 10 || digits.length > 15) {
+    throw new HttpError(400, 'Укажите телефон: от 10 до 15 цифр.');
+  }
+  const budget = body.budget == null || body.budget === '' ? null : body.budget;
+  if (budget !== null && (!Number.isSafeInteger(budget) || budget < 100000 || budget > 100000000)) {
+    throw new HttpError(400, 'Бюджет должен быть целым числом от 100 000 до 100 000 000 ₽.');
+  }
+  return {
+    name: text(body.name, 'имя', 80),
+    phone,
+    modification: text(body.modification, 'модификация', 20),
+    city: text(body.city, 'город', 80),
+    budget,
+    message: body.message == null ? '' : text(body.message, 'пожелания', 2000, 0)
+  };
+}
 export function rateLimit({ limit = 100, windowMs = 60000 } = {}) {
   const entries = new Map();
   return (req,res,next) => {

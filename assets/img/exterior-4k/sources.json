@@ -1,0 +1,74 @@
+[
+  {
+    "file": "original-f10-520d-black-sapphire-01.jpg",
+    "width": 3951,
+    "height": 2964,
+    "bytes": 2552018,
+    "sha256": "259d882bf90caea6ab4fb9cde3568402e1abc7c84350fd463326bfe23f0fa778",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/BMW_F10_520d_Black_Sapphire_Metallic_%281%29.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(1).jpg",
+    "author": "Damian B Oh",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "original-f10-520d-black-sapphire-02.jpg",
+    "width": 3917,
+    "height": 2938,
+    "bytes": 2482987,
+    "sha256": "583762f4cd39308d1820dc08721d41ecd89034ac3002477aab5e602ec36d5c8b",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/BMW_F10_520d_Black_Sapphire_Metallic_%282%29.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:BMW_F10_520d_Black_Sapphire_Metallic_(2).jpg",
+    "author": "Damian B Oh",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "original-f10-sedan-sojka-4.jpg",
+    "width": 4130,
+    "height": 2552,
+    "bytes": 5581034,
+    "sha256": "fb124e6b46d83cf229bff3d9e6d1407f83bba2490f4c1c3cc1c31cf647940299",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/BMW5er_4.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:BMW5er_4.jpg",
+    "author": "Wladyslaw Sojka (Taxiarchos228)",
+    "license": "Free Art License 1.3",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3"
+  },
+  {
+    "file": "original-f10-sedan-sojka-6.jpg",
+    "width": 4433,
+    "height": 2706,
+    "bytes": 7983512,
+    "sha256": "d2ef8abf2db6fe553a0e309110746a0d49c50e22b7ece7d5f21a2a99bf3ec9fc",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/BMW5er_6.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:BMW5er_6.jpg",
+    "author": "Wladyslaw Sojka (Taxiarchos228)",
+    "license": "Free Art License 1.3",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3"
+  },
+  {
+    "file": "original-f10-exterior-white-front-candidate-sojka.jpg",
+    "width": 4549,
+    "height": 2508,
+    "bytes": 3807725,
+    "sha256": "36b6d3330751ab15e321107d3ca946408b6ad9991888e9077a8f21a5c74cc303",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/BMW5er_1.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:BMW5er_1.jpg",
+    "author": "Wladyslaw Sojka (Taxiarchos228)",
+    "license": "Free Art License 1.3",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3"
+  },
+  {
+    "file": "original-f10-exterior-white-profile-candidate-sojka.jpg",
+    "width": 3933,
+    "height": 2178,
+    "bytes": 6062002,
+    "sha256": "e6b3fb4ef835779f67eec789749616a10e5322bc89a0d2ceb5a476f13db218f6",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/BMW5er_3.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:BMW5er_3.jpg",
+    "author": "Wladyslaw Sojka (Taxiarchos228)",
+    "license": "Free Art License 1.3",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Free_Art_License_1.3"
+  }
+]

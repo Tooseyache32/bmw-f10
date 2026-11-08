@@ -107,7 +107,7 @@
       text-transform: uppercase;
     }
 
-    /* Плёночное зерно */
+    
     .grain {
       position: fixed;
       inset: 0;
@@ -117,7 +117,7 @@
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
     }
 
-    /* Фоновый интерактивный след курсора */
+    
     #ambientCanvas {
       position: fixed;
       inset: 0;
@@ -146,7 +146,7 @@
       text-wrap: pretty;
     }
 
-    /* Сплит слов и U-кривая букв */
+    
     .w {
       display: inline-block;
       overflow: hidden;
@@ -178,9 +178,7 @@
       justify-content: space-between;
     }
 
-    /* ============================================================
-       ЛОКАЛЬНОЕ РУБИНОВОЕ БОКЕ СТРОГО ПОД КУРСОРОМ (ТОЛЬКО ЧАСТЬ ТЕКСТА)
-       ============================================================ */
+    
     .ruby-spot {
       --sx: -9999px;
       --sy: -9999px;
@@ -206,9 +204,7 @@
       opacity: 0.16;
     }
 
-    /* ============================================================
-       3D TILT + GLARE + LASER HUD НА КАРТИНКАХ (БЕЗ РАЗМЫТИЯ)
-       ============================================================ */
+    
     .fx-tilt {
       --mx: 50%;
       --my: 50%;
@@ -300,7 +296,7 @@
       }
     }
 
-    /* Кнопка-бейдж вызова математического поповера // under the hood */
+    
     .hood-trigger {
       display: inline-flex;
       align-items: center;
@@ -332,7 +328,7 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-    /* Скобочные ссылки: [ Текст ] */
+    
     .bracket-link {
       display: inline-flex;
       align-items: center;
@@ -369,9 +365,7 @@
       color: var(--accent);
     }
 
-    /* ============================================================
-       КАСТОМНЫЙ КУРСОР + БЕЙДЖ
-       ============================================================ */
+    
     @media (pointer: fine) {
 
       html.has-cursor,
@@ -450,9 +444,7 @@
       opacity: 1;
     }
 
-    /* ============================================================
-       ПРЕЛОАДЕР
-       ============================================================ */
+    
     .preloader {
       position: fixed;
       inset: 0;
@@ -526,9 +518,7 @@
       letter-spacing: 0;
     }
 
-    /* ============================================================
-       МОДАЛЬНОЕ ОКНО ГИРОСКОПА
-       ============================================================ */
+    
     .motion-modal {
       position: fixed;
       bottom: 24px;
@@ -605,9 +595,7 @@
       font-weight: 500;
     }
 
-    /* ============================================================
-       ПОПОВЕРЫ: // UNDER THE HOOD & 📍 LOCATION
-       ============================================================ */
+    
     .popover-backdrop {
       position: fixed;
       inset: 0;
@@ -774,9 +762,7 @@
       margin-top: 8px;
     }
 
-    /* ============================================================
-       НАВИГАЦИЯ
-       ============================================================ */
+    
     .site-nav {
       position: fixed;
       top: 0;
@@ -917,9 +903,7 @@
       -webkit-backdrop-filter: blur(18px);
     }
 
-    /* ============================================================
-       ЧИСТЫЙ ПЕРЕХОД МЕЖДУ СТРАНИЦАМИ
-       ============================================================ */
+    
     .page-transition-overlay {
       position: fixed;
       inset: 0;
@@ -956,9 +940,7 @@
       transition: width 0.5s var(--ease-out);
     }
 
-    /* ============================================================
-       1. HERO: 360° ОБЛЁТ + ПАРЯЩИЙ ПРОСТРАНСТВЕННЫЙ КОЛЛАЖ
-       ============================================================ */
+    
     .hero-orbit-section {
       position: relative;
       height: 430vh;
@@ -977,7 +959,7 @@
       perspective: 1200px;
     }
 
-    /* Холст без CSS-масштабирования — 100% попиксельная резкость */
+    
     #orbitCanvas {
       position: absolute;
       inset: 0;
@@ -1238,9 +1220,7 @@
       background: var(--accent);
     }
 
-    /* ============================================================
-       2. АРХИТЕКТУРА ЭКСТЕРЬЕРА
-       ============================================================ */
+    
     .section-pillars {
       position: relative;
       z-index: 5;
@@ -1369,9 +1349,7 @@
       background: var(--accent);
     }
 
-    /* ============================================================
-       3. ВЗГЛЯД — СВЕТ СЛЕДУЕТ ЗА КУРСОРОМ
-       ============================================================ */
+    
     .section-look {
       position: relative;
       z-index: 5;
@@ -1431,9 +1409,7 @@
       margin-bottom: clamp(20px, 2.6vw, 32px);
     }
 
-    /* ============================================================
-       4. FEATURED ANGLES — АСИММЕТРИЧНАЯ BENTO-ВИТРИНА
-       ============================================================ */
+    
     .section-featured {
       position: relative;
       z-index: 6;
@@ -1566,9 +1542,7 @@
       white-space: nowrap;
     }
 
-    /* ============================================================
-       5. SELECTED DETAILS — ИНДЕКС С ПАРЯЩИМ ПРЕВЬЮ
-       ============================================================ */
+    
     .section-index {
       position: relative;
       z-index: 7;
@@ -1678,7 +1652,7 @@
       color: var(--text-muted);
     }
 
-    /* Парящее окно превью за курсором */
+    
     .floating-preview {
       position: fixed;
       top: 0;
@@ -1719,9 +1693,7 @@
       object-fit: cover;
     }
 
-    /* ============================================================
-       6. СИЛУЭТ — ЗАКРЕПЛЁННЫЙ ПРОХОД КАМЕРЫ ВДОЛЬ КУЗОВА
-       ============================================================ */
+    
     .section-silhouette {
       position: relative;
       z-index: 6;
@@ -1891,9 +1863,7 @@
       padding-bottom: clamp(80px, 12vh, 150px);
     }
 
-    /* ============================================================
-       7. ГОРИЗОНТАЛЬНАЯ ЛЕНТА ДЕТАЛЕЙ (С ПЕРЕВОРОТОМ НА 360° ПРИ НАВЕДЕНИИ)
-       ============================================================ */
+    
     .section-details {
       position: relative;
       z-index: 7;
@@ -1928,7 +1898,7 @@
       margin-bottom: 26px;
     }
 
-    /* Контейнер карточки с 3D-перспективой для вращения на 360° */
+    
     .d-panel {
       flex: none;
       position: relative;
@@ -2017,7 +1987,7 @@
       text-shadow: 0 0 32px rgba(220, 0, 12, 0.55);
     }
 
-    /* Лайтбокс с панорамой */
+    
     .lightbox {
       position: fixed;
       inset: 0;
@@ -2070,9 +2040,7 @@
       backdrop-filter: blur(12px);
     }
 
-    /* ============================================================
-       8. ЦИТАТА + КОРМА
-       ============================================================ */
+    
     .section-quote {
       position: relative;
       z-index: 8;
@@ -2253,9 +2221,7 @@
       transform: scaleX(0);
     }
 
-    /* ============================================================
-       9. ФИНАЛ + ФУТЕР С ИНТЕРАКТИВНЫМ CANVAS
-       ============================================================ */
+    
     .section-next-interior {
       position: relative;
       z-index: 9;
@@ -2359,9 +2325,7 @@
       display: block;
     }
 
-    /* ============================================================
-       АДАПТИВ
-       ============================================================ */
+    
     @media (max-width: 1120px) {
       .pillars-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2498,6 +2462,21 @@
 }
 </style>
   <link rel="stylesheet" href="assets/css/site-header.css">
+<style id="exteriorOriginalPhotos">
+img[data-original-photo]{image-rendering:auto;object-position:center;display:block}
+.look-media img[data-original-photo],.sil-track img[data-original-photo],.rear-wide-banner img[data-original-photo]{object-fit:cover;object-position:center}
+.feat-img-box img[data-original-photo]{height:100%;width:100%;object-fit:cover;transform:scale(1.015)}
+.feat-card:hover .feat-img-box img[data-original-photo]{transform:scale(1.035);filter:none}
+.d-media img[data-original-photo]{height:100%;width:100%;object-fit:cover;transform:scale(1.015)}
+.d-panel:hover .d-media img[data-original-photo]{transform:scale(1.035);filter:none}
+.tail-photo-wrap img[data-original-photo]{object-fit:cover;transform:scale(1.015)}
+.tail-photo-wrap:hover img[data-original-photo]{transform:scale(1.035);filter:none}
+.fp-slide img[data-original-photo]{object-fit:cover}
+.lightbox img{height:auto;width:auto;max-width:100vw;max-height:calc(100svh - 90px)}
+.look-media img[data-original-photo="4k-front"]{object-position:50% 48%}
+.sil-track img[data-original-photo="4k-silhouette"]{object-position:50% 55%}
+.rear-wide-banner img[data-original-photo="4k-rear"]{object-position:50% 52%}
+</style>
 </head>
 
 <body>
@@ -2508,19 +2487,19 @@
   <div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel">ZOOM</span></div>
   <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
-  <!-- Парящее окно превью для секции Индекс узлов -->
+  
   <div class="floating-preview" id="floatingPreview" aria-hidden="true">
     <div class="fp-reel" id="fpReel">
-      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-07.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-08.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-09.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-10.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-11.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="fp-slide"><img src="assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-01.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="fp-slide"><img src="assets/img/exterior-user-originals/1a1f96fe8b0437c2632f0ff57eee9697.jpg" alt="" loading="lazy" decoding="async" width="1080" height="1080" data-original-photo="1"></div>
+      <div class="fp-slide"><img src="assets/img/exterior-user-originals/2d3274ab3333fa3810bfee863b624d2b.jpg" alt="" loading="lazy" decoding="async" width="676" height="1200" data-original-photo="2"></div>
+      <div class="fp-slide"><img src="assets/img/exterior-user-originals/46285b0bbe5451ee4c58fb91b76ce682.jpg" alt="" loading="lazy" decoding="async" width="736" height="1230" data-original-photo="3"></div>
+      <div class="fp-slide"><img src="assets/img/exterior-user-originals/5e5c053300f9998e74ae9ee6b17d3b94.jpg" alt="" loading="lazy" decoding="async" width="1080" height="1080" data-original-photo="4"></div>
+      <div class="fp-slide"><img src="assets/img/exterior-user-originals/a6aae802788275f311dccb5e299677de.jpg" alt="" loading="lazy" decoding="async" width="720" height="1280" data-original-photo="5"></div>
+      <div class="fp-slide"><img src="assets/img/exterior-user-originals/c4793bebb55b4d568ea1715485da2123.jpg" alt="" loading="lazy" decoding="async" width="676" height="1200" data-original-photo="6"></div>
     </div>
   </div>
 
-  <!-- Модальное окно гироскопа -->
+  
   <div class="motion-modal" id="motionModal" role="dialog" aria-label="Доступ к датчикам движения">
     <div class="motion-head mono"><span>◎</span><span>Device Motion · Запрос доступа</span></div>
     <p class="motion-title">Эта страница двигается вместе с вами.</p>
@@ -2532,7 +2511,7 @@
     </div>
   </div>
 
-  <!-- Поповер // UNDER THE HOOD -->
+  
   <div class="popover-backdrop" id="popoverBackdrop"></div>
 
   <div class="floating-popover" id="hoodPopover" role="dialog" aria-label="Под капотом анимации">
@@ -2560,7 +2539,7 @@
     <div class="pop-foot">края приземляются первыми · середина догоняет · чистая тригонометрия</div>
   </div>
 
-  <!-- Поповер 📍 LOCATION (Dingolfing / Munich) -->
+  
   <div class="floating-popover" id="locPopover" role="dialog" aria-label="Локация создания BMW F10">
     <button type="button" class="pop-close" data-close-pop aria-label="Закрыть">×</button>
     <div class="pop-tag">📍 Location · Происхождение</div>
@@ -2573,7 +2552,7 @@
     <div class="loc-coords"><span>48.6309° N</span><span>12.4966° E</span></div>
   </div>
 
-  <!-- Прелоадер -->
+  
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="pre-top mono">
       <div class="pre-status">
@@ -2591,12 +2570,12 @@
     </div>
   </div>
 
-  <!-- Плавный переход между страницами -->
+  
   <div class="page-transition-overlay" id="pageTransitionOverlay" aria-hidden="true">
     <div class="trans-progress-track"><i class="trans-progress-fill" id="transProgFill"></i></div>
   </div>
 
-  <!-- Лайтбокс с панорамой -->
+  
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <img id="lightboxImg" alt="">
     <div class="lightbox-hud mono">
@@ -2604,7 +2583,7 @@
     </div>
   </div>
 
-  <!-- Навигация с прогресс-барами секций -->
+  
   <header class="site-nav unified-site-header" id="siteNav">
     <div class="unified-left">
       <a href="index.html" class="unified-brand" aria-label="F10 Anatomy — главная"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>F10 · Anatomy</span></a>
@@ -2620,9 +2599,10 @@
         <a href="contact.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span></a>
     </nav>
     <div class="unified-actions">
+      <a class="unified-account" href="account.html" aria-label="Личный кабинет" title="Личный кабинет"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><span>Кабинет</span></a>
       <div class="unified-actions-pill"><a class="unified-bracket" href="index.html#anatomySection"><span class="br">[</span><span>Разбор</span><span class="br">]</span></a><a class="unified-bracket" href="exterior.html"><span class="br">[</span><span>Экстерьер →</span><span class="br">]</span></a></div>
       
-      <details class="unified-menu"><summary>Страницы</summary><nav class="unified-menu-panel" aria-label="Все семь страниц" data-lenis-prevent>
+      <details class="unified-menu"><summary>Страницы</summary><nav class="unified-menu-panel" aria-label="Навигация проекта" data-lenis-prevent>
         <a href="index.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span><span class="unified-number" aria-hidden="true">01</span></a>
         <a href="exterior.html" class="unified-link nav-transition-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span><span class="unified-number" aria-hidden="true">02</span></a>
         <a href="interior.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span><span class="unified-number" aria-hidden="true">03</span></a>
@@ -2630,6 +2610,8 @@
         <a href="tech.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span><span class="unified-number" aria-hidden="true">05</span></a>
         <a href="versions.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span><span class="unified-number" aria-hidden="true">06</span></a>
         <a href="contact.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span><span class="unified-number" aria-hidden="true">07</span></a>
+      
+        <a href="account.html" class="unified-link unified-service-link"><span class="unified-dot" aria-hidden="true"></span><span>Личный кабинет</span><span class="unified-number" aria-hidden="true">09</span></a><a href="admin.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Админ-панель</span><span class="unified-number" aria-hidden="true">10</span></a>
       </nav></details>
     </div>
     <nav class="nav-chapters unified-legacy-links" hidden aria-hidden="true" inert aria-label="Навигация по секциям">
@@ -2661,7 +2643,7 @@
   </header>
 
   <main>
-    <!-- 1. HERO: 360° ОБЛЁТ + ПАРЯЩИЕ КАРТОЧКИ + U-CURVE ЗАГОЛОВОК -->
+    
     <section class="hero-orbit-section" id="heroOrbitSection">
       <div class="hero-sticky-stage" id="stageContainer">
         <canvas id="orbitCanvas" aria-label="Интерактивный облёт экстерьера BMW F10"></canvas>
@@ -2718,7 +2700,7 @@
       </div>
     </section>
 
-    <!-- 2. АРХИТЕКТУРА КУЗОВА -->
+    
     <section class="section-pillars" id="sectionPillars">
       <div class="container">
         <div class="pillars-intro">
@@ -2823,13 +2805,13 @@
       </div>
     </section>
 
-    <!-- 3. ВЗГЛЯД — ИНТЕРАКТИВНЫЙ СВЕТ-КУРСОР -->
+    
     <section class="section-look" id="sectionLook">
       <div class="look-stage" id="lookStage">
         <div class="look-media" id="lookMedia">
-          <img class="dim" src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-01.jpg" alt="" loading="lazy" decoding="async">
-          <img class="lit" src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-01.jpg"
-            alt="Фотография седана BMW F10 — кадр 01" loading="lazy" decoding="async">
+          <img class="dim" src="assets/img/exterior-user-originals/f10-front-nov08-5504.jpg" alt="" loading="lazy" decoding="async" width="5504" height="3072" data-original-photo="4k-front">
+          <img class="lit" src="assets/img/exterior-user-originals/f10-front-nov08-5504.jpg"
+            alt="Изображение BMW F10 из подборки владельца проекта" loading="lazy" decoding="async" width="5504" height="3072" data-original-photo="4k-front">
         </div>
         <div class="container look-copy">
           <h2 class="display split-words">Лицо пятой серии.</h2>
@@ -2839,7 +2821,7 @@
       </div>
     </section>
 
-    <!-- 4. FEATURED ANGLES — 4 УНИКАЛЬНЫХ РАКУРСА С 3D MAGNETIC GLARE HOVER -->
+    
     <section class="section-featured" id="sectionFeatured">
       <div class="container">
         <div class="feat-header">
@@ -2853,30 +2835,30 @@
             <article class="feat-card fx-tilt" data-zoom data-cursor="ZOOM" data-curtain="left">
               <div class="feat-img-box fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <span class="feat-badge">520d · Black Sapphire / 02</span>
-                <img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-02.jpg" alt="Фотография седана BMW F10 — кадр 02" data-parallax-img loading="lazy" decoding="async">
+                <span class="feat-badge">Новая серия / 01</span>
+                <img src="assets/img/exterior-user-originals/1a1f96fe8b0437c2632f0ff57eee9697.jpg" alt="Экстерьер автомобиля — фотография из новой серии 01" data-parallax-img loading="lazy" decoding="async" width="1080" height="1080" data-original-photo="1">
               </div>
               <div class="feat-meta">
                 <div>
                   <span class="feat-title ruby-spot">Один характер</span>
-                  <span class="feat-sub">Фотография реального автомобиля · Без студийного рендера</span>
+                  <span class="feat-sub">Фотография из новой подборки</span>
                 </div>
-                <span class="feat-tag">Black Sapphire · 02</span>
+                <span class="feat-tag">Оригинал · 01</span>
               </div>
             </article>
 
             <article class="feat-card tall fx-tilt" data-zoom data-cursor="ZOOM" data-curtain="left">
               <div class="feat-img-box fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <span class="feat-badge">520d · Black Sapphire / 03</span>
-                <img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-03.jpg" alt="Фотография седана BMW F10 — кадр 03" data-parallax-img loading="lazy" decoding="async">
+                <span class="feat-badge">Новая серия / 02</span>
+                <img src="assets/img/exterior-user-originals/2d3274ab3333fa3810bfee863b624d2b.jpg" alt="Экстерьер автомобиля — фотография из новой серии 02" data-parallax-img loading="lazy" decoding="async" width="676" height="1200" data-original-photo="2">
               </div>
               <div class="feat-meta">
                 <div>
-                  <span class="feat-title ruby-spot">Чёрный сапфир</span>
-                  <span class="feat-sub">Отдельный кадр серии Black Sapphire Metallic</span>
+                  <span class="feat-title ruby-spot">Сила силуэта</span>
+                  <span class="feat-sub">Фотография из новой подборки</span>
                 </div>
-                <span class="feat-tag">Black Sapphire · 03</span>
+                <span class="feat-tag">Оригинал · 02</span>
               </div>
             </article>
           </div>
@@ -2885,30 +2867,30 @@
             <article class="feat-card tall fx-tilt" data-zoom data-cursor="ZOOM" data-curtain="right">
               <div class="feat-img-box fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <span class="feat-badge">520d · Black Sapphire / 04</span>
-                <img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-04.jpg" alt="Фотография седана BMW F10 — кадр 04" data-parallax-img loading="lazy" decoding="async">
+                <span class="feat-badge">Новая серия / 05</span>
+                <img src="assets/img/exterior-user-originals/a6aae802788275f311dccb5e299677de.jpg" alt="Экстерьер автомобиля — фотография из новой серии 05" data-parallax-img loading="lazy" decoding="async" width="720" height="1280" data-original-photo="5">
               </div>
               <div class="feat-meta">
                 <div>
                   <span class="feat-title ruby-spot">Оттенки формы</span>
-                  <span class="feat-sub">Поверхности кузова · Естественный свет</span>
+                  <span class="feat-sub">Фотография из новой подборки</span>
                 </div>
-                <span class="feat-tag">Black Sapphire · 04</span>
+                <span class="feat-tag">Оригинал · 05</span>
               </div>
             </article>
 
             <article class="feat-card fx-tilt" data-zoom data-cursor="ZOOM" data-curtain="right">
               <div class="feat-img-box fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <span class="feat-badge">520d · Black Sapphire / 05</span>
-                <img src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-05.jpg" alt="Фотография седана BMW F10 — кадр 05" data-parallax-img loading="lazy" decoding="async">
+                <span class="feat-badge">Новая серия / 04</span>
+                <img src="assets/img/exterior-user-originals/5e5c053300f9998e74ae9ee6b17d3b94.jpg" alt="Экстерьер автомобиля — фотография из новой серии 04" data-parallax-img loading="lazy" decoding="async" width="1080" height="1080" data-original-photo="4">
               </div>
               <div class="feat-meta">
                 <div>
                   <span class="feat-title ruby-spot">Пятый ракурс</span>
-                  <span class="feat-sub">Ещё одна самостоятельная фотография F10</span>
+                  <span class="feat-sub">Оригинал без повторного сжатия</span>
                 </div>
-                <span class="feat-tag">Black Sapphire · 05</span>
+                <span class="feat-tag">Оригинал · 04</span>
               </div>
             </article>
           </div>
@@ -2916,7 +2898,7 @@
       </div>
     </section>
 
-    <!-- 5. ИНДЕКС УЗЛОВ ЭКСТЕРЬЕРА -->
+    
     <section class="section-index" id="sectionIndex">
       <div class="container">
         <div class="index-head">
@@ -2926,67 +2908,67 @@
         </div>
 
         <ul class="index-list" id="indexList">
-          <li class="index-row" data-idx="0" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-07.jpg"
-            data-alt="Фотография седана BMW F10 — кадр 06" data-cursor="OPEN">
+          <li class="index-row" data-idx="0" data-src="assets/img/exterior-user-originals/1a1f96fe8b0437c2632f0ff57eee9697.jpg"
+            data-alt="Экстерьер автомобиля — фотография из новой серии 01" data-cursor="OPEN">
             <span class="idx-num">01</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Black Sapphire · Кадр 06</span>
-              <span class="idx-tags">Передний бампер · Радиатор</span>
+              <span class="idx-title ruby-spot">Новая серия · Кадр 01</span>
+              <span class="idx-tags">Квадратный кадр · Оригинал</span>
             </div>
             <span class="idx-code">F10 · FRONT</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="1" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-08.jpg" data-alt="Фотография седана BMW F10 — кадр 07"
+          <li class="index-row" data-idx="1" data-src="assets/img/exterior-user-originals/2d3274ab3333fa3810bfee863b624d2b.jpg" data-alt="Экстерьер автомобиля — фотография из новой серии 02"
             data-cursor="OPEN">
             <span class="idx-num">02</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Black Sapphire · Кадр 07</span>
-              <span class="idx-tags">Колёсная арка · Вылет оси</span>
+              <span class="idx-title ruby-spot">Новая серия · Кадр 02</span>
+              <span class="idx-tags">Вертикальный кадр · Оригинал</span>
             </div>
             <span class="idx-code">F10 · FENDER</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="2" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-09.jpg"
-            data-alt="Фотография седана BMW F10 — кадр 08" data-cursor="OPEN">
+          <li class="index-row" data-idx="2" data-src="assets/img/exterior-user-originals/46285b0bbe5451ee4c58fb91b76ce682.jpg"
+            data-alt="Экстерьер автомобиля — фотография из новой серии 03" data-cursor="OPEN">
             <span class="idx-num">03</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Black Sapphire · Кадр 08</span>
-              <span class="idx-tags">Длинный капот · База 2 968 мм</span>
+              <span class="idx-title ruby-spot">Новая серия · Кадр 03</span>
+              <span class="idx-tags">Вертикальный кадр · Оригинал</span>
             </div>
             <span class="idx-code">F10 · PROFILE</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="3" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-10.jpg"
-            data-alt="Фотография седана BMW F10 — кадр 09" data-cursor="OPEN">
+          <li class="index-row" data-idx="3" data-src="assets/img/exterior-user-originals/5e5c053300f9998e74ae9ee6b17d3b94.jpg"
+            data-alt="Экстерьер автомобиля — фотография из новой серии 04" data-cursor="OPEN">
             <span class="idx-num">04</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Black Sapphire · Кадр 09</span>
-              <span class="idx-tags">Остекление · Стойка C</span>
+              <span class="idx-title ruby-spot">Новая серия · Кадр 04</span>
+              <span class="idx-tags">Квадратный кадр · Оригинал</span>
             </div>
             <span class="idx-code">F10 · ROOFLINE</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="4" data-src="assets/img/f10-page-refresh/exterior/f10-520d-black-sapphire-11.jpg"
-            data-alt="Фотография седана BMW F10 — кадр 10" data-cursor="OPEN">
+          <li class="index-row" data-idx="4" data-src="assets/img/exterior-user-originals/a6aae802788275f311dccb5e299677de.jpg"
+            data-alt="Экстерьер автомобиля — фотография из новой серии 05" data-cursor="OPEN">
             <span class="idx-num">05</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Black Sapphire · Кадр 10</span>
-              <span class="idx-tags">Задняя колея · Светотень</span>
+              <span class="idx-title ruby-spot">Новая серия · Кадр 05</span>
+              <span class="idx-tags">Вертикальный кадр · Оригинал</span>
             </div>
             <span class="idx-code">F10 · HAUNCH</span>
             <i class="idx-line" aria-hidden="true"></i>
           </li>
 
-          <li class="index-row" data-idx="5" data-src="assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-01.jpg"
-            data-alt="Фотография седана BMW F10 — кадр 11" data-cursor="OPEN">
+          <li class="index-row" data-idx="5" data-src="assets/img/exterior-user-originals/c4793bebb55b4d568ea1715485da2123.jpg"
+            data-alt="Экстерьер автомобиля — фотография из новой серии 06" data-cursor="OPEN">
             <span class="idx-num">06</span>
             <div class="idx-main">
-              <span class="idx-title ruby-spot">Black Sapphire · Кадр 11</span>
-              <span class="idx-tags">Багажник · Сдвоенный выхлоп</span>
+              <span class="idx-title ruby-spot">Новая серия · Кадр 06</span>
+              <span class="idx-tags">Вертикальный кадр · Оригинал</span>
             </div>
             <span class="idx-code">F10 · DIFFUSER</span>
             <i class="idx-line" aria-hidden="true"></i>
@@ -2995,7 +2977,7 @@
       </div>
     </section>
 
-    <!-- 6. СИЛУЭТ — ЗАКРЕПЛЁННЫЙ ПРОХОД ВДОЛЬ КУЗОВА -->
+    
     <section class="section-silhouette" id="sectionSilhouette">
       <div class="container">
         <div class="sil-head">
@@ -3007,7 +2989,7 @@
 
       <div class="sil-pin" id="silPin">
         <div class="sil-track" id="silTrack">
-          <img src="assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-02.jpg" alt="Фотография седана BMW F10 — кадр 12" loading="lazy" decoding="async">
+          <img src="assets/img/exterior-4k/original-f10-exterior-white-profile-candidate-sojka.jpg" alt="BMW 5 серии F10 — оригинальная фотография высокого разрешения" loading="lazy" decoding="async" width="3933" height="2178" data-original-photo="4k-silhouette">
         </div>
         <div class="sil-count">
           <div class="sil-count-num ruby-spot" id="silCount">0000</div>
@@ -3045,7 +3027,7 @@
       </div>
     </section>
 
-    <!-- 7. ГОРИЗОНТАЛЬНАЯ ГАЛЕРЕЯ ДЕТАЛЕЙ (ЧЕРЕДУЮЩИЙСЯ ПЕРЕВОРОТ НА 360° ПРИ НАВЕДЕНИИ) -->
+    
     <section class="section-details" id="sectionDetails">
       <div class="details-pin" id="detailsPin">
         <div class="details-track" id="detailsTrack">
@@ -3055,47 +3037,47 @@
               крыши и бокового рельефа.</p>
           </div>
 
-          <!-- 1-я карточка: 360° по вертикали (ось X) -->
+          
           <figure class="d-panel" data-zoom data-cursor="360° ↕">
             <div class="d-flip-inner">
               <span class="d-num">01</span>
               <div class="d-media fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <img src="assets/img/f10-page-refresh/exterior/f10-528i-dark-graphite-03.jpg" alt="Фотография седана BMW F10 — кадр 13" loading="lazy" decoding="async">
+                <img src="assets/img/exterior-user-originals/46285b0bbe5451ee4c58fb91b76ce682.jpg" alt="Экстерьер автомобиля — фотография из новой серии 03" loading="lazy" decoding="async" width="736" height="1230" data-original-photo="3">
               </div>
-              <figcaption><span><b>A</b>Dark Graphite · Кадр 02</span><em>360° по вертикали</em></figcaption>
+              <figcaption><span><b>A</b>Новая серия · Кадр 03</span><em>Открыть оригинал</em></figcaption>
             </div>
           </figure>
 
-          <!-- 2-я карточка: 360° по горизонтали (ось Y) -->
+          
           <figure class="d-panel" data-zoom data-cursor="360° ↔">
             <div class="d-flip-inner">
               <span class="d-num">02</span>
               <div class="d-media fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <img src="assets/img/f10-page-refresh/exterior/f10-green-sedan-01.jpg" alt="Фотография седана BMW F10 — кадр 14" loading="lazy" decoding="async">
+                <img src="assets/img/exterior-user-originals/a6aae802788275f311dccb5e299677de.jpg" alt="Экстерьер автомобиля — фотография из новой серии 05" loading="lazy" decoding="async" width="720" height="1280" data-original-photo="5">
               </div>
-              <figcaption><span><b>B</b>Dark Graphite · Кадр 03</span><em>360° по горизонтали</em></figcaption>
+              <figcaption><span><b>B</b>Новая серия · Кадр 05</span><em>Открыть оригинал</em></figcaption>
             </div>
           </figure>
 
-          <!-- 3-я карточка: 360° по вертикали (ось X) -->
+          
           <figure class="d-panel" data-zoom data-cursor="360° ↕">
             <div class="d-flip-inner">
               <span class="d-num">03</span>
               <div class="d-media fx-frame">
                 <i class="fx-scan" aria-hidden="true"></i>
-                <img src="assets/img/f10-page-refresh/exterior/f10-green-sedan-02.jpg" alt="Фотография седана BMW F10 — кадр 15"
-                  loading="lazy" decoding="async">
+                <img src="assets/img/exterior-user-originals/c4793bebb55b4d568ea1715485da2123.jpg" alt="Экстерьер автомобиля — фотография из новой серии 06"
+                  loading="lazy" decoding="async" width="676" height="1200" data-original-photo="6">
               </div>
-              <figcaption><span><b>C</b>Зелёный F10 · Кадр 02</span><em>360° по вертикали</em></figcaption>
+              <figcaption><span><b>C</b>Новая серия · Кадр 06</span><em>Открыть оригинал</em></figcaption>
             </div>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- 8. РЕДАКЦИОННАЯ ЦИТАТА -->
+    
     <section class="section-quote" id="sectionQuote">
       <div class="container">
         <div class="quote-wrap">
@@ -3109,15 +3091,15 @@
       </div>
     </section>
 
-    <!-- 9. КОРМА -->
+    
     <section class="section-tail" id="sectionTail">
       <div class="tail-glow" id="tailGlow"></div>
       <div class="container">
         <div class="tail-mirror-grid">
           <figure class="tail-photo-wrap fx-tilt fx-frame" data-curtain="left" data-zoom data-cursor="ZOOM">
             <i class="fx-scan" aria-hidden="true"></i>
-            <img src="assets/img/f10-page-refresh/exterior/f10-green-sedan-03.jpg" alt="Фотография седана BMW F10 — кадр 16" loading="lazy"
-             >
+            <img src="assets/img/exterior-user-originals/c4793bebb55b4d568ea1715485da2123.jpg" alt="Экстерьер автомобиля — фотография из новой серии 06" loading="lazy"
+              width="676" height="1200" decoding="async" data-original-photo="6">
           </figure>
           <div class="tail-text">
             <h2 class="display split-words">Корма без лишнего.</h2>
@@ -3129,7 +3111,7 @@
 
       <div class="rear-wide-banner fx-frame" id="rearBanner" data-zoom data-cursor="ZOOM">
         <i class="fx-scan" aria-hidden="true"></i>
-        <img src="assets/img/f10-page-refresh/exterior/f10-green-sedan-04.jpg" alt="Фотография седана BMW F10 — кадр 17" loading="lazy">
+        <img src="assets/img/exterior-4k/original-f10-sedan-sojka-4.jpg" alt="BMW 5 серии F10 — оригинальная фотография высокого разрешения" loading="lazy" width="4130" height="2552" decoding="async" data-original-photo="4k-rear">
         <div class="rear-scrim-overlay">
           <div class="container">
             <div class="rear-scrim-row">
@@ -3144,7 +3126,7 @@
       </div>
     </section>
 
-    <!-- 10. ФИНАЛ + ПАСПОРТ ЭКСТЕРЬЕРА + ФУТЕР С CANVAS -->
+    
     <section class="section-next-interior" id="sectionInterior">
       <div class="container">
         <div class="cta-top-row">
@@ -3170,7 +3152,7 @@
           </div>
         </div>
 
-        <p class="mono" style="font-size:11px;line-height:1.8;color:var(--text-muted);margin:24px 0;">Новая фотосерия: Damian B Oh · CC BY-SA 4.0. <a href="assets/img/f10-page-refresh/photo-credits.html#exterior">Авторы, оригиналы и лицензии ↗</a></p>
+        <p class="mono" style="font-size:11px;line-height:1.8;color:var(--text-muted);margin:24px 0;">Изображение блока «Лицо пятой серии» предоставлено владельцем проекта, 5504 × 3072. Фотографии силуэта и нижнего баннера — Wladyslaw Sojka (Taxiarchos228), <a href="https://artlibre.org/licence/lal/en/" target="_blank" rel="noopener noreferrer">Free Art License 1.3 ↗</a>. Оригиналы: <a href="https://commons.wikimedia.org/wiki/File:BMW5er_3.jpg" target="_blank" rel="noopener noreferrer">3933 × 2178 ↗</a> · <a href="https://commons.wikimedia.org/wiki/File:BMW5er_4.jpg" target="_blank" rel="noopener noreferrer">4130 × 2552 ↗</a>. Файлы не пересжаты; обрезка только средствами CSS.</p>
         <footer class="exterior-footer" id="exteriorFooter">
           <span class="mono" style="color: var(--text-dim);">© BMW F10 Anatomy · Экстерьер</span>
           <div class="footer-brackets">
@@ -3215,7 +3197,7 @@
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const finePointer = window.matchMedia('(pointer: fine)').matches;
 
-      /* ─── 1. ЧЁТКИЙ И ПЛАВНЫЙ СКРОЛЛ LENIS ──────────────────── */
+       
       let lenis = null;
       if (hasGsap && window.Lenis && !reduceMotion) {
         lenis = new Lenis({
@@ -3234,7 +3216,7 @@
         else window.scrollTo({ top: y, behavior: 'smooth' });
       };
 
-      /* ─── 2. СПЛИТ ТЕКСТА И U-КРИВАЯ ────────────────────────── */
+       
       function splitLetters(el) {
         const text = el.textContent.trim();
         el.setAttribute('aria-label', text);
@@ -3289,7 +3271,7 @@
         }
       }
 
-      /* ─── 3. КУРСОР + ЛОКАЛЬНОЕ РУБИНОВОЕ БОКЕ ──────────────── */
+       
       const cursorDot = $('cursorDot');
       const cursorRing = $('cursorRing');
       const cursorLabel = $('cursorLabel');
@@ -3370,7 +3352,7 @@
         });
       }
 
-      /* ─── 4A. 3D MAGNETIC TILT НА КАРТОЧКАХ (БЕЗ РАЗМЫВАЮЩЕГО SVG-ФИЛЬТРА) */
+       
       document.querySelectorAll('.fx-tilt').forEach(card => {
         const frame = card.querySelector('.fx-frame') || card;
 
@@ -3398,8 +3380,8 @@
         });
       });
 
-      /* ─── 4B. ЧЕРЕДУЮЩИЙСЯ ПЕРЕВОРОТ КАРТОЧЕК НА 360° ПОСЛЕ «МЕЛОЧИ, ИЗ КОТОРЫХ ВСЁ СЛОЖЕНО.»
-             1-я — по вертикали (rotateX: 360), 2-я — по горизонтали (rotateY: 360), 3-я — по вертикали (rotateX: 360) */
+      
+
       document.querySelectorAll('#sectionDetails .d-panel').forEach((panel, idx) => {
         const inner = panel.querySelector('.d-flip-inner') || panel;
         const frame = panel.querySelector('.fx-frame');
@@ -3450,7 +3432,7 @@
         });
       });
 
-      /* ─── 5. ПОПОВЕРЫ (// UNDER THE HOOD & LOCATION) ────────── */
+       
       const backdrop = $('popoverBackdrop');
       const popovers = document.querySelectorAll('.floating-popover');
 
@@ -3486,7 +3468,7 @@
       uhRange.addEventListener('input', updateUH);
       updateUH();
 
-      /* ─── 6. ГИРОСКОП НА МОБИЛЬНЫХ ──────────────────────────── */
+       
       const motionModal = $('motionModal');
       let tiltX = 0, tiltY = 0, tiltTX = 0, tiltTY = 0;
 
@@ -3516,7 +3498,7 @@
         tiltTY = (e.clientY / innerHeight - 0.5) * 2;
       }, { passive: true });
 
-      /* ─── 7. ПРЕЛОАДЕР И КРИСТАЛЬНО ЧЁТКИЙ 360° ОБЛЁТ НА CANVAS ─ */
+       
       const FRAME_COUNT = 192;
       const frameSrc = i => `frames/orbit/o_${String(i + 1).padStart(3, '0')}.webp`;
 
@@ -3561,7 +3543,7 @@
         renderOrbit(curProg, true);
       }
 
-      /* Отрисовка строго одного кадра в нативном масштабе без двоения (globalAlpha) */
+       
       function renderOrbit(progress, force) {
         if (!isReady && loadedCount < 1) return;
         const idx = Math.round(clamp(progress * (FRAME_COUNT - 1), 0, FRAME_COUNT - 1));
@@ -3683,7 +3665,7 @@
       }
       requestAnimationFrame(preTick);
 
-      /* ─── 8. СВЕТ-КУРСОР ВО «ВЗГЛЯДЕ» ───────────────────────── */
+       
       const lookStage = $('lookStage');
       const lookMedia = $('lookMedia');
       let lookVisible = false;
@@ -3697,7 +3679,7 @@
       }, { passive: true });
       new IntersectionObserver(es => { lookVisible = es[0].isIntersecting; }).observe(lookStage);
 
-      /* ─── 9. ИНДЕКС УЗЛОВ С ПАРЯЩИМ ПРЕВЬЮ ─────────────────── */
+       
       const floatingPreview = $('floatingPreview');
       const fpReel = $('fpReel');
       let fpX = innerWidth / 2, fpY = innerHeight / 2;
@@ -3719,7 +3701,7 @@
         });
       });
 
-      /* ─── 10. ЛАЙТБОКС С ПАНОРАМОЙ ──────────────────────────── */
+       
       const lightbox = $('lightbox');
       const lbImg = $('lightboxImg');
       const lbCap = $('lightboxCaption');
@@ -3762,7 +3744,7 @@
         lbPY = e.clientY / innerHeight;
       }, { passive: true });
 
-      /* ─── 11. ФУТЕР CANVAS (РИСУЕТСЯ ТОЛЬКО КОГДА ВИДЕН) ───── */
+       
       const footCanvas = $('footerCanvas');
       const footCtx = footCanvas.getContext('2d');
       let fcW = 0, fcH = 0, footerVisible = false;
@@ -3810,7 +3792,7 @@
         footCtx.restore();
       }
 
-      /* ─── 12. ГЛАВНЫЙ ЦИКЛ АНИМАЦИИ ─────────────────────────── */
+       
       let heroActive = true;
       new IntersectionObserver(es => { heroActive = es[0].isIntersecting; }).observe(heroSection);
 
@@ -3904,7 +3886,7 @@
         requestAnimationFrame(loop);
       }
 
-      /* ─── 13. НАВИГАЦИЯ И ПЕРЕХОД В САЛОН ───────────────────── */
+       
       const nav = $('siteNav');
       let lastY = window.scrollY;
       window.addEventListener('scroll', () => {
@@ -3943,9 +3925,9 @@
         });
       });
 
-      /* ============================================================
-         14. ВСЕ АНИМАЦИИ НА SCROLLTRIGGER (БЕЗ BLUR-ФИЛЬТРОВ)
-         ============================================================ */
+      
+
+
       if (hasGsap) {
         const silPin = $('silPin');
         const silTrack = $('silTrack');
@@ -3975,7 +3957,7 @@
           }
         );
 
-        /* Горизонтальная лента деталей */
+         
         const detailsPin = $('detailsPin');
         const detailsTrack = $('detailsTrack');
         const dPanels = document.querySelectorAll('.d-panel');
@@ -4029,7 +4011,7 @@
           }
         });
 
-        /* 1. Пословный скролл-скраббинг */
+         
         document.querySelectorAll('[data-scrub-text]').forEach(p => {
           const words = p.textContent.trim().replace(/\s+/g, ' ').split(' ');
           p.textContent = '';
@@ -4059,7 +4041,7 @@
           );
         });
 
-        /* 2. 3D-раскрытие слов заголовков */
+         
         document.querySelectorAll('.split-words').forEach(h => {
           const inners = splitWords(h, h.hasAttribute('data-accent-last'));
           gsap.set(inners, { yPercent: 118, rotateX: -34, opacity: 0 });
@@ -4078,7 +4060,7 @@
           });
         });
 
-        /* 3. Чёткий диагональный выезд подзаголовков (без размытия!) */
+         
         document.querySelectorAll('[data-reveal="slide"]').forEach(el => {
           gsap.fromTo(el,
             { y: 28, x: 20, opacity: 0 },
@@ -4097,7 +4079,7 @@
           );
         });
 
-        /* 4. Каскадный 3D-веер карточек Архитектуры */
+         
         const pillarCards = document.querySelectorAll('.pillar-card');
         if (pillarCards.length) {
           gsap.fromTo(pillarCards,
@@ -4138,7 +4120,7 @@
           });
         }
 
-        /* 5. Кинематографическая шторка (Clip-Path Curtain) */
+         
         document.querySelectorAll('[data-curtain]').forEach(card => {
           const dir = card.getAttribute('data-curtain');
           const box = card.querySelector('.feat-img-box') || card;
@@ -4188,7 +4170,7 @@
           });
         });
 
-        /* 6. Тройное синхронное раскрытие строк в каталоге Индекс */
+         
         document.querySelectorAll('.index-row').forEach(row => {
           const line = row.querySelector('.idx-line');
           const num = row.querySelector('.idx-num');
@@ -4209,7 +4191,7 @@
             .fromTo(code, { x: 24, opacity: 0 }, { x: 0, opacity: 1, duration: 1.1, ease: 'expo.out' }, 0.16);
         });
 
-        /* 7. Характеристики (#specsGrid) — чёткий 3D-подъём без размытия */
+         
         const specs = document.querySelectorAll('#specsGrid .spec');
         if (specs.length) {
           gsap.fromTo(specs,
@@ -4270,7 +4252,7 @@
           });
         }
 
-        /* 8. АНИМАЦИЯ ЦИТАТЫ (#sectionQuote) */
+         
         if ($('quoteMark')) {
           gsap.fromTo($('quoteMark'),
             { scale: 0.4, rotate: -20, y: 36, opacity: 0 },
@@ -4290,7 +4272,7 @@
           );
         }
 
-        /* 9. АНИМАЦИЯ КОРМЫ И ШИРОКОГО БАННЕРА */
+         
         gsap.to($('tailGlow'), {
           opacity: 1,
           ease: 'none',
@@ -4340,7 +4322,7 @@
           });
         }
 
-        /* 10. АНИМАЦИЯ ФИНАЛА, КНОПКИ САЛОНА, ПАСПОРТА И ФУТЕРА (БЕЗ BLUR) */
+         
         if ($('ctaInteriorBtn')) {
           gsap.fromTo($('ctaInteriorBtn'),
             { scale: 0.8, y: 32, opacity: 0 },
@@ -4396,7 +4378,7 @@
           );
         }
 
-        /* Свет во Взгляде */
+         
         gsap.fromTo(lookMedia, { '--r': '0px' }, {
           '--r': '370px',
           duration: 1.8,
@@ -4409,7 +4391,7 @@
           scrollTrigger: { trigger: lookStage, start: 'top bottom', end: 'bottom top', scrub: 0.8 }
         });
 
-        /* Индикаторы прогресса глав в шапке */
+         
         document.querySelectorAll('.nav-chap-link').forEach(link => {
           const secId = link.getAttribute('data-section');
           const sec = $(secId);
@@ -4432,7 +4414,7 @@
           });
         });
 
-        /* Магнитная кнопка */
+         
         document.querySelectorAll('.magnetic').forEach(el => {
           el.addEventListener('pointermove', e => {
             const r = el.getBoundingClientRect();

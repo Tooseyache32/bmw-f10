@@ -18,7 +18,7 @@ Open **http://localhost:3000**. The provided ignored `.env` uses `DATABASE_URL=p
 
 `APP_ORIGIN` must exactly match the browser origin for mutations. With the supplied value, use `localhost`, not `127.0.0.1`, in the browser. When publishing, use HTTPS, `NODE_ENV=production`, a correct HTTPS `APP_ORIGIN`, password-authenticated PostgreSQL, restricted network access and a deployment-appropriate connection configuration. Production cookies are Secure. The loopback-only development cluster's trust authentication is **not suitable for deployment**. Express deliberately does not trust forwarded proxy headers; configure deployment deliberately rather than blindly trusting them.
 
-`GET /api/health` checks the HTTP process. `GET /api/ready` checks all eight tables and catalog/topic seed availability. Migrations and seed are explicit operations, never automatic on server startup. Migration is an idempotent initial schema creation, not a general future schema-version framework. Seed upserts only catalog specifications and topic labels and does not create users.
+`GET /api/health` checks the HTTP process. `GET /api/ready` checks all nine tables and catalog/topic seed availability. Migrations and seed are explicit operations, never automatic on server startup. Migration applies `001_schema.sql` and the additive `002_car_orders.sql` under one advisory lock. Seed upserts only catalog specifications and topic labels and does not create users.
 
 ## Existing-page integration (owned by the main site task)
 
@@ -41,7 +41,7 @@ For existing model pages, include `api-client.js` and deferred `catalog-api.js` 
 
 Supply `ADMIN_EMAIL` and a new 12–128 character `ADMIN_PASSWORD` only in the local environment, then run `npm run db:admin`. Remove the password afterward. No built-in credentials exist. The command inserts a new admin; it refuses duplicate email rather than silently changing an existing account. Do not use passwords from real services for this development demonstration. Log in on `account.html`, then open `admin.html`. Hiding a panel is not authorization: every admin API route checks the server-side session and role.
 
-## Eight-table schema
+## Nine-table schema
 
 1. `users`: unique normalized email, display name, salted scrypt password hash, checked `user`/`admin` role.
 2. `sessions`: SHA-256 hash of a 256-bit opaque cookie token, optional user foreign key, CSRF token and seven-day expiry.
@@ -51,6 +51,7 @@ Supply `ADMIN_EMAIL` and a new 12–128 character `ADMIN_PASSWORD` only in the l
 6. `inquiries`: optional user FK, required topic and optional model FKs, name/contact/message, consent timestamp, checked status, unique public ticket hash and timestamps.
 7. `inquiry_events`: inquiry/admin FKs, previous/next checked status, note and timestamp.
 8. `favorites`: user/model composite primary key, preventing duplicates.
+9. `car_orders`: optional user and required vehicle-model foreign keys, name, phone, city, optional integer budget in rubles, wishes, consent timestamp and checked status. `order.html` contains only the order form. Successful `POST /api/car-orders` returns HTTP 201 with the saved order number; it does not charge money or create a purchase contract.
 
 Seed reads the existing `assets/js/specs.js` as the single source of truth. Europe, from July 2013, RWD, eight-speed Steptronic, official combined EU cycle and stated tire scope are retained. Seeded model tuples (hp / Nm / 0–100 seconds / l/100 km / cc / kW): `520d 184/380/7.9/4.5/1995/135`, `528i 245/350/6.3/6.1/1997/180`, `535i 306/400/5.7/7.2/2979/225`.
 
@@ -69,6 +70,7 @@ All responses are JSON. Mutations require `Content-Type: application/json`, exac
 | POST | `/api/auth/login` | Verify scrypt, rotate session |
 | POST | `/api/auth/logout` | Invalidate session, clear cookie |
 | POST | `/api/inquiries` | Guest/user real INSERT, HTTP 201, one-time ticket token |
+| POST | `/api/car-orders` | Guest/user session, Origin and CSRF; validate and save car application, HTTP 201 |
 | GET | `/api/tickets/:token` | Public response contains **only `{status}`**, never PII |
 | GET | `/api/inquiries` | Own authenticated requests, latest 100 |
 | GET | `/api/favorites` | Own saved models |

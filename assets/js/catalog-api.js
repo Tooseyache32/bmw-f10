@@ -12,7 +12,7 @@
       const response=await window.F10_API.request('/api/models');
       if (!Array.isArray(response.models) || !response.models.length) throw new Error('Empty catalog');
       const models=Object.fromEntries(response.models.map(model => [model.slug,model]));
-      // Update the original object: chapters.js holds a reference to this same models dictionary.
+       
       Object.assign(original.models,models);
       original.scope=response.models[0].scope;
       original.consumptionScope=response.models[0].consumptionScope;
@@ -23,7 +23,7 @@
       window.dispatchEvent(new CustomEvent('f10:catalog',{detail:{source:'server',models}}));
     } catch {
       window.dispatchEvent(new CustomEvent('f10:catalog',{detail:{source:'local',models:original.models}}));
-      // Only catalog rendering has a local read-only fallback. No server writes are faked.
+       
     }
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true}); else void init();

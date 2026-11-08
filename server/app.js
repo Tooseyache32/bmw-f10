@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'node:path';
 import { root } from './config.js';
-import { token, digest, HttpError, text, email, password, hashPassword, verifyPassword, validateInquiry, rateLimit, statuses } from './security.js';
+import { token, digest, HttpError, text, email, password, hashPassword, verifyPassword, validateInquiry, validateCarOrder, rateLimit, statuses } from './security.js';
 
 const COOKIE = 'f10_session';
 const SESSION_MS = 7 * 24 * 60 * 60 * 1000;
@@ -37,11 +37,11 @@ export function createApp({ pool, appOrigin = process.env.APP_ORIGIN || '', secu
     try {
       const result = await pool.query(`SELECT count(*)::int AS tables FROM information_schema.tables
         WHERE table_schema='public' AND table_name=ANY($1::text[])`,
-      [['users','sessions','vehicle_models','model_specs','inquiry_topics','inquiries','inquiry_events','favorites']]);
-      if (result.rows[0].tables !== 8) return res.status(503).json({ status:'not_ready' });
+      [['users','sessions','vehicle_models','model_specs','inquiry_topics','inquiries','inquiry_events','favorites','car_orders']]);
+      if (result.rows[0].tables !== 9) return res.status(503).json({ status:'not_ready' });
       const seeded = await pool.query('SELECT (SELECT count(*) FROM model_specs)::int AS models, (SELECT count(*) FROM inquiry_topics)::int AS topics');
       if (seeded.rows[0].models < 3 || seeded.rows[0].topics < 4) return res.status(503).json({ status:'not_seeded' });
-      res.json({ status:'ready', database:true, tables:8 });
+      res.json({ status:'ready', database:true, tables:9 });
     } catch { res.status(503).json({ status:'unavailable', database:false }); }
   });
   app.get('/api/models', async (req,res) => res.json({ models:(await pool.query(`${modelSelect} ORDER BY m.slug`)).rows }));
@@ -87,7 +87,7 @@ export function createApp({ pool, appOrigin = process.env.APP_ORIGIN || '', secu
     const csrfToken = req.session?.csrf_token || await newSession(req,res);
     res.json({ user:userFromSession(req.session),csrfToken });
   });
-  // Every state-changing API request needs both an exact same origin and a session-bound CSRF token.
+   
   app.use('/api', (req,res,next) => {
     if (['GET','HEAD','OPTIONS'].includes(req.method)) return next();
     const expected = appOrigin || `${req.protocol}://${req.get('host')}`;
@@ -142,7 +142,7 @@ export function createApp({ pool, appOrigin = process.env.APP_ORIGIN || '', secu
     if (!/^[a-f0-9]{64}$/.test(req.params.token)) throw new HttpError(404,'Запрос не найден.');
     const result = await pool.query('SELECT status FROM inquiries WHERE public_token_hash=$1',[digest(req.params.token)]);
     if (!result.rows[0]) throw new HttpError(404,'Запрос не найден.');
-    // Deliberately no id, timestamps, contact, name, message, model or topic in the public response.
+     
     res.json({ status:result.rows[0].status });
   });
   app.get('/api/inquiries', requireUser, async (req,res) => {
@@ -196,10 +196,21 @@ export function createApp({ pool, appOrigin = process.env.APP_ORIGIN || '', secu
     } catch (error) { await client.query('ROLLBACK'); throw error; }
     finally { client.release(); }
   });
+  app.post('/api/car-orders', rateLimit({ limit:10,windowMs:15*60*1000 }), async (req,res) => {
+    const data = validateCarOrder(req.body);
+    const model = (await pool.query('SELECT id FROM vehicle_models WHERE slug=$1', [data.modification])).rows[0];
+    if (!model) throw new HttpError(400, 'Выберите существующую модификацию автомобиля.');
+    const order = (await pool.query(`INSERT INTO car_orders
+      (user_id,model_id,name,phone,city,budget,message)
+      VALUES ($1,$2,$3,$4,$5,$6,$7)
+      RETURNING id,status,created_at AS "createdAt"`,
+    [req.session.user_id,model.id,data.name,data.phone,data.city,data.budget,data.message])).rows[0];
+    res.status(201).json({ order,message:'Заявка на автомобиль сохранена.' });
+  });
   app.use('/api', (req,res,next) => next(new HttpError(404,'API-маршрут не найден.')));
 
-  // Only public file types/paths are served. Code, dependencies, SQL, tests, secrets and dotfiles are denied.
-  const publicFiles = new Set(['index.html','exterior.html','interior.html','engine.html','tech.html','versions.html','contact.html','account.html','admin.html','intro.mp4','interior.mp4']);
+   
+  const publicFiles = new Set(['index.html','exterior.html','interior.html','engine.html','tech.html','versions.html','contact.html','order.html','account.html','admin.html','intro.mp4','interior.mp4']);
   app.use((req,res,next) => {
     let pathname;
     try { pathname = decodeURIComponent(req.path); } catch { return res.sendStatus(400); }
@@ -218,7 +229,7 @@ export function createApp({ pool, appOrigin = process.env.APP_ORIGIN || '', secu
     if (error.type === 'entity.too.large') { status=413; message='Слишком большой запрос.'; }
     if (error.type === 'entity.parse.failed') { status=400; message='Некорректный JSON.'; }
     if (error.code === 'ECONNREFUSED' || error.code === '57P01') { status=503; message='База данных недоступна. Действие не подтверждено.'; }
-    // Never log request bodies, cookies, passwords, connection strings or database stack traces.
+     
     res.status(status).json({ error:message });
   });
   return app;

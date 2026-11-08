@@ -10,9 +10,9 @@
     const setStatus=(message,error=false) => { status.textContent=message; status.classList.toggle('is-error',error); };
     let submitting=false;
     let saved=false;
-    // Capture runs before inline onsubmit and the existing chapters.js local-only listener.
+     
     form.addEventListener('submit',async event => {
-      if (!http) return; // Preserve the explicitly local-only file:// experience.
+      if (!http) return;  
       event.preventDefault();
       event.stopImmediatePropagation();
       if (submitting || !form.reportValidity()) return;

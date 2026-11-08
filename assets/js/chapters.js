@@ -4,7 +4,8 @@
     ['index.html', 'Главная', '01', 'index'], ['exterior.html', 'Экстерьер', '02', 'exterior'],
     ['interior.html', 'Интерьер', '03', 'interior'], ['engine.html', 'Двигатель', '04', 'engine'],
     ['tech.html', 'Технологии', '05', 'tech'], ['versions.html', 'Модификации', '06', 'versions'],
-    ['contact.html', 'Контакты', '07', 'contact']
+    ['contact.html', 'Контакты', '07', 'contact'], ['order.html', 'Заказать машину', '08', 'order'],
+    ['account.html', 'Личный кабинет', '09', 'account'], ['admin.html', 'Админ-панель', '10', 'admin']
   ];
   const currentPage = document.body.dataset.page;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');

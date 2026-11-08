@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Оставьте заявку на BMW F10: выберите модификацию, бюджет и город. Заявка сохраняется на сервере проекта.">
+  <title>Заказать машину · F10 Anatomy</title>
+  <link rel="stylesheet" href="assets/css/chapters.css">
+  <link rel="stylesheet" href="assets/css/order.css">
+  <link rel="stylesheet" href="assets/css/site-header.css">
+  <script>try{const t=localStorage.getItem('f10-interior-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(_){}</script>
+  <script src="assets/js/api-client.js" defer></script>
+  <script src="assets/js/order.js" defer></script>
+</head>
+<body data-page="order">
+  <a class="skip-link" href="#orderForm">Перейти к форме заказа</a>
+  <header class="site-nav unified-site-header" id="siteNav">
+    <div class="unified-left">
+      <a href="index.html" class="unified-brand" aria-label="F10 Anatomy — главная"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>F10 · Anatomy</span></a>
+    </div>
+    <nav class="unified-links" aria-label="Страницы проекта">
+      <a href="index.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span></a>
+      <a href="exterior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span></a>
+      <a href="interior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span></a>
+      <a href="engine.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Двигатель</span></a>
+      <a href="tech.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span></a>
+      <a href="versions.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span></a>
+      <a href="order.html" class="unified-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Заказать</span></a>
+    </nav>
+    <div class="unified-actions">
+      <a class="unified-account" href="account.html" aria-label="Личный кабинет" title="Личный кабинет"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><span>Кабинет</span></a>
+      <div class="unified-actions-pill"><a class="unified-bracket" href="contact.html"><span class="br">[</span><span>Контакты</span><span class="br">]</span></a></div>
+      <div class="unified-theme chapter-theme" role="group" aria-label="Цветовая тема"><button type="button" data-theme="light" aria-label="Светлая тема" aria-pressed="false"><span aria-hidden="true">☼</span></button><button type="button" data-theme="dark" aria-label="Тёмная тема" aria-pressed="true"><span aria-hidden="true">◐</span></button></div>
+      <details class="unified-menu"><summary>Страницы</summary><nav class="unified-menu-panel" aria-label="Навигация проекта">
+        <a href="index.html" class="unified-link">Главная</a>
+        <a href="exterior.html" class="unified-link">Экстерьер</a>
+        <a href="interior.html" class="unified-link">Салон</a>
+        <a href="engine.html" class="unified-link">Двигатель</a>
+        <a href="tech.html" class="unified-link">Технологии</a>
+        <a href="versions.html" class="unified-link">Модификации</a>
+        <a href="contact.html" class="unified-link">Контакты</a>
+        <a href="order.html" class="unified-link" aria-current="page">Заказать машину</a>
+      
+        <a href="account.html" class="unified-link unified-service-link"><span class="unified-dot" aria-hidden="true"></span><span>Личный кабинет</span><span class="unified-number" aria-hidden="true">09</span></a><a href="admin.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Админ-панель</span><span class="unified-number" aria-hidden="true">10</span></a>
+      </nav></details>
+    </div>
+  </header>
+  <main class="order-main container" id="main">
+    <div class="order-heading"><p class="eyebrow">BMW F10 / Ваш следующий автомобиль</p><h1>Заказать<br><span>машину.</span></h1></div>
+    <form class="order-form" id="orderForm" aria-label="Заказать машину" aria-describedby="orderNotice">
+      <div class="form-grid">
+        <div class="field"><label for="orderName">Ваше имя</label><input id="orderName" name="name" autocomplete="name" maxlength="80" placeholder="Как к вам обращаться" required></div>
+        <div class="field"><label for="orderPhone">Телефон</label><input id="orderPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 (999) 123-45-67" required></div>
+        <div class="field"><label for="orderModel">Модификация</label><select id="orderModel" name="modification" required><option value="" selected disabled>Выберите автомобиль</option><option value="520d">BMW F10 · 520d</option><option value="528i">BMW F10 · 528i</option><option value="535i">BMW F10 · 535i</option></select></div>
+        <div class="field"><label for="orderCity">Город</label><input id="orderCity" name="city" autocomplete="address-level2" maxlength="80" placeholder="Ваш город" required></div>
+        <div class="field full-width"><label for="orderBudget">Бюджет, ₽ <span>необязательно</span></label><input id="orderBudget" name="budget" type="number" inputmode="numeric" min="100000" max="100000000" step="1" placeholder="Например, 2 500 000"></div>
+        <div class="field full-width"><label for="orderMessage">Пожелания <span>необязательно</span></label><textarea id="orderMessage" name="message" rows="4" maxlength="2000" placeholder="Год выпуска, цвет, комплектация и другие детали"></textarea></div>
+      </div>
+      <label class="check-field" for="orderConsent"><input id="orderConsent" name="consent" type="checkbox" required><span>Согласен на сохранение имени, телефона и деталей заявки на сервере проекта.</span></label>
+      <div class="order-submit-row"><p id="orderNotice">Это заявка на автомобиль, без оплаты и заключения договора.</p><button class="button" type="submit" id="orderSubmit"><span data-order-button-label>Отправить заявку</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button></div>
+      <p id="orderStatus" class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      <noscript><p class="form-status">Для сохранения заявки включите JavaScript.</p></noscript>
+    </form>
+  </main>
+</body>
+</html>

@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url';
 import { root, createPool, databaseUrl, assertProjectDatabase } from './config.js';
 
 export async function seed(pool) {
-  // One authoritative catalog: use the exact existing July 2013 specs, not a second data copy.
+   
   const context = { window: {} };
   vm.runInNewContext(await readFile(path.join(root, 'assets/js/specs.js'), 'utf8'), context, { timeout: 1000 });
   const catalog = context.window.F10_SPECS;

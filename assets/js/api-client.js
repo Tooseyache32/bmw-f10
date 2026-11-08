@@ -32,7 +32,7 @@
   async function request(path,options={}) {
     const method=(options.method || 'GET').toUpperCase();
     if (method !== 'GET' && !csrfToken) await session();
-    // Never automatically retry mutations: a lost response may already have committed in PostgreSQL.
+     
     return send(path,{...options,method});
   }
   window.F10_API={ request,session,APIError,statusLabels:{new:'Новый',in_progress:'В работе',completed:'Завершён',rejected:'Отклонён'} };

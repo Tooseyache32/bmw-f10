@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Отправьте запрос о BMW F10 на сервер учебного проекта, сохраните текст и отслеживайте статус. Личный кабинет и история обращений. Независимый проект, не дилерский центр.">
+  <meta name="color-scheme" content="light dark">
+  <title>Контакты и запрос — F10 · Anatomy</title>
+  <link rel="icon" href="data:,">
+  <style>
+:root{color-scheme:light;--paper:#f4f4f1;--surface:#fff;--ink:#1c1d20;--muted:#717278;--line:#dbdcd8;--soft:#e9eae6;--accent:#c53b32;--glass:rgba(247,247,244,.93);--gutter:clamp(20px,4.5vw,76px);--radius:22px;--ease:cubic-bezier(.22,1,.36,1);--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}html[data-theme=dark]{color-scheme:dark;--paper:#101113;--surface:#1b1d20;--ink:#f4f4f0;--muted:#a0a3aa;--line:#34373b;--soft:#25282c;--glass:rgba(17,19,22,.94);--accent:#ef6559}*,*::before,*::after{box-sizing:border-box}html{scroll-padding-top:110px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}h1,h2,h3,h4,p,figure,dl{margin:0}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #608dce;outline-offset:5px}img{display:block;width:100%;height:auto}svg{max-width:100%}[hidden]{display:none!important}::selection{background:#c4d3e6;color:#18202b}.container{width:100%;max-width:1440px;margin-inline:auto;padding-inline:var(--gutter)}.eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.6;display:flex;gap:10px;align-items:center}.eyebrow::before{content:'';width:5px;height:5px;background:currentColor;border-radius:50%;flex-shrink:0}.display-xl{font-size:clamp(56px,8.5vw,132px);line-height:.98;letter-spacing:-.07em;font-weight:500;overflow-wrap:break-word}.display-lg{font-size:clamp(38px,5.4vw,78px);line-height:1.05;letter-spacing:-.06em;font-weight:500}.muted{color:var(--muted)}.lede{max-width:50ch;font-size:clamp(15px,1.35vw,18px);line-height:1.75;color:var(--muted)}.section{padding-block:clamp(64px,8vw,120px)}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px}.section-head .lede{max-width:36ch}.section-head .eyebrow{margin-bottom:24px}.rule{border-top:1px solid var(--line)}.button{display:inline-flex;align-items:center;justify-content:center;gap:30px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:100px;padding:16px 23px;font-size:12px;font-weight:500;transition:background .25s,transform .25s}.button:hover{transform:translateY(-2px)}.button.secondary{color:var(--ink);background:transparent;border-color:var(--line)}.text-link{display:inline-flex;align-items:center;gap:28px;padding-block:10px;border-bottom:1px solid var(--line);font-size:12px;font-weight:500}.text-link span{font-size:18px}.photo-cover{width:100%;height:100%;object-fit:cover}.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.feature-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}.feature-copy{padding:clamp(26px,3vw,42px)}.feature-copy h3{font-size:clamp(28px,3vw,42px);font-weight:500;letter-spacing:-.05em;line-height:1.12;margin:20px 0 18px}.feature-copy p:not(.eyebrow){color:var(--muted);font-size:14px;line-height:1.8}.feature-media{aspect-ratio:16/10;overflow:hidden;background:var(--soft)}.feature-media img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}@media(hover:hover){.feature-card:hover .feature-media img{transform:scale(1.025)}}.note{font-size:12px;line-height:1.8;color:var(--muted)}.reveal{transition:opacity .85s var(--ease),transform .85s var(--ease)}.reveal.is-pending{opacity:0;transform:translateY(24px)}.skip-link{position:fixed;top:-100px;left:20px;z-index:300;background:var(--surface);padding:15px;border-radius:10px}.skip-link:focus{top:100px}.chapter-header{position:fixed;z-index:120;top:0;left:0;right:0;border-bottom:1px solid var(--line);background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.chapter-header-inner{max-width:1540px;padding:15px var(--gutter);margin:auto;display:flex;gap:30px;align-items:center;min-height:78px}.chapter-brand{display:flex;align-items:center;gap:11px;margin-right:auto;white-space:nowrap;font-size:12px;font-weight:600;letter-spacing:-.01em}.chapter-brand-mark{font-size:10px;width:30px;height:30px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center}.chapter-nav{display:flex;gap:20px;align-items:center;font-size:11px}.chapter-nav a{color:var(--muted);white-space:nowrap;position:relative;transition:color .2s}.chapter-nav a:hover,.chapter-nav a[aria-current=page]{color:var(--ink)}.chapter-nav a[aria-current=page]::after{content:'';width:4px;height:4px;border-radius:50%;position:absolute;left:50%;bottom:-10px;background:var(--accent)}.chapter-tools{display:flex;align-items:center;gap:10px}.chapter-theme{display:flex;gap:2px;border:1px solid var(--line);border-radius:100px;padding:3px}.chapter-theme button{width:31px;height:31px;border:0;border-radius:50%;background:none;color:var(--muted);display:grid;place-items:center;font-size:15px;line-height:1}.chapter-theme button[aria-pressed=true]{background:var(--ink);color:var(--paper)}.chapter-menu-toggle{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:100px;padding:11px 15px;display:none;gap:12px;font-size:12px}.chapter-menu-toggle span{font-size:17px}.chapter-progress{position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}.chapter-menu{background:var(--paper);max-height:calc(100svh - 78px);overflow:auto;padding:28px var(--gutter) 36px;border-top:1px solid var(--line)}.chapter-menu a{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:24px;letter-spacing:-.045em}.chapter-menu a span{font-size:11px;color:var(--muted);letter-spacing:0}.chapter-menu a[aria-current=page]{color:var(--accent)}.chapter-footer{padding:70px var(--gutter) 30px;border-top:1px solid var(--line);background:var(--paper);color:var(--ink)}.chapter-footer-main{max-width:1288px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:50px}.chapter-footer-title{font-size:clamp(38px,5vw,70px);letter-spacing:-.06em;font-weight:500;line-height:1}.chapter-footer-title span{color:var(--muted)}.chapter-directory{display:grid;grid-template-columns:1fr 1fr;gap:0 36px;align-content:start}.chapter-directory a{border-bottom:1px solid var(--line);padding:14px 0;font-size:12px;display:flex;justify-content:space-between;gap:20px}.chapter-directory a span{font-size:10px;color:var(--muted)}.chapter-directory a:hover{color:var(--accent)}.chapter-footer-bottom{max-width:1288px;margin:64px auto 0;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;font-size:10px;color:var(--muted)}.next-chapter{display:flex;justify-content:space-between;gap:50px;align-items:flex-end;border-top:1px solid var(--line);padding-top:45px}.next-chapter .eyebrow{margin-bottom:20px}.model-switch{display:flex;flex-wrap:wrap;gap:5px;padding:5px;width:fit-content;border:1px solid var(--line);border-radius:100px;background:var(--surface)}.model-switch button{border:0;padding:12px 24px;border-radius:100px;background:transparent;color:var(--muted);font-size:12px;font-weight:500;min-height:44px}.model-switch button[aria-pressed=true]{background:var(--ink);color:var(--paper)}.model-switch button:hover:not([aria-pressed=true]){background:var(--soft);color:var(--ink)}.metric-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.metric{padding:28px 26px;border-left:1px solid var(--line);min-width:0}.metric:first-child{padding-left:0;border:0}.metric dt{font-size:11px;color:var(--muted);margin-bottom:20px}.metric dd{font-size:clamp(35px,4vw,60px);font-weight:500;letter-spacing:-.055em;line-height:1.1;margin:0;font-variant-numeric:tabular-nums}.metric dd small{font-size:14px;letter-spacing:-.025em;margin-left:5px;font-weight:400}.source-note{margin-top:22px;max-width:82ch}.source-note a,.source-list a{border-bottom:1px solid var(--line);overflow-wrap:anywhere}.source-list{padding:0;list-style:none}.source-list li{margin-top:16px}.source-details{border-top:1px solid var(--line);padding:22px 0;margin-top:40px}.source-details summary{cursor:pointer;font-size:13px;padding:8px 0;width:fit-content}.field{display:flex;flex-direction:column;gap:11px;min-width:0}.field label{font-size:12px;font-weight:500}.field input,.field select,.field textarea{width:100%;min-width:0;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:15px 16px;color:var(--ink);font-size:16px;line-height:1.5;outline-offset:3px}.field textarea{resize:vertical;min-height:150px}.field input::placeholder,.field textarea::placeholder{color:var(--muted)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px 22px}.field.full-width{grid-column:1/-1}.check-field{display:flex;align-items:flex-start;gap:12px;font-size:12px;line-height:1.75;color:var(--muted)}.check-field input{margin-top:5px;accent-color:var(--ink);flex-shrink:0;width:16px;height:16px}.form-status{font-size:13px;line-height:1.75;color:var(--muted);min-height:22px}.form-status.is-error{color:var(--accent)}.inquiry-result{padding:28px;border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);margin-top:25px}.inquiry-result textarea{width:100%;min-height:240px;background:var(--soft);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:16px;font:14px/1.7 var(--font);resize:vertical}.contact-channel-list{display:grid;gap:0}.contact-channel{display:flex;gap:20px;justify-content:space-between;border-bottom:1px solid var(--line);padding:18px 0;font-size:13px}.contact-channel strong{font-weight:500}.contact-channel span{color:var(--muted);overflow-wrap:anywhere}.count-value{font-variant-numeric:tabular-nums}.chapter-fallback-nav{display:flex;flex-wrap:wrap;gap:15px;padding:20px}.diagram-button{border:1px solid var(--line);color:var(--ink);border-radius:100px;background:var(--surface);padding:14px 19px;font-size:12px}.diagram-button[aria-pressed=true]{background:var(--ink);color:var(--paper)}html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}@media(max-width:1190px){.chapter-nav{gap:13px;font-size:10px}.chapter-header-inner{gap:18px}.chapter-brand{font-size:11px}}@media(max-width:1000px){.chapter-nav{display:none}.chapter-menu-toggle{display:flex}.section-head{align-items:flex-start}.chapter-footer-main{gap:35px}.metric{padding-inline:18px}}@media(max-width:700px){.section-head{flex-direction:column;gap:24px;margin-bottom:32px}.section-head .lede{max-width:44ch}.display-xl{font-size:clamp(52px,12.5vw,88px)}.grid-2,.grid-3{grid-template-columns:1fr}.chapter-header-inner{padding:12px 18px;min-height:70px;gap:14px}.chapter-brand{gap:8px}.chapter-menu-toggle{padding:10px 12px}.chapter-theme button{width:29px;height:29px}.chapter-tools{gap:7px}.chapter-footer-main{grid-template-columns:1fr;gap:40px}.chapter-footer{padding-top:50px}.chapter-footer-bottom{margin-top:40px;flex-direction:column;gap:10px;line-height:1.7}.chapter-directory{gap:0 22px}.chapter-directory a{font-size:11px}.metric-row{grid-template-columns:1fr 1fr}.metric,.metric:first-child{padding:22px 17px;border-bottom:1px solid var(--line)}.metric:nth-child(odd){padding-left:0;border-left:0}.metric:nth-child(n+3){border-bottom:0}.metric dd{font-size:42px}.metric dt{font-size:10px;margin-bottom:15px}.next-chapter{align-items:flex-start;flex-direction:column;gap:28px}.form-grid{grid-template-columns:1fr}.feature-copy{padding:28px}.button{min-height:46px}.model-switch button{padding-inline:22px}.source-note{font-size:11px}}@media(max-width:370px){.chapter-brand .brand-word{display:none}.chapter-header-inner{gap:10px}.chapter-menu-toggle{font-size:11px}.metric dd{font-size:36px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}.reveal.is-pending{opacity:1;transform:none}}@media print{.chapter-header,.chapter-menu,.chapter-progress,.chapter-tools{display:none}.reveal.is-pending{opacity:1;transform:none}body{background:white;color:black}.section{padding-block:30px}}
+
+</style>
+  <style>
+    body[data-page="contact"] {
+      --contact-paper: #f5f2ec;
+      --contact-ink: #252724;
+      --contact-muted: #62655e;
+      --contact-line: #d6d4cc;
+      --contact-accent: #5b654f;
+      --contact-surface: #fcfaf6;
+      --contact-field-line: #bcbfb4;
+      --contact-placeholder: #73766c;
+      --contact-error: #9b4635;
+      --contact-button-hover: #44483e;
+      --contact-secondary-hover: #e7e6dd;
+      --contact-plate: #252724;
+      --contact-plate-ink: #f5f2ec;
+      --contact-plate-muted: #c0c5b8;
+      color-scheme: light;
+      margin: 0;
+      background: var(--contact-paper);
+      color: var(--contact-ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    html[data-theme="dark"] body[data-page="contact"] {
+      --contact-paper: #1b1c19;
+      --contact-ink: #eeeae1;
+      --contact-muted: #b6b8ab;
+      --contact-line: #42453b;
+      --contact-accent: #b5c49f;
+      --contact-surface: #252720;
+      --contact-field-line: #626859;
+      --contact-placeholder: #a4a999;
+      --contact-error: #ef9b88;
+      --contact-button-hover: #d0d7c2;
+      --contact-secondary-hover: #34382d;
+      --contact-plate: #11130f;
+      --contact-plate-ink: #eeeae1;
+      --contact-plate-muted: #b5c49f;
+      color-scheme: dark;
+    }
+    body[data-page="contact"] *,
+    body[data-page="contact"] *::before,
+    body[data-page="contact"] *::after { box-sizing: border-box; }
+    body[data-page="contact"] [hidden] { display: none !important; }
+    body[data-page="contact"] main { overflow-wrap: anywhere; }
+    body[data-page="contact"] main a { color: inherit; }
+    body[data-page="contact"] main p { margin: 0 0 1em; }
+    body[data-page="contact"] main h1,
+    body[data-page="contact"] main h2,
+    body[data-page="contact"] main h3 { margin: 0; font-weight: 400; }
+    body[data-page="contact"] main .container,
+    body[data-page="contact"] .contact-noscript .container {
+      width: 100%;
+      max-width: 1440px;
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+    body[data-page="contact"] main .eyebrow {
+      display: block;
+      margin: 0;
+      font-family: "Courier New", monospace;
+      font-size: 11px;
+      line-height: 1.5;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    body[data-page="contact"] main .muted { color: var(--contact-muted); }
+    body[data-page="contact"] main .rule { border: 0; border-top: 1px solid var(--contact-line); margin: 0; }
+    body[data-page="contact"] main .section { padding-block: 88px; }
+    body[data-page="contact"] main .display-xl,
+    body[data-page="contact"] main .display-lg {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+    body[data-page="contact"] main .display-xl { font-size: clamp(64px, 7.7vw, 112px); }
+    body[data-page="contact"] main .display-lg { font-size: clamp(38px, 4vw, 58px); line-height: 1.06; }
+    body[data-page="contact"] main .lede { font-size: 18px; line-height: 1.65; }
+    body[data-page="contact"] .contact-skip {
+      position: fixed;
+      z-index: 300;
+      top: 90px;
+      left: 12px;
+      padding: 12px 18px;
+      background: var(--contact-ink);
+      color: var(--contact-paper);
+      transform: translateY(calc(-100% - 110px));
+    }
+    body[data-page="contact"] .contact-skip:focus { transform: none; }
+    body[data-page="contact"] main :focus-visible,
+    body[data-page="contact"] .contact-noscript a:focus-visible {
+      outline: 3px solid var(--contact-accent);
+      outline-offset: 5px;
+    }
+    body[data-page="contact"] .contact-hero { padding-top: 142px; padding-bottom: 72px; }
+    body[data-page="contact"] .contact-folio {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 23px;
+      border-bottom: 1px solid var(--contact-line);
+    }
+    body[data-page="contact"] .contact-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+      gap: clamp(36px, 5vw, 80px);
+      align-items: start;
+      padding-top: 57px;
+    }
+    body[data-page="contact"] .contact-hero h1 { max-width: 850px; }
+    body[data-page="contact"] .contact-hero h1 em { font-weight: 400; color: var(--contact-accent); }
+    body[data-page="contact"] .contact-hero .lede { max-width: 535px; margin-top: 32px; }
+    body[data-page="contact"] main .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 44px;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 1px;
+      font-size: 14px;
+    }
+    body[data-page="contact"] .contact-plate { margin: 0; background: var(--contact-plate); color: var(--contact-plate-ink); }
+    body[data-page="contact"] .contact-plate img {
+      display: block;
+      width: 100%;
+      height: clamp(180px, 20vw, 290px);
+      object-fit: cover;
+      object-position: 50% 58%;
+    }
+    body[data-page="contact"] .contact-plate figcaption { padding: 25px 28px 28px; }
+    body[data-page="contact"] .contact-plate .eyebrow { color: var(--contact-plate-muted); }
+    body[data-page="contact"] .contact-plate p { margin-top: 13px; margin-bottom: 0; font-size: 14px; line-height: 1.7; }
+    body[data-page="contact"] .contact-section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, .55fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+    body[data-page="contact"] .contact-section-heading .eyebrow { margin-bottom: 19px; }
+    body[data-page="contact"] .contact-section-heading > p { max-width: 370px; margin: 0; font-size: 15px; }
+    body[data-page="contact"] .contact-form-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, .43fr);
+      gap: clamp(32px, 5vw, 76px);
+      align-items: start;
+    }
+    body[data-page="contact"] #inquiryForm { min-width: 0; margin: 0; }
+    body[data-page="contact"] .contact-mode {
+      border-left: 2px solid var(--contact-accent);
+      padding: 3px 0 3px 18px;
+      margin-bottom: 30px;
+      color: var(--contact-muted);
+      font-size: 14px;
+    }
+    body[data-page="contact"] .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    body[data-page="contact"] .field { display: block; min-width: 0; }
+    body[data-page="contact"] .field-wide { grid-column: 1 / -1; }
+    body[data-page="contact"] .field label {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    body[data-page="contact"] .field label span { color: var(--contact-muted); font-weight: 400; }
+    body[data-page="contact"] .field input,
+    body[data-page="contact"] .field select,
+    body[data-page="contact"] .field textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      min-height: 52px;
+      padding: 13px 14px;
+      border: 1px solid var(--contact-field-line);
+      border-radius: 0;
+      background: var(--contact-surface);
+      color: var(--contact-ink);
+      font: inherit;
+      font-size: 16px;
+      line-height: 1.5;
+      box-shadow: none;
+    }
+    body[data-page="contact"] .field select { padding-right: 28px; }
+    body[data-page="contact"] .field textarea { min-height: 184px; resize: vertical; }
+    body[data-page="contact"] .field input::placeholder,
+    body[data-page="contact"] .field textarea::placeholder { color: var(--contact-placeholder); opacity: 1; }
+    body[data-page="contact"] .field :is(input, select, textarea):focus {
+      border-color: var(--contact-accent);
+      outline: 2px solid var(--contact-accent);
+      outline-offset: 2px;
+    }
+    body[data-page="contact"] .field [aria-invalid="true"] { border-color: var(--contact-error); }
+    body[data-page="contact"] #inquiryStatus.is-error { color: var(--contact-error); }
+    body[data-page="contact"] .field-hint { margin: 8px 0 0 !important; color: var(--contact-muted); font-size: 12px; line-height: 1.6; }
+    body[data-page="contact"] .contact-required { margin-bottom: 22px !important; }
+    body[data-page="contact"] .check-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    body[data-page="contact"] .check-field input {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
+      margin: 3px 0 0;
+      accent-color: var(--contact-accent);
+    }
+    body[data-page="contact"] .check-field label { max-width: 540px; font-size: 14px; cursor: pointer; }
+    body[data-page="contact"] .contact-form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 24px;
+      margin-top: 28px;
+    }
+    body[data-page="contact"] main .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 52px;
+      padding: 14px 24px;
+      border: 1px solid var(--contact-ink);
+      border-radius: 0;
+      background: var(--contact-ink);
+      color: var(--contact-paper);
+      font: inherit;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color .18s ease, color .18s ease;
+    }
+    body[data-page="contact"] main .button:hover { background: var(--contact-button-hover); }
+    body[data-page="contact"] main .button.secondary { background: transparent; color: var(--contact-ink); }
+    body[data-page="contact"] main .button.secondary:hover { background: var(--contact-secondary-hover); }
+    body[data-page="contact"] main .button:disabled { opacity: .55; cursor: not-allowed; }
+    body[data-page="contact"] .contact-form-actions p { margin: 0; font-size: 12px; }
+    body[data-page="contact"] #inquiryStatus { margin-top: 18px; font-size: 14px; }
+    body[data-page="contact"] #inquiryStatus:empty { margin: 0; }
+    body[data-page="contact"] .contact-result { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--contact-line); }
+    body[data-page="contact"] .contact-result h3 { font: 400 28px/1.2 Georgia, "Times New Roman", serif; }
+    body[data-page="contact"] .contact-result > p { margin-top: 10px; font-size: 14px; }
+    body[data-page="contact"] #inquiryText { min-height: 300px; white-space: pre-wrap; }
+    body[data-page="contact"] .contact-result .contact-form-actions { margin-top: 18px; }
+    body[data-page="contact"] .contact-brief {
+      background: transparent;
+      border: 0;
+      border-top: 2px solid var(--contact-ink);
+      border-radius: 0;
+      padding-top: 23px;
+    }
+    body[data-page="contact"] .contact-brief h3 { margin-top: 13px; font: 400 29px/1.16 Georgia, "Times New Roman", serif; letter-spacing: -.025em; }
+    body[data-page="contact"] .contact-checklist { list-style: none; padding: 0; margin: 24px 0 0; counter-reset: request-item; }
+    body[data-page="contact"] .contact-checklist li {
+      display: grid;
+      grid-template-columns: 25px minmax(0, 1fr);
+      gap: 14px;
+      padding-block: 16px;
+      border-top: 1px solid var(--contact-line);
+      font-size: 14px;
+      counter-increment: request-item;
+    }
+    body[data-page="contact"] .contact-checklist li::before {
+      content: "0" counter(request-item);
+      padding-top: 2px;
+      color: var(--contact-accent);
+      font: 11px/1.6 "Courier New", monospace;
+    }
+    body[data-page="contact"] .contact-checklist strong { display: block; margin-bottom: 5px; font-weight: 600; }
+    body[data-page="contact"] .contact-checklist p { margin: 0; color: var(--contact-muted); }
+    body[data-page="contact"] .contact-privacy { margin-top: 22px; padding-top: 19px; border-top: 1px solid var(--contact-line); font-size: 12px; color: var(--contact-muted); }
+    body[data-page="contact"] .contact-bottom-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .75fr) minmax(0, 1fr);
+      gap: clamp(36px, 7vw, 110px);
+    }
+    body[data-page="contact"] .contact-channels .eyebrow,
+    body[data-page="contact"] .contact-faq .eyebrow { margin-bottom: 20px; }
+    body[data-page="contact"] .contact-channels h2 { font: 400 38px/1.1 Georgia, "Times New Roman", serif; letter-spacing: -.04em; }
+    body[data-page="contact"] [data-contact-channels] { margin-top: 25px; }
+    body[data-page="contact"] .contact-channels .note { padding-block: 20px; border-block: 1px solid var(--contact-line); font-size: 14px; }
+    body[data-page="contact"] .contact-channels .note p:last-child { margin-bottom: 0; }
+    body[data-page="contact"] .contact-channels > p { margin-top: 22px; font-size: 13px; }
+    body[data-page="contact"] .contact-faq h2 { margin-bottom: 25px; font: 400 38px/1.1 Georgia, "Times New Roman", serif; letter-spacing: -.04em; }
+    body[data-page="contact"] .contact-faq details { border-top: 1px solid var(--contact-line); }
+    body[data-page="contact"] .contact-faq details:last-child { border-bottom: 1px solid var(--contact-line); }
+    body[data-page="contact"] .contact-faq summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      min-height: 64px;
+      padding-block: 18px;
+      font-size: 15px;
+      cursor: pointer;
+      list-style: none;
+    }
+    body[data-page="contact"] .contact-faq summary::-webkit-details-marker { display: none; }
+    body[data-page="contact"] .contact-faq summary::after { content: "+"; flex: 0 0 auto; color: var(--contact-accent); font-size: 23px; font-weight: 400; }
+    body[data-page="contact"] .contact-faq details[open] summary::after { content: "−"; }
+    body[data-page="contact"] .contact-faq details p { margin: 0; padding: 0 28px 23px 0; color: var(--contact-muted); font-size: 14px; }
+    body[data-page="contact"] .contact-endnote {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 28px 40px;
+      border-top: 1px solid var(--contact-line);
+      font-size: 12px;
+      color: var(--contact-muted);
+    }
+    body[data-page="contact"] .contact-endnote p { max-width: 520px; margin: 0; }
+    body[data-page="contact"] .contact-noscript { padding-block: 24px; border-bottom: 1px solid var(--contact-line); }
+    body[data-page="contact"] .contact-noscript nav { display: flex; flex-wrap: wrap; gap: 12px 22px; }
+    body[data-page="contact"] .contact-noscript a { color: inherit; font-size: 14px; text-underline-offset: 4px; }
+    body[data-page="contact"] .contact-noscript p { max-width: 760px; margin: 18px 0 0; font-size: 14px; }
+    @media (max-width: 1000px) {
+      body[data-page="contact"] .contact-hero-grid { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 30px; }
+      body[data-page="contact"] main .display-xl { font-size: clamp(60px, 8vw, 86px); }
+      body[data-page="contact"] .contact-plate figcaption { padding: 22px; }
+      body[data-page="contact"] .contact-form-layout { grid-template-columns: minmax(0, 1fr) minmax(0, .48fr); gap: 32px; }
+      body[data-page="contact"] .form-grid { gap: 22px 18px; }
+    }
+    @media (max-width: 760px) {
+      body[data-page="contact"] main .section { padding-block: 58px; }
+      body[data-page="contact"] .contact-hero { padding-top: 120px; padding-bottom: 48px; }
+      body[data-page="contact"] .contact-hero-grid,
+      body[data-page="contact"] .contact-form-layout,
+      body[data-page="contact"] .contact-section-heading,
+      body[data-page="contact"] .contact-bottom-grid { grid-template-columns: minmax(0, 1fr); }
+      body[data-page="contact"] .contact-hero-grid { padding-top: 36px; gap: 36px; }
+      body[data-page="contact"] main .display-xl { font-size: clamp(59px, 10.5vw, 80px); }
+      body[data-page="contact"] .contact-hero .lede { margin-top: 25px; font-size: 17px; }
+      body[data-page="contact"] .contact-plate { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      body[data-page="contact"] .contact-plate img { height: 100%; min-height: 210px; }
+      body[data-page="contact"] .contact-section-heading { gap: 22px; margin-bottom: 30px; }
+      body[data-page="contact"] .contact-section-heading > p { max-width: 540px; }
+      body[data-page="contact"] .contact-form-layout { gap: 46px; }
+      body[data-page="contact"] .contact-bottom-grid { gap: 46px; }
+      body[data-page="contact"] .contact-endnote { flex-direction: column; gap: 16px; }
+    }
+    @media (max-width: 480px) {
+      body[data-page="contact"] .contact-folio { gap: 12px; }
+      body[data-page="contact"] .contact-folio .eyebrow { font-size: 10px; letter-spacing: .07em; }
+      body[data-page="contact"] main .display-xl { font-size: clamp(47px, 13.4vw, 64px); letter-spacing: -.065em; }
+      body[data-page="contact"] main .display-lg { font-size: 37px; }
+      body[data-page="contact"] .contact-plate { display: block; }
+      body[data-page="contact"] .contact-plate img { height: 180px; min-height: 0; }
+      body[data-page="contact"] .contact-plate figcaption { padding: 22px; }
+      body[data-page="contact"] .form-grid { grid-template-columns: minmax(0, 1fr); }
+      body[data-page="contact"] .contact-form-actions { align-items: stretch; gap: 12px; }
+      body[data-page="contact"] .contact-form-actions .button { width: 100%; }
+      body[data-page="contact"] .contact-form-actions p { width: 100%; }
+      body[data-page="contact"] .contact-channels h2,
+      body[data-page="contact"] .contact-faq h2 { font-size: 34px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body[data-page="contact"] main .button { transition: none; }
+    }
+  </style>
+  
+  
+  
+  <style>
+body[data-chapter-motion="cinematic"].chapter-cinema-ready main .reveal,
+body[data-chapter-motion="cinematic"].chapter-cinema-ready main .reveal.is-pending {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+body[data-chapter-motion="cinematic"] .motion-reveal { transform-origin: var(--motion-origin, 50% 50%); }
+body[data-chapter-motion="cinematic"] .motion-running { will-change: opacity, transform; }
+body[data-chapter-motion="cinematic"] .motion-waiting { opacity: 0; }
+body[data-chapter-motion="cinematic"] .motion-waiting:focus-within { opacity: 1; }
+body[data-chapter-motion="cinematic"] .motion-text-word { display: inline-block; font: inherit; letter-spacing: inherit; color: inherit; white-space: nowrap; }
+body[data-chapter-motion="cinematic"] .motion-text-glyph { display: inline-block; font: inherit; letter-spacing: inherit; color: inherit; transform-origin: 50% 85%; transition: color .35s, translate .75s cubic-bezier(.2,.8,.2,1); }
+body[data-chapter-motion="cinematic"] .motion-text-word:hover .motion-text-glyph { color: var(--motion-text-accent, #ef6559); translate: 0 -.12em; transition-delay: calc(var(--glyph-order, 0) * 15ms); }
+html[data-theme="light"] body[data-chapter-motion="cinematic"] { --motion-text-accent: #259ff5; }
+html[data-theme="dark"] body[data-chapter-motion="cinematic"] { --motion-text-accent: #ef6559; }
+body[data-chapter-motion="cinematic"] .motion-accessible { position: absolute !important; width: 1px !important; height: 1px !important; margin: -1px !important; padding: 0 !important; overflow: hidden !important; clip-path: inset(50%) !important; white-space: nowrap !important; }
+body[data-page="tech"] .tech-hero-heading h1 span.motion-text-word,
+body[data-page="tech"] .tech-hero-heading h1 span.motion-text-glyph { display: inline-block; color: inherit; }
+body[data-page="tech"] .tech-hero-heading h1 .motion-accessible { display: block; }
+body[data-chapter-motion="cinematic"] .motion-depth { translate: var(--depth-x, 0px) var(--depth-y, 0px); rotate: var(--depth-rotate, 0deg); }
+body[data-chapter-motion="cinematic"] .motion-media { transform: translate3d(0,var(--image-y,0px),0) scale(var(--image-scale,1)); }
+body[data-chapter-motion="cinematic"] .motion-native-scroll { overscroll-behavior: contain; }
+body[data-chapter-motion="cinematic"] .motion-reveal[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  body[data-chapter-motion="cinematic"] .motion-text-glyph { transition-duration: .55s !important; }
+  body[data-chapter-motion="cinematic"] .motion-waiting { opacity: 0 !important; }
+}
+@media print {
+  body[data-chapter-motion="cinematic"] .motion-waiting { opacity: 1 !important; }
+  body[data-chapter-motion="cinematic"] .motion-reveal,
+  body[data-chapter-motion="cinematic"] .motion-text-glyph,
+  body[data-chapter-motion="cinematic"] .motion-depth,
+  body[data-chapter-motion="cinematic"] .motion-media { transform: none !important; translate: none !important; rotate: none !important; opacity: 1 !important; clip-path: none !important; }
+}
+
+</style>
+  
+  
+  
+  <style>
+body[data-chapter-motion="cinematic"] .chapter-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  pointer-events: none;
+  overflow: clip;
+}
+body[data-chapter-motion="cinematic"] .chapter-transition-panel {
+  background: var(--paper, #111315);
+  transform: translateY(102%);
+  will-change: transform;
+}
+body[data-page="tech"] .chapter-transition-panel { background: var(--tech-ink); }
+body[data-page="contact"] .chapter-transition-panel { background: var(--contact-ink); }
+body[data-page="versions"] .chapter-transition-panel { background: var(--ink); }
+body[data-page="engine"] .chapter-transition-panel { background: var(--ink); }
+body[data-chapter-motion="cinematic"] .chapter-transition-label {
+  position: fixed;
+  z-index: 5001;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--paper);
+  font: 500 clamp(30px, 7vw, 90px)/1.1 var(--font, system-ui);
+  letter-spacing: -.05em;
+  opacity: 0;
+  pointer-events: none;
+}
+body[data-page="tech"] .chapter-transition-label { color: var(--tech-surface); }
+body[data-page="contact"] .chapter-transition-label { color: var(--contact-paper); }
+body[data-chapter-motion="cinematic"] .cinema-slit,
+body[data-chapter-motion="cinematic"] .cinema-aperture,
+body[data-chapter-motion="cinematic"] .cinema-fold { isolation: isolate; }
+body[data-chapter-motion="cinematic"] .cinema-slit .cinema-shutter {
+  position: absolute;
+  inset-block: 0;
+  width: 25.1%;
+  background: var(--surface);
+  pointer-events: none;
+  z-index: 2;
+  transform-origin: 0 50%;
+}
+body[data-page="tech"] .cinema-slit .cinema-shutter { background: var(--tech-surface); }
+body[data-page="contact"] .cinema-slit .cinema-shutter { background: var(--contact-paper); }
+body[data-chapter-motion="cinematic"] .cinema-pointer { translate: var(--cinema-hover-x, 0px) var(--cinema-hover-y, 0px); transition: translate 1.05s cubic-bezier(.16,1,.3,1); }
+body[data-chapter-motion="cinematic"] .cinema-card-content { transform: perspective(1600px) rotateX(var(--cinema-tilt-x, 0deg)) rotateY(var(--cinema-tilt-y, 0deg)); transition: transform 1.2s cubic-bezier(.16,1,.3,1); }
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: chapter-old-view .85s cubic-bezier(.2,.75,.2,1) both; }
+::view-transition-new(root) { animation: chapter-new-view 1.1s cubic-bezier(.2,.75,.2,1) both; }
+@keyframes chapter-old-view { to { opacity: 0; transform: scale(.965) translateY(-30px); } }
+@keyframes chapter-new-view { from { opacity: 0; transform: scale(1.045) translateY(45px); clip-path: inset(5% 0 0); } to { opacity: 1; transform: scale(1) translateY(0); clip-path: inset(0); } }
+@media print {
+  .chapter-transition, .chapter-transition-label, .cinema-shutter { display: none !important; }
+}
+
+</style>
+  
+  <style>
+.unified-site-header#siteNav{position:fixed;inset:0 0 auto;z-index:1000;width:100%;max-width:none;margin:0;padding:16px clamp(20px,4vw,64px);display:flex;align-items:center;justify-content:space-between;gap:14px;color:#f4f3ef;background:linear-gradient(180deg,rgba(8,8,10,.85),rgba(8,8,10,0));border:0;border-radius:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;pointer-events:none;transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .4s;--header-surface:rgba(14,14,18,.88);--header-line:rgba(255,255,255,.14);--header-muted:#b0b0b8;--header-text:#f4f3ef;--header-dim:#777780;--header-accent:#d90b16;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}.unified-site-header#siteNav>*{pointer-events:auto}.unified-site-header#siteNav.is-hidden{transform:translateY(-110%);opacity:0}.unified-site-header#siteNav.is-editorial{background:linear-gradient(180deg,rgba(8,8,10,.85),rgba(8,8,10,0));color:#f4f3ef;box-shadow:none}.unified-site-header .unified-left{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}.unified-site-header .unified-brand{display:inline-flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid var(--header-line);border-radius:100px;background:var(--header-surface);color:var(--header-text);font:11px/1.45 ui-monospace,'SFMono-Regular','Space Mono',Consolas,monospace;letter-spacing:.10em;white-space:nowrap;text-transform:uppercase;text-decoration:none;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:border-color .25s}.unified-site-header .unified-brand:hover{border-color:rgba(255,255,255,.3)}.unified-site-header .unified-brand svg{width:16px;height:16px;fill:none;stroke:var(--header-accent);stroke-width:1.7;flex-shrink:0}.unified-site-header .unified-links{display:flex;align-items:center;justify-content:center;gap:2px;padding:5px;border:1px solid var(--header-line);border-radius:100px;background:var(--header-surface);min-width:0;flex-shrink:0;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.unified-site-header .unified-link{display:inline-flex;align-items:center;gap:6px;padding:9px 10px;border-radius:100px;white-space:nowrap;color:var(--header-muted);font-size:11px;font-weight:500;line-height:1.3;text-decoration:none;transition:color .2s,background .2s}.unified-site-header .unified-link:hover,.unified-site-header .unified-link[aria-current=page]{color:var(--header-text)}.unified-site-header .unified-link:hover{background:rgba(255,255,255,.04)}.unified-site-header .unified-dot{display:block;width:5px;height:5px;background:var(--header-dim);border-radius:50%;flex-shrink:0}.unified-site-header .unified-link[aria-current=page] .unified-dot{background:var(--header-accent);box-shadow:0 0 8px rgba(217,11,22,.5)}.unified-site-header .unified-actions{display:flex;align-items:center;gap:9px;flex-shrink:0}.unified-site-header .unified-actions-pill{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--header-line);border-radius:100px;background:var(--header-surface);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.unified-site-header .unified-bracket{display:inline-flex;align-items:center;gap:5px;color:var(--header-muted);font:11px/1.45 ui-monospace,'SFMono-Regular','Space Mono',Consolas,monospace;letter-spacing:.04em;text-decoration:none;white-space:nowrap}.unified-site-header .unified-bracket .br{color:var(--header-dim);transition:transform .25s,color .25s}.unified-site-header .unified-bracket:hover{color:var(--header-text)}.unified-site-header .unified-bracket:hover .br:first-child{transform:translateX(-2px);color:var(--header-accent)}.unified-site-header .unified-bracket:hover .br:last-child{transform:translateX(2px);color:var(--header-accent)}.unified-site-header .unified-location,.unified-site-header .unified-menu{position:relative;display:block;font-size:11px;line-height:1.5;color:var(--header-text)}.unified-site-header .unified-location>summary,.unified-site-header .unified-menu>summary{display:flex;align-items:center;gap:8px;list-style:none;cursor:pointer;padding:9px 12px;border:1px solid var(--header-line);border-radius:100px;background:var(--header-surface);color:var(--header-muted);font:11px/1.5 ui-monospace,'SFMono-Regular','Space Mono',Consolas,monospace;white-space:nowrap;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.unified-site-header summary::-webkit-details-marker{display:none}.unified-site-header .unified-location>summary i{width:6px;height:6px;border-radius:50%;background:var(--header-accent);box-shadow:0 0 8px rgba(217,11,22,.6)}.unified-site-header .unified-location-panel{position:absolute;top:calc(100% + 12px);left:0;width:280px;max-width:calc(100vw - 40px);padding:22px;background:#111318;border:1px solid var(--header-line);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.35);color:var(--header-text)}.unified-site-header .unified-location-panel h2{font-size:19px;font-weight:500;letter-spacing:-.025em;margin:0 0 12px;line-height:1.3}.unified-site-header .unified-location-panel p{font-size:12px;line-height:1.8;color:var(--header-muted);margin:10px 0 0}.unified-site-header .unified-location-panel small{display:block;font:10px/1.7 ui-monospace,Consolas,monospace;color:var(--header-dim);margin-top:14px}.unified-site-header .unified-menu{display:none}.unified-site-header .unified-menu>summary::after{content:'+';font-size:16px;line-height:1}.unified-site-header .unified-menu[open]>summary::after{content:'−'}.unified-site-header .unified-menu-panel{position:absolute;right:0;top:calc(100% + 12px);width:260px;max-width:calc(100vw - 40px);max-height:calc(100svh - 100px);overflow:auto;overscroll-behavior:contain;padding:9px;background:#111318;border:1px solid var(--header-line);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.35)}.unified-site-header .unified-menu-panel .unified-link{display:flex;justify-content:flex-start;padding:13px 12px;border-radius:10px;font-size:13px}.unified-site-header .unified-menu-panel .unified-link[aria-current=page]{background:rgba(255,255,255,.07)}.unified-site-header .unified-menu-panel .unified-number{margin-left:auto;color:var(--header-dim);font-size:10px;letter-spacing:.08em}.unified-site-header .unified-theme.theme-switch,.unified-site-header .unified-theme.chapter-theme{display:flex;align-items:center;gap:2px;padding:3px;background:var(--header-surface);border:1px solid var(--header-line);border-radius:100px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.unified-site-header .unified-theme button{display:grid;place-items:center;width:31px;height:31px;padding:0;min-height:0;border:0;border-radius:50%;background:transparent;color:var(--header-muted);font:16px/1 system-ui,sans-serif;opacity:1;box-shadow:none;cursor:pointer}.unified-site-header .unified-theme button[aria-pressed=true]{background:#f4f3ef;color:#17191c;opacity:1;box-shadow:none}.unified-site-header .unified-theme button svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}.unified-site-header .chapter-progress{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--header-accent);transform-origin:0 50%;pointer-events:none}.unified-site-header a:focus-visible,.unified-site-header summary:focus-visible,.unified-site-header button:focus-visible{outline:2px solid #78aaf5;outline-offset:4px}.unified-site-header .unified-legacy-links{display:none!important}.unified-site-header~.project-route-menu{display:none!important}@media(max-width:1360px){.unified-site-header .unified-location{display:none}.unified-site-header#siteNav{gap:10px}.unified-site-header .unified-link{padding-inline:8px}.unified-site-header .unified-actions-pill{gap:8px;padding-inline:10px}}@media(max-width:1180px){.unified-site-header .unified-links{display:none}.unified-site-header .unified-menu{display:block}.unified-site-header .unified-left{margin-right:auto}.unified-site-header .unified-location{display:block}}@media(max-width:700px){.unified-site-header#siteNav{padding:12px 16px;gap:8px}.unified-site-header .unified-brand{font-size:10px;letter-spacing:.04em;padding:10px}.unified-site-header .unified-brand svg{width:14px;height:14px}.unified-site-header .unified-actions-pill{display:none}.unified-site-header .unified-location{display:none}.unified-site-header .unified-actions{gap:7px}.unified-site-header .unified-menu>summary{font-size:10px;padding:10px 12px}.unified-site-header .unified-theme button{width:28px;height:28px}.unified-site-header .unified-menu-panel{width:260px;max-width:calc(100vw - 32px)}.unified-site-header .unified-menu-panel .unified-link{min-height:44px}}@media(max-width:360px){.unified-site-header .unified-brand span{font-size:9px}.unified-site-header .unified-menu>summary{padding:10px 8px;font-size:9px}.unified-site-header .unified-theme button{width:25px;height:28px}.unified-site-header#siteNav{padding-inline:12px}}@media(prefers-reduced-motion:reduce){.unified-site-header,.unified-site-header *{transition:none!important}}@media print{.unified-site-header#siteNav{display:none}}
+
+</style>
+<style>
+html{scroll-behavior:smooth}
+.reveal,.reveal.is-pending{opacity:1!important;transform:none!important}
+.preloader,.pilato-preloader,.cursor-dot,.cursor-ring,.engine-progress,.chapter-transition,.chapter-transition-label{display:none!important}
+html.lock,body.lock{overflow:auto!important}
+body{min-height:100vh}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<style>.unified-site-header .unified-account{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:39px;padding:9px 12px;border:1px solid var(--header-line);border-radius:100px;background:var(--header-surface);color:var(--header-text);font:11px/1.45 ui-monospace,Consolas,monospace;text-decoration:none;white-space:nowrap;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:border-color .25s,background .25s}.unified-site-header .unified-account svg{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}.unified-site-header .unified-account:hover{border-color:var(--header-accent);background:rgba(28,28,34,.95)}.unified-site-header .unified-menu-panel .unified-service-link{border-top:1px solid var(--header-line);border-radius:0;margin-top:7px;padding-top:17px}@media(max-width:1440px){.unified-site-header .unified-actions-pill{display:none}}@media(max-width:700px){.unified-site-header .unified-account{width:35px;min-height:35px;padding:8px}.unified-site-header .unified-account>span{display:none}.unified-site-header .unified-actions{gap:6px}}
+
+</style>
+<style>@media(max-width:360px){.unified-site-header .unified-account{width:31px;min-height:31px;padding:6px}.unified-site-header .unified-menu>summary{gap:4px;padding:10px 6px}.unified-site-header .unified-theme button{width:23px}}</style>
+</head>
+<body data-page="contact" data-chapter-motion="cinematic">
+  <a class="contact-skip" href="#inquiryForm">Перейти к форме запроса</a>
+  <header class="site-nav unified-site-header" id="siteNav">
+    <div class="unified-left">
+      <a href="index.html" class="unified-brand" aria-label="F10 Anatomy — главная"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>F10 · Anatomy</span></a>
+      <details class="unified-location"><summary><i aria-hidden="true"></i><span>Dingolfing</span></summary><div class="unified-location-panel"><h2>Создан в Баварии.</h2><p>BMW 5 серии F10 выпускали в Дингольфинге, Германия. Дизайн — мюнхенская школа BMW.</p><small>Происхождение модели, не адрес владельца сайта.</small></div></details>
+    </div>
+    <nav class="unified-links" aria-label="Страницы проекта">
+        <a href="index.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span></a>
+        <a href="exterior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span></a>
+        <a href="interior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span></a>
+        <a href="engine.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Двигатель</span></a>
+        <a href="tech.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span></a>
+        <a href="versions.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span></a>
+        <a href="contact.html" class="unified-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span></a>
+    </nav>
+    <div class="unified-actions">
+      <a class="unified-account" href="account.html" aria-label="Личный кабинет" title="Личный кабинет"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><span>Кабинет</span></a>
+      <div class="unified-actions-pill"><a class="unified-bracket" href="index.html#anatomySection"><span class="br">[</span><span>Разбор</span><span class="br">]</span></a><a class="unified-bracket" href="order.html"><span class="br">[</span><span>Заказать →</span><span class="br">]</span></a></div>
+      <div class="unified-theme chapter-theme" role="group" aria-label="Цветовая тема"><button type="button" data-theme="light" aria-label="Светлая тема" aria-pressed="true"><span aria-hidden="true">☼</span></button><button type="button" data-theme="dark" aria-label="Тёмная тема" aria-pressed="false"><span aria-hidden="true">◐</span></button></div>
+      <details class="unified-menu"><summary>Страницы</summary><nav class="unified-menu-panel" aria-label="Навигация проекта" data-lenis-prevent>
+        <a href="index.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span><span class="unified-number" aria-hidden="true">01</span></a>
+        <a href="exterior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span><span class="unified-number" aria-hidden="true">02</span></a>
+        <a href="interior.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span><span class="unified-number" aria-hidden="true">03</span></a>
+        <a href="engine.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Двигатель</span><span class="unified-number" aria-hidden="true">04</span></a>
+        <a href="tech.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span><span class="unified-number" aria-hidden="true">05</span></a>
+        <a href="versions.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span><span class="unified-number" aria-hidden="true">06</span></a>
+        <a href="contact.html" class="unified-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span><span class="unified-number" aria-hidden="true">07</span></a>
+        <a href="order.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Заказать машину</span><span class="unified-number" aria-hidden="true">08</span></a>
+      
+        <a href="account.html" class="unified-link unified-service-link"><span class="unified-dot" aria-hidden="true"></span><span>Личный кабинет</span><span class="unified-number" aria-hidden="true">09</span></a><a href="admin.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Админ-панель</span><span class="unified-number" aria-hidden="true">10</span></a>
+      </nav></details>
+    </div>
+    
+  </header>
+  
+
+  <main id="main" tabindex="-1">
+    <section class="contact-hero container" aria-labelledby="contactTitle">
+      <div class="contact-folio">
+        <p class="eyebrow">F10 · Anatomy / Контакты</p>
+        <p class="eyebrow muted">Глава 07 / 07</p>
+      </div>
+      <div class="contact-hero-grid grid-2">
+        <div class="reveal">
+          <h1 id="contactTitle" class="display-xl">Составим<br>хороший <em>запрос.</em></h1>
+          <p class="lede muted">У каждой F10 своя история. Расскажите, что хотите узнать, выбрать или проверить, — и начните с текста, в котором есть всё важное.</p>
+          <a class="text-link" href="#request">Перейти к форме <span aria-hidden="true">↘</span></a>
+        </div>
+        <figure class="contact-plate reveal">
+          <img src="../assets/img/f10-page-refresh/exterior/f10-535i-rear-m93.jpg" alt="Вид сзади на настоящий BMW 535i F10" decoding="async">
+          <figcaption>
+            <span class="eyebrow">Сначала — ясность</span>
+            <p>Это независимый учебный проект о BMW F10, не дилерский центр. Запрос сохраняется на сервере проекта, а его статус можно проверить по персональной ссылке или в личном кабинете.</p>
+            <p><a href="../assets/img/f10-page-refresh/photo-credits.html#contact">Фото: M 93 · Источник ↗</a></p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container"><hr class="rule"></div>
+
+    <section id="request" class="section container" aria-labelledby="requestTitle">
+      <div class="contact-section-heading reveal">
+        <div>
+          <p class="eyebrow">01 / Подготовка</p>
+          <h2 id="requestTitle" class="display-lg">О чём ваш запрос?</h2>
+        </div>
+        <p class="muted">Оставьте несколько конкретных деталей. Сервер сохранит обращение, присвоит номер и выдаст персональную ссылку для проверки статуса.</p>
+      </div>
+
+      <div class="contact-form-layout">
+        <div>
+          <p id="contactModeNote" class="contact-mode note">Запрос будет сохранён в PostgreSQL на сервере учебного проекта. Это не запись к дилеру и не отправка email. В <a href="account.html">личном кабинете</a> доступны ваши обращения и избранные модификации.</p>
+
+          <form id="inquiryForm" aria-labelledby="requestTitle" aria-describedby="contactModeNote requiredFieldsNote"  method="post">
+            <p id="requiredFieldsNote" class="field-hint contact-required">Все поля обязательны, кроме модификации.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="inquiryName">Как вас зовут</label>
+                <input id="inquiryName" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Ваше имя">
+              </div>
+              <div class="field">
+                <label for="inquiryContact">Email или мессенджер</label>
+                <input id="inquiryContact" name="contact" type="text" autocomplete="email" maxlength="160" required aria-describedby="contactHint" placeholder="Email или имя в мессенджере">
+                <p id="contactHint" class="field-hint">Для мессенджера укажите его название и ваш профиль. Контакт сохранится в обращении и будет доступен администратору проекта.</p>
+              </div>
+              <div class="field">
+                <label for="inquiryInterest">Тема запроса</label>
+                <select id="inquiryInterest" name="interest" required>
+                  <option value="" disabled selected>Выберите тему</option>
+                  <option value="Подбор F10">Подбор F10</option>
+                  <option value="Вопрос по автомобилю">Вопрос по автомобилю</option>
+                  <option value="Обслуживание">Обслуживание</option>
+                  <option value="Другое">Другое</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="inquiryModification">Модификация <span>· необязательно</span></label>
+                <select id="inquiryModification" name="modification">
+                  <option value="Не определился" selected>Не определился</option>
+                  <option value="520d">520d</option>
+                  <option value="528i">528i</option>
+                  <option value="535i">535i</option>
+                </select>
+              </div>
+              <div class="field field-wide">
+                <label for="inquiryMessage">Что хотите обсудить</label>
+                <textarea id="inquiryMessage" name="message" rows="7" maxlength="2000" required aria-describedby="messageHint" placeholder="Опишите задачу. Если автомобиль уже есть: год, двигатель, пробег и что именно вызывает вопрос. Если выбираете: бюджет и как планируете ездить."></textarea>
+                <p id="messageHint" class="field-hint">До 2 000 символов. Полный VIN, документы и чужие персональные данные здесь не нужны.</p>
+              </div>
+            </div>
+            <div class="check-field">
+              <input id="inquiryConsent" name="consent" type="checkbox" required>
+              <label for="inquiryConsent">Я понимаю: запрос сохранится на сервере учебного проекта, но не будет отправлен дилеру или по email.</label>
+            </div>
+            <div class="contact-form-actions">
+              <button type="button" class="button" data-submit-label="Сохранить запрос">Сохранить запрос</button>
+              <p class="muted">Сохранение в учебном приложении — не запись к дилеру.</p>
+            </div>
+            <div id="inquiryStatus" role="status" aria-live="polite" aria-atomic="true"></div>
+          </form>
+
+          <section id="inquiryResult" class="contact-result" hidden aria-labelledby="resultTitle">
+            <h3 id="resultTitle">Ваш текст запроса</h3>
+            <p class="muted">Проверьте детали и сохраните персональную ссылку. Текст можно скопировать или скачать после подтверждённого сервером сохранения.</p>
+            <div class="field">
+              <label for="inquiryText">Текст для передачи получателю</label>
+              <textarea id="inquiryText" rows="12" readonly spellcheck="false" aria-describedby="resultPrivacyNote"></textarea>
+            </div>
+            <div class="contact-form-actions">
+              <button id="copyInquiry" type="button" class="button">Скопировать текст</button>
+              <button id="downloadInquiry" type="button" class="button secondary">Скачать .txt</button>
+            </div>
+            <p id="resultPrivacyNote" class="field-hint">Копирование перенесёт текст в буфер обмена, скачивание сохранит файл на вашем устройстве. В них будут данные, которые вы указали.</p>
+          </section>
+        </div>
+
+        <aside class="contact-brief feature-card" aria-labelledby="briefTitle">
+          <p class="eyebrow">Небольшая памятка</p>
+          <h3 id="briefTitle">Меньше догадок.<br>Больше контекста.</h3>
+          <ol class="contact-checklist">
+            <li>
+              <div>
+                <strong>Если выбираете F10</strong>
+                <p>Назовите бюджет, привычные маршруты и приоритеты: расход, динамика или комфорт. Не знаете мотор — так и напишите.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Если автомобиль уже есть</strong>
+                <p>Укажите год выпуска, модификацию, примерный пробег и важные работы из истории обслуживания.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Если есть неисправность</strong>
+                <p>Опишите симптом, когда он появляется и что уже проверили. Код ошибки полезнее предположения о причине.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="contact-privacy">Не прикладывайте паспорт, СТС и другие документы. Для первого вопроса достаточно описания; идентификаторы автомобиля лучше обсуждать отдельно с выбранным специалистом.</p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container"><hr class="rule"></div>
+
+    <section class="section container contact-bottom-grid grid-2" aria-label="Каналы связи и ответы на вопросы">
+      <div class="contact-channels reveal">
+        <p class="eyebrow">02 / Получатель</p>
+        <h2>Куда передать текст</h2>
+        <div data-contact-channels>
+          <div class="note">
+            <p><strong>Обращения принимает сервер учебного проекта.</strong></p>
+            <p class="muted">После сохранения появятся номер и персональная ссылка на статус. Авторизованный пользователь также увидит обращение в <a href="account.html">личном кабинете</a>.</p>
+          </div>
+        </div>
+        <p class="muted">Подтверждённого адреса для посещения нет, поэтому здесь нет карты и маршрута. Серверный статус означает только обработку обращения в учебном приложении.</p>
+      </div>
+
+      <div class="contact-faq reveal">
+        <p class="eyebrow">03 / До подготовки запроса</p>
+        <h2>Коротко о важном</h2>
+        <details>
+          <summary>Что произойдёт после нажатия кнопки?</summary>
+          <p>После проверки обязательных полей запрос сохраняется в базе данных и получает номер. Вы увидите текст и секретную ссылку, по которой раскрывается только статус без контактных данных и сообщения. Это не отправка дилеру, сервису или по email.</p>
+        </details>
+        <details>
+          <summary>Как указать год и данные автомобиля?</summary>
+          <p>Напишите год выпуска, а не только год первой регистрации, если знаете разницу. Добавьте модификацию, двигатель, примерный пробег и наличие xDrive. Если какие-то данные неизвестны, честно отметьте это — выдумывать их не нужно.</p>
+        </details>
+        <details>
+          <summary>Нужен ли полный VIN?</summary>
+          <p>Нет, полный VIN не обязателен и для первого запроса обычно не нужен. Если позже потребуется проверка комплектации или истории, согласуйте передачу VIN напрямую с выбранным получателем. Не публикуйте его вместе с документами и персональными данными.</p>
+        </details>
+        <details>
+          <summary>Где останутся введённые данные?</summary>
+          <p>Обращения хранятся в PostgreSQL на сервере учебного проекта. Гость получает секретную ссылку только на статус; авторизованный пользователь видит свои обращения в личном кабинете. Пароль хранится не открытым текстом, а как стойкий хеш. Браузер также может запоминать поля через собственное автозаполнение.</p>
+        </details>
+        <details>
+          <summary>Можно ли здесь заказать подбор или ремонт?</summary>
+          <p>Нет. «Подбор F10» и «Обслуживание» — категории обращений учебного приложения, а не услуги дилера. Администратор проекта может изменить статус запроса, но это не создаёт заказ, договор или запись на ремонт.</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="container contact-endnote">
+      <p>F10 · Anatomy — независимый редакционный проект. Названия BMW и F10 используются для описания автомобиля.</p>
+      <a class="text-link" href="versions.html">Сначала сравнить модификации <span aria-hidden="true">↗</span></a>
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

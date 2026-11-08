@@ -16,9 +16,7 @@
   </script>
   <link rel="preload" as="image" href="img/Generated Image November 05, 2026 - 8_21PM.jpg" fetchpriority="high">
   <style>
-    /* ============================================================
-       ПАЛИТРА И ПЕРЕМЕННЫЕ В ЭСТЕТИКЕ PILATO (QUIET LUXURY)
-       ============================================================ */
+    
     :root {
       color-scheme: light;
       --page: #f3efe8;
@@ -151,9 +149,7 @@
       color: #fff;
     }
 
-    /* ============================================================
-       КАСТОМНЫЙ ПЛАВНЫЙ КУРСОР PILATO (ДЛЯ ПК)
-       ============================================================ */
+    
     .pilato-cursor {
       position: fixed;
       top: 0;
@@ -236,9 +232,7 @@
       }
     }
 
-    /* ============================================================
-       ШТОРКА-ПРЕЛОАДЕР ПРИ ОТКРЫТИИ СТРАНИЦЫ
-       ============================================================ */
+    
     .pilato-preloader {
       position: fixed;
       inset: 0;
@@ -302,9 +296,7 @@
       top: 90px;
     }
 
-    /* ============================================================
-       НАВИГАЦИЯ (ПЛАВНОЕ СКРЫТИЕ/ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ КАК НА PILATO)
-       ============================================================ */
+    
     .site-nav {
       position: fixed;
       top: 20px;
@@ -375,9 +367,7 @@
       opacity: 1;
     }
 
-    /* ============================================================
-       1. ПЕРВЫЙ ЭКРАН PILATO HERO (ПЛАВНЫЙ ЗУМ + МАСОЧНЫЙ ВЫЕЗД СТРОК)
-       ============================================================ */
+    
     .pilato-hero-wrap {
       position: relative;
       height: 100vh;
@@ -533,7 +523,7 @@
       transform: translate3d(0, 0, 0) rotate(0deg);
     }
 
-    /* Нижний центральный индикатор «Узнать больше» в стиле Pilato */
+    
     .pilato-discover {
       position: absolute;
       left: 50%;
@@ -607,9 +597,7 @@
       }
     }
 
-    /* ============================================================
-       2. РЕДАКЦИОННАЯ СЕКЦИЯ И ПЛАВНЫЕ REVEAL-АНИМАЦИИ PILATO
-       ============================================================ */
+    
     .editorial {
       position: relative;
       z-index: 4;
@@ -624,7 +612,7 @@
       border-top: 1px solid var(--line);
     }
 
-    /* Мягкое масочное появление блоков вместо резких 3D-вращений */
+    
     [data-build] {
       position: relative;
       opacity: 0;
@@ -647,7 +635,7 @@
       transform: translate3d(0, 0, 0);
     }
 
-    /* Построчные маски для заголовков разделов */
+    
     .pilato-split-mask {
       display: block;
       overflow: hidden;
@@ -746,9 +734,7 @@
       transform: translate(3px, 2px);
     }
 
-    /* ============================================================
-       3. КАРТОЧКИ С РАСКРЫТИЕМ ШТОРКИ ФОТО И СКРОЛЛ-ПАРАЛЛАКСОМ
-       ============================================================ */
+    
     .feature {
       --mx: 50%;
       --my: 50%;
@@ -916,7 +902,7 @@
       font-size: clamp(27px, 2.8vw, 40px);
     }
 
-    /* ХАРАКТЕРИСТИКИ С ПЛАВНЫМ СЧЁТЧИКОМ */
+    
     .specs {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -996,7 +982,7 @@
       line-height: 1.6;
     }
 
-    /* ЦИТАТА */
+    
     .statement {
       padding: clamp(88px, 12vw, 160px) 0;
       text-align: center;
@@ -1031,7 +1017,7 @@
       color: var(--muted);
     }
 
-    /* ФИНАЛЬНЫЙ БЛОК */
+    
     .closing {
       --mx: 50%;
       --my: 50%;
@@ -1285,7 +1271,7 @@
 </head>
 
 <body>
-  <!-- Прелоадер-шторка и кастомный курсор в стиле Pilato -->
+  
   <div class="pilato-preloader" id="pilatoPreloader" aria-hidden="true"></div>
   <div class="pilato-cursor" id="pilatoCursor" aria-hidden="true"><span>Обзор</span></div>
 
@@ -1323,6 +1309,7 @@
           aria-hidden="true"></span><span>Контакты</span></a>
     </nav>
     <div class="unified-actions">
+      <a class="unified-account" href="account.html" aria-label="Личный кабинет" title="Личный кабинет"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><span>Кабинет</span></a>
       <div class="unified-actions-pill"><a class="unified-bracket" href="index.html#anatomySection"><span
             class="br">[</span><span>Разбор</span><span class="br">]</span></a><a class="unified-bracket"
           href="exterior.html"><span class="br">[</span><span>Экстерьер →</span><span class="br">]</span></a></div>
@@ -1332,7 +1319,7 @@
           aria-label="Тёмная тема" aria-pressed="false"><span aria-hidden="true">◐</span></button></div>
       <details class="unified-menu">
         <summary>Страницы</summary>
-        <nav class="unified-menu-panel" aria-label="Все семь страниц" data-lenis-prevent>
+        <nav class="unified-menu-panel" aria-label="Навигация проекта" data-lenis-prevent>
           <a href="index.html" class="unified-link"><span class="unified-dot"
               aria-hidden="true"></span><span>Главная</span><span class="unified-number"
               aria-hidden="true">01</span></a>
@@ -1353,13 +1340,15 @@
           <a href="contact.html" class="unified-link"><span class="unified-dot"
               aria-hidden="true"></span><span>Контакты</span><span class="unified-number"
               aria-hidden="true">07</span></a>
-        </nav>
+        
+        <a href="account.html" class="unified-link unified-service-link"><span class="unified-dot" aria-hidden="true"></span><span>Личный кабинет</span><span class="unified-number" aria-hidden="true">09</span></a><a href="admin.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Админ-панель</span><span class="unified-number" aria-hidden="true">10</span></a>
+      </nav>
       </details>
     </div>
   </header>
 
   <main>
-    <!-- 1. ПЕРВЫЙ ЭКРАН В СТИЛЕ PILATO.IT -->
+    
     <div class="pilato-hero-wrap" id="cabinOrbitSection">
       <section class="pilato-hero" id="pilatoStickyHero" aria-label="Интерьер BMW F10">
         <div class="pilato-hero-media" id="heroMediaLayer">
@@ -1404,7 +1393,7 @@
       </section>
     </div>
 
-    <!-- 2. ОСНОВНОЙ КОНТЕНТ: ПЛАВНОЕ РАСКРЫТИЕ ШТОРОК, ПАРАЛЛАКС КАРТИНОК И МАСОЧНАЯ ТИПОГРАФИКА -->
+    
     <section class="editorial" id="sectionErgonomics" aria-labelledby="editorialTitle">
       <div class="container">
         <div class="editorial-heading">

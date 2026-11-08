@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { hashPassword, verifyPassword, validateInquiry, password, email, digest, token, HttpError, rateLimit } from '../server/security.js';
+import { hashPassword, verifyPassword, validateInquiry, validateCarOrder, password, email, digest, token, HttpError, rateLimit } from '../server/security.js';
 import { assertProjectDatabase } from '../server/config.js';
 
 test('scrypt uses random salts, verifies correct passwords and rejects malformed hashes',async () => {
@@ -18,6 +18,14 @@ test('inquiry validation matches existing form lengths, trims fields and require
   for (const [key,length] of [['name',81],['contact',161],['message',2001]]) assert.throws(() => validateInquiry({...valid,[key]:'x'.repeat(length)}),HttpError);
   assert.throws(() => validateInquiry({...valid,consent:'on'}),HttpError);
   assert.throws(() => validateInquiry({...valid,message:'   '}),HttpError);
+});
+test('car order validation accepts optional budget and rejects invalid phones, consent and fields',() => {
+  const data={name:' Покупатель ',phone:'+7 (999) 123-45-67',modification:'535i',city:' Оренбург ',budget:2500000,consent:true};
+  assert.deepEqual(validateCarOrder(data),{name:'Покупатель',phone:data.phone,modification:'535i',city:'Оренбург',budget:2500000,message:''});
+  assert.equal(validateCarOrder({...data,budget:''}).budget,null);
+  for (const invalid of [{phone:'123'},{phone:'9999999999999999'},{phone:'8999letters'},{consent:'on'},{budget:'2500000'},{budget:2500000.5},{budget:99999},{budget:100000001},{name:'x'.repeat(81)},{city:'   '},{message:'x'.repeat(2001)}]) {
+    assert.throws(() => validateCarOrder({...data,...invalid}),HttpError);
+  }
 });
 test('credentials have bounded lengths and email normalization',() => {
   assert.equal(email('TEST@Example.test'),'test@example.test');

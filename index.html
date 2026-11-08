@@ -9,17 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   DESIGN SYSTEM — Reference Inspired (Playfair + Soft Pastels)
-   ============================================================ */
+
 :root {
-  /* Canvas & Dark Surfaces */
+  
   --bg-pitch:    #090a0d;
   --bg-surface:  #111318;
   --bg-card:     #171920;
   --bg-overlay:  rgba(9,10,13,0.85);
 
-  /* Reference Pastel Palette */
+  
   --pastel-lavender: #d8cefc;
   --pastel-lavender-text: #1d1738;
   --pastel-mint:     #96e2bc;
@@ -27,20 +25,20 @@
   --pastel-ochre:    #cfbd74;
   --pastel-ochre-text: #2a230d;
 
-  /* Typography Colors */
+  
   --text-white:   #ffffff;
   --text-primary: #f1f3f7;
   --text-muted:   #8e95a5;
   --text-dim:     #5a6170;
 
-  /* Accent & Technical */
+  
   --accent-blue:  #38bdf8;
   --accent-amber: #f59e0b;
   --accent-crimson: #d90b16;
   --line-subtle:  rgba(255,255,255,0.08);
   --line-light:   rgba(255,255,255,0.16);
 
-  /* Typography Fonts */
+  
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans:  'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono:  'Space Mono', 'Courier New', monospace;
@@ -49,9 +47,7 @@
   --ease-smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* ============================================================
-   RESET, BASE & LENIS SMOOTH SCROLL
-   ============================================================ */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html {
   background: var(--bg-pitch);
@@ -67,7 +63,7 @@ html.lenis, html.lenis body { height: auto; }
 body { overflow-x: clip; background: var(--bg-pitch); }
 html.lock, body.lock { overflow: hidden; }
 
-/* Плёночное зерно и интерактивный курсор */
+
 .grain {
   position: fixed; inset: 0; z-index: 9000; pointer-events: none; opacity: 0.045;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
@@ -96,9 +92,7 @@ html.lock, body.lock { overflow: hidden; }
   html.has-cursor .cursor-dot, html.has-cursor .cursor-ring { opacity: 1; }
 }
 
-/* ============================================================
-   1 — INTRO VIDEO LOADING SCREEN + КНОПКА SKIP
-   ============================================================ */
+
 .intro-screen {
   position: fixed; inset: 0; z-index: 10000; background: #000; overflow: hidden;
   transition: opacity 0.95s var(--ease-spring), visibility 0s linear 1s;
@@ -111,7 +105,7 @@ html.lock, body.lock { overflow: hidden; }
 .intro-screen.flash::after { opacity: 0.85; }
 .intro-screen.out { opacity: 0; visibility: hidden; pointer-events: none; }
 
-/* Кнопка SKIP: белый цвет, прозрачная заливка, белые края */
+
 .intro-skip-btn {
   position: absolute;
   right: clamp(24px, 5vw, 72px);
@@ -174,9 +168,7 @@ html.lock, body.lock { overflow: hidden; }
   letter-spacing: 0.02em;
 }
 
-/* ============================================================
-   TOP NAVIGATION — Match Exterior Cyber Luxury HUD
-   ============================================================ */
+
 .site-nav {
   position: fixed;
   top: 0;
@@ -372,9 +364,7 @@ html.lock, body.lock { overflow: hidden; }
   }
 }
 
-/* ============================================================
-   2 — HERO SECTION (Matching Reference Typography & CTA)
-   ============================================================ */
+
 .hero-ref {
   position: relative; min-height: 100vh; min-height: 100svh;
   display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -385,7 +375,7 @@ html.lock, body.lock { overflow: hidden; }
   perspective: 1200px;
 }
 
-/* 4K Seamless Video of Planet with Orbiting BMW F10 */
+
 .hero-planet-bg {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; z-index: 0; pointer-events: none;
@@ -402,7 +392,7 @@ html.lock, body.lock { overflow: hidden; }
   position: relative; z-index: 2;
 }
 
-/* Top Subtle Eyebrow Badge */
+
 .hero-ref-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 18px; border-radius: 9999px;
@@ -419,7 +409,7 @@ html.lock, body.lock { overflow: hidden; }
   box-shadow: 0 0 10px #38bdf8;
 }
 
-/* Editorial Serif Headline with 3D Word Wrappers */
+
 .hero-ref-title {
   font-family: var(--font-serif);
   font-size: clamp(48px, 8vw, 108px);
@@ -440,7 +430,7 @@ html.lock, body.lock { overflow: hidden; }
   transform-origin: 50% 100%;
 }
 
-/* Reference Pill CTA with Arrow Circle */
+
 .hero-ref-cta {
   margin-top: 38px;
   display: inline-flex; align-items: center; gap: 14px;
@@ -464,12 +454,10 @@ html.lock, body.lock { overflow: hidden; }
 }
 .hero-ref-cta:hover .hero-ref-cta-icon { transform: translateY(3px); }
 
-/* Hidden backup studio image for backward compatibility */
+
 #heroStudioImg { display: none; }
 
-/* ============================================================
-   3 — INTERACTIVE DISASSEMBLY STAGE (HOVER-DRIVEN ENGINE)
-   ============================================================ */
+
 .section-anatomy {
   position: relative;
   padding: 80px clamp(20px, 4vw, 56px) 120px;
@@ -477,7 +465,7 @@ html.lock, body.lock { overflow: hidden; }
   perspective: 1400px;
 }
 
-/* Заголовок перед интерактивным стендом */
+
 .anatomy-intro-header {
   max-width: 1400px; margin: 0 auto 48px;
   display: flex; justify-content: space-between; align-items: flex-end;
@@ -510,7 +498,7 @@ html.lock, body.lock { overflow: hidden; }
   will-change: transform, clip-path, opacity;
 }
 
-/* Glassmorphic Top HUD Header */
+
 .stage-hud-header {
   display: flex; justify-content: space-between; align-items: center;
   padding: 18px clamp(18px, 2.8vw, 38px);
@@ -522,7 +510,7 @@ html.lock, body.lock { overflow: hidden; }
   position: relative; z-index: 20;
 }
 
-/* Left: Model & Chassis Telemetry Badge */
+
 .hud-model-cluster {
   display: flex; align-items: center; gap: 12px;
   will-change: transform, opacity, filter;
@@ -545,7 +533,7 @@ html.lock, body.lock { overflow: hidden; }
   padding-left: 10px;
 }
 
-/* Center: Interactive Scrubber Track */
+
 .hud-scrubber-cluster {
   display: flex; align-items: center; gap: 14px;
   flex: 1; max-width: 460px; margin: 0 auto;
@@ -580,7 +568,7 @@ html.lock, body.lock { overflow: hidden; }
   box-shadow: 0 0 20px #a78bfa, 0 0 30px rgba(167,139,250,0.8);
 }
 
-/* Right: Status & Parts Count */
+
 .hud-status-cluster {
   display: flex; align-items: center; gap: 10px;
   will-change: transform, opacity, filter;
@@ -618,7 +606,7 @@ html.lock, body.lock { overflow: hidden; }
   font-weight: 600; color: #cbd5e1; font-size: 10px; letter-spacing: 0.04em;
 }
 
-/* Canvas Viewport HUD Reticles */
+
 .hud-reticle {
   position: absolute; width: 16px; height: 16px;
   pointer-events: none; z-index: 6;
@@ -629,7 +617,7 @@ html.lock, body.lock { overflow: hidden; }
 .reticle-bl { bottom: 20px; left: 24px; border-bottom: 1.5px solid #a78bfa; border-left: 1.5px solid #a78bfa; }
 .reticle-br { bottom: 20px; right: 24px; border-bottom: 1.5px solid #a78bfa; border-right: 1.5px solid #a78bfa; }
 
-/* Interactive Aggregates Quick Dock */
+
 .hud-dock-bar {
   position: absolute; bottom: 22px; left: 0; right: 0; z-index: 25;
   display: flex; justify-content: center; pointer-events: none;
@@ -682,7 +670,7 @@ html.lock, body.lock { overflow: hidden; }
   .hud-dock-pill { padding: 5px 10px; font-size: 10.5px; }
 }
 
-/* The Canvas Wrapper & Interactive Surface */
+
 .canvas-interactive-wrap {
   position: relative;
   width: 100%; aspect-ratio: 16 / 9; min-height: 480px; max-height: 820px;
@@ -692,19 +680,19 @@ html.lock, body.lock { overflow: hidden; }
   position: absolute; inset: 0; width: 100%; height: 100%; display: block;
 }
 
-/* Atmospheric Glow & Vignette */
+
 .canvas-vignette {
   position: absolute; inset: 0; pointer-events: none; z-index: 4;
   background: radial-gradient(circle at 50% 50%, transparent 55%, rgba(12,14,18,0.7) 100%);
 }
 
-/* SVG Leader Lines Layer */
+
 .insp-svg {
   position: absolute; inset: 0; width: 100%; height: 100%;
   pointer-events: none; z-index: 10; overflow: visible;
 }
 
-/* Hotspots Container — Smooth Fade Transition */
+
 .insp-hotspots {
   position: absolute; inset: 0; z-index: 15;
   pointer-events: none; opacity: 0;
@@ -714,7 +702,7 @@ html.lock, body.lock { overflow: hidden; }
   opacity: 1; pointer-events: none;
 }
 
-/* Hotspot Nodes */
+
 .hs-node {
   position: absolute; cursor: pointer; pointer-events: auto;
   transform: translate(-50%, -50%);
@@ -726,7 +714,7 @@ html.lock, body.lock { overflow: hidden; }
 .hs-node.hs-visible { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 .hs-node.hs-dimmed { opacity: 0.2; filter: saturate(0.2); }
 
-/* Hotspot Pin — Modern Radar Crosshair */
+
 .hs-pin {
   position: relative; width: 28px; height: 28px;
   display: flex; align-items: center; justify-content: center;
@@ -754,7 +742,7 @@ html.lock, body.lock { overflow: hidden; }
   box-shadow: 0 0 20px #a78bfa, 0 0 40px rgba(167,139,250,0.5);
 }
 
-/* Monospace Chip Tag Label on Pin */
+
 .hs-pin-label {
   position: absolute; left: calc(100% + 12px); top: 50%; transform: translateY(-50%);
   background: rgba(14,16,24,0.88);
@@ -771,9 +759,7 @@ html.lock, body.lock { overflow: hidden; }
   border-color: #a78bfa; color: #a78bfa;
 }
 
-/* ============================================================
-   DETAIL CALLOUT CARD — NOVAPAY DECK INTERFACE
-   ============================================================ */
+
 .hs-card {
   position: absolute; z-index: 35;
   width: clamp(290px, 28vw, 360px);
@@ -880,7 +866,7 @@ html.lock, body.lock { overflow: hidden; }
   background: #a78bfa; box-shadow: 0 0 10px #a78bfa;
 }
 
-/* Subtle Progress Bar along bottom of stage */
+
 .stage-progress-bar {
   position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
   background: rgba(255,255,255,0.06); z-index: 10;
@@ -892,9 +878,7 @@ html.lock, body.lock { overflow: hidden; }
   transition: width 0.1s linear;
 }
 
-/* ============================================================
-   4 — ТЕЛЕМЕТРИЯ И БЫСТРЫЙ ПЕРЕХОД К УЗЛАМ (BENTO STRIP)
-   ============================================================ */
+
 .telemetry-bento {
   max-width: 1400px; margin: 44px auto 0;
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -951,9 +935,7 @@ html.lock, body.lock { overflow: hidden; }
   .telemetry-bento { grid-template-columns: 1fr; }
 }
 
-/* ============================================================
-   ЧИСТЫЙ КИНЕМАТОГРАФИЧЕСКИЙ ПЕРЕХОД (БЕЗ ВИДЕО ДРИФТА)
-   ============================================================ */
+
 .page-transition-curtain {
   position: fixed; inset: 0; z-index: 99999;
   background: radial-gradient(circle at 50% 50%, #131620 0%, #090a0d 100%);
@@ -972,7 +954,7 @@ footer {
   font-family: var(--font-sans); font-size: 12px; color: var(--text-dim);
 }
 
-/* Hidden elements maintained for ID compatibility */
+
 #inspectionOverlay, #inspectionVideo, #scrollHint, #inspectCta,
 #btnOpenInspect, #btnCloseInspect, #btnReplayInspect, #inspHint,
 #anatProgBar { display: none !important; }
@@ -1059,7 +1041,7 @@ footer {
 <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
-<!-- ── 1. INTRO LOADING SCREEN + КНОПКА SKIP ─────────────────── -->
+
 <div class="intro-screen" id="introScreen">
   <video id="introVideo" src="intro.mp4" muted playsinline autoplay preload="auto"></video>
   <div class="icap" data-from="0.7" data-to="3.3">
@@ -1071,7 +1053,7 @@ footer {
     <p>Каждая деталь выверена до миллиметра.</p>
   </div>
 
-  <!-- Кнопка SKIP: белый текст, прозрачная заливка, белые края -->
+  
   <button type="button" class="intro-skip-btn" id="skipIntroBtn" aria-label="Пропустить интро">
     <span>Skip</span>
     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -1082,7 +1064,7 @@ footer {
   <div class="intro-load"><i id="introLoadBar"></i></div>
 </div>
 
-<!-- ── TOP NAVIGATION ────────────────────────────────────────── -->
+
 <header class="site-nav unified-site-header" id="siteNav">
     <div class="unified-left">
       <a href="index.html" class="unified-brand" aria-label="F10 Anatomy — главная"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>F10 · Anatomy</span></a>
@@ -1098,9 +1080,10 @@ footer {
         <a href="contact.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span></a>
     </nav>
     <div class="unified-actions">
+      <a class="unified-account" href="account.html" aria-label="Личный кабинет" title="Личный кабинет"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><span>Кабинет</span></a>
       <div class="unified-actions-pill"><a class="unified-bracket" href="#anatomySection"><span class="br">[</span><span>Разбор</span><span class="br">]</span></a><a class="unified-bracket" href="exterior.html"><span class="br">[</span><span>Экстерьер →</span><span class="br">]</span></a></div>
       
-      <details class="unified-menu"><summary>Страницы</summary><nav class="unified-menu-panel" aria-label="Все семь страниц" data-lenis-prevent>
+      <details class="unified-menu"><summary>Страницы</summary><nav class="unified-menu-panel" aria-label="Навигация проекта" data-lenis-prevent>
         <a href="index.html" class="unified-link nav-transition-link" aria-current="page"><span class="unified-dot" aria-hidden="true"></span><span>Главная</span><span class="unified-number" aria-hidden="true">01</span></a>
         <a href="exterior.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Экстерьер</span><span class="unified-number" aria-hidden="true">02</span></a>
         <a href="interior.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Салон</span><span class="unified-number" aria-hidden="true">03</span></a>
@@ -1108,12 +1091,14 @@ footer {
         <a href="tech.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Технологии</span><span class="unified-number" aria-hidden="true">05</span></a>
         <a href="versions.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Модификации</span><span class="unified-number" aria-hidden="true">06</span></a>
         <a href="contact.html" class="unified-link nav-transition-link"><span class="unified-dot" aria-hidden="true"></span><span>Контакты</span><span class="unified-number" aria-hidden="true">07</span></a>
+      
+        <a href="account.html" class="unified-link unified-service-link"><span class="unified-dot" aria-hidden="true"></span><span>Личный кабинет</span><span class="unified-number" aria-hidden="true">09</span></a><a href="admin.html" class="unified-link"><span class="unified-dot" aria-hidden="true"></span><span>Админ-панель</span><span class="unified-number" aria-hidden="true">10</span></a>
       </nav></details>
     </div>
     
   </header>
 
-<!-- ── 2. HERO SECTION (Planet & Orbiting BMW F10 Video) ─────── -->
+
 <section class="hero-ref" id="heroRef">
   <video class="hero-planet-bg" id="heroPlanetVideo" src="assets/video/planet-orbit.mp4" autoplay loop muted playsinline preload="auto"></video>
   <div class="hero-planet-overlay"></div>
@@ -1139,7 +1124,7 @@ footer {
   <img id="heroStudioImg" src="assets/img/new/bmw_dark_studio.jpg" alt="BMW F10 Studio">
 </section>
 
-<!-- ── 3. INTERACTIVE DISASSEMBLY CANVAS (HOVER & HUD SCRUBBER) ── -->
+
 <section class="section-anatomy" id="anatomySection">
   <div class="anatomy-intro-header" id="anatomyIntroHeader">
     <h2 class="anatomy-intro-title" id="anatomyTitle">
@@ -1152,7 +1137,7 @@ footer {
   </div>
 
   <div class="anatomy-stage-box" id="stageBox">
-    <!-- Stage HUD Header -->
+    
     <div class="stage-hud-header">
       <div class="hud-model-cluster">
         <div class="hud-brand-pill">
@@ -1182,7 +1167,7 @@ footer {
       </div>
     </div>
 
-    <!-- The Interactive Canvas Container -->
+    
     <div class="canvas-interactive-wrap" id="canvasWrap">
       <div class="hud-reticle reticle-tl"></div>
       <div class="hud-reticle reticle-tr"></div>
@@ -1196,7 +1181,7 @@ footer {
       <div class="insp-hotspots" id="inspHotspots"></div>
       <div class="hs-card" id="hsCard" aria-live="polite"></div>
 
-      <!-- Interactive Aggregates Quick Dock -->
+      
       <div class="hud-dock-bar">
         <div class="hud-dock-inner" id="hudDockInner">
           <button class="hud-dock-pill" data-part="hood" type="button"><span class="hud-dock-dot"></span>Капот Al</button>
@@ -1214,7 +1199,7 @@ footer {
     </div>
   </div>
 
-  <!-- Интерактивные карточки ключевых агрегатов с живыми счётчиками -->
+  
   <div class="telemetry-bento" id="telemetryBento">
     <article class="t-card" id="cardEngine">
       <div class="t-card-top">
@@ -1248,7 +1233,7 @@ footer {
   </div>
 </section>
 
-<!-- ── ЧИСТЫЙ ПЕРЕХОД МЕЖДУ СТРАНИЦАМИ (БЕЗ ДРИФТ-ВИДЕО) ─────── -->
+
 <div class="page-transition-curtain" id="transitionOverlay"></div>
 
 <section class="home-photo-edit" aria-labelledby="homePhotoTitle">
@@ -1271,7 +1256,7 @@ footer {
   </div>
 </footer>
 
-<!-- ── HIDDEN COMPATIBILITY CONTAINERS ───────────────────────── -->
+
 <div id="specsSection" style="display:none!important"></div>
 
 <div id="inspectionOverlay" class="inspection-overlay" style="display:none!important">
@@ -1286,7 +1271,7 @@ footer {
   <div id="anatProgBar"></div>
 </div>
 
-<!-- Подключение GSAP, ScrollTrigger и Lenis для плавного скролла и анимаций -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -1304,7 +1289,7 @@ if (hasGsap) {
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer  = window.matchMedia('(pointer: fine)').matches;
 
-/* ─── LENIS ПЛАВНЫЙ СКРОЛЛ ──────────────────────────────────── */
+ 
 let lenis = null;
 if (hasGsap && window.Lenis && !reduceMotion) {
   lenis = new Lenis({
@@ -1317,7 +1302,7 @@ if (hasGsap && window.Lenis && !reduceMotion) {
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(t => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
-  lenis.stop(); // Блокируем до завершения или пропуска интро
+  lenis.stop();  
 }
 
 function smoothScrollTo(target) {
@@ -1328,7 +1313,7 @@ function smoothScrollTo(target) {
   }
 }
 
-/* ─── CONSTANTS & HOTSPOT DATA ──────────────────────────────── */
+ 
 const FRAME_COUNT = 120;
 const frameSrc = i => `frames/f_${String(i + 1).padStart(4, '0')}.webp`;
 
@@ -1407,7 +1392,7 @@ const HOTSPOTS = [
   },
 ];
 
-/* ─── DOM REFS ──────────────────────────────────────────────── */
+ 
 const $ = id => document.getElementById(id);
 const introScreen    = $('introScreen');
 const introVideo     = $('introVideo');
@@ -1428,7 +1413,7 @@ const hudScrubThumb  = $('hudScrubThumb');
 const btnToggle      = $('btnToggleDisassembly');
 const btnToggleLabel = $('btnToggleLabel');
 
-/* ─── КАСТОМНЫЙ КУРСОР ──────────────────────────────────────── */
+ 
 const cursorDot  = $('cursorDot');
 const cursorRing = $('cursorRing');
 let cx = innerWidth / 2, cy = innerHeight / 2, rx = cx, ry = cy;
@@ -1446,7 +1431,7 @@ if (finePointer) {
   });
 }
 
-/* ─── MODULE 1: INTRO SEQUENCE & КНОПКА SKIP ────────────────── */
+ 
 let videoDone = false, siteLoaded = false, introFinished = false;
 document.documentElement.classList.add('lock');
 
@@ -1499,7 +1484,7 @@ function tryFinish() {
   finishIntroNow();
 }
 
-/* Кнопка SKIP пропускает интро мгновенно в любой момент */
+ 
 if (skipIntroBtn) {
   skipIntroBtn.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -1527,7 +1512,7 @@ if (introVideo) {
   if (p0?.catch) p0.catch(endIntroVideo);
 }
 
-/* ─── MODULE 2: CANVAS ENGINE & HOVER DISASSEMBLY ───────────── */
+ 
 const images = new Array(FRAME_COUNT);
 let loaded = 0, ready = false;
 let currentProgress  = 0;
@@ -1680,7 +1665,7 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 requestAnimationFrame(tick);
 
-/* ─── HUD SCRUBBER INTERACTION ──────────────────────────────── */
+ 
 function applyScrub(clientX) {
   if (!hudScrubTrack) return;
   const rect = hudScrubTrack.getBoundingClientRect();
@@ -1713,7 +1698,7 @@ if (hudScrubTrack) {
   });
 }
 
-/* ─── HOVER & INTERACTION LISTENERS ON CAR STAGE ────────────── */
+ 
 canvasWrap.addEventListener('mouseenter', () => {
   isHovered = true;
   if (scrubTarget !== null) scrubTarget = null;
@@ -1752,7 +1737,7 @@ if (btnToggle) {
   });
 }
 
-/* ─── MODULE 3: HOTSPOT & CALLOUT SYSTEM ────────────────────── */
+ 
 let activeHotspot = null;
 let pinnedHotspot = null;
 let hsNodes = {};
@@ -1977,7 +1962,7 @@ function clearSvg() {
   while (inspSvg.firstChild) inspSvg.removeChild(inspSvg.firstChild);
 }
 
-/* ─── MODULE 4: CARD CLICKS SCROLL & FOCUS HOTSPOT ──────────── */
+ 
 function focusComponent(id) {
   isPinnedDisassembly = true;
   isHovered = true;
@@ -2020,7 +2005,7 @@ document.querySelectorAll('a[href="#anatomySection"]').forEach(link => {
   });
 });
 
-/* ─── НАВИГАЦИЯ: СКРЫТИЕ ПРИ СКРОЛЛЕ ВНИЗ ───────────────────── */
+ 
 const siteNav = $('siteNav');
 let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
@@ -2029,7 +2014,7 @@ window.addEventListener('scroll', () => {
   lastScrollY = y;
 }, { passive: true });
 
-/* ─── ЧИСТЫЙ ПЕРЕХОД МЕЖДУ СТРАНИЦАМИ (БЕЗ ВИДЕО ДРИФТА) ────── */
+ 
 const transitionOverlay = $('transitionOverlay');
 let isNavigating = false;
 
@@ -2058,9 +2043,9 @@ document.querySelectorAll('.nav-transition-link').forEach(link => {
   });
 });
 
-/* ─── MODULE 5: РАЗНООБРАЗНЫЕ АНИМАЦИИ ПОЯВЛЕНИЯ НА GSAP ────── */
+ 
 if (hasGsap) {
-  /* 1. Параллакс планеты и плавный уход текста Hero при скролле вниз */
+   
   gsap.to('#heroPlanetVideo', {
     scale: 1.16,
     yPercent: 14,
@@ -2085,7 +2070,7 @@ if (hasGsap) {
     }
   });
 
-  /* 2. Заголовок и описание перед секцией разбора (3D Unfold + Optical De-Blur) */
+   
   gsap.fromTo('#anatomyTitle .w-inner',
     { yPercent: 120, rotateX: -38, opacity: 0 },
     {
@@ -2112,7 +2097,7 @@ if (hasGsap) {
     }
   );
 
-  /* 3. Кинематографический 3D-разворот капсулы разбора (#stageBox) + HUD + Док */
+   
   const stageTl = gsap.timeline({
     scrollTrigger: {
       trigger: '#stageBox',
@@ -2157,7 +2142,7 @@ if (hasGsap) {
       0.4
     );
 
-  /* 4. Карточки телеметрии (#telemetryBento) + набегающие счётчики цифр */
+   
   const tCards = document.querySelectorAll('.t-card');
   if (tCards.length) {
     gsap.fromTo(tCards,
@@ -2194,7 +2179,7 @@ if (hasGsap) {
     });
   }
 
-  /* 5. Магнитный отклик для кнопки Hero CTA */
+   
   document.querySelectorAll('.magnetic').forEach(el => {
     el.addEventListener('pointermove', e => {
       const r = el.getBoundingClientRect();

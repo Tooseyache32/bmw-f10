@@ -1,0 +1,40 @@
+body[data-page="order"] { --order-accent: #ef6559; }
+html[data-theme="light"] body[data-page="order"] { --order-accent: #259ff5; }
+body[data-page="order"] .order-main { max-width: 1160px; padding-top: clamp(120px, 12vw, 165px); padding-bottom: 80px; }
+body[data-page="order"] .order-heading { margin-bottom: 42px; }
+body[data-page="order"] .order-heading .eyebrow { color: var(--muted); font: 10px/1.7 ui-monospace, Consolas, monospace; letter-spacing: .1em; margin-bottom: 23px; }
+body[data-page="order"] .order-heading .eyebrow::before { background: var(--order-accent); }
+body[data-page="order"] h1 { font-size: clamp(64px, 8.5vw, 112px); line-height: 1.02; font-weight: 450; letter-spacing: -.065em; }
+body[data-page="order"] h1 > span { color: var(--muted); }
+body[data-page="order"] .order-form { padding: clamp(25px, 4vw, 50px); border: 1px solid var(--line); border-radius: 22px; background: var(--surface); }
+body[data-page="order"] .form-grid { gap: 27px 26px; }
+body[data-page="order"] .field label { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; }
+body[data-page="order"] .field label > span { color: var(--muted); font-size: 10px; }
+body[data-page="order"] .field input,
+body[data-page="order"] .field select,
+body[data-page="order"] .field textarea { background: var(--paper); border-radius: 10px; min-height: 54px; }
+body[data-page="order"] .field textarea { min-height: 120px; }
+body[data-page="order"] .field input:focus,
+body[data-page="order"] .field select:focus,
+body[data-page="order"] .field textarea:focus { border-color: var(--order-accent); }
+body[data-page="order"] .check-field { margin-top: 28px; max-width: 60ch; font-size: 12px; }
+body[data-page="order"] .check-field input { accent-color: var(--order-accent); }
+body[data-page="order"] .order-submit-row { display: flex; justify-content: space-between; align-items: center; gap: 30px; margin-top: 31px; padding-top: 26px; border-top: 1px solid var(--line); }
+body[data-page="order"] .order-submit-row > p { max-width: 37ch; font-size: 11px; line-height: 1.8; color: var(--muted); }
+body[data-page="order"] .button { min-height: 56px; min-width: 230px; justify-content: space-between; flex-shrink: 0; font-size: 12px; }
+body[data-page="order"] .button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.4; transition: transform .5s var(--ease); }
+body[data-page="order"] .button:hover svg { transform: translate(2px, -2px); }
+body[data-page="order"] .form-status { margin-top: 22px; }
+body[data-page="order"] .form-status:empty { display: none; }
+body[data-page="order"] .form-status.is-success { color: var(--ink); padding: 18px 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
+body[data-page="order"] .form-status.is-error { color: var(--accent); }
+@media(max-width: 700px) {
+  body[data-page="order"] .order-main { padding-top: 112px; padding-bottom: 45px; }
+  body[data-page="order"] .order-heading { margin-bottom: 30px; }
+  body[data-page="order"] .order-heading .eyebrow { font-size: 8px; }
+  body[data-page="order"] h1 { font-size: clamp(60px, 15vw, 84px); }
+  body[data-page="order"] .order-form { border-radius: 16px; padding: 25px 22px; }
+  body[data-page="order"] .order-submit-row { flex-direction: column; align-items: stretch; gap: 22px; }
+  body[data-page="order"] .order-submit-row > p { max-width: none; }
+  body[data-page="order"] .button { width: 100%; }
+}
